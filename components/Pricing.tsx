@@ -95,7 +95,7 @@ export default function Pricing() {
 
           <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 md:p-8 text-center">
             <p className="text-gray-700 mb-2">
-              <strong className="text-gray-900">Onboarding (einmalig): CHF 4'000</strong>
+              <strong className="text-gray-900">Onboarding (einmalig): CHF 4&apos;000</strong>
             </p>
             <p className="text-gray-600 text-sm md:text-base">
               HR Health Check inkl. priorisiertem Massnahmenplan.
