@@ -1,0 +1,18 @@
+{
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "staging": true
+    }
+  },
+  "github": {
+    "enabled": true,
+    "autoAlias": true,
+    "silent": false
+  },
+  "regions": ["iad1"],
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs"
+}
