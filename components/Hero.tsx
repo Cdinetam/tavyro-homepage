@@ -26,12 +26,12 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button
-              onClick={() => scrollToSection("kontakt")}
-              className="btn-primary w-full sm:w-auto"
+            <a
+              href="/erstgespraech-buchen"
+              className="btn-primary w-full sm:w-auto text-center"
             >
               Erstgespräch buchen
-            </button>
+            </a>
             <button
               onClick={() => scrollToSection("leistungen")}
               className="btn-secondary w-full sm:w-auto"

@@ -1,75 +1,131 @@
 # TaVyro Homepage
 
-Moderne, professionelle Homepage für TaVyro – Fractional CHRO & People Advisory.
+> Professional homepage for TaVyro - Fractional CHRO & People Advisory
 
-## Technologie-Stack
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8)](https://tailwindcss.com/)
 
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **React 18**
-
-## Installation
-
-1. Installieren Sie die Abhängigkeiten:
+## 🚀 Quick Start
 
 ```bash
+# Install dependencies
 npm install
-```
 
-oder
-
-```bash
-yarn install
-```
-
-oder
-
-```bash
-pnpm install
-```
-
-## Entwicklung
-
-Starten Sie den Development Server:
-
-```bash
+# Run development server
 npm run dev
-```
 
-Die Seite ist dann unter [http://localhost:3000](http://localhost:3000) erreichbar.
-
-## Build
-
-Erstellen Sie einen Production Build:
-
-```bash
+# Build for production
 npm run build
-```
 
-Starten Sie den Production Server:
-
-```bash
+# Start production server
 npm start
 ```
 
-## Struktur
+## 📁 Project Structure
 
-- `/app` - Next.js App Router Seiten und Layouts
-- `/components` - React Komponenten
-- `/public` - Statische Assets (optional)
+```
+tavyro-homepage/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Homepage
+│   └── globals.css        # Global styles
+├── components/            # React components
+│   ├── About.tsx
+│   ├── Coaching.tsx
+│   ├── Contact.tsx
+│   ├── Footer.tsx
+│   ├── Hero.tsx
+│   ├── Impact.tsx
+│   ├── Navigation.tsx
+│   ├── Pricing.tsx
+│   ├── Services.tsx
+│   ├── TargetAudience.tsx
+│   └── TrustAnchors.tsx
+├── public/                # Static assets
+│   └── logo*.svg
+├── images/                # Images
+├── docs/                  # Documentation
+│   ├── setup/            # Setup guides
+│   ├── deployment/       # Deployment docs
+│   └── email/            # Email configuration
+├── scripts/               # Utility scripts
+│   ├── setup/
+│   ├── deployment/
+│   └── email/
+└── archive/               # Archived files
+```
 
-## Features
+## 🛠️ Tech Stack
 
-- ✅ Vollständig responsive Design
-- ✅ Smooth Scrolling Navigation
-- ✅ Alle Sektionen aus der Markdown-Vorlage implementiert
-- ✅ Moderne, professionelle UI
-- ✅ C-Level Tonalität
-- ✅ SEO-optimiert mit Meta-Tags
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript (strict mode)
+- **Styling**: Tailwind CSS
+- **UI**: React 18 (functional components + hooks)
+- **Deployment**: Vercel
 
-## Anpassungen
+## 🌐 Deployment
 
-Kontaktinformationen (E-Mail, Telefon, LinkedIn) können in den Komponenten angepasst werden:
-- `components/Contact.tsx`
-- `components/Footer.tsx`
+### Production
+- **URL**: https://tavyro.ch
+- **Branch**: `main`
+- **Auto-deploy**: On push to main
+
+### Staging
+- **URL**: https://tavyro-tam.vercel.app
+- **Branch**: `staging`
+- **Auto-deploy**: On push to staging
+
+## 📧 Email Configuration
+
+Email is managed through Hostpoint:
+- **Address**: hello@tavyro.ch
+- **IMAP**: imap.hostpoint.ch:993 (SSL)
+- **SMTP**: smtp.hostpoint.ch:465 (SSL)
+
+See `docs/email/` for detailed setup guides.
+
+## 📚 Documentation
+
+- **Setup Guide**: [`docs/setup/`](docs/setup/)
+- **Deployment Guide**: [`docs/deployment/`](docs/deployment/)
+- **Email Setup**: [`docs/email/`](docs/email/)
+- **Agent Instructions**: [`AGENTS.md`](AGENTS.md)
+
+## 🧑‍💻 Development
+
+### Commands
+
+```bash
+npm run dev        # Start development server
+npm run build      # Build for production
+npm run start      # Start production server
+npm run lint       # Run ESLint
+```
+
+### Code Style
+
+- **Components**: PascalCase (e.g., `Hero.tsx`)
+- **Files**: TypeScript (.tsx, .ts)
+- **Styling**: Tailwind utility classes
+- **Imports**: Absolute imports with `@/` alias
+
+See [`AGENTS.md`](AGENTS.md) for detailed coding guidelines.
+
+## 🌍 Domains
+
+- **Production**: tavyro.ch
+- **Staging**: tavyro-tam.vercel.app
+- **DNS**: Managed by Hostpoint
+
+## 📝 License
+
+Private project - All rights reserved.
+
+## 🤝 Contributing
+
+This is a private project. For questions or contributions, contact the team.
+
+---
+
+**Built with ❤️ for TaVyro**

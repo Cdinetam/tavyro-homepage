@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,16 +17,19 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           <a
-            href="#top"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            className="text-xl md:text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors"
+            href="/"
+            className="flex items-center"
           >
-            TaVyro
+            <Image
+              src="/logo-tavyro.svg"
+              alt="TaVyro Logo"
+              width={240}
+              height={64}
+              className="h-16 md:h-20 w-auto"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -61,11 +65,7 @@ export default function Navigation() {
               Über TaVyro
             </a>
             <a
-              href="#kontakt"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("kontakt");
-              }}
+              href="/erstgespraech-buchen"
               className="btn-primary text-sm px-5 py-2.5"
             >
               Erstgespräch buchen
@@ -131,11 +131,7 @@ export default function Navigation() {
                 Über TaVyro
               </a>
               <a
-                href="#kontakt"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("kontakt");
-                }}
+                href="/erstgespraech-buchen"
                 className="btn-primary text-sm px-5 py-2.5 text-center"
               >
                 Erstgespräch buchen

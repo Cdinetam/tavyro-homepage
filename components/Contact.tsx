@@ -18,26 +18,24 @@ export default function Contact() {
           </p>
 
           <div className="space-y-6">
-            <button
-              onClick={scrollToTop}
-              className="btn-primary text-lg px-8 py-4"
+            <a
+              href="/erstgespraech-buchen"
+              className="btn-primary text-lg px-8 py-4 inline-block"
             >
               Erstgespräch buchen
-            </button>
+            </a>
 
             <div className="pt-6 border-t border-gray-200">
               <p className="text-gray-600 mb-4">
-                Alternativ: E-Mail | Telefon | LinkedIn
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
-                <a href="mailto:kontakt@tavyro.ch" className="hover:text-gray-900 transition-colors">
+                Alternativ:{" "}
+                <a href="mailto:hello@tavyro.ch" className="hover:text-gray-900 transition-colors">
                   E-Mail
                 </a>
-                <span className="text-gray-300">|</span>
-                <a href="tel:+41XXXXXXXXX" className="hover:text-gray-900 transition-colors">
+                {" | "}
+                <a href="tel:+41786868089" className="hover:text-gray-900 transition-colors">
                   Telefon
                 </a>
-                <span className="text-gray-300">|</span>
+                {" | "}
                 <a
                   href="https://linkedin.com/company/tavyro"
                   target="_blank"
@@ -46,7 +44,7 @@ export default function Contact() {
                 >
                   LinkedIn
                 </a>
-              </div>
+              </p>
             </div>
           </div>
         </div>

@@ -1,0 +1,47 @@
+# Cursor Rules for TaVyro Homepage
+
+## Project Structure
+
+This project follows a clean, organized structure:
+
+```
+/
+├── app/           # Next.js App Router
+├── components/    # React components
+├── public/        # Static assets
+├── images/        # Images
+├── docs/          # Documentation
+│   ├── setup/
+│   ├── deployment/
+│   └── email/
+├── scripts/       # Utility scripts
+│   ├── setup/
+│   ├── deployment/
+│   └── email/
+└── archive/       # Archived/old files (ignored by git)
+```
+
+## Rules
+
+1. **Keep root directory clean**: Only configuration files in root
+2. **Documentation goes in `/docs`**: Organized by category
+3. **Scripts go in `/scripts`**: Organized by category
+4. **No duplicate files**: Archive old versions in `/archive`
+5. **Follow AGENTS.md**: See AGENTS.md for coding guidelines
+6. **Professional structure**: Maintain clean, professional directory structure
+
+## When Adding Files
+
+- **Documentation (.md)**: Add to appropriate `/docs` subdirectory
+- **Scripts (.sh, .py, etc.)**: Add to appropriate `/scripts` subdirectory
+- **Components (.tsx)**: Add to `/components`
+- **Images**: Add to `/images`
+- **Static assets**: Add to `/public`
+
+## Git Workflow
+
+- Main branch: `main` (production)
+- Staging branch: `staging`
+- Feature branches: `feature/*`
+
+See `docs/GIT_EXPLANATION.md` for details.
