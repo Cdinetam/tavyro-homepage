@@ -5,8 +5,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 // Konfiguration - Hier die URLs eintragen, wenn verfügbar
-const BOOKINGS_IFRAME_URL = "";
-const BOOKINGS_PAGE_URL = "";
+const BOOKINGS_IFRAME_URL: string = "";
+const BOOKINGS_PAGE_URL: string = "";
 
 export default function ErstgespraechBuchen() {
   const scrollToSection = (id: string) => {
