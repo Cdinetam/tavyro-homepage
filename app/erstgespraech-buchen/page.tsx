@@ -10,7 +10,9 @@ export default function ErstgespraechBuchen() {
     nachname: "",
     email: "",
     telefon: "",
-    terminwunsch: "",
+    terminwunsch1: "",
+    terminwunsch2: "",
+    terminwunsch3: "",
     thema: "",
     nachricht: ""
   });
@@ -58,7 +60,9 @@ export default function ErstgespraechBuchen() {
           nachname: "",
           email: "",
           telefon: "",
-          terminwunsch: "",
+          terminwunsch1: "",
+          terminwunsch2: "",
+          terminwunsch3: "",
           thema: "",
           nachricht: ""
         });
@@ -147,7 +151,7 @@ export default function ErstgespraechBuchen() {
                     onClick={() => scrollToSection("booking")}
                     className="btn-primary w-full sm:w-auto"
                   >
-                    Termin auswählen
+                    Teams-Call buchen
                   </button>
                   <button
                     onClick={() => scrollToSection("ablauf")}
@@ -352,23 +356,59 @@ function BookingSection({
               </p>
             </div>
 
-            <div>
-              <label htmlFor="terminwunsch" className="block text-sm font-medium text-gray-900 mb-2">
-                Gewünschter Zeitpunkt für den Teams-Call <span className="text-red-500">*</span>
+            <div className="space-y-4">
+              <label className="block text-sm font-medium text-gray-900 mb-2">
+                Terminvorschläge für den Teams-Call <span className="text-red-500">*</span>
               </label>
-              <input
-                type="text"
-                id="terminwunsch"
-                name="terminwunsch"
-                value={formData.terminwunsch}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
-                placeholder="Montag, 20. Januar 2026, 14:00 Uhr"
-              />
-              <p className="mt-2 text-sm text-gray-600">
-                Verfügbar Montag bis Freitag, 9 bis 17 Uhr (CET). Bitte nennen Sie idealerweise 1 bis 2 Alternativen.
+              <p className="text-sm text-gray-600 mb-4">
+                Verfügbar Montag bis Freitag, 9 bis 17 Uhr (CET). Bitte nennen Sie 2-3 Alternativen.
               </p>
+
+              <div>
+                <label htmlFor="terminwunsch1" className="block text-xs font-medium text-gray-700 mb-1">
+                  1. Terminvorschlag <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="datetime-local"
+                  id="terminwunsch1"
+                  name="terminwunsch1"
+                  value={formData.terminwunsch1}
+                  onChange={handleChange}
+                  required
+                  min={new Date().toISOString().slice(0, 16)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="terminwunsch2" className="block text-xs font-medium text-gray-700 mb-1">
+                  2. Terminvorschlag (optional)
+                </label>
+                <input
+                  type="datetime-local"
+                  id="terminwunsch2"
+                  name="terminwunsch2"
+                  value={formData.terminwunsch2}
+                  onChange={handleChange}
+                  min={new Date().toISOString().slice(0, 16)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="terminwunsch3" className="block text-xs font-medium text-gray-700 mb-1">
+                  3. Terminvorschlag (optional)
+                </label>
+                <input
+                  type="datetime-local"
+                  id="terminwunsch3"
+                  name="terminwunsch3"
+                  value={formData.terminwunsch3}
+                  onChange={handleChange}
+                  min={new Date().toISOString().slice(0, 16)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                />
+              </div>
             </div>
 
             <div>

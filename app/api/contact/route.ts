@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { vorname, nachname, email, telefon, terminwunsch, thema, nachricht } = body;
+    const { vorname, nachname, email, telefon, terminwunsch1, terminwunsch2, terminwunsch3, thema, nachricht } = body;
 
     // Validierung
     if (!vorname || !nachname || !email || !terminwunsch) {
@@ -42,7 +42,12 @@ Vorname: ${vorname}
 Nachname: ${nachname}
 E-Mail: ${email}
 ${telefon ? `Telefon: ${telefon}` : ''}
-Gewünschter Zeitpunkt: ${terminwunsch}
+
+Terminvorschläge:
+1. ${terminwunsch1 ? new Date(terminwunsch1).toLocaleString('de-CH', { dateStyle: 'full', timeStyle: 'short' }) : 'Nicht angegeben'}
+${terminwunsch2 ? `2. ${new Date(terminwunsch2).toLocaleString('de-CH', { dateStyle: 'full', timeStyle: 'short' })}` : ''}
+${terminwunsch3 ? `3. ${new Date(terminwunsch3).toLocaleString('de-CH', { dateStyle: 'full', timeStyle: 'short' })}` : ''}
+
 ${thema ? `Thema/Anlass: ${thema}` : ''}
 
 ${nachricht ? `Zusätzliche Nachricht:\n${nachricht}` : ''}
