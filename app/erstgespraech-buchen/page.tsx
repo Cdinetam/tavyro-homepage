@@ -1,14 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-// Konfiguration - Hier die URLs eintragen, wenn verfügbar
-const BOOKINGS_IFRAME_URL: string = "";
-const BOOKINGS_PAGE_URL: string = "";
-
 export default function ErstgespraechBuchen() {
+  const [formData, setFormData] = useState({
+    vorname: "",
+    name: "",
+    email: "",
+    terminwunsch: "",
+    nachricht: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -26,6 +32,49 @@ export default function ErstgespraechBuchen() {
       metaDescription.setAttribute("content", "Buchen Sie Ihr 30-minütiges Erstgespräch mit TaVyro. Online via Microsoft Teams. Vertraulich, fokussiert, ohne Verkaufsdruck.");
     }
   }, []);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus('success');
+        setFormData({
+          vorname: "",
+          name: "",
+          email: "",
+          terminwunsch: "",
+          nachricht: ""
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
 
   return (
     <main className="min-h-screen">
@@ -164,14 +213,26 @@ export default function ErstgespraechBuchen() {
 
               {/* Mobile: Show booking here */}
               <div className="lg:hidden">
-                <BookingSection />
+                <BookingSection 
+                  formData={formData}
+                  handleChange={handleChange}
+                  handleSubmit={handleSubmit}
+                  isSubmitting={isSubmitting}
+                  submitStatus={submitStatus}
+                />
               </div>
             </div>
 
             {/* Right Column: Sticky Booking (Desktop only) */}
             <div className="hidden lg:block">
               <div className="sticky top-32">
-                <BookingSection />
+                <BookingSection 
+                  formData={formData}
+                  handleChange={handleChange}
+                  handleSubmit={handleSubmit}
+                  isSubmitting={isSubmitting}
+                  submitStatus={submitStatus}
+                />
               </div>
             </div>
           </div>
@@ -183,59 +244,148 @@ export default function ErstgespraechBuchen() {
   );
 }
 
-// Separate Booking Section Component
-function BookingSection() {
-  const hasBookingURL = BOOKINGS_IFRAME_URL && BOOKINGS_IFRAME_URL.trim() !== "";
-
+// Booking Form Component
+function BookingSection({ 
+  formData, 
+  handleChange, 
+  handleSubmit, 
+  isSubmitting, 
+  submitStatus 
+}: {
+  formData: any;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  isSubmitting: boolean;
+  submitStatus: 'idle' | 'success' | 'error';
+}) {
   return (
     <section id="booking" className="scroll-mt-32">
-      <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+      <div className="bg-white rounded-lg border border-gray-200 p-6 md:p-8 shadow-sm">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          Termin auswählen
+          Termin anfragen
         </h2>
         
         <p className="text-gray-700 mb-6">
-          Bitte wählen Sie ein Zeitfenster. Das Meeting findet online via Microsoft Teams statt.
+          Füllen Sie das Formular aus und wir melden uns bei Ihnen für die Terminvereinbarung.
         </p>
 
-        {hasBookingURL ? (
-          <>
-            <div className="relative w-full" style={{ minHeight: "900px" }}>
-              <iframe
-                src={BOOKINGS_IFRAME_URL}
-                width="100%"
-                height="1000"
-                style={{ border: 0, minHeight: "900px" }}
-                title="TaVyro Erstgespräch buchen"
-                allowFullScreen
+        {submitStatus === 'success' ? (
+          <div className="p-6 bg-green-50 border border-green-200 rounded-lg">
+            <h3 className="text-lg font-semibold text-green-900 mb-2">
+              ✓ Vielen Dank!
+            </h3>
+            <p className="text-green-800">
+              Ihre Anfrage wurde erfolgreich versendet. Wir melden uns in Kürze bei Ihnen.
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="vorname" className="block text-sm font-medium text-gray-900 mb-2">
+                  Vorname <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="vorname"
+                  name="vorname"
+                  value={formData.vorname}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                  placeholder="Max"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
+                  Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                  placeholder="Mustermann"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
+                E-Mail-Adresse <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                placeholder="max.mustermann@example.com"
               />
             </div>
-            
-            {BOOKINGS_PAGE_URL && BOOKINGS_PAGE_URL.trim() !== "" && (
-              <div className="mt-4 text-center">
-                <a
-                  href={BOOKINGS_PAGE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  Falls das Portal nicht lädt: Termin direkt öffnen →
-                </a>
+
+            <div>
+              <label htmlFor="terminwunsch" className="block text-sm font-medium text-gray-900 mb-2">
+                Gewünschter Zeitpunkt für Teams Call <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="terminwunsch"
+                name="terminwunsch"
+                value={formData.terminwunsch}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                placeholder="z.B. Montag, 20. Januar 2025, 14:00 Uhr"
+              />
+              <p className="mt-2 text-sm text-gray-600">
+                Verfügbar: Montag bis Freitag, 9:00 - 17:00 Uhr
+              </p>
+            </div>
+
+            <div>
+              <label htmlFor="nachricht" className="block text-sm font-medium text-gray-900 mb-2">
+                Zusätzliche Nachricht (optional)
+              </label>
+              <textarea
+                id="nachricht"
+                name="nachricht"
+                value={formData.nachricht}
+                onChange={handleChange}
+                rows={4}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
+                placeholder="Kurze Beschreibung Ihrer Situation oder Fragen..."
+              />
+            </div>
+
+            {submitStatus === 'error' && (
+              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-800 text-sm">
+                  Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.
+                </p>
               </div>
             )}
-          </>
-        ) : (
-          <div className="p-8 bg-gray-50 rounded-lg border border-gray-200 text-center">
-            <p className="text-gray-700 mb-4">
-              Buchungslink wird noch hinterlegt. Bitte kontaktieren Sie uns in der Zwischenzeit per E-Mail.
-            </p>
-            <a
-              href="mailto:hello@tavyro.ch"
-              className="btn-primary inline-block"
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full btn-primary py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Per E-Mail kontaktieren
-            </a>
-          </div>
+              {isSubmitting ? 'Wird gesendet...' : 'Anfrage senden'}
+            </button>
+
+            <p className="text-sm text-gray-600 text-center">
+              Alternativ: <a href="mailto:hello@tavyro.ch" className="underline hover:text-gray-900">hello@tavyro.ch</a>
+              {" | "}
+              <a href="tel:+41786868089" className="underline hover:text-gray-900">+41 78 686 80 89</a>
+            </p>
+          </form>
         )}
       </div>
     </section>
