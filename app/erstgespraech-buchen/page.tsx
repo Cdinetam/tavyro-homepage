@@ -4,17 +4,33 @@ import { useEffect, useState, FormEvent } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+// Zeitoptionen 9:00-17:00 in 30-Min-Schritten
+const generateTimeOptions = () => {
+  const options = [];
+  for (let hour = 9; hour <= 17; hour++) {
+    options.push(`${hour.toString().padStart(2, '0')}:00`);
+    if (hour < 17) {
+      options.push(`${hour.toString().padStart(2, '0')}:30`);
+    }
+  }
+  return options;
+};
+
 export default function ErstgespraechBuchen() {
   const [formData, setFormData] = useState({
     vorname: "",
     nachname: "",
     email: "",
     telefon: "",
-    terminwunsch1: "",
-    terminwunsch2: "",
-    terminwunsch3: "",
+    terminwunsch1_datum: "",
+    terminwunsch1_zeit: "",
+    terminwunsch2_datum: "",
+    terminwunsch2_zeit: "",
+    terminwunsch3_datum: "",
+    terminwunsch3_zeit: "",
     thema: "",
-    nachricht: ""
+    nachricht: "",
+    kopie_an_mich: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -43,12 +59,28 @@ export default function ErstgespraechBuchen() {
     setSubmitStatus('idle');
 
     try {
+      // Kombiniere Datum und Zeit für Terminwünsche
+      const terminwunsch1 = formData.terminwunsch1_datum && formData.terminwunsch1_zeit 
+        ? `${formData.terminwunsch1_datum}T${formData.terminwunsch1_zeit}` 
+        : '';
+      const terminwunsch2 = formData.terminwunsch2_datum && formData.terminwunsch2_zeit 
+        ? `${formData.terminwunsch2_datum}T${formData.terminwunsch2_zeit}` 
+        : '';
+      const terminwunsch3 = formData.terminwunsch3_datum && formData.terminwunsch3_zeit 
+        ? `${formData.terminwunsch3_datum}T${formData.terminwunsch3_zeit}` 
+        : '';
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          terminwunsch1,
+          terminwunsch2,
+          terminwunsch3
+        })
       });
 
       const data = await response.json();
@@ -60,11 +92,15 @@ export default function ErstgespraechBuchen() {
           nachname: "",
           email: "",
           telefon: "",
-          terminwunsch1: "",
-          terminwunsch2: "",
-          terminwunsch3: "",
+          terminwunsch1_datum: "",
+          terminwunsch1_zeit: "",
+          terminwunsch2_datum: "",
+          terminwunsch2_zeit: "",
+          terminwunsch3_datum: "",
+          terminwunsch3_zeit: "",
           thema: "",
-          nachricht: ""
+          nachricht: "",
+          kopie_an_mich: false
         });
       } else {
         setSubmitStatus('error');
@@ -77,10 +113,11 @@ export default function ErstgespraechBuchen() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const value = e.target.type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value;
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: value
     }));
   };
 
@@ -364,50 +401,114 @@ function BookingSection({
                 Verfügbar Montag bis Freitag, 9 bis 17 Uhr (CET). Bitte nennen Sie 2-3 Alternativen.
               </p>
 
-              <div>
-                <label htmlFor="terminwunsch1" className="block text-xs font-medium text-gray-700 mb-1">
+              {/* 1. Terminvorschlag */}
+              <div className="space-y-2">
+                <label className="block text-xs font-medium text-gray-700">
                   1. Terminvorschlag <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="datetime-local"
-                  id="terminwunsch1"
-                  name="terminwunsch1"
-                  value={formData.terminwunsch1}
-                  onChange={handleChange}
-                  required
-                  min={new Date().toISOString().slice(0, 16)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
-                />
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label htmlFor="terminwunsch1_datum" className="block text-xs text-gray-600 mb-1">Datum</label>
+                    <input
+                      type="date"
+                      id="terminwunsch1_datum"
+                      name="terminwunsch1_datum"
+                      value={formData.terminwunsch1_datum}
+                      onChange={handleChange}
+                      required
+                      min={new Date().toISOString().split('T')[0]}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="terminwunsch1_zeit" className="block text-xs text-gray-600 mb-1">Uhrzeit</label>
+                    <select
+                      id="terminwunsch1_zeit"
+                      name="terminwunsch1_zeit"
+                      value={formData.terminwunsch1_zeit}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                    >
+                      <option value="">Wählen...</option>
+                      {generateTimeOptions().map(time => (
+                        <option key={time} value={time}>{time} Uhr</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
               </div>
 
-              <div>
-                <label htmlFor="terminwunsch2" className="block text-xs font-medium text-gray-700 mb-1">
+              {/* 2. Terminvorschlag */}
+              <div className="space-y-2">
+                <label className="block text-xs font-medium text-gray-700">
                   2. Terminvorschlag (optional)
                 </label>
-                <input
-                  type="datetime-local"
-                  id="terminwunsch2"
-                  name="terminwunsch2"
-                  value={formData.terminwunsch2}
-                  onChange={handleChange}
-                  min={new Date().toISOString().slice(0, 16)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
-                />
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label htmlFor="terminwunsch2_datum" className="block text-xs text-gray-600 mb-1">Datum</label>
+                    <input
+                      type="date"
+                      id="terminwunsch2_datum"
+                      name="terminwunsch2_datum"
+                      value={formData.terminwunsch2_datum}
+                      onChange={handleChange}
+                      min={new Date().toISOString().split('T')[0]}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="terminwunsch2_zeit" className="block text-xs text-gray-600 mb-1">Uhrzeit</label>
+                    <select
+                      id="terminwunsch2_zeit"
+                      name="terminwunsch2_zeit"
+                      value={formData.terminwunsch2_zeit}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                    >
+                      <option value="">Wählen...</option>
+                      {generateTimeOptions().map(time => (
+                        <option key={time} value={time}>{time} Uhr</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
               </div>
 
-              <div>
-                <label htmlFor="terminwunsch3" className="block text-xs font-medium text-gray-700 mb-1">
+              {/* 3. Terminvorschlag */}
+              <div className="space-y-2">
+                <label className="block text-xs font-medium text-gray-700">
                   3. Terminvorschlag (optional)
                 </label>
-                <input
-                  type="datetime-local"
-                  id="terminwunsch3"
-                  name="terminwunsch3"
-                  value={formData.terminwunsch3}
-                  onChange={handleChange}
-                  min={new Date().toISOString().slice(0, 16)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
-                />
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label htmlFor="terminwunsch3_datum" className="block text-xs text-gray-600 mb-1">Datum</label>
+                    <input
+                      type="date"
+                      id="terminwunsch3_datum"
+                      name="terminwunsch3_datum"
+                      value={formData.terminwunsch3_datum}
+                      onChange={handleChange}
+                      min={new Date().toISOString().split('T')[0]}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="terminwunsch3_zeit" className="block text-xs text-gray-600 mb-1">Uhrzeit</label>
+                    <select
+                      id="terminwunsch3_zeit"
+                      name="terminwunsch3_zeit"
+                      value={formData.terminwunsch3_zeit}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                    >
+                      <option value="">Wählen...</option>
+                      {generateTimeOptions().map(time => (
+                        <option key={time} value={time}>{time} Uhr</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -441,10 +542,26 @@ function BookingSection({
               />
             </div>
 
-            <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg">
-              <p className="text-sm text-gray-600">
-                Mit dem Absenden stimmen Sie zu, dass wir Ihre Angaben zur Terminvereinbarung verwenden. Ihre Daten werden vertraulich behandelt.
-              </p>
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <input
+                  type="checkbox"
+                  id="kopie_an_mich"
+                  name="kopie_an_mich"
+                  checked={formData.kopie_an_mich}
+                  onChange={handleChange}
+                  className="mt-1 h-4 w-4 text-gray-900 focus:ring-gray-900 border-gray-300 rounded"
+                />
+                <label htmlFor="kopie_an_mich" className="ml-3 text-sm text-gray-700">
+                  Kopie der Anfrage an mich senden
+                </label>
+              </div>
+
+              <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                <p className="text-sm text-gray-600">
+                  Mit dem Absenden stimmen Sie zu, dass wir Ihre Angaben zur Terminvereinbarung verwenden. Ihre Daten werden vertraulich behandelt.
+                </p>
+              </div>
             </div>
 
             {submitStatus === 'error' && (

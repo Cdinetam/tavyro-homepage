@@ -3,10 +3,10 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { vorname, nachname, email, telefon, terminwunsch1, terminwunsch2, terminwunsch3, thema, nachricht } = body;
+    const { vorname, nachname, email, telefon, terminwunsch1, terminwunsch2, terminwunsch3, thema, nachricht, kopie_an_mich } = body;
 
     // Validierung
-    if (!vorname || !nachname || !email || !terminwunsch) {
+    if (!vorname || !nachname || !email || !terminwunsch1) {
       return NextResponse.json(
         { error: 'Bitte füllen Sie alle Pflichtfelder aus.' },
         { status: 400 }
@@ -22,6 +22,9 @@ export async function POST(request: Request) {
       );
     }
 
+    // Bestimme Empfänger (TaVyro + optional Kopie an Absender)
+    const recipients = kopie_an_mich ? `hello@tavyro.ch,${email}` : 'hello@tavyro.ch';
+
     // Web3Forms API verwenden (kostenloser Service)
     const web3formsResponse = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -34,6 +37,8 @@ export async function POST(request: Request) {
         subject: `Neue Teams-Call Anfrage von ${vorname} ${nachname}`,
         from_name: `${vorname} ${nachname}`,
         email: email,
+        replyto: email,
+        to: recipients,
         message: `
 Teams-Call Anfrage von TaVyro Website
 ========================================
