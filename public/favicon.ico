@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
     <style>
@@ -6,15 +7,11 @@
     </style>
   </defs>
   
-  <!-- Vereinfachtes Check-Symbol für Favicon -->
+  <!-- Vereinfachtes Check-Symbol f�r Favicon -->
   <g transform="translate(16, 16)">
-    <!-- Vertikale Linie -->
     <path class="icon" d="M0,-8 L0,8" stroke="#4e663f" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <!-- Linke Schräge -->
     <path class="icon" d="M0,0 L-6,6" stroke="#4e663f" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <!-- Rechte Schräge -->
     <path class="icon" d="M0,0 L6,6" stroke="#4e663f" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <!-- Kreis -->
     <circle class="accent" cx="0" cy="0" r="14" fill="none" stroke="#7ec1dd" stroke-width="2"/>
   </g>
 </svg>
