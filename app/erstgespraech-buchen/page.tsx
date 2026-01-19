@@ -7,9 +7,11 @@ import Footer from "@/components/Footer";
 export default function ErstgespraechBuchen() {
   const [formData, setFormData] = useState({
     vorname: "",
-    name: "",
+    nachname: "",
     email: "",
+    telefon: "",
     terminwunsch: "",
+    thema: "",
     nachricht: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -53,9 +55,11 @@ export default function ErstgespraechBuchen() {
         setSubmitStatus('success');
         setFormData({
           vorname: "",
-          name: "",
+          nachname: "",
           email: "",
+          telefon: "",
           terminwunsch: "",
+          thema: "",
           nachricht: ""
         });
       } else {
@@ -262,11 +266,11 @@ function BookingSection({
     <section id="booking" className="scroll-mt-32">
       <div className="bg-white rounded-lg border border-gray-200 p-6 md:p-8 shadow-sm">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          Termin anfragen
+          Teams-Call buchen
         </h2>
         
-        <p className="text-gray-700 mb-6">
-          Füllen Sie das Formular aus und wir melden uns bei Ihnen für die Terminvereinbarung.
+        <p className="text-gray-700 mb-6 leading-relaxed">
+          Füllen Sie kurz das Formular aus – wir melden uns in der Regel am selben Arbeitstag zurück (9 bis 17 Uhr). Der Call findet via Microsoft Teams statt; den Link erhalten Sie per E-Mail.
         </p>
 
         {submitStatus === 'success' ? (
@@ -298,14 +302,14 @@ function BookingSection({
               </div>
 
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
-                  Name <span className="text-red-500">*</span>
+                <label htmlFor="nachname" className="block text-sm font-medium text-gray-900 mb-2">
+                  Nachname <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
+                  id="nachname"
+                  name="nachname"
+                  value={formData.nachname}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
@@ -331,8 +335,26 @@ function BookingSection({
             </div>
 
             <div>
+              <label htmlFor="telefon" className="block text-sm font-medium text-gray-900 mb-2">
+                Telefonnummer
+              </label>
+              <input
+                type="tel"
+                id="telefon"
+                name="telefon"
+                value={formData.telefon}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                placeholder="+41 79 123 45 67"
+              />
+              <p className="mt-2 text-sm text-gray-600">
+                Für kurzfristige Rückfragen oder falls wir Sie schneller erreichen sollen.
+              </p>
+            </div>
+
+            <div>
               <label htmlFor="terminwunsch" className="block text-sm font-medium text-gray-900 mb-2">
-                Gewünschter Zeitpunkt für Teams Call <span className="text-red-500">*</span>
+                Gewünschter Zeitpunkt für den Teams-Call <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -342,11 +364,26 @@ function BookingSection({
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
-                placeholder="z.B. Montag, 20. Januar 2025, 14:00 Uhr"
+                placeholder="Montag, 20. Januar 2026, 14:00 Uhr"
               />
               <p className="mt-2 text-sm text-gray-600">
-                Verfügbar: Montag bis Freitag, 9:00 - 17:00 Uhr
+                Verfügbar Montag bis Freitag, 9 bis 17 Uhr (CET). Bitte nennen Sie idealerweise 1 bis 2 Alternativen.
               </p>
+            </div>
+
+            <div>
+              <label htmlFor="thema" className="block text-sm font-medium text-gray-900 mb-2">
+                Thema / Anlass des Gesprächs
+              </label>
+              <input
+                type="text"
+                id="thema"
+                name="thema"
+                value={formData.thema}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                placeholder="Fractional CHRO, HR-Transformation, HRIS/People Analytics..."
+              />
             </div>
 
             <div>
@@ -360,8 +397,14 @@ function BookingSection({
                 onChange={handleChange}
                 rows={4}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
-                placeholder="Kurze Beschreibung Ihrer Situation oder Fragen..."
+                placeholder="Gerne mit Kontext, Ziel des Gesprächs oder Fragen, die wir vorbereiten sollen."
               />
+            </div>
+
+            <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg">
+              <p className="text-sm text-gray-600">
+                Mit dem Absenden stimmen Sie zu, dass wir Ihre Angaben zur Terminvereinbarung verwenden. Ihre Daten werden vertraulich behandelt.
+              </p>
             </div>
 
             {submitStatus === 'error' && (
@@ -377,7 +420,7 @@ function BookingSection({
               disabled={isSubmitting}
               className="w-full btn-primary py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? 'Wird gesendet...' : 'Anfrage senden'}
+              {isSubmitting ? 'Wird gesendet...' : 'Jetzt buchen'}
             </button>
 
             <p className="text-sm text-gray-600 text-center">

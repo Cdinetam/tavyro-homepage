@@ -3,10 +3,10 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { vorname, name, email, terminwunsch, nachricht } = body;
+    const { vorname, nachname, email, telefon, terminwunsch, thema, nachricht } = body;
 
     // Validierung
-    if (!vorname || !name || !email || !terminwunsch) {
+    if (!vorname || !nachname || !email || !terminwunsch) {
       return NextResponse.json(
         { error: 'Bitte füllen Sie alle Pflichtfelder aus.' },
         { status: 400 }
@@ -31,17 +31,19 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         access_key: process.env.WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE',
-        subject: `Neue Erstgespräch-Anfrage von ${vorname} ${name}`,
-        from_name: `${vorname} ${name}`,
+        subject: `Neue Teams-Call Anfrage von ${vorname} ${nachname}`,
+        from_name: `${vorname} ${nachname}`,
         email: email,
         message: `
-Erstgespräch-Anfrage von TaVyro Website
+Teams-Call Anfrage von TaVyro Website
 ========================================
 
 Vorname: ${vorname}
-Name: ${name}
+Nachname: ${nachname}
 E-Mail: ${email}
+${telefon ? `Telefon: ${telefon}` : ''}
 Gewünschter Zeitpunkt: ${terminwunsch}
+${thema ? `Thema/Anlass: ${thema}` : ''}
 
 ${nachricht ? `Zusätzliche Nachricht:\n${nachricht}` : ''}
 
