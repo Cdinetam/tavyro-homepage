@@ -70,22 +70,98 @@ export default function ErstgespraechBuchen() {
         ? `${formData.terminwunsch3_datum}T${formData.terminwunsch3_zeit}` 
         : '';
 
-      const response = await fetch('/api/contact', {
+      // Formatiere Terminvorschläge für E-Mail
+      const formatTermin = (termin: string) => {
+        if (!termin) return 'Nicht angegeben';
+        try {
+          return new Date(termin).toLocaleString('de-CH', { 
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long', 
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          });
+        } catch {
+          return termin;
+        }
+      };
+
+      // Erstelle E-Mail-Nachricht
+      const emailMessage = `
+Teams-Call Anfrage von TaVyro Website
+========================================
+
+Vorname: ${formData.vorname}
+Nachname: ${formData.nachname}
+E-Mail: ${formData.email}
+${formData.telefon ? `Telefon: ${formData.telefon}` : ''}
+
+Terminvorschläge:
+1. ${formatTermin(terminwunsch1)}
+${terminwunsch2 ? `2. ${formatTermin(terminwunsch2)}` : ''}
+${terminwunsch3 ? `3. ${formatTermin(terminwunsch3)}` : ''}
+
+${formData.thema ? `Thema/Anlass: ${formData.thema}` : ''}
+
+${formData.nachricht ? `Zusätzliche Nachricht:\n${formData.nachricht}` : ''}
+
+---
+Gesendet über: tavyro.ch/erstgespraech-buchen
+      `.trim();
+
+      // Sende direkt an Web3Forms (Client-seitig, kein Server!)
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
-          ...formData,
-          terminwunsch1,
-          terminwunsch2,
-          terminwunsch3
+          access_key: 'eefecccc-4850-4bce-81e9-d859ebd2c1a7',
+          subject: `Neue Teams-Call Anfrage von ${formData.vorname} ${formData.nachname}`,
+          from_name: 'TaVyro Website',
+          name: `${formData.vorname} ${formData.nachname}`,
+          email: formData.email,
+          message: emailMessage,
         })
       });
 
       const data = await response.json();
+      console.log('Web3Forms Response:', data);
 
-      if (response.ok && data.success) {
+      if (data.success) {
+        // Falls Kopie gewünscht: Sende Bestätigung
+        if (formData.kopie_an_mich) {
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              access_key: 'eefecccc-4850-4bce-81e9-d859ebd2c1a7',
+              subject: `Bestätigung: Ihre Teams-Call Anfrage bei TaVyro`,
+              from_name: 'TaVyro',
+              email: formData.email,
+              message: `Vielen Dank für Ihre Anfrage, ${formData.vorname}!
+
+Wir haben Ihre Anfrage erhalten und melden uns in der Regel am selben Arbeitstag zurück (Mo-Fr, 9-17 Uhr).
+
+Ihre Angaben:
+--------------
+${emailMessage}
+
+Mit freundlichen Grüssen
+Ihr TaVyro Team
+
+---
+Diese E-Mail wurde automatisch generiert.
+Bei Fragen erreichen Sie uns unter hello@tavyro.ch`,
+            })
+          }).catch(err => console.error('Confirmation email error:', err));
+        }
+
         setSubmitStatus('success');
         setFormData({
           vorname: "",
@@ -103,6 +179,7 @@ export default function ErstgespraechBuchen() {
           kopie_an_mich: false
         });
       } else {
+        console.error('Web3Forms error:', data);
         setSubmitStatus('error');
       }
     } catch (error) {
