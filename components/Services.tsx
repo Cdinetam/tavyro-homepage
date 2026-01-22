@@ -3,7 +3,13 @@ export default function Services() {
     {
       title: "A) Fractional CHRO / Strategic People Partner",
       description:
-        "Externe HR-Führungsrolle für GL und VR: People-Strategie, Governance, Leadership, Kultur, komplexe Fälle, Aufbau/Weiterentwicklung von HR-Strukturen und HR-Systemen.",
+        "Externe HR-Führungsrolle für Geschäftsleitung und Verwaltungsrat:",
+      items: [
+        "Die Geschäftsleitung Personal und Organisationsfragen entlastet und berät",
+        "HR-Strategien entwickelt und umsetzt",
+        "Komplexe Fälle begleitet (Kündigungen, Konflikte, Umstrukturierungen)",
+        "Sicherstellt, dass Sie arbeitsrechtlich sauber unterwegs sind",
+      ],
     },
     {
       title: "B) Organisation & Transformation (Projekt)",
