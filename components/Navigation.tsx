@@ -35,6 +35,12 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a
+              href="/"
+              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              Home
+            </a>
+            <a
               href="#leistungen"
               onClick={(e) => {
                 e.preventDefault();
@@ -100,6 +106,12 @@ export default function Navigation() {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4">
+              <a
+                href="/"
+                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors py-2"
+              >
+                Home
+              </a>
               <a
                 href="#leistungen"
                 onClick={(e) => {
