@@ -12,7 +12,7 @@ export default function Hero() {
     <section id="top" className="pt-32 md:pt-40 pb-16 md:pb-24 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-700 mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-700 mb-6 leading-tight">
             Echte Entwicklung beginnt innen.
           </h1>
           
