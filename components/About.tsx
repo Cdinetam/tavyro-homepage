@@ -26,7 +26,7 @@ export default function About() {
                 TaVyro ist ein <strong className="text-gray-900">Zürcher Advisory</strong> für Geschäftsleitungen und Verwaltungsräte.
               </p>
               <p className="text-lg text-gray-600">
-                Founder & Lead Advisor: <strong className="text-gray-900">Tam Nguyen</strong> – HR-Führung, Transformation und Executive Coaching (international & Schweiz).
+                Lead Advisor: <strong className="text-gray-900">Tam Nguyen</strong> – HR-Führung, Transformation und Executive Coaching (international & Schweiz).
               </p>
             </div>
 
