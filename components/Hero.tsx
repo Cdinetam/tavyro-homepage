@@ -17,7 +17,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-xl md:text-2xl text-accent-700 mb-8 leading-relaxed">
-            TaVyro begleitet Geschäftsleitungen und Verwaltungsräte als{" "}
+            TaVyro begleitet CEO, Geschäftsleitungen und Verwaltungsräte als{" "}
             <strong className="text-secondary-600">Fractional CHRO / Strategic People Partner</strong> – unabhängig, umsetzungsnah und mit messbarer Wirkung.
           </p>
 
