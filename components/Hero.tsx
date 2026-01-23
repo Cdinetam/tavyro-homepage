@@ -16,13 +16,9 @@ export default function Hero() {
             Echte Entwicklung beginnt innen.
           </h1>
           
-          <p className="text-xl md:text-2xl text-accent-700 mb-8 leading-relaxed">
+          <p className="text-xl md:text-2xl text-accent-700 mb-12 leading-relaxed">
             TaVyro begleitet CEOs, Geschäftsleitungen und Verwaltungsräte als{" "}
             <strong className="text-secondary-600">Fractional CHRO / Strategic People Partner</strong> – unabhängig, umsetzungsnah und mit messbarer Wirkung.
-          </p>
-
-          <p className="text-lg md:text-xl text-accent-600 mb-12 font-medium">
-            Fractional CHRO & People Advisory für nachhaltigen Impact.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
