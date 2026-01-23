@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import TrustAnchors from "@/components/TrustAnchors";
 import Impact from "@/components/Impact";
 import TargetAudience from "@/components/TargetAudience";
 import Services from "@/components/Services";
@@ -15,7 +14,6 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
       <Hero />
-      <TrustAnchors />
       <Impact />
       <TargetAudience />
       <Services />
