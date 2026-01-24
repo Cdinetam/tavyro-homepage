@@ -6,14 +6,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="kontakt" className="section-padding bg-gray-50">
+    <section id="kontakt" className="section-padding bg-tavyro-surface">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-tavyro-text mb-6">
             Kontakt
           </h2>
 
-          <p className="text-xl text-gray-700 mb-12">
+          <p className="text-xl text-tavyro-text2 mb-12">
             Lassen Sie uns in einem kurzen Erstgespräch klären, wo der grösste Hebel liegt.
           </p>
 
@@ -25,14 +25,14 @@ export default function Contact() {
               Erstgespräch buchen
             </a>
 
-            <div className="pt-6 border-t border-gray-200">
-              <p className="text-gray-600 mb-4">
+            <div className="pt-6 border-t border-tavyro-border">
+              <p className="text-tavyro-secondary-500 mb-4">
                 Alternativ:{" "}
-                <a href="mailto:hello@tavyro.ch" className="hover:text-gray-900 transition-colors">
+                <a href="mailto:hello@tavyro.ch" className="hover:text-tavyro-text transition-colors">
                   E-Mail
                 </a>
                 {" | "}
-                <a href="tel:+41786868089" className="hover:text-gray-900 transition-colors">
+                <a href="tel:+41786868089" className="hover:text-tavyro-text transition-colors">
                   Telefon
                 </a>
                 {" | "}
@@ -40,7 +40,7 @@ export default function Contact() {
                   href="https://linkedin.com/company/tavyro"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-gray-900 transition-colors"
+                  className="hover:text-tavyro-text transition-colors"
                 >
                   LinkedIn
                 </a>

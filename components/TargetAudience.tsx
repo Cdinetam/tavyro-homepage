@@ -9,22 +9,22 @@ export default function TargetAudience() {
     <section id="zielgruppe" className="section-padding bg-white">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-tavyro-text mb-6">
             Für wen
           </h2>
           
-          <p className="text-xl text-gray-700 mb-12">
+          <p className="text-xl text-tavyro-text2 mb-12">
             Für Unternehmen, die People & Organisation strategisch stärken möchten –{" "}
-            <strong className="text-gray-900">ohne</strong> eine Vollzeit-CHRO-Rolle.
+            <strong className="text-tavyro-text">ohne</strong> eine Vollzeit-CHRO-Rolle.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
             {audiences.map((audience, index) => (
               <div
                 key={index}
-                className="p-6 bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
+                className="p-6 bg-tavyro-tint rounded-lg border border-tavyro-border hover:shadow-md transition-shadow"
               >
-                <p className="text-gray-900 font-medium">{audience}</p>
+                <p className="text-tavyro-text font-medium">{audience}</p>
               </div>
             ))}
           </div>

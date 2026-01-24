@@ -35,10 +35,10 @@ export default function Services() {
   ];
 
   return (
-    <section id="leistungen" className="section-padding bg-gradient-to-b from-white to-primary-50">
+    <section id="leistungen" className="section-padding bg-gradient-to-b from-white to-tavyro-surface">
       <div className="container-custom">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-700 mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-tavyro-brand-700 mb-12 text-center">
             Leistungen
           </h2>
 
@@ -46,12 +46,12 @@ export default function Services() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="p-6 md:p-8 bg-white rounded-xl border-2 border-primary-200 hover:border-primary-400 hover:shadow-xl transition-all duration-300"
+                className="p-6 md:p-8 bg-white rounded-xl border-2 border-tavyro-border hover:border-tavyro-brand-400 hover:shadow-xl transition-all duration-300"
               >
-                <h3 className="text-xl md:text-2xl font-semibold text-secondary-600 mb-4">
+                <h3 className="text-xl md:text-2xl font-semibold text-tavyro-brand-600 mb-4">
                   {service.title}
                 </h3>
-                <p className="text-accent-700 mb-4 leading-relaxed">
+                <p className="text-tavyro-text2 mb-4 leading-relaxed">
                   {service.description}
                 </p>
                 {service.items && (
@@ -59,9 +59,9 @@ export default function Services() {
                     {service.items.map((item, itemIndex) => (
                       <li
                         key={itemIndex}
-                        className="flex items-start text-accent-700"
+                        className="flex items-start text-tavyro-text2"
                       >
-                        <span className="mr-3 text-primary-500 font-semibold text-lg">
+                        <span className="mr-3 text-tavyro-brand-500 font-semibold text-lg">
                           •
                         </span>
                         <span>{item}</span>

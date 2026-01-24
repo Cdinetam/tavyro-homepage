@@ -5,10 +5,46 @@
 @layer base {
   :root {
     --font-inter: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    
+    /* Brand (TaVyro) */
+    --tavyro-brand-50:  #EEF1F3;
+    --tavyro-brand-100: #DCE4E6;
+    --tavyro-brand-200: #BAC8CD;
+    --tavyro-brand-300: #97ADB5;
+    --tavyro-brand-400: #6B8B96;
+    --tavyro-brand-500: #265464;
+    --tavyro-brand-600: #214A58;
+    --tavyro-brand-700: #1D404C;
+    --tavyro-brand-800: #183640;
+    --tavyro-brand-900: #132A32;
+
+    /* Secondary (Muted Teal/Grey) */
+    --tavyro-secondary-50:  #F0F3F3;
+    --tavyro-secondary-100: #DEE4E4;
+    --tavyro-secondary-200: #C7D0D1;
+    --tavyro-secondary-300: #AFBDBE;
+    --tavyro-secondary-400: #90A3A4;
+    --tavyro-secondary-500: #6B8486;
+    --tavyro-secondary-600: #5E7476;
+    --tavyro-secondary-700: #506364;
+    --tavyro-secondary-800: #425253;
+    --tavyro-secondary-900: #333F40;
+
+    /* Neutrals (Logo-Offwhites) */
+    --tavyro-bg:     #FFFFFF;
+    --tavyro-surface:#F8FCFC;
+    --tavyro-muted:  #ECEDEF;
+    --tavyro-border: #D7DDE1;
+    --tavyro-tint:   #E7F0F5;
+
+    /* Text defaults */
+    --tavyro-text:   var(--tavyro-brand-900);
+    --tavyro-text-2: var(--tavyro-secondary-700);
   }
 
-  body {
-    @apply text-gray-900 bg-white;
+  html, body {
+    background: var(--tavyro-bg);
+    color: var(--tavyro-text);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -18,11 +54,11 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-secondary-500 hover:bg-secondary-600 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-tavyro-brand-500 hover:bg-tavyro-brand-700 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-secondary-500 bg-white border-2 border-secondary-500 hover:bg-secondary-50 rounded-lg transition-all duration-200;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-tavyro-brand-500 bg-white border-2 border-tavyro-brand-500 hover:bg-tavyro-brand-50 rounded-lg transition-all duration-200;
   }
 
   .section-padding {

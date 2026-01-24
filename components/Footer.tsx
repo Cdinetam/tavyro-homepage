@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-8 md:py-12">
+    <footer className="bg-tavyro-brand-900 text-tavyro-secondary-200 py-8 md:py-12">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex flex-col items-center md:items-start space-y-2">
@@ -14,7 +14,7 @@ export default function Footer() {
               >
                 E-Mail
               </a>
-              <span className="text-gray-600">|</span>
+              <span className="text-tavyro-secondary-700">|</span>
               <a 
                 href="tel:+41786868089" 
                 className="hover:text-white transition-colors"
@@ -30,7 +30,7 @@ export default function Footer() {
             >
               Impressum
             </a>
-            <span className="text-gray-600">|</span>
+            <span className="text-tavyro-secondary-700">|</span>
             <a
               href="#datenschutz"
               className="hover:text-white transition-colors"

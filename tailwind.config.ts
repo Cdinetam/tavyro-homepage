@@ -9,41 +9,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: "#f0fafd",
-          100: "#e0f4fb",
-          200: "#c1e9f7",
-          300: "#a2def3",
-          400: "#7ec1dd", // Logo-Türkis
-          500: "#5aabcc",
-          600: "#4a8fad",
-          700: "#3a738a",
-          800: "#2a5767",
-          900: "#1a3b44",
-        },
-        secondary: {
-          50: "#f4f6f3",
-          100: "#e9ede7",
-          200: "#d3dbcf",
-          300: "#bdc9b7",
-          400: "#8fa085",
-          500: "#4e663f", // Logo-Dunkelgrün
-          600: "#3f5233",
-          700: "#2f3e27",
-          800: "#202a1a",
-          900: "#10150d",
-        },
-        accent: {
-          50: "#f8f9fa",
-          100: "#f1f3f5",
-          200: "#e9ecef",
-          300: "#dee2e6",
-          400: "#ced4da",
-          500: "#6c757d", // Logo-Grau
-          600: "#495057",
-          700: "#343a40",
-          800: "#212529",
-          900: "#181b1e",
+        tavyro: {
+          bg: "var(--tavyro-bg)",
+          surface: "var(--tavyro-surface)",
+          muted: "var(--tavyro-muted)",
+          border: "var(--tavyro-border)",
+          tint: "var(--tavyro-tint)",
+          text: "var(--tavyro-text)",
+          text2: "var(--tavyro-text-2)",
+          brand: {
+            50: "var(--tavyro-brand-50)",
+            100: "var(--tavyro-brand-100)",
+            200: "var(--tavyro-brand-200)",
+            300: "var(--tavyro-brand-300)",
+            400: "var(--tavyro-brand-400)",
+            500: "var(--tavyro-brand-500)",
+            600: "var(--tavyro-brand-600)",
+            700: "var(--tavyro-brand-700)",
+            800: "var(--tavyro-brand-800)",
+            900: "var(--tavyro-brand-900)",
+          },
+          secondary: {
+            50: "var(--tavyro-secondary-50)",
+            100: "var(--tavyro-secondary-100)",
+            200: "var(--tavyro-secondary-200)",
+            300: "var(--tavyro-secondary-300)",
+            400: "var(--tavyro-secondary-400)",
+            500: "var(--tavyro-secondary-500)",
+            600: "var(--tavyro-secondary-600)",
+            700: "var(--tavyro-secondary-700)",
+            800: "var(--tavyro-secondary-800)",
+            900: "var(--tavyro-secondary-900)",
+          },
         },
       },
       fontFamily: {
