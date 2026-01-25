@@ -105,7 +105,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a 
-                  href="#impressum" 
+                  href="/impressum" 
                   className="hover:text-white transition-colors"
                 >
                   Impressum
