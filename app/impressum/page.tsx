@@ -80,6 +80,9 @@ export default function Impressum() {
                     <strong className="text-tavyro-text">Eingetragen im Handelsregister:</strong> Kanton Zürich
                   </p>
                   <p>
+                    <strong className="text-tavyro-text">UID:</strong> CHE-376.686.218
+                  </p>
+                  <p>
                     <strong className="text-tavyro-text">Rechtsform:</strong> Gesellschaft mit beschränkter Haftung (GmbH)
                   </p>
                 </div>
