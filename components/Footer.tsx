@@ -32,7 +32,7 @@ export default function Footer() {
             </a>
             <span className="text-tavyro-secondary-700">|</span>
             <a
-              href="#datenschutz"
+              href="/datenschutz"
               className="hover:text-white transition-colors"
             >
               Datenschutz
