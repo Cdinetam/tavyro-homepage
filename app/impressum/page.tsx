@@ -161,26 +161,6 @@ export default function Impressum() {
 
               <div className="mb-10">
                 <h3 className="text-2xl font-semibold text-tavyro-brand-600 mb-4">
-                  Streitschlichtung
-                </h3>
-                <p className="text-tavyro-text2 leading-relaxed">
-                  Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, 
-                  die Sie unter{" "}
-                  <a 
-                    href="https://ec.europa.eu/consumers/odr/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-tavyro-brand-500 hover:text-tavyro-brand-700 transition-colors underline"
-                  >
-                    https://ec.europa.eu/consumers/odr/
-                  </a>{" "}
-                  finden. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle 
-                  sind wir nicht verpflichtet und nicht bereit.
-                </p>
-              </div>
-
-              <div className="mb-10">
-                <h3 className="text-2xl font-semibold text-tavyro-brand-600 mb-4">
                   Anwendbares Recht und Gerichtsstand
                 </h3>
                 <p className="text-tavyro-text2 leading-relaxed">
