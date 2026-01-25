@@ -67,7 +67,7 @@ export default function Impressum() {
                   Vertretungsberechtigte Person
                 </h3>
                 <p className="text-tavyro-text2 leading-relaxed">
-                  Tam Nguyen, Lead Advisor
+                  Claudine Stüssi
                 </p>
               </div>
 
