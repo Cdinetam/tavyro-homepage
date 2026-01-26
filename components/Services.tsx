@@ -28,9 +28,9 @@ export default function Services() {
         "1:1 Sparring für GL und Führungskräfte: Entscheide, Wirkung, Rollenwechsel, Konflikte.",
     },
     {
-      title: "D) Employee Care Line (Add-on oder separat)",
+      title: "D) Employee Care Line",
       description:
-        "Diskrete Sprechstunde für Mitarbeitende. Aggregiertes Feedback stärkt Kultur und psychologische Sicherheit – ohne Vertraulichkeit zu verletzen.",
+        "Die Employee Care Line ist ein vertrauliches Gesprächsangebot für Mitarbeitende im Unternehmen. Sie dient als neutrale Anlaufstelle zur Orientierung und Entlastung und wird durch TaVyro durchgeführt. Es werden keine Individualfälle an das Unternehmen zurückgemeldet; Rückmeldungen erfolgen ausschliesslich in anonymisierter und aggregierter Form. Bereits als eigenständiges Angebot entfaltet die Employee Care Line Wirkung, weil Mitarbeitende ein diskretes, professionelles Gesprächsfenster erhalten, als Signal von Wertschätzung, psychologischer Sicherheit und aktiver Fürsorge.",
     },
   ];
 
