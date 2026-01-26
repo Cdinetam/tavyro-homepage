@@ -15,7 +15,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-tavyro-border z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-tavyro-border z-50 [color-scheme:light]">
       <div className="container-custom">
         <div className="flex items-center justify-between h-24 md:h-28 py-4 md:py-6">
           <a

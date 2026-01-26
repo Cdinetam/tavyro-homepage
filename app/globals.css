@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    color-scheme: light;
     --font-inter: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     
     /* Brand (TaVyro) */
