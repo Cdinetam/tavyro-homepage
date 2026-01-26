@@ -1,11 +1,19 @@
 "use client";
 
+import { useState } from "react";
+
 export default function Footer() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
   const faqs = [
@@ -43,15 +51,37 @@ export default function Footer() {
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
             Q&A
           </h3>
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-tavyro-brand-800 rounded-lg p-6 hover:bg-tavyro-brand-700 transition-colors">
-                <h4 className="text-white font-semibold text-base md:text-lg mb-3">
-                  {faq.question}
-                </h4>
-                <p className="text-tavyro-secondary-200 text-sm md:text-base leading-relaxed">
-                  {faq.answer}
-                </p>
+              <div key={index} className="bg-tavyro-brand-800 rounded-lg overflow-hidden">
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-tavyro-brand-700 transition-colors"
+                >
+                  <h4 className="text-white font-semibold text-base md:text-lg pr-4">
+                    {faq.question}
+                  </h4>
+                  <svg
+                    className={`w-5 h-5 text-white flex-shrink-0 transition-transform duration-300 ${
+                      openFaqIndex === index ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {openFaqIndex === index && (
+                  <div className="px-6 pb-6 pt-0">
+                    <p className="text-tavyro-secondary-200 text-sm md:text-base leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
