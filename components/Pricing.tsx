@@ -40,7 +40,7 @@ export default function Pricing() {
       <div className="container-custom">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-tavyro-text mb-4 text-center">
-            Angebote (Fractional CHRO)
+            Angebote
           </h2>
           
           <p className="text-center text-tavyro-text2 mb-2">
