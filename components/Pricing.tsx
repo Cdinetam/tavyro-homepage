@@ -5,7 +5,7 @@ export default function Pricing() {
       price: "CHF 2'000",
       period: "/ Monat",
       features: [
-        "GL-Sparring (z. B. 2h/Monat)",
+        "GL-Sparring",
         "Hotline für Führungskräfte",
         "Vorlagen, Reviews, kurze Impulse",
       ],
