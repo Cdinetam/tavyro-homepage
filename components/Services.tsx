@@ -25,7 +25,14 @@ export default function Services() {
     {
       title: "C) Executive Coaching",
       description:
-        "1:1 Sparring für GL und Führungskräfte: Entscheide, Wirkung, Rollenwechsel, Konflikte.",
+        "1:1 Sparring für Geschäftsleitung und Führungskräfte zu Führung, Organisation, Management und Kommunikation. Fokus: klare Entscheidungen, Priorisierung, Rollenklarheit und souveräner Umgang mit anspruchsvollen Situationen.",
+      items: [
+        "Rollenwechsel und neue Erwartungen (Führung, Stakeholder, Verantwortung)",
+        "Veränderung führen: Alignment, Umsetzung, Umgang mit Widerständen",
+        "Schwierige Gespräche und Konfliktklärung (klar, deeskalierend, wirksam)",
+        "Performance & Führung: Ziele, Delegation, Feedback, Routinen",
+        "Team- und Schnittstellenführung: Verantwortung, Zusammenarbeit, Performance",
+      ],
     },
     {
       title: "D) Employee Care Line",
