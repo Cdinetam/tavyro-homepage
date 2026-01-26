@@ -39,10 +39,22 @@ export default function Pricing() {
     <section id="angebote" className="section-padding bg-white">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-tavyro-text mb-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-tavyro-text mb-12 text-center">
             Angebote (Fractional CHRO)
           </h2>
           
+          {/* Projektarbeit auf Stundenbasis */}
+          <div className="mb-12 p-6 md:p-8 bg-tavyro-tint rounded-xl border-2 border-tavyro-brand-400 shadow-md">
+            <h3 className="text-2xl font-bold text-tavyro-brand-700 mb-4 text-center">
+              Projektarbeit auf Stundenbasis
+            </h3>
+            <p className="text-tavyro-text2 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+              Für klar abgegrenzte Vorhaben ist eine Zusammenarbeit auf Stundenbasis möglich. 
+              Voraussetzung ist ein definierter Umfang (Ziel, Ergebnis, Zeitfenster). Aufwand und 
+              Wirkung bleiben transparent; Entscheidungen werden faktenbasiert vorbereitet.
+            </p>
+          </div>
+
           <p className="text-center text-tavyro-text2 mb-2">
             Alle Modelle inkl. klarer Zusammenarbeit, Vertraulichkeit und kalkulierbarer Monatskosten.
           </p>
