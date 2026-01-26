@@ -1,20 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <style>
-      .icon { fill: #4e663f; }
-      .accent { fill: #7ec1dd; }
-    </style>
-  </defs>
+  <!-- TaVyro Brand Color Background -->
+  <rect width="32" height="32" fill="#265464" rx="4"/>
   
-  <!-- Vereinfachtes Check-Symbol für Favicon -->
-  <g transform="translate(16, 16)">
-    <!-- Vertikale Linie -->
-    <path class="icon" d="M0,-8 L0,8" stroke="#4e663f" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <!-- Linke Schräge -->
-    <path class="icon" d="M0,0 L-6,6" stroke="#4e663f" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <!-- Rechte Schräge -->
-    <path class="icon" d="M0,0 L6,6" stroke="#4e663f" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <!-- Kreis -->
-    <circle class="accent" cx="0" cy="0" r="14" fill="none" stroke="#7ec1dd" stroke-width="2"/>
+  <!-- White V Logo -->
+  <g transform="translate(16, 9)">
+    <!-- Left part of V -->
+    <path d="M -6,0 L 0,14" 
+          stroke="#FFFFFF" 
+          stroke-width="3.5" 
+          fill="none" 
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+    <!-- Right part of V -->
+    <path d="M 0,14 L 6,0" 
+          stroke="#FFFFFF" 
+          stroke-width="3.5" 
+          fill="none" 
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
   </g>
 </svg>
