@@ -142,8 +142,8 @@ export default function Datenschutz() {
                   Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
                 </p>
                 <p className="p-4 bg-tavyro-surface rounded-lg border border-tavyro-border">
-                  TaVyro<br />
-                  Tam Nguyen<br />
+                  TaVyro GmbH<br />
+                  Claudine Stüssi | Tam Nguyen<br />
                   Schweiz<br />
                   E-Mail: <a href="mailto:hello@tavyro.ch" className="text-tavyro-brand-500 hover:text-tavyro-brand-700 transition-colors">hello@tavyro.ch</a>
                 </p>
