@@ -93,8 +93,17 @@ export default function Pricing() {
             ))}
           </div>
 
+          <div className="mb-12 bg-tavyro-surface border border-tavyro-border rounded-lg p-6 md:p-8 text-center">
+            <p className="text-tavyro-text2 mb-2">
+              <strong className="text-tavyro-text">Onboarding (einmalig): CHF 4&apos;000</strong>
+            </p>
+            <p className="text-tavyro-secondary-500 text-sm md:text-base">
+              HR Health Check inkl. priorisiertem Massnahmenplan.
+            </p>
+          </div>
+
           {/* Projektarbeit auf Stundenbasis */}
-          <div className="mb-12 p-6 md:p-8 bg-tavyro-tint rounded-xl border-2 border-tavyro-brand-400 shadow-md">
+          <div className="p-6 md:p-8 bg-tavyro-tint rounded-xl border-2 border-tavyro-brand-400 shadow-md">
             <h3 className="text-2xl font-bold text-tavyro-brand-700 mb-4 text-center">
               Projektarbeit auf Stundenbasis
             </h3>
@@ -102,15 +111,6 @@ export default function Pricing() {
               Für klar abgegrenzte Vorhaben ist eine Zusammenarbeit auf Stundenbasis möglich. 
               Voraussetzung ist ein definierter Umfang (Ziel, Ergebnis, Zeitfenster). Aufwand und 
               Wirkung bleiben transparent; Entscheidungen werden faktenbasiert vorbereitet.
-            </p>
-          </div>
-
-          <div className="bg-tavyro-surface border border-tavyro-border rounded-lg p-6 md:p-8 text-center">
-            <p className="text-tavyro-text2 mb-2">
-              <strong className="text-tavyro-text">Onboarding (einmalig): CHF 4&apos;000</strong>
-            </p>
-            <p className="text-tavyro-secondary-500 text-sm md:text-base">
-              HR Health Check inkl. priorisiertem Massnahmenplan.
             </p>
           </div>
         </div>
