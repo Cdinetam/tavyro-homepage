@@ -53,29 +53,33 @@ export default function Services() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="p-6 md:p-8 bg-white rounded-xl border-2 border-tavyro-border hover:border-tavyro-brand-400 hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="bg-white rounded-xl border-2 border-tavyro-border hover:border-tavyro-brand-400 hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden"
               >
-                <h3 className="text-lg md:text-xl font-semibold text-tavyro-brand-600 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-tavyro-text2 mb-4 leading-relaxed text-sm md:text-base">
-                  {service.description}
-                </p>
-                {service.items && (
-                  <ul className="list-none space-y-2 mt-auto">
-                    {service.items.map((item, itemIndex) => (
-                      <li
-                        key={itemIndex}
-                        className="flex items-start text-tavyro-text2 text-sm md:text-base"
-                      >
-                        <span className="mr-2 text-tavyro-brand-500 font-semibold text-base">
-                          •
-                        </span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <div className="bg-tavyro-brand-900 px-6 md:px-8 py-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-white">
+                    {service.title}
+                  </h3>
+                </div>
+                <div className="p-6 md:p-8 flex flex-col flex-grow">
+                  <p className="text-tavyro-text2 mb-4 leading-relaxed text-sm md:text-base">
+                    {service.description}
+                  </p>
+                  {service.items && (
+                    <ul className="list-none space-y-2 mt-auto">
+                      {service.items.map((item, itemIndex) => (
+                        <li
+                          key={itemIndex}
+                          className="flex items-start text-tavyro-text2 text-sm md:text-base"
+                        >
+                          <span className="mr-2 text-tavyro-brand-500 font-semibold text-base">
+                            •
+                          </span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
             ))}
           </div>
