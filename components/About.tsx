@@ -1,15 +1,9 @@
 export default function About() {
   const qualifications = [
-    "Mehrjährige CHRO-Erfahrung (GL/Board-Nähe, multi-site)",
-    "Arbeits- und Organisationspsychologie (lic. phil.)",
-    "Digitalisierung & KI im HRM (Praxisfokus)",
-  ];
-
-  const languages = [
-    "Schweizerdeutsch",
-    "Deutsch",
-    "Englisch",
-    "Französisch",
+    "Arbeits- und Organisationspsychologie (lic. phil./MSc)",
+    "CAS Executive Management",
+    "CAS Digitalisierung & Künstliche Intelligenz im HRM",
+    "Arbeitssprache: D/E/F",
   ];
 
   return (
@@ -32,7 +26,7 @@ export default function About() {
 
             <div className="p-6 md:p-8 bg-tavyro-surface rounded-lg border border-tavyro-border">
               <h3 className="text-lg md:text-xl font-semibold text-tavyro-text mb-4">
-                Qualifikationen
+                Ausbildungen & Qualifikationen
               </h3>
               <ul className="space-y-3">
                 {qualifications.map((qual, index) => (
@@ -52,22 +46,6 @@ export default function About() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div className="text-center">
-              <p className="text-tavyro-text2 mb-3">
-                <strong className="text-tavyro-text">Sprachen:</strong>
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                {languages.map((lang, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-tavyro-tint text-tavyro-text rounded-lg text-sm font-medium"
-                  >
-                    {lang}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
         </div>
