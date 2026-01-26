@@ -23,7 +23,7 @@ export default function About() {
           <div className="space-y-8">
             <div className="text-center">
               <p className="text-xl text-tavyro-text2 mb-4">
-                TaVyro ist ein <strong className="text-tavyro-text">Boutique Advisory mit Sitz in Zürich</strong> für CEOs, Geschäftsleitungen und Verwaltungsräte.
+                TaVyro ist ein <strong className="text-tavyro-text">Boutique Advisory mit Sitz in Zürich</strong> für CEOs, Geschäftsleitungen und Verwaltungsräte. Der Fokus liegt auf Führung, Organisation und HR-Governance sowie auf der pragmatischen Weiterentwicklung von People- und HR-Strukturen – von der Standortbestimmung über die Priorisierung bis zur Umsetzung in klaren, wirksamen Schritten.
               </p>
               <p className="text-lg text-tavyro-secondary-500">
                 Lead Advisor: <strong className="text-tavyro-text">Tam Nguyen</strong> mit über 20 Jahren Erfahrung als CHRO und HR-Führungskraft in internationalen und Schweizer Unternehmen.
