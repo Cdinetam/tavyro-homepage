@@ -18,6 +18,14 @@ export default function Footer() {
 
   const faqs = [
     {
+      question: "Weshalb ist es wichtig, dass jetzt etwas unternommen wird?",
+      answer: "Weil nachhaltiger Fortschritt Zeit braucht. Die grössten Kosten liegen selten im Projektbudget, sondern in verlorener Zeit, in Unsicherheit und in verzögerten Entscheidungen. Veränderungen in Führung, Organisation und Kultur wirken nicht sofort, sondern müssen aufgebaut und verankert werden. Wer zu lange wartet, verliert nicht nur Momentum, sondern gefährdet langfristig die Entwicklungsfähigkeit und damit die Zukunftsfähigkeit der Unternehmung."
+    },
+    {
+      question: "Wofür steht TaVyro in seinem Kern?",
+      answer: "TaVyro steht für Herz, Vision und Verankerung. Fortschritt entsteht dort, wo Menschen mitgenommen werden, Ziele klar sind und Veränderungen Zeit haben, sich in der Organisation zu verankern. Genau diese Verbindung aus Haltung, Richtung und Wirkung bildet die Grundlage nachhaltiger Unternehmensentwicklung."
+    },
+    {
       question: "Arbeitet TaVyro auf Stundenbasis oder mit Retainern?",
       answer: "Beides. Für klar abgegrenzte Vorhaben ist eine projektbezogene Zusammenarbeit auf Stundenbasis möglich. Für nachhaltige Wirkung, Priorisierung und Umsetzung arbeitet TaVyro in der Regel mit klar definierten Projekten oder Retainern. Auch wenn TaVyro extern mandatierter Partner ist, arbeitet sich TaVyro in die Organisation ein und wird im Alltag wie ein Teil der Firma wirksam, versteht und trägt die Unternehmenskultur, bleibt dabei jedoch neutral und objektiv."
     },
