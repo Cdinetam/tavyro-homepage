@@ -103,8 +103,8 @@ export default function Footer() {
             <h3 className="text-white font-semibold text-lg mb-4">Kontakt</h3>
             <div className="space-y-2 text-sm">
               <p className="text-white font-medium">TaVyro GmbH</p>
-              <p>Albisriederstrasse 247</p>
-              <p>8047 Zürich</p>
+              <p>Albisriederstrasse 248</p>
+              <p>CH-8047 Zürich</p>
               <p className="mt-4">
                 <a 
                   href="mailto:hello@tavyro.ch" 

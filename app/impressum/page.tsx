@@ -30,8 +30,8 @@ export default function Impressum() {
                 </h3>
                 <div className="p-6 bg-tavyro-surface rounded-lg border border-tavyro-border text-tavyro-text2 leading-relaxed">
                   <p className="font-semibold text-tavyro-text mb-2">TaVyro GmbH</p>
-                  <p>Albisriederstrasse 247</p>
-                  <p>8047 Zürich</p>
+                  <p>Albisriederstrasse 248</p>
+                  <p>CH-8047 Zürich</p>
                   <p>Schweiz</p>
                 </div>
               </div>
