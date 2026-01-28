@@ -12,10 +12,11 @@ export const metadata: Metadata = {
     description: "Boutique Advisory für CEOs, Geschäftsleitungen und Verwaltungsräte – unabhängig, umsetzungsnah und mit messbarer Wirkung.",
     images: [
       {
-        url: "/og.png",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "TaVyro – Fractional CHRO & People Advisory",
+        type: "image/jpeg",
       },
     ],
     siteName: "TaVyro",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TaVyro – Fractional CHRO & People Advisory",
     description: "Boutique Advisory für CEOs, Geschäftsleitungen und Verwaltungsräte – unabhängig, umsetzungsnah und mit messbarer Wirkung.",
-    images: ["/og.png"],
+    images: ["/og.jpg"],
   },
   icons: {
     icon: [
