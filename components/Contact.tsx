@@ -37,7 +37,7 @@ export default function Contact() {
                 </a>
                 {" | "}
                 <a
-                  href="https://linkedin.com/company/tavyro"
+                  href="https://www.linkedin.com/company/tavyro/about/?viewAsMember=true"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-tavyro-text transition-colors"

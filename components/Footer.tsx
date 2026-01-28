@@ -38,8 +38,8 @@ export default function Footer() {
       answer: "Ja. Bereits als eigenständiges Angebot entfaltet sie Wirkung, da Mitarbeitende eine diskrete Anlaufstelle erhalten und Wertschätzung, psychologische Sicherheit und Fürsorge erlebbar werden."
     },
     {
-      question: "Für welche Organisationen ist TaVyro geeignet?",
-      answer: "TaVyro arbeitet mit CEOs, Geschäftsleitungen und Verwaltungsräten in Schweizer und internationalen Organisationen – insbesondere in KMU, Scale-ups, Stiftungen sowie öffentlich geprägten Kontexten."
+      question: "Was unterscheidet TaVyro von grossen Beratungsunternehmen?",
+      answer: "TaVyro arbeitet konsequent an Ihren Zielen und Ihrem Kontext ausgerichtet und nicht nach einem Standard-Playbook. Viele Beratungsmodelle sind team- und prozessgetrieben. Senior Partner sind punktuell involviert, die operative Ausarbeitung erfolgt oft durch Rollen unterschiedlicher Seniorität. Bei TaVyro erhalten Sie eine konstante Ansprechperson auf C-Level-Niveau von der Diagnose bis zur Umsetzung. Durch ein strukturiertes Onboarding wird TaVyro Teil Ihrer Organisation, versteht Mitarbeitende, Kultur, Dynamiken und Entscheidwege und bleibt dabei extern, neutral und wirksam. Ergebnis sind massgeschneiderte Lösungen, die nicht nur konzipiert, sondern konsequent umgesetzt werden."
     }
   ];
 
