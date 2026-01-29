@@ -1,7 +1,7 @@
 export default function Services() {
   const services = [
     {
-      title: "A) Fractional CHRO / Strategic People Partner",
+      title: "Fractional CHRO / Strategic People Partner",
       description:
         "Externe HR-Führungsrolle für Geschäftsleitung und Verwaltungsrat:",
       items: [
@@ -12,7 +12,7 @@ export default function Services() {
       ],
     },
     {
-      title: "B) Organisation & Transformation (Projekt)",
+      title: "Organisation & Transformation (Projekt)",
       description:
         "Analyse bis Umsetzung – pragmatisch, messbar, passend zur Organisation:",
       items: [
@@ -23,7 +23,7 @@ export default function Services() {
       ],
     },
     {
-      title: "C) Executive Coaching",
+      title: "Executive Coaching",
       description:
         "1:1 Sparring für Geschäftsleitung und Führungskräfte zu Führung, Organisation, Management und Kommunikation. Fokus: klare Entscheidungen, Priorisierung, Rollenklarheit und souveräner Umgang mit anspruchsvollen Situationen.",
       items: [
@@ -35,7 +35,7 @@ export default function Services() {
       ],
     },
     {
-      title: "D) Employee Care Line",
+      title: "Add-ons: Employee Care Line",
       description:
         "Die Employee Care Line ist ein vertrauliches Gesprächsangebot für Mitarbeitende im Unternehmen. Sie dient als neutrale Anlaufstelle zur Orientierung und Entlastung und wird durch TaVyro durchgeführt. Es werden keine Individualfälle an das Unternehmen zurückgemeldet; Rückmeldungen erfolgen ausschliesslich in anonymisierter und aggregierter Form. Bereits als eigenständiges Angebot entfaltet die Employee Care Line Wirkung, weil Mitarbeitende ein diskretes, professionelles Gesprächsfenster erhalten, als Signal von Wertschätzung, psychologischer Sicherheit und aktiver Fürsorge.",
     },
