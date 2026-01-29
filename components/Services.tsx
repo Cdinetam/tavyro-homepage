@@ -12,7 +12,7 @@ export default function Services() {
       ],
     },
     {
-      title: "Organisation & Transformation (Projekt)",
+      title: "Organisation & Transformation",
       description:
         "Analyse bis Umsetzung – pragmatisch, messbar, passend zur Organisation:",
       items: [
