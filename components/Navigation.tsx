@@ -2,11 +2,20 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const scrollToSection = (id: string) => {
+    // If not on homepage, navigate to homepage with hash
+    if (pathname !== "/") {
+      window.location.href = `/#${id}`;
+      return;
+    }
+    
+    // If on homepage, smooth scroll to section
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
