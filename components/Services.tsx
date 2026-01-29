@@ -35,7 +35,7 @@ export default function Services() {
       ],
     },
     {
-      title: "Add-ons: Employee Care Line",
+      title: "Add-on: Employee Care Line",
       description:
         "Die Employee Care Line ist ein vertrauliches Gesprächsangebot für Mitarbeitende im Unternehmen. Sie dient als neutrale Anlaufstelle zur Orientierung und Entlastung und wird durch TaVyro durchgeführt. Es werden keine Individualfälle an das Unternehmen zurückgemeldet; Rückmeldungen erfolgen ausschliesslich in anonymisierter und aggregierter Form. Bereits als eigenständiges Angebot entfaltet die Employee Care Line Wirkung, weil Mitarbeitende ein diskretes, professionelles Gesprächsfenster erhalten, als Signal von Wertschätzung, psychologischer Sicherheit und aktiver Fürsorge.",
     },
