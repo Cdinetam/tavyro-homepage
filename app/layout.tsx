@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#265464',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tavyro.ch"),
   title: "TaVyro – Fractional CHRO & People Advisory",
   description: "Echte Entwicklung beginnt innen. TaVyro begleitet Geschäftsleitungen und Verwaltungsräte als Fractional CHRO / Strategic People Partner – unabhängig, umsetzungsnah und mit messbarer Wirkung.",
-  themeColor: '#265464',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
   openGraph: {
     type: "website",
     url: "https://www.tavyro.ch",
