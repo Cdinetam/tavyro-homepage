@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.tavyro.ch"),
   title: "TaVyro – Fractional CHRO & People Advisory",
   description: "Echte Entwicklung beginnt innen. TaVyro begleitet Geschäftsleitungen und Verwaltungsräte als Fractional CHRO / Strategic People Partner – unabhängig, umsetzungsnah und mit messbarer Wirkung.",
+  themeColor: '#265464',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
   openGraph: {
     type: "website",
     url: "https://www.tavyro.ch",
@@ -28,10 +34,12 @@ export const metadata: Metadata = {
     description: "Boutique Advisory für CEOs, Geschäftsleitungen und Verwaltungsräte – unabhängig, umsetzungsnah und mit messbarer Wirkung.",
     images: ["/og.jpg"],
   },
+  manifest: '/site.webmanifest',
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
       { url: '/icon.svg', type: 'image/svg+xml' },
     ],
     apple: [
@@ -41,6 +49,11 @@ export const metadata: Metadata = {
       {
         rel: 'mask-icon',
         url: '/icon.svg',
+        color: '#265464',
+      },
+      {
+        rel: 'manifest',
+        url: '/site.webmanifest',
       },
     ],
   },
