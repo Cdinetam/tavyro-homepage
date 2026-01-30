@@ -48,6 +48,10 @@ export default function Footer() {
     {
       question: "Wofür steht TaVyro in seinem Kern?",
       answer: "TaVyro steht für Herz, Vision und Verankerung. Fortschritt entsteht dort, wo Menschen mitgenommen werden, Ziele klar sind und Veränderungen Zeit haben, sich in der Organisation zu verankern. Genau diese Verbindung aus Haltung, Richtung und Wirkung bildet die Grundlage nachhaltiger Unternehmensentwicklung."
+    },
+    {
+      question: "Was bedeutet Fractional CHRO?",
+      answer: "Ein Fractional CHRO ist eine strategische HR-Leitungsfunktion auf Mandatsbasis oder Teilzeit. Unternehmen erhalten CHRO-Kompetenz auf C-Level-Niveau, ohne eine Vollzeitstelle zu besetzen. Ein Fractional CHRO arbeitet eng mit der Geschäftsleitung zusammen, übernimmt Verantwortung für People- und Organisationsthemen und stärkt Struktur, Entscheidungsqualität und Umsetzungskraft, bleibt dabei jedoch extern und unabhängig. TaVyro arbeitet sich in Ihre Organisation ein, versteht Kultur, Mitarbeitende, Dynamiken und Entscheidungswege und setzt gemeinsam mit Ihnen wirksame Lösungen um. Häufig wird dieser Ansatz auch als CHRO as a Service, externe HR-Leitung oder strategische HR-Beratung für die Geschäftsleitung verstanden."
     }
   ];
 
