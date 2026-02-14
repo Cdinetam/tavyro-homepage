@@ -2,7 +2,7 @@ export default function Pricing() {
   const pricingPlans = [
     {
       name: "TaVyro Basic",
-      price: "CHF 2'000",
+      price: "CHF 3'000",
       period: "/ Monat",
       features: [
         "GL-Sparring",
@@ -13,7 +13,7 @@ export default function Pricing() {
     },
     {
       name: "TaVyro Pro",
-      price: "CHF 4'000",
+      price: "CHF 5'000",
       period: "/ Monat",
       features: [
         "GL-Sparring 1:1 + Teilnahme an ausgewählten GL-Sitzungen",
@@ -24,7 +24,7 @@ export default function Pricing() {
     },
     {
       name: "TaVyro Premium",
-      price: "ab CHF 7'000",
+      price: "ab CHF 9'000",
       period: "/ Monat",
       features: [
         "Nahezu CHRO-Ersatz (fair-use, bis 4 Tage/Monat)",

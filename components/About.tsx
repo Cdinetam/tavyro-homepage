@@ -1,3 +1,5 @@
+import QuoteBanner from "@/components/QuoteBanner";
+
 export default function About() {
   const qualifications = [
     "Arbeits- und Organisationspsychologie (lic. phil./MSc)",
@@ -24,29 +26,18 @@ export default function About() {
               </p>
             </div>
 
-            <div className="p-6 md:p-8 bg-tavyro-surface rounded-lg border border-tavyro-border">
-              <h3 className="text-lg md:text-xl font-semibold text-tavyro-text mb-4">
+            <div className="bg-tavyro-surface rounded-lg border border-tavyro-border overflow-hidden">
+              <h3 className="text-lg md:text-xl font-semibold text-white bg-tavyro-brand-500 px-6 py-3">
                 Ausbildungen & Qualifikationen
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 list-disc list-inside text-tavyro-text2 p-6">
                 {qualifications.map((qual, index) => (
-                  <li key={index} className="flex items-start text-tavyro-text2">
-                    <svg
-                      className="w-5 h-5 text-tavyro-brand-500 mr-3 mt-0.5 flex-shrink-0"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>{qual}</span>
-                  </li>
+                  <li key={index}>{qual}</li>
                 ))}
               </ul>
             </div>
+
+            <QuoteBanner />
           </div>
         </div>
       </div>
