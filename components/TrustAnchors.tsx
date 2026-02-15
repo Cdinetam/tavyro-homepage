@@ -1,10 +1,9 @@
+import { useTranslations } from "next-intl";
+
 export default function TrustAnchors() {
-  const anchors = [
-    "C‑Level HR Leadership auf Abruf",
-    "Organisationsentwicklung & Umsetzung aus einer Hand",
-    "Zürich-based, international erfahren",
-    "Diskret. Klar. Wirksam.",
-  ];
+  const t = useTranslations("TrustAnchors");
+
+  const anchors = [t("items.0"), t("items.1"), t("items.2"), t("items.3")];
 
   return (
     <section className="section-padding bg-white border-y border-gray-200">

@@ -1,39 +1,40 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+
 export default function Contact() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const t = useTranslations("Contact");
 
   return (
     <section id="kontakt" className="section-padding bg-tavyro-surface">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-tavyro-text mb-6">
-            Kontakt
+            {t("title")}
           </h2>
 
           <p className="text-xl text-tavyro-text2 mb-12">
-            Lassen Sie uns in einem kurzen Erstgespräch klären, wo der grösste Hebel liegt.
+            {t("subtitle")}
           </p>
 
           <div className="space-y-6">
-            <a
+            <Link
               href="/erstgespraech-buchen"
               className="btn-primary text-lg px-8 py-4 inline-block"
             >
-              Erstgespräch buchen
-            </a>
+              {t("cta")}
+            </Link>
 
             <div className="pt-6 border-t border-tavyro-border">
               <p className="text-tavyro-secondary-500 mb-4">
-                Alternativ:{" "}
+                {t("alternative")}{" "}
                 <a href="mailto:hello@tavyro.ch" className="hover:text-tavyro-text transition-colors">
-                  E-Mail
+                  {t("email")}
                 </a>
                 {" | "}
                 <a href="tel:+41786868089" className="hover:text-tavyro-text transition-colors">
-                  Telefon
+                  {t("phone")}
                 </a>
                 {" | "}
                 <a

@@ -2,16 +2,20 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("Navigation");
+  const locale = useLocale();
   const pathname = usePathname();
+  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     // If not on homepage, navigate to homepage with hash
     if (pathname !== "/") {
-      window.location.href = `/#${id}`;
+      window.location.href = `/${locale}/#${id}`;
       return;
     }
     
@@ -23,11 +27,15 @@ export default function Navigation() {
     setIsOpen(false);
   };
 
+  const switchLocale = (newLocale: "de" | "en") => {
+    router.replace(pathname, { locale: newLocale });
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-tavyro-border z-50 [color-scheme:light]">
       <div className="container-custom">
         <div className="flex items-center justify-between h-24 md:h-28 py-4 md:py-6">
-          <a
+          <Link
             href="/"
             className="flex items-center"
           >
@@ -39,16 +47,16 @@ export default function Navigation() {
               className="h-14 md:h-16 w-auto"
               priority
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a
+            <Link
               href="/"
               className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
             >
-              Home
-            </a>
+              {t("home")}
+            </Link>
             <a
               href="#leistungen"
               onClick={(e) => {
@@ -57,7 +65,7 @@ export default function Navigation() {
               }}
               className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
             >
-              Leistungen
+              {t("services")}
             </a>
             <a
               href="#angebote"
@@ -67,7 +75,7 @@ export default function Navigation() {
               }}
               className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
             >
-              Angebote
+              {t("offers")}
             </a>
             <a
               href="#ueber"
@@ -77,14 +85,40 @@ export default function Navigation() {
               }}
               className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
             >
-              Über TaVyro
+              {t("about")}
             </a>
-            <a
+
+            {/* Language Switch */}
+            <div className="flex items-center text-sm font-medium">
+              <button
+                onClick={() => switchLocale("de")}
+                className={`transition-colors ${
+                  locale === "de"
+                    ? "text-tavyro-text font-bold"
+                    : "text-tavyro-text2 hover:text-tavyro-text"
+                }`}
+              >
+                DE
+              </button>
+              <span className="text-tavyro-border mx-1.5">|</span>
+              <button
+                onClick={() => switchLocale("en")}
+                className={`transition-colors ${
+                  locale === "en"
+                    ? "text-tavyro-text font-bold"
+                    : "text-tavyro-text2 hover:text-tavyro-text"
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
+            <Link
               href="/erstgespraech-buchen"
               className="btn-primary text-sm px-5 py-2.5"
             >
-              Erstgespräch buchen
-            </a>
+              {t("cta")}
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -115,12 +149,12 @@ export default function Navigation() {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-tavyro-border">
             <div className="flex flex-col space-y-4">
-              <a
+              <Link
                 href="/"
                 className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
               >
-                Home
-              </a>
+                {t("home")}
+              </Link>
               <a
                 href="#leistungen"
                 onClick={(e) => {
@@ -129,7 +163,7 @@ export default function Navigation() {
                 }}
                 className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
               >
-                Leistungen
+                {t("services")}
               </a>
               <a
                 href="#angebote"
@@ -139,7 +173,7 @@ export default function Navigation() {
                 }}
                 className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
               >
-                Angebote
+                {t("offers")}
               </a>
               <a
                 href="#ueber"
@@ -149,14 +183,40 @@ export default function Navigation() {
                 }}
                 className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
               >
-                Über TaVyro
+                {t("about")}
               </a>
-              <a
+
+              {/* Mobile Language Switch */}
+              <div className="flex items-center text-sm font-medium py-2">
+                <button
+                  onClick={() => switchLocale("de")}
+                  className={`transition-colors ${
+                    locale === "de"
+                      ? "text-tavyro-text font-bold"
+                      : "text-tavyro-text2 hover:text-tavyro-text"
+                  }`}
+                >
+                  DE
+                </button>
+                <span className="text-tavyro-border mx-1.5">|</span>
+                <button
+                  onClick={() => switchLocale("en")}
+                  className={`transition-colors ${
+                    locale === "en"
+                      ? "text-tavyro-text font-bold"
+                      : "text-tavyro-text2 hover:text-tavyro-text"
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
+
+              <Link
                 href="/erstgespraech-buchen"
                 className="btn-primary text-sm px-5 py-2.5 text-center"
               >
-                Erstgespräch buchen
-              </a>
+                {t("cta")}
+              </Link>
             </div>
           </div>
         )}

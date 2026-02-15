@@ -1,0 +1,324 @@
+{
+  "Metadata": {
+    "title": "TaVyro | HR Support for Executive Teams | Fractional CHRO Switzerland",
+    "titleTemplate": "{title} | TaVyro",
+    "description": "HR support for executive teams and CEOs: Fractional CHRO (CHROaaS), HR consulting for SMEs in Switzerland, HR strategy, HR governance, executive sparring, HR digitalization (HRIS/People Analytics).",
+    "ogTitle": "TaVyro | Fractional CHRO Switzerland",
+    "ogDescription": "CHRO-as-a-Service for Swiss SMEs: HR support for executive teams, executive sparring, HR strategy & implementation."
+  },
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "offers": "Plans",
+    "about": "About TaVyro",
+    "cta": "Book consultation"
+  },
+  "Hero": {
+    "headline": "Real growth starts from within.",
+    "subheadline": "TaVyro supports CEOs, executive teams and boards as <strong>Fractional CHRO / Strategic People Partner</strong> – independent, hands-on and with measurable impact.",
+    "ctaPrimary": "Book consultation",
+    "ctaSecondary": "View services"
+  },
+  "TrustAnchors": {
+    "items": {
+      "0": "C-Level HR Leadership on demand",
+      "1": "Organizational development & implementation from one source",
+      "2": "Zurich-based, internationally experienced",
+      "3": "Discreet. Clear. Effective."
+    }
+  },
+  "Impact": {
+    "title": "What we achieve",
+    "subtitle": "We strengthen your organization where people, culture and strategy converge.",
+    "items": {
+      "0": "Enhance leadership quality and decision-making",
+      "1": "Minimize HR and compliance risks",
+      "2": "Improve time-to-hire and retention",
+      "3": "Professionalize structures, processes and HR systems",
+      "4": "Sustainably strengthen culture and collaboration"
+    }
+  },
+  "TargetAudience": {
+    "title": "Who we serve",
+    "subtitle": "For organizations looking to strategically strengthen People & Organization – <strong>without</strong> a full-time CHRO role.",
+    "items": {
+      "0": "SMEs & family businesses",
+      "1": "PE portfolio companies",
+      "2": "Scale-ups (Tech, AI, Digital)",
+      "3": "Non-profit organizations (care homes, social institutions, foundations/NPOs)",
+      "4": "Public-sector organizations & government-related entities"
+    }
+  },
+  "Services": {
+    "title": "Services",
+    "items": {
+      "0": {
+        "title": "Fractional CHRO / Strategic People Partner",
+        "description": "External HR leadership role for executive teams and boards:",
+        "features": {
+          "0": "Relieves and advises the executive team on people and organizational matters",
+          "1": "Develops and implements HR strategies",
+          "2": "Manages complex cases (terminations, conflicts, restructurings)",
+          "3": "Ensures full compliance with employment law"
+        }
+      },
+      "1": {
+        "title": "Organization & Transformation",
+        "description": "From analysis to implementation – pragmatic, measurable, tailored to your organization:",
+        "features": {
+          "0": "Operating model, roles/RACI, HR process blueprint",
+          "1": "Reorganizations, change and communication packages",
+          "2": "Policies and regulations, legally sound implementation",
+          "3": "HRIS, People Analytics and AI use cases in HR"
+        }
+      },
+      "2": {
+        "title": "Executive Coaching",
+        "description": "1:1 sparring for executive teams and leaders on leadership, organization, management and communication. Focus: clear decisions, prioritization, role clarity and confident handling of challenging situations.",
+        "features": {
+          "0": "Role transitions and new expectations (leadership, stakeholders, responsibility)",
+          "1": "Leading change: alignment, implementation, handling resistance",
+          "2": "Difficult conversations and conflict resolution (clear, de-escalating, effective)",
+          "3": "Performance & leadership: goals, delegation, feedback, routines",
+          "4": "Team and cross-functional leadership: accountability, collaboration, performance"
+        }
+      },
+      "3": {
+        "title": "Add-on: Employee Care Line",
+        "description": "The Employee Care Line is a confidential support service for employees within the organization. It serves as a neutral point of contact for orientation and relief and is provided by TaVyro. No individual cases are reported back to the company; feedback is provided exclusively in anonymized and aggregated form. Even as a standalone offering, the Employee Care Line creates impact because employees receive a discreet, professional space for conversation – as a signal of appreciation, psychological safety and active care."
+      }
+    }
+  },
+  "Pricing": {
+    "title": "Plans",
+    "subtitle": "All models include clear collaboration, confidentiality and predictable monthly costs.",
+    "minTerm": "Minimum term: 3 months.",
+    "perMonth": "/ month",
+    "plans": {
+      "0": {
+        "name": "TaVyro Basic",
+        "price": "CHF 3,000",
+        "features": {
+          "0": "Executive sparring",
+          "1": "Hotline for leaders",
+          "2": "Templates, reviews, quick impulses"
+        }
+      },
+      "1": {
+        "name": "TaVyro Pro",
+        "price": "CHF 5,000",
+        "features": {
+          "0": "1:1 executive sparring + participation in selected board meetings",
+          "1": "Prioritization & management of key HR topics",
+          "2": "Quarterly roadmap + monthly brief reporting"
+        }
+      },
+      "2": {
+        "name": "TaVyro Premium",
+        "price": "from CHF 9,000",
+        "features": {
+          "0": "Near CHRO replacement (fair-use, up to 4 days/month)",
+          "1": "Program management, KPI/pulse checks, moderation",
+          "2": "Governance, sensitive cases (conflicts, performance, reorg)"
+        }
+      }
+    },
+    "onboarding": "Onboarding (one-time): CHF 4,000",
+    "onboardingDesc": "HR Health Check incl. prioritized action plan.",
+    "hourlyTitle": "Project work on hourly basis",
+    "hourlyDesc": "For clearly defined projects, collaboration on an hourly basis is possible. The prerequisite is a defined scope (goal, result, timeframe). Effort and impact remain transparent; decisions are prepared on a fact-based basis."
+  },
+  "About": {
+    "title": "About TaVyro",
+    "description": "TaVyro is a <strong>boutique advisory based in Zurich</strong> for CEOs, executive teams and boards. The focus is on leadership, organization and HR governance as well as the pragmatic development of people and HR structures – from assessment through prioritization to implementation in clear, effective steps.",
+    "leadAdvisor": "Lead Advisor: <strong>Tam Nguyen</strong> with over 20 years of experience as CHRO and HR executive in international and Swiss companies.",
+    "qualificationsTitle": "Education & Qualifications",
+    "qualifications": {
+      "0": "Work & Organizational Psychology (lic. phil./MSc)",
+      "1": "CAS Executive Management",
+      "2": "CAS Digitalization & Artificial Intelligence in HRM",
+      "3": "Working languages: DE/EN/FR"
+    }
+  },
+  "QuoteBanner": {
+    "testimonials": {
+      "0": {
+        "quote": "The 1:1 sparring at executive level was discreet, professional and very helpful. I was able to reassess the situation and make key decisions with significantly more clarity.",
+        "author": "CEO, Swiss Engineering Company (China)"
+      },
+      "1": {
+        "quote": "In a challenging situation, I quickly received a clear assessment and a structured approach. Discreet, competent and solution-oriented – I was able to achieve a fair and sustainable solution.",
+        "author": "Private Client, Zurich"
+      },
+      "2": {
+        "quote": "As CHRO, he was a highly valued member of the executive team. With sensitivity, empathy and clear judgment, he noticeably advanced the company. The combination of strategic thinking and pragmatic implementation measurably contributed to stability and growth.",
+        "author": "CEO, International Swiss SME"
+      },
+      "3": {
+        "quote": "In restructuring our organization, his support was a real asset. He sharpened organizational development as well as role and structure questions, properly assessed employment law topics and pragmatically guided the implementation. As a discreet sparring partner for the executive team, he brought clarity to complex situations – and helped implement decisions consistently and fairly.",
+        "author": "Executive Team and Supervisory Board"
+      },
+      "4": {
+        "quote": "TaVyro quickly brought structure to leadership and role questions and noticeably improved decision quality. Particularly valuable was the combination of strategic vision (People & Organization) and consistent implementation – clearly prioritized, without overhead, with high reliability.",
+        "author": "CEO, Swiss IT/Software Company"
+      }
+    }
+  },
+  "Contact": {
+    "title": "Contact",
+    "subtitle": "Let's clarify in a brief initial meeting where the greatest leverage lies.",
+    "cta": "Book consultation",
+    "alternative": "Alternatively:",
+    "email": "Email",
+    "phone": "Phone"
+  },
+  "Footer": {
+    "qaSectionTitle": "Q&A",
+    "faqs": {
+      "0": {
+        "question": "Why is it important to take action now?",
+        "answer": "Because sustainable progress takes time. The biggest costs rarely lie in the project budget, but in lost time, uncertainty and delayed decisions. Changes in leadership, organization and culture don't take effect immediately – they need to be built and anchored. Those who wait too long not only lose momentum but jeopardize the long-term development capability and thus the future viability of the organization."
+      },
+      "1": {
+        "question": "Does TaVyro work on an hourly basis or with retainers?",
+        "answer": "Both. For clearly defined projects, project-based collaboration on an hourly basis is possible. For sustainable impact, prioritization and implementation, TaVyro typically works with clearly defined projects or retainers. Even though TaVyro is an externally mandated partner, TaVyro integrates into the organization and becomes effective in day-to-day operations like part of the company, understands and carries the corporate culture, while remaining neutral and objective."
+      },
+      "2": {
+        "question": "What does Executive Coaching at TaVyro include?",
+        "answer": "Executive Coaching at TaVyro is 1:1 sparring for CEO, executive and leadership level. The focus is on clear decisions, prioritization, role clarity, communication and handling challenging situations (e.g. conflicts, role transitions, change)."
+      },
+      "3": {
+        "question": "In which situations is TaVyro typically engaged?",
+        "answer": "When decisions need to be made, roles and responsibilities need to be clarified, or leadership, organization and HR need to be strategically developed – especially in growth, change or transition phases."
+      },
+      "4": {
+        "question": "How does TaVyro ensure confidentiality?",
+        "answer": "Confidentiality is paramount. Upon request, a non-disclosure agreement (NDA) is concluded. Contents from mandates and conversations are not shared; feedback to companies – if agreed – is provided exclusively in anonymized and aggregated form."
+      },
+      "5": {
+        "question": "Can the Employee Care Line also be used as a standalone offering?",
+        "answer": "Yes. Even as a standalone offering, it creates impact because employees receive a discreet point of contact and appreciation, psychological safety and care become tangible."
+      },
+      "6": {
+        "question": "What distinguishes TaVyro from large consulting firms?",
+        "answer": "TaVyro works consistently aligned with your goals and context rather than following a standard playbook. Many consulting models are team and process-driven. Senior partners are involved on a point-by-point basis, with operational work often done by roles of varying seniority. With TaVyro, you get a constant contact person at C-level from diagnosis to implementation. Through structured onboarding, TaVyro becomes part of your organization, understands employees, culture, dynamics and decision paths, while remaining external, neutral and effective. The result is tailored solutions that are not only designed but consistently implemented."
+      },
+      "7": {
+        "question": "What does TaVyro stand for at its core?",
+        "answer": "TaVyro stands for heart, vision and anchoring. Progress happens where people are brought along, goals are clear and changes have time to take root in the organization. This very connection of attitude, direction and impact forms the foundation of sustainable business development."
+      },
+      "8": {
+        "question": "What does Fractional CHRO mean?",
+        "answer": "A Fractional CHRO is a strategic HR leadership function on a mandate or part-time basis. Companies gain CHRO competence at C-level without filling a full-time position. A Fractional CHRO works closely with the executive team, takes responsibility for people and organizational topics and strengthens structure, decision quality and implementation power, while remaining external and independent. TaVyro integrates into your organization, understands culture, employees, dynamics and decision paths and implements effective solutions together with you. This approach is often also understood as CHRO as a Service, external HR leadership or strategic HR consulting for the executive team."
+      }
+    },
+    "contactTitle": "Contact",
+    "navigationTitle": "Navigation",
+    "home": "Home",
+    "services": "Services",
+    "offers": "Plans",
+    "aboutTavyro": "About TaVyro",
+    "bookCall": "Book consultation",
+    "legalTitle": "Legal",
+    "impressum": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "copyright": "© {year} TaVyro GmbH. All rights reserved."
+  },
+  "Erstgespraech": {
+    "pageTitle": "Book consultation",
+    "heroText": "Let's clarify in 30 minutes whether and how TaVyro can effectively support you as <strong>Fractional CHRO / People & Organization Partner</strong> – pragmatically in the short term, strategically sustainable.",
+    "step1": "Quick check of your situation (People, Organization, Leadership, HR Systems)",
+    "step2": "Initial hypotheses & next steps – no sales pressure",
+    "step3": "Fit assessment: needs, timing, setup (mandate / interim / advisory)",
+    "step4": "Confidential, focused, solution-oriented",
+    "teamsInfo": "Online via Microsoft Teams | German/English | Confidentiality guaranteed",
+    "bookTeamsCall": "Book Teams call",
+    "viewProcess": "View process",
+    "processTitle": "How the initial meeting works",
+    "processStep1Title": "Choose a time",
+    "processStep1Desc": "Select an available 30-minute time slot in the booking portal.",
+    "processStep2Title": "Confirmation & Teams link",
+    "processStep2Desc": "After booking, you will receive a confirmation including the Microsoft Teams meeting link and key details.",
+    "processStep3Title": "Meeting & next step",
+    "processStep3Desc": "We clarify goals, bottlenecks and priorities. At the end, you receive a clear recommendation on whether a next step makes sense – and which one.",
+    "processNote": "No recording. Content remains confidential. NDA upon request.",
+    "noteLabel": "Note:",
+    "formTitle": "Book Teams call",
+    "formIntro": "Fill out the short form – we usually respond on the same business day (9am to 5pm). The call takes place via Microsoft Teams; you will receive the link by email.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "emailLabel": "Email address",
+    "phoneLabel": "Phone number",
+    "phoneHint": "For short-term questions or if you'd like us to reach you faster.",
+    "dateLabel": "Preferred dates for the Teams call",
+    "dateHint": "Available Monday to Friday, 9am to 5pm (CET). Please suggest 2-3 alternatives.",
+    "slot1Label": "1st preference",
+    "slot2Label": "2nd preference (optional)",
+    "slot3Label": "3rd preference (optional)",
+    "dateFieldLabel": "Date",
+    "timeFieldLabel": "Time",
+    "timeSelect": "Select...",
+    "timeSuffix": "",
+    "topicLabel": "Topic / reason for the call",
+    "messageLabel": "Additional message (optional)",
+    "messagePlaceholder": "Feel free to include context, the goal of the conversation or questions you'd like us to prepare.",
+    "copyToMe": "Send me a copy of the request",
+    "consentText": "By submitting, you agree that we may use your information for scheduling. Your data will be treated confidentially.",
+    "submitButton": "Book now",
+    "submitting": "Sending...",
+    "successTitle": "✓ Thank you!",
+    "successMessage": "Your request has been sent successfully. We will get back to you shortly.",
+    "errorMessage": "An error occurred. Please try again or contact us directly by email.",
+    "alternative": "Alternatively:"
+  },
+  "Datenschutz": {
+    "pageTitle": "Privacy Policy",
+    "subtitle": "Privacy Policy (Switzerland) – Summary",
+    "backHome": "Back to homepage",
+    "lastUpdated": "Last updated: January 2026",
+    "section1Title": "1. Controller",
+    "section1Content": "TaVyro GmbH\nAlbisriederstrasse 248, CH-8047 Zurich, Switzerland",
+    "section2Title": "2. What data we process and why",
+    "section2Intro": "When you visit our website or contact us, we process in particular:",
+    "section2TechData": "Technical data (e.g. IP address, date/time, pages accessed, browser/OS): for provision, security and stability of the website.",
+    "section2CommData": "Communication data (e.g. name, email, content of your inquiry): for processing your request and contacting you.",
+    "section2NoProfiling": "We do not use your data for automated individual decisions or profiling that leads to significant impairment.",
+    "section3Title": "3. Hosting (Vercel, USA)",
+    "section3Content": "Our website is hosted by Vercel (Vercel Inc., San Francisco, California, USA). Technical data (in particular IP address and log files) are processed to provide the website securely and reliably. Processing may also take place in the USA and other countries where Vercel or its sub-processors process data.",
+    "section4Title": "4. Contact",
+    "section4Content": "When you contact us by email or via the contact form, we process your information to handle your inquiry and for any follow-up questions. Disclosure to third parties only occurs when necessary for service provision (e.g. IT service providers/hosting) or when legally required.",
+    "section5Title": "5. Cookies / Analytics",
+    "section5Content": "We may use cookies that are necessary for the operation of the website. We currently only use visitor statistics (analytics) if activated; we will update this privacy policy when introducing or changing tracking/analytics.",
+    "section6Title": "6. Retention period",
+    "section6Content": "We store personal data only as long as necessary for the stated purposes or as required by legal retention obligations.",
+    "section7Title": "7. Your rights",
+    "section7Content": "Under applicable data protection law, you have the right to information, rectification, deletion/restriction (where permissible) and disclosure/transfer (where legally provided). Please direct inquiries to hello@tavyro.ch. You may also contact the FDPIC.",
+    "section8Title": "8. Data security",
+    "section8Content": "We take appropriate technical and organizational security measures (including TLS encryption). Absolute protection cannot be guaranteed."
+  },
+  "Impressum": {
+    "pageTitle": "Legal Notice",
+    "subtitle": "Information pursuant to Swiss law",
+    "publisherTitle": "Publisher",
+    "contactTitle": "Contact",
+    "representativeTitle": "Authorized representative",
+    "representativeName": "Claudine Stüssi",
+    "registerTitle": "Commercial register entry",
+    "registerCanton": "Registered in the commercial register: Canton of Zurich",
+    "registerUid": "UID: CHE-376.686.218",
+    "registerForm": "Legal form: Limited liability company (GmbH)",
+    "purposeTitle": "Purpose of the company",
+    "purposeContent": "Fractional CHRO Services, Strategic People Advisory, Executive Coaching, HR consulting and organizational development for executive teams, boards and leaders.",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimerContent": "Liability for content: The content of our pages has been created with the utmost care. However, we cannot guarantee the accuracy, completeness and timeliness of the content.",
+    "disclaimerLinks": "Liability for links: Our website contains links to external third-party websites over whose content we have no influence. Therefore, we cannot accept any liability for this third-party content.",
+    "copyrightTitle": "Copyright",
+    "copyrightContent": "The content and works created by the site operators on these pages are subject to Swiss copyright law.",
+    "dataProtectionTitle": "Data Protection",
+    "dataProtectionContent": "Information on data protection and the use of your data can be found in our Privacy Policy.",
+    "jurisdictionTitle": "Applicable law and jurisdiction",
+    "jurisdictionContent": "Swiss law applies exclusively. The place of jurisdiction is Zurich, Switzerland.",
+    "changeNote": "Subject to changes and errors.",
+    "backHome": "Back to homepage"
+  }
+}

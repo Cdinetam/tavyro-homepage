@@ -1,6 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+
 export default function Hero() {
+  const t = useTranslations("Hero");
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -24,26 +29,27 @@ export default function Hero() {
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            Echte Entwicklung beginnt innen.
+            {t("headline")}
           </h1>
           
           <p className="text-lg md:text-xl lg:text-2xl text-white mb-12 leading-relaxed drop-shadow-lg">
-            TaVyro begleitet CEOs, Geschäftsleitungen und Verwaltungsräte als{" "}
-            <strong className="text-white">Fractional CHRO / Strategic People Partner</strong> – unabhängig, umsetzungsnah und mit messbarer Wirkung.
+            {t.rich("subheadline", {
+              strong: (chunks) => <strong className="text-white">{chunks}</strong>,
+            })}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
+            <Link
               href="/erstgespraech-buchen"
               className="btn-primary w-full sm:w-auto text-center"
             >
-              Erstgespräch buchen
-            </a>
+              {t("ctaPrimary")}
+            </Link>
             <button
               onClick={() => scrollToSection("leistungen")}
               className="btn-secondary w-full sm:w-auto"
             >
-              Leistungen ansehen
+              {t("ctaSecondary")}
             </button>
           </div>
         </div>
