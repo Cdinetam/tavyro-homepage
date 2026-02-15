@@ -23,7 +23,7 @@ export default function Home() {
       "CHRO-as-a-Service",
       "Fractional CHRO",
       "HR Governance",
-      "Executive Coaching",
+      "Executive Advisory & Sparring",
       "HR Transformation",
     ],
     hasOfferCatalog: {

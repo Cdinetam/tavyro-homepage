@@ -116,18 +116,6 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href="#angebote"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("angebote");
-                  }}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  {t("offers")}
-                </a>
-              </li>
-              <li>
-                <a 
                   href="#ueber"
                   onClick={(e) => {
                     e.preventDefault();
@@ -136,6 +124,18 @@ export default function Footer() {
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   {t("aboutTavyro")}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#angebote"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("angebote");
+                  }}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  {t("offers")}
                 </a>
               </li>
               <li>

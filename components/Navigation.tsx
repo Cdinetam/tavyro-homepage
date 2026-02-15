@@ -68,16 +68,6 @@ export default function Navigation() {
               {t("services")}
             </a>
             <a
-              href="#angebote"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("angebote");
-              }}
-              className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
-            >
-              {t("offers")}
-            </a>
-            <a
               href="#ueber"
               onClick={(e) => {
                 e.preventDefault();
@@ -86,6 +76,16 @@ export default function Navigation() {
               className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
             >
               {t("about")}
+            </a>
+            <a
+              href="#angebote"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("angebote");
+              }}
+              className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
+            >
+              {t("offers")}
             </a>
 
             {/* Language Switch */}
@@ -166,16 +166,6 @@ export default function Navigation() {
                 {t("services")}
               </a>
               <a
-                href="#angebote"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("angebote");
-                }}
-                className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
-              >
-                {t("offers")}
-              </a>
-              <a
                 href="#ueber"
                 onClick={(e) => {
                   e.preventDefault();
@@ -184,6 +174,16 @@ export default function Navigation() {
                 className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
               >
                 {t("about")}
+              </a>
+              <a
+                href="#angebote"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("angebote");
+                }}
+                className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
+              >
+                {t("offers")}
               </a>
 
               {/* Mobile Language Switch */}
