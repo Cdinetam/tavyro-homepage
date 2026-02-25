@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -47,10 +47,6 @@ export default function ErstgespraechBuchen() {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-
-  useEffect(() => {
-    document.title = `${t("pageTitle")} | TaVyro`;
-  }, [t]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

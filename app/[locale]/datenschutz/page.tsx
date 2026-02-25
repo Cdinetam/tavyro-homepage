@@ -1,7 +1,31 @@
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { isSiteLocale } from "@/config/site";
+import { getCanonical, getLanguageAlternates } from "@/lib/seo";
 import { useTranslations } from "next-intl";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "@/i18n/navigation";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const safeLocale = isSiteLocale(locale) ? locale : "de";
+  const t = await getTranslations({ locale: safeLocale, namespace: "Datenschutz" });
+  const site = await getTranslations({ locale: safeLocale, namespace: "Metadata" });
+
+  return {
+    title: t("pageTitle"),
+    description: site("description"),
+    alternates: {
+      canonical: getCanonical(safeLocale, "datenschutz"),
+      languages: getLanguageAlternates("datenschutz"),
+    },
+  };
+}
 
 export default function Datenschutz() {
   const t = useTranslations("Datenschutz");

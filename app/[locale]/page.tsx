@@ -1,4 +1,7 @@
-import { useTranslations } from "next-intl";
+import type { Metadata } from "next";
+import { isSiteLocale, siteConfig } from "@/config/site";
+import { getCanonical, getLanguageAlternates } from "@/lib/seo";
+import { getTranslations } from "next-intl/server";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Impact from "@/components/Impact";
@@ -8,73 +11,45 @@ import Pricing from "@/components/Pricing";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/seo/StructuredData";
 
-export default function Home() {
-  const t = useTranslations("Metadata");
+type Props = {
+  params: Promise<{ locale: string }>;
+};
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "TaVyro",
-    url: "https://tavyro.ch",
-    areaServed: "CH",
-    description: t("description"),
-    serviceType: [
-      "CHRO-as-a-Service",
-      "Fractional CHRO",
-      "HR Governance",
-      "Executive Advisory & Sparring",
-      "HR Transformation",
-    ],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "HR Unterstützung Geschäftsleitung",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "HR Beratung KMU Schweiz",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name: "HR Sparring CEO" },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name: "HR Strategie KMU" },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "HR Interim Lösung (Fractional CHRO)",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "HR Digitalisierung Beratung (HRIS/People Analytics)",
-          },
-        },
-      ],
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const safeLocale = isSiteLocale(locale) ? locale : "de";
+  const t = await getTranslations({ locale: safeLocale, namespace: "Metadata" });
+
+  return {
+    title: t("title"),
+    description: siteConfig.description[safeLocale] ?? t("description"),
+    alternates: {
+      canonical: getCanonical(safeLocale),
+      languages: getLanguageAlternates(),
     },
   };
+}
+
+export default async function Home({ params }: Props) {
+  const { locale } = await params;
+  const safeLocale = isSiteLocale(locale) ? locale : "de";
+  const t = await getTranslations({ locale: safeLocale, namespace: "Metadata" });
+  const footerT = await getTranslations({ locale: safeLocale, namespace: "Footer" });
+
+  const faqKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8"] as const;
+  const faqItems = faqKeys.map((key) => ({
+    question: footerT(`faqs.${key}.question`),
+    answer: footerT(`faqs.${key}.answer`),
+  }));
 
   return (
     <main className="min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <StructuredData
+        locale={safeLocale}
+        description={siteConfig.description[safeLocale] ?? t("description")}
+        faqItems={faqItems}
       />
       <Navigation />
       <Hero />

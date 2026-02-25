@@ -3,7 +3,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { isSiteLocale, siteConfig } from "@/config/site";
+import { getCanonical, getLanguageAlternates } from "@/lib/seo";
 import "../globals.css";
 
 export const viewport: Viewport = {
@@ -22,24 +23,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
-    metadataBase: new URL("https://tavyro.ch"),
+    metadataBase: new URL(siteConfig.siteUrl),
     title: {
       default: t("title"),
-      template: `%s | TaVyro`,
+      template: `%s | ${siteConfig.brand}`,
     },
     description: t("description"),
     alternates: {
-      canonical: `https://tavyro.ch/${locale}`,
-      languages: {
-        de: "https://tavyro.ch/de",
-        en: "https://tavyro.ch/en",
-      },
+      canonical: getCanonical(isSiteLocale(locale) ? locale : "de"),
+      languages: getLanguageAlternates(),
     },
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
-      url: `https://tavyro.ch/${locale}`,
-      siteName: "TaVyro",
+      url: getCanonical(isSiteLocale(locale) ? locale : "de"),
+      siteName: siteConfig.brand,
       locale: locale === "de" ? "de_CH" : "en_US",
       type: "website",
       images: [
@@ -95,7 +93,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Validate locale
-  if (!routing.locales.includes(locale as "de" | "en")) {
+  if (!isSiteLocale(locale)) {
     notFound();
   }
 
