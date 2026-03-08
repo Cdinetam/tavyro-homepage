@@ -5,7 +5,13 @@ import forWhomImage from "@/images/TaVyro Für wen.jpg";
 export default function TargetAudience() {
   const t = useTranslations("TargetAudience");
 
-  const audiences = [t("items.0"), t("items.1"), t("items.2")];
+  const audiences = [
+    t("items.0"),
+    t("items.1"),
+    t("items.2"),
+    t("items.3"),
+    t("items.4"),
+  ];
 
   return (
     <section id="zielgruppe" className="section-padding bg-white">
