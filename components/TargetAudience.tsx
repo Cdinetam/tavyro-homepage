@@ -5,36 +5,32 @@ import forWhomImage from "@/images/TaVyro Für wen.jpg";
 export default function TargetAudience() {
   const t = useTranslations("TargetAudience");
 
-  const audiences = [
-    t("items.0"),
-    t("items.1"),
-    t("items.2"),
-  ];
+  const audiences = [t("items.0"), t("items.1"), t("items.2")];
 
   return (
     <section id="zielgruppe" className="section-padding bg-white">
       <div className="container-custom">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-tavyro-text mb-6">
-            {t("title")}
-          </h2>
-          
-          <p className="text-lg md:text-xl text-tavyro-text2 mb-10 max-w-3xl mx-auto">
-            {t.rich("subtitle", {
-              strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
-            })}
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+            <ul className="space-y-4 text-left p-6 md:p-8 border-2 border-tavyro-border rounded-xl shadow-sm">
+              {audiences.map((audience, index) => (
+                <li key={index} className="flex items-start text-tavyro-text text-base md:text-lg">
+                  <span className="mr-3 text-tavyro-brand-500 font-bold text-lg flex-shrink-0">•</span>
+                  <span className="font-medium">{audience}</span>
+                </li>
+              ))}
+            </ul>
 
-          <div className="p-6 md:p-8 bg-tavyro-tint rounded-xl border-2 border-tavyro-border shadow-md">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-              <ul className="space-y-4 text-left">
-                {audiences.map((audience, index) => (
-                  <li key={index} className="flex items-start text-tavyro-text text-base md:text-lg">
-                    <span className="mr-3 text-tavyro-brand-500 font-bold text-lg flex-shrink-0">•</span>
-                    <span className="font-medium">{audience}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="text-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-tavyro-text mb-4">
+                {t("title")}
+              </h2>
+              <p className="text-lg md:text-xl text-tavyro-text2 mb-6">
+                {t.rich("subtitle", {
+                  strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
+                })}
+              </p>
+
               <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden border border-tavyro-border shadow-sm">
                 <Image
                   src={forWhomImage}
