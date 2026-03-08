@@ -22,7 +22,9 @@ export default function TargetAudience() {
           </h2>
           <p className="text-lg md:text-xl text-tavyro-text2 mb-8 max-w-3xl mx-auto text-center">
             {t.rich("subtitle", {
-              strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
+              strong: (chunks) => (
+                <strong className="text-tavyro-text whitespace-nowrap">{chunks}</strong>
+              ),
             })}
           </p>
 
@@ -35,7 +37,7 @@ export default function TargetAudience() {
                 </li>
               ))}
             </ul>
-            <div className="relative w-full h-64 md:h-80 lg:h-full lg:min-h-[300px] rounded-lg overflow-hidden border border-tavyro-border shadow-sm">
+            <div className="relative w-full h-64 md:h-80 lg:h-full lg:min-h-[300px] overflow-hidden border border-tavyro-border shadow-sm">
               <Image
                 src={forWhomImage}
                 alt="TaVyro Für wen"
