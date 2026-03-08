@@ -20,7 +20,7 @@ export default function TargetAudience() {
           <h2 className="text-3xl md:text-4xl font-bold text-tavyro-text mb-4 text-center">
             {t("title")}
           </h2>
-          <p className="text-lg md:text-xl text-tavyro-text2 mb-8 max-w-3xl mx-auto text-center whitespace-nowrap">
+          <p className="text-lg md:text-xl text-tavyro-text2 mb-8 max-w-3xl mx-auto text-center whitespace-normal md:whitespace-nowrap">
             <span className="inline-block">
               {t.rich("subtitle", {
                 strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
