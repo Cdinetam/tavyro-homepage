@@ -22,9 +22,7 @@ export default function TargetAudience() {
           </h2>
           <p className="text-lg md:text-xl text-tavyro-text2 mb-8 max-w-3xl mx-auto text-center">
             {t.rich("subtitle", {
-              strong: (chunks) => (
-                <strong className="text-tavyro-text whitespace-nowrap">{chunks}</strong>
-              ),
+              strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
             })}
           </p>
 
