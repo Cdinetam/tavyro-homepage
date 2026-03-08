@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
 const LOCALE_ROUTE_PATHS: Record<(typeof siteConfig.locales)[number], string[]> = {
-  de: ["", "datenschutz", "impressum", "erstgespraech-buchen", "fractional-chro-schweiz"],
-  en: ["", "datenschutz", "impressum", "erstgespraech-buchen", "fractional-chro-switzerland"],
+  de: ["", "datenschutz", "impressum", "erstgespraech-buchen", "faq", "fractional-chro-schweiz"],
+  en: ["", "datenschutz", "impressum", "erstgespraech-buchen", "faq", "fractional-chro-switzerland"],
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
