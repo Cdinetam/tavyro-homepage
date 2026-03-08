@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "title": "TaVyro | HR Unterstützung Geschäftsleitung | Fractional CHRO Schweiz",
+    "title": "Fractional CHRO Schweiz | HR Unterstützung für CEO & Geschäftsleitung | TaVyro",
     "titleTemplate": "{title} | TaVyro",
-    "description": "HR Unterstützung für Geschäftsleitung und CEO: Fractional CHRO (CHROaaS), HR Beratung für KMU in der Schweiz, HR Strategie, HR Governance, Executive Sparring, HR Digitalisierung (HRIS/People Analytics).",
+    "description": "Boutique Advisory in Zürich für CEOs, Geschäftsleitungen und Verwaltungsräte: Fractional CHRO, HR Governance, Organisation und Executive Advisory & Sparring.",
     "ogTitle": "TaVyro | Fractional CHRO Schweiz",
     "ogDescription": "CHRO-as-a-Service für Schweizer KMU: HR Unterstützung Geschäftsleitung, Executive Sparring, HR Strategie & Umsetzung."
   },
@@ -14,7 +14,7 @@
     "cta": "Erstgespräch buchen"
   },
   "Hero": {
-    "headline": "Echte Entwicklung beginnt innen.",
+    "headline": "Fractional CHRO für Schweizer KMU",
     "subheadline": "TaVyro begleitet CEOs, Geschäftsleitungen und Verwaltungsräte als <strong>Fractional CHRO / Strategic People Partner</strong> – unabhängig, umsetzungsnah und mit messbarer Wirkung.",
     "ctaPrimary": "Erstgespräch buchen",
     "ctaSecondary": "Leistungen ansehen"
@@ -40,7 +40,7 @@
   },
   "TargetAudience": {
     "title": "Für wen",
-    "subtitle": "Für Unternehmen, die People & Organisation strategisch stärken möchten – <strong>ohne</strong> eine Vollzeit-CHRO-Rolle.",
+    "subtitle": "Für Unternehmen, die People & Organisation strategisch stärken wollen – <strong>ohne</strong> Vollzeit-CHRO.",
     "items": {
       "0": "KMU & Familienunternehmen",
       "1": "PE-Portfoliofirmen",
@@ -50,7 +50,7 @@
     }
   },
   "Services": {
-    "title": "Leistungen",
+    "title": "Leistungen für Geschäftsleitung, CEO und Verwaltungsrat",
     "items": {
       "0": {
         "title": "Fractional CHRO / Strategic People Partner",
@@ -210,6 +210,30 @@
       "8": {
         "question": "Was bedeutet Fractional CHRO?",
         "answer": "Ein Fractional CHRO ist eine strategische HR-Leitungsfunktion auf Mandatsbasis oder Teilzeit. Unternehmen erhalten CHRO-Kompetenz auf C-Level-Niveau, ohne eine Vollzeitstelle zu besetzen. Ein Fractional CHRO arbeitet eng mit der Geschäftsleitung zusammen, übernimmt Verantwortung für People- und Organisationsthemen und stärkt Struktur, Entscheidungsqualität und Umsetzungskraft, bleibt dabei jedoch extern und unabhängig. TaVyro arbeitet sich in Ihre Organisation ein, versteht Kultur, Mitarbeitende, Dynamiken und Entscheidungswege und setzt gemeinsam mit Ihnen wirksame Lösungen um. Häufig wird dieser Ansatz auch als CHRO as a Service, externe HR-Leitung oder strategische HR-Beratung für die Geschäftsleitung verstanden."
+      },
+      "9": {
+        "question": "Was kostet ein Fractional CHRO in der Schweiz?",
+        "answer": "Die Kosten hängen von Umfang, Mandatsdauer und Komplexität ab. TaVyro arbeitet mit klaren Modellen und transparenter Leistungsabgrenzung, damit Sie Planungssicherheit und messbare Wirkung erhalten."
+      },
+      "10": {
+        "question": "Für welche Unternehmen lohnt sich ein Fractional CHRO?",
+        "answer": "Besonders für KMU, Familienunternehmen, PE-Portfoliofirmen und Scale-ups in Wachstums-, Veränderungs- oder Übergangsphasen, wenn strategische HR-Führung benötigt wird, ohne eine Vollzeit-CHRO-Rolle zu besetzen."
+      },
+      "11": {
+        "question": "Was ist der Unterschied zwischen HR-Beratung und Fractional CHRO?",
+        "answer": "HR-Beratung ist häufig punktuell und projektbezogen. Ein Fractional CHRO übernimmt dagegen laufend Verantwortung auf Führungsebene, arbeitet eng mit der Geschäftsleitung und steuert Prioritäten, Umsetzung und Governance ganzheitlich."
+      },
+      "12": {
+        "question": "Wie schnell kann TaVyro starten?",
+        "answer": "In der Regel kurzfristig nach Erstgespräch und Scope-Definition. Der Start erfolgt strukturiert mit klarem Onboarding, damit rasch priorisierte Themen mit hoher Wirksamkeit umgesetzt werden können."
+      },
+      "13": {
+        "question": "Ist Executive Advisory & Sparring auch ohne Retainer möglich?",
+        "answer": "Ja. Für klar definierte Fragestellungen ist auch eine Zusammenarbeit auf Stundenbasis oder in abgegrenzten Paketen möglich. Für nachhaltige Wirkung empfiehlt sich häufig ein kontinuierliches Setup."
+      },
+      "14": {
+        "question": "Unterstützt TaVyro auch bei Reorganisationen und Konfliktfällen?",
+        "answer": "Ja. TaVyro begleitet Reorganisationen, sensible Personalfälle und Konfliktsituationen mit arbeitsrechtlich sauberem Vorgehen, klarer Kommunikation und konsequenter Umsetzung auf Führungsebene."
       }
     },
     "contactTitle": "Kontakt",

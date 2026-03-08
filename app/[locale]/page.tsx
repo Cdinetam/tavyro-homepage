@@ -38,7 +38,23 @@ export default async function Home({ params }: Props) {
   const t = await getTranslations({ locale: safeLocale, namespace: "Metadata" });
   const footerT = await getTranslations({ locale: safeLocale, namespace: "Footer" });
 
-  const faqKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8"] as const;
+  const faqKeys = [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+  ] as const;
   const faqItems = faqKeys.map((key) => ({
     question: footerT(`faqs.${key}.question`),
     answer: footerT(`faqs.${key}.answer`),

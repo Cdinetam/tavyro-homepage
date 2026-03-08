@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "title": "TaVyro | HR Support for Executive Teams | Fractional CHRO Switzerland",
+    "title": "Fractional CHRO Switzerland | HR Advisory for CEOs & Executive Teams | TaVyro",
     "titleTemplate": "{title} | TaVyro",
-    "description": "HR support for executive teams and CEOs: Fractional CHRO (CHROaaS), HR consulting for SMEs in Switzerland, HR strategy, HR governance, executive sparring, HR digitalization (HRIS/People Analytics).",
+    "description": "Boutique advisory in Zurich for CEOs, executive teams and boards: Fractional CHRO, HR governance, organization design and executive advisory & sparring.",
     "ogTitle": "TaVyro | Fractional CHRO Switzerland",
     "ogDescription": "CHRO-as-a-Service for Swiss SMEs: HR support for executive teams, executive sparring, HR strategy & implementation."
   },
@@ -14,7 +14,7 @@
     "cta": "Book consultation"
   },
   "Hero": {
-    "headline": "Real growth starts from within.",
+    "headline": "Fractional CHRO for Swiss SMEs",
     "subheadline": "TaVyro supports CEOs, executive teams and boards as <strong>Fractional CHRO / Strategic People Partner</strong> – independent, hands-on and with measurable impact.",
     "ctaPrimary": "Book consultation",
     "ctaSecondary": "View services"
@@ -40,7 +40,7 @@
   },
   "TargetAudience": {
     "title": "Who we serve",
-    "subtitle": "For organizations looking to strategically strengthen People & Organization – <strong>without</strong> a full-time CHRO role.",
+    "subtitle": "For organizations that want to strengthen People & Organization strategically – <strong>without</strong> a full-time CHRO.",
     "items": {
       "0": "SMEs & family businesses",
       "1": "PE portfolio companies",
@@ -50,7 +50,7 @@
     }
   },
   "Services": {
-    "title": "Services",
+    "title": "Services for CEOs, Executive Teams and Boards",
     "items": {
       "0": {
         "title": "Fractional CHRO / Strategic People Partner",
@@ -210,6 +210,30 @@
       "8": {
         "question": "What does Fractional CHRO mean?",
         "answer": "A Fractional CHRO is a strategic HR leadership function on a mandate or part-time basis. Companies gain CHRO competence at C-level without filling a full-time position. A Fractional CHRO works closely with the executive team, takes responsibility for people and organizational topics and strengthens structure, decision quality and implementation power, while remaining external and independent. TaVyro integrates into your organization, understands culture, employees, dynamics and decision paths and implements effective solutions together with you. This approach is often also understood as CHRO as a Service, external HR leadership or strategic HR consulting for the executive team."
+      },
+      "9": {
+        "question": "How much does a Fractional CHRO cost in Switzerland?",
+        "answer": "Pricing depends on scope, duration and complexity. TaVyro works with clear models and transparent service boundaries to provide planning security and measurable impact."
+      },
+      "10": {
+        "question": "Which companies benefit most from a Fractional CHRO?",
+        "answer": "Especially SMEs, family businesses, PE portfolio companies and scale-ups in growth, change or transition phases that need strategic HR leadership without hiring a full-time CHRO."
+      },
+      "11": {
+        "question": "What is the difference between HR consulting and a Fractional CHRO?",
+        "answer": "HR consulting is often project-based and selective. A Fractional CHRO takes ongoing leadership responsibility, works closely with the executive team and drives priorities, execution and governance holistically."
+      },
+      "12": {
+        "question": "How quickly can TaVyro start?",
+        "answer": "Typically on short notice after the initial consultation and scope definition. Engagement starts with a structured onboarding to move priority topics into execution quickly and effectively."
+      },
+      "13": {
+        "question": "Is Executive Advisory & Sparring available without a retainer?",
+        "answer": "Yes. Clearly scoped topics can be handled on an hourly basis or in defined packages. For sustainable impact, a continuous setup is often recommended."
+      },
+      "14": {
+        "question": "Does TaVyro support reorganization and sensitive people cases?",
+        "answer": "Yes. TaVyro supports reorganization, sensitive people cases and conflict situations with legally sound execution, clear communication and consistent leadership-level implementation."
       }
     },
     "contactTitle": "Contact",

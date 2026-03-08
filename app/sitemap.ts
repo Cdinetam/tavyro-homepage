@@ -1,13 +1,16 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
-const ROUTE_PATHS = ["", "datenschutz", "impressum", "erstgespraech-buchen"];
+const LOCALE_ROUTE_PATHS: Record<(typeof siteConfig.locales)[number], string[]> = {
+  de: ["", "datenschutz", "impressum", "erstgespraech-buchen", "fractional-chro-schweiz"],
+  en: ["", "datenschutz", "impressum", "erstgespraech-buchen", "fractional-chro-switzerland"],
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const localizedRoutes = siteConfig.locales.flatMap((locale) =>
-    ROUTE_PATHS.map((path) => ({
+    LOCALE_ROUTE_PATHS[locale].map((path) => ({
       url: `${siteConfig.siteUrl}/${locale}${path ? `/${path}` : ""}`,
       lastModified: now,
       changeFrequency: path === "" ? "weekly" : ("monthly" as const),
