@@ -34,6 +34,9 @@ export default function About() {
               <p className="text-lg text-tavyro-secondary-500 mt-3">
                 {t("advisorNetwork")}
               </p>
+              <p className="text-lg text-tavyro-secondary-500 mt-3">
+                {t("aiFocus")}
+              </p>
             </div>
 
             <div className="bg-tavyro-surface rounded-lg border border-tavyro-border overflow-hidden">

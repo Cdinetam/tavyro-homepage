@@ -36,7 +36,8 @@
       "1": "Minimize HR and compliance risks",
       "2": "Improve time-to-hire and retention",
       "3": "Professionalize structures, processes and HR systems",
-      "4": "Sustainably strengthen culture and collaboration"
+      "4": "Sustainably strengthen culture and collaboration",
+      "5": "Use People Analytics and selected AI applications to improve decision quality and HR effectiveness."
     }
   },
   "TargetAudience": {
@@ -65,12 +66,12 @@
       },
       "1": {
         "title": "Organization & Transformation",
-        "description": "From analysis to implementation – pragmatic, measurable, tailored to your organization:",
+        "description": "HR digitalization, People Analytics and practical AI use cases in HR, from assessment to implementation.",
         "features": {
-          "0": "Operating model, roles/RACI, HR process blueprint",
-          "1": "Reorganizations, change and communication packages",
-          "2": "Policies and regulations, legally sound implementation",
-          "3": "HRIS, People Analytics and AI use cases in HR"
+          "0": "Operating model, roles and RACI",
+          "1": "Reorganizations, change and communication",
+          "2": "Policies, regulations and legally compliant implementation",
+          "3": "HR digitalization, HRIS, People Analytics and pragmatic AI applications"
         }
       },
       "2": {
@@ -134,6 +135,7 @@
     "description": "TaVyro is a <strong>boutique advisory based in Zurich</strong> for CEOs, executive teams and boards. The focus is on leadership, organization and HR governance as well as the pragmatic development of people and HR structures – from assessment through prioritization to implementation in clear, effective steps.",
     "leadAdvisor": "Lead Advisor: <strong>Tam Nguyen</strong> with over 20 years of experience as CHRO and HR executive in international and Swiss companies.",
     "advisorNetwork": "TaVyro complements engagements, when needed, with a proven network of senior advisors and subject matter experts; overall accountability and steering remain with TaVyro.",
+    "aiFocus": "Particular focus on translating AI and digital HR trends into pragmatic, business-relevant people solutions for Swiss SMEs and scale-ups.",
     "qualificationsTitle": "Education & Qualifications",
     "qualifications": {
       "0": "Work & Organizational Psychology (lic. phil./MSc)",

@@ -35,7 +35,8 @@
       "1": "HR- und Compliance-Risiken minimieren",
       "2": "Time-to-Hire und Retention verbessern",
       "3": "Strukturen, Prozesse und HR-Systeme professionalisieren",
-      "4": "Kultur und Zusammenarbeit nachhaltig stärken"
+      "4": "Kultur und Zusammenarbeit nachhaltig stärken",
+      "5": "People Analytics und ausgewählte KI-Anwendungen gezielt nutzen, um Entscheidungsqualität und HR-Wirksamkeit zu erhöhen."
     }
   },
   "TargetAudience": {
@@ -64,12 +65,12 @@
       },
       "1": {
         "title": "Organisation & Transformation",
-        "description": "Analyse bis Umsetzung – pragmatisch, messbar, passend zur Organisation:",
+        "description": "HR-Digitalisierung, People Analytics und praxisnahe KI-Use-Cases im HR – von der Standortbestimmung bis zur Umsetzung.",
         "features": {
-          "0": "Operating Model, Rollen/RACI, HR-Prozess-Blueprint",
-          "1": "Reorganisationen, Change- und Kommunikationspakete",
-          "2": "Policies/Reglemente, arbeitsrechtlich saubere Umsetzung",
-          "3": "HRIS, People Analytics und KI-Use-Cases im HR"
+          "0": "Operating Model, Rollen und RACI",
+          "1": "Reorganisationen, Change und Kommunikation",
+          "2": "Policies, Reglemente und arbeitsrechtlich saubere Umsetzung",
+          "3": "HR Digitalisierung, HRIS, People Analytics und pragmatische KI Anwendungen"
         }
       },
       "2": {
@@ -133,6 +134,7 @@
     "description": "TaVyro ist ein <strong>Boutique Advisory mit Sitz in Zürich</strong> für CEOs, Geschäftsleitungen und Verwaltungsräte. Der Fokus liegt auf Führung, Organisation und HR-Governance sowie auf der pragmatischen Weiterentwicklung von People- und HR-Strukturen – von der Standortbestimmung über die Priorisierung bis zur Umsetzung in klaren, wirksamen Schritten.",
     "leadAdvisor": "Lead Advisor: <strong>Tam Nguyen</strong> mit über 20 Jahren Erfahrung als CHRO und HR-Führungskraft in internationalen und Schweizer Unternehmen.",
     "advisorNetwork": "TaVyro ergänzt Mandate bei Bedarf mit einem erprobten Netzwerk von Senior Advisors und Fachexperten, die Gesamtverantwortung und Steuerung bleiben bei TaVyro.",
+    "aiFocus": "Besonderer Fokus liegt darauf, KI- und digitale HR-Trends in pragmatische, geschäftsrelevante People-Lösungen für Schweizer KMU und Scale-ups zu übersetzen.",
     "qualificationsTitle": "Ausbildungen & Qualifikationen",
     "qualifications": {
       "0": "Arbeits- und Organisationspsychologie (lic. phil./MSc)",

@@ -9,6 +9,7 @@ export default function Impact() {
     t("items.2"),
     t("items.3"),
     t("items.4"),
+    t("items.5"),
   ];
 
   return (
