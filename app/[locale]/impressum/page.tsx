@@ -60,7 +60,7 @@ export default function Impressum() {
                     TaVyro GmbH
                   </p>
                   <p>Albisriederstrasse 248</p>
-                  <p>CH-8047 Zürich</p>
+                  <p>CH-8047 Zurich</p>
                   <p>Schweiz</p>
                 </div>
               </div>

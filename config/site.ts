@@ -9,7 +9,7 @@ export const siteConfig = {
   } as const,
   description: {
     de: "Boutique Advisory in Zürich für CEOs, Geschäftsleitungen und Verwaltungsräte. Fractional CHRO, HR Governance, Organisation und KI im HR.",
-    en: "Boutique advisory in Zurich for CEOs, executive teams, and boards. Fractional CHRO, HR governance, organization design, and AI in HR.",
+    en: "Boutique advisory in Zurich for CEOs, executive teams, and boards. Fractional CHRO Zurich, HR governance, organization design, and AI in HR.",
   } as const,
   social: {
     linkedin: "https://www.linkedin.com/company/REPLACE_WITH_TAVYRO_LINKEDIN",
@@ -19,7 +19,7 @@ export const siteConfig = {
     phone: "+41XXXXXXXXX",
   },
   address: {
-    addressLocality: "Zürich",
+    addressLocality: "Zurich",
     addressRegion: "ZH",
     addressCountry: "CH",
   },

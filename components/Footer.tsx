@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 export default function Footer() {
   const t = useTranslations("Footer");
+  const locale = useLocale();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const scrollToSection = (id: string) => {
@@ -89,7 +90,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <p className="text-white font-medium">TaVyro GmbH</p>
               <p>Albisriederstrasse 248</p>
-              <p>CH-8047 Zürich</p>
+              <p>CH-8047 Zurich</p>
               <p className="mt-4">
                 <a 
                   href="mailto:hello@tavyro.ch" 
@@ -153,6 +154,14 @@ export default function Footer() {
                 >
                   {t("offers")}
                 </a>
+              </li>
+              <li>
+                <Link
+                  href={locale === "en" ? "/fractional-chro-zurich" : "/fractional-chro-schweiz"}
+                  className="hover:text-white transition-colors"
+                >
+                  {t("fractionalChroPage")}
+                </Link>
               </li>
               <li>
                 <Link 

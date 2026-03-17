@@ -132,6 +132,7 @@
     "title": "Über TaVyro",
     "description": "TaVyro ist ein <strong>Boutique Advisory mit Sitz in Zürich</strong> für CEOs, Geschäftsleitungen und Verwaltungsräte. Der Fokus liegt auf Führung, Organisation und HR-Governance sowie auf der pragmatischen Weiterentwicklung von People- und HR-Strukturen – von der Standortbestimmung über die Priorisierung bis zur Umsetzung in klaren, wirksamen Schritten.",
     "leadAdvisor": "Lead Advisor: <strong>Tam Nguyen</strong> mit über 20 Jahren Erfahrung als CHRO und HR-Führungskraft in internationalen und Schweizer Unternehmen.",
+    "advisorNetwork": "TaVyro ergänzt Mandate bei Bedarf mit einem erprobten Netzwerk von Senior Advisors und Fachexperten, die Gesamtverantwortung und Steuerung bleiben bei TaVyro.",
     "qualificationsTitle": "Ausbildungen & Qualifikationen",
     "qualifications": {
       "0": "Arbeits- und Organisationspsychologie (lic. phil./MSc)",
@@ -242,6 +243,7 @@
     "services": "Leistungen",
     "offers": "Angebote",
     "aboutTavyro": "Über TaVyro",
+    "fractionalChroPage": "Fractional CHRO Schweiz",
     "bookCall": "Erstgespräch buchen",
     "legalTitle": "Rechtliches",
     "impressum": "Impressum",

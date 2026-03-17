@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "title": "Fractional CHRO Switzerland | HR Advisory for CEOs & Executive Teams | TaVyro",
+    "title": "Fractional CHRO Zurich & Switzerland | HR Advisory for CEOs & Executive Teams | TaVyro",
     "titleTemplate": "{title} | TaVyro",
-    "description": "Boutique advisory in Zurich for CEOs, executive teams and boards: Fractional CHRO, HR governance, organization design and executive advisory & sparring.",
+    "description": "Boutique advisory in Zurich for CEOs, executive teams and boards: Fractional CHRO Zurich, HR governance, organization design and executive advisory & sparring.",
     "ogTitle": "TaVyro | Fractional CHRO Switzerland",
     "ogDescription": "CHRO-as-a-Service for Swiss SMEs: HR support for executive teams, executive sparring, HR strategy & implementation."
   },
@@ -17,7 +17,8 @@
     "headline": "Fractional CHRO for Swiss SMEs",
     "subheadline": "TaVyro supports CEOs, executive teams and boards as <strong>Fractional CHRO / Strategic People Partner</strong> – independent, hands-on and with measurable impact.",
     "ctaPrimary": "Book consultation",
-    "ctaSecondary": "View services"
+    "ctaSecondary": "View services",
+    "seoLink": "Looking for a Fractional CHRO in Zurich? <link>Learn more</link>"
   },
   "TrustAnchors": {
     "items": {
@@ -132,6 +133,7 @@
     "title": "About TaVyro",
     "description": "TaVyro is a <strong>boutique advisory based in Zurich</strong> for CEOs, executive teams and boards. The focus is on leadership, organization and HR governance as well as the pragmatic development of people and HR structures – from assessment through prioritization to implementation in clear, effective steps.",
     "leadAdvisor": "Lead Advisor: <strong>Tam Nguyen</strong> with over 20 years of experience as CHRO and HR executive in international and Swiss companies.",
+    "advisorNetwork": "TaVyro complements engagements, when needed, with a proven network of senior advisors and subject matter experts; overall accountability and steering remain with TaVyro.",
     "qualificationsTitle": "Education & Qualifications",
     "qualifications": {
       "0": "Work & Organizational Psychology (lic. phil./MSc)",
@@ -242,6 +244,7 @@
     "services": "Services",
     "offers": "Plans",
     "aboutTavyro": "About TaVyro",
+    "fractionalChroPage": "Fractional CHRO Zurich",
     "bookCall": "Book consultation",
     "legalTitle": "Legal",
     "impressum": "Legal Notice",

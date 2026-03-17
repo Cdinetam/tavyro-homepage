@@ -1,10 +1,11 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 export default function Hero() {
   const t = useTranslations("Hero");
+  const locale = useLocale();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -52,6 +53,20 @@ export default function Hero() {
               {t("ctaSecondary")}
             </button>
           </div>
+          {locale === "en" && (
+            <p className="mt-6 text-sm md:text-base text-white/90 drop-shadow-lg">
+              {t.rich("seoLink", {
+                link: (chunks) => (
+                  <Link
+                    href="/fractional-chro-zurich"
+                    className="underline underline-offset-4 hover:text-white"
+                  >
+                    {chunks}
+                  </Link>
+                ),
+              })}
+            </p>
+          )}
         </div>
       </div>
     </section>

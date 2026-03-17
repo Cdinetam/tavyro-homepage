@@ -25,6 +25,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("title"),
     description: siteConfig.description[safeLocale] ?? t("description"),
+    keywords:
+      safeLocale === "en"
+        ? [
+            "fractional chro zurich",
+            "fractional chro switzerland",
+            "interim chro zurich",
+            "hr advisory zurich",
+            "chro as a service switzerland",
+          ]
+        : undefined,
     alternates: {
       canonical: getCanonical(safeLocale),
       languages: getLanguageAlternates(),

@@ -61,7 +61,7 @@ export default function Datenschutz() {
                     <p className="text-tavyro-text2 leading-relaxed">
                       <strong className="text-tavyro-text">TaVyro GmbH</strong>
                       <br />
-                      Albisriederstrasse 248, CH-8047 Zürich, Schweiz
+                      Albisriederstrasse 248, CH-8047 Zurich, Schweiz
                       <br />
                       E-Mail:{" "}
                       <a
