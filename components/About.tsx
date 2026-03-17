@@ -31,7 +31,7 @@ export default function About() {
                   strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
                 })}
               </p>
-              <p className="text-base text-tavyro-text2 mt-3">
+              <p className="text-lg text-tavyro-secondary-500 mt-3">
                 {t("advisorNetwork")}
               </p>
             </div>
