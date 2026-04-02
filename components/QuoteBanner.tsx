@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 
 export default function QuoteBanner() {
@@ -8,7 +8,16 @@ export default function QuoteBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
 
-  const testimonialKeys = ["0", "1", "2", "3", "4"] as const;
+  const testimonialKeys = useMemo(() => ["0", "1", "2", "3", "4"] as const, []);
+  const total = testimonialKeys.length;
+
+  const goNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % total);
+  }, [total]);
+
+  const goPrev = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + total) % total);
+  }, [total]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -22,7 +31,7 @@ export default function QuoteBanner() {
 
     if (!mediaQuery.matches) {
       const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % testimonialKeys.length);
+        goNext();
       }, 10000);
 
       return () => {
@@ -34,7 +43,7 @@ export default function QuoteBanner() {
     return () => {
       mediaQuery.removeEventListener("change", handleChange);
     };
-  }, []);
+  }, [goNext]);
 
   return (
     <div
@@ -71,6 +80,25 @@ export default function QuoteBanner() {
             </div>
           );
         })}
+      </div>
+
+      <div className="flex items-center justify-center gap-3">
+        <button
+          type="button"
+          onClick={goPrev}
+          className="rounded-md border border-tavyro-border bg-white px-3 py-1.5 text-sm text-tavyro-text2 hover:text-tavyro-text hover:border-tavyro-brand-400 transition-colors"
+          aria-label="Previous testimonial"
+        >
+          Prev
+        </button>
+        <button
+          type="button"
+          onClick={goNext}
+          className="rounded-md border border-tavyro-border bg-white px-3 py-1.5 text-sm text-tavyro-text2 hover:text-tavyro-text hover:border-tavyro-brand-400 transition-colors"
+          aria-label="Next testimonial"
+        >
+          Next
+        </button>
       </div>
     </div>
   );
