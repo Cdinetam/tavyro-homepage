@@ -31,6 +31,7 @@
   "Impact": {
     "title": "What we achieve",
     "subtitle": "We strengthen your organization where people, culture and strategy converge.",
+    "clarityNote": "Unclear starting points rarely lead to good decisions. In such cases, we first align direction at executive level before moving into operational steps.",
     "items": {
       "0": "Enhance leadership quality and decision-making",
       "1": "Minimize HR and compliance risks",
@@ -66,7 +67,7 @@
       },
       "1": {
         "title": "Organization & Transformation",
-        "description": "HR digitalization, People Analytics and practical AI use cases in HR, from assessment to implementation.",
+        "description": "We create clarity in organization, roles, processes and execution.",
         "features": {
           "0": "Operating model, roles and RACI",
           "1": "Reorganizations, change and communication",
@@ -87,7 +88,7 @@
       },
       "3": {
         "title": "Add-on: Employee Care Line",
-        "description": "The Employee Care Line is a confidential support service for employees within the organization. It serves as a neutral point of contact for orientation and relief and is provided by TaVyro. No individual cases are reported back to the company; feedback is provided exclusively in anonymized and aggregated form. Even as a standalone offering, the Employee Care Line creates impact because employees receive a discreet, professional space for conversation – as a signal of appreciation, psychological safety and active care."
+        "description": "The Employee Care Line is a confidential support service for employees within the organization. It serves as a neutral point of contact for orientation and relief and is provided by TaVyro. No individual cases are reported back to the company; feedback is provided exclusively in anonymized and aggregated form.\n\nEven as a standalone offering, the Employee Care Line creates impact because employees receive a discreet, professional space for conversation – as a signal of appreciation, psychological safety and active care."
       }
     }
   },
@@ -134,8 +135,7 @@
     "title": "About TaVyro",
     "description": "TaVyro is a <strong>boutique advisory based in Zurich</strong> for CEOs, executive teams and boards. The focus is on leadership, organization and HR governance as well as the pragmatic development of people and HR structures – from assessment through prioritization to implementation in clear, effective steps.",
     "leadAdvisor": "Lead Advisor: <strong>Tam Nguyen</strong> with over 20 years of experience as CHRO and HR executive in international and Swiss companies.",
-    "advisorNetwork": "TaVyro complements engagements, when needed, with a proven network of senior advisors and subject matter experts; overall accountability and steering remain with TaVyro.",
-    "aiFocus": "Particular focus on translating AI and digital HR trends into pragmatic, business-relevant people solutions for Swiss SMEs and scale-ups.",
+    "accountabilityBlock": "TaVyro takes responsibility at executive team level. When needed, we selectively bring in senior experts; overall accountability remains with TaVyro. We focus on pragmatic solutions for leadership and organization; digital and AI-based approaches are used where they create real value.",
     "qualificationsTitle": "Education & Qualifications",
     "qualifications": {
       "0": "Work & Organizational Psychology (lic. phil./MSc)",

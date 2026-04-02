@@ -21,22 +21,21 @@ export default function About() {
 
           <div className="space-y-8">
             <div className="text-center">
-              <p className="text-xl text-tavyro-text2 mb-4">
-                {t.rich("description", {
-                  strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
-                })}
-              </p>
-              <p className="text-lg text-tavyro-secondary-500">
-                {t.rich("leadAdvisor", {
-                  strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
-                })}
-              </p>
-              <p className="text-lg text-tavyro-secondary-500 mt-3">
-                {t("advisorNetwork")}
-              </p>
-              <p className="text-lg text-tavyro-secondary-500 mt-3">
-                {t("aiFocus")}
-              </p>
+              <div className="max-w-3xl mx-auto space-y-4 md:space-y-5">
+                <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
+                  {t.rich("description", {
+                    strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
+                  })}
+                </p>
+                <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
+                  {t.rich("leadAdvisor", {
+                    strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
+                  })}
+                </p>
+                <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
+                  {t("accountabilityBlock")}
+                </p>
+              </div>
             </div>
 
             <div className="bg-tavyro-surface rounded-lg border border-tavyro-border overflow-hidden">

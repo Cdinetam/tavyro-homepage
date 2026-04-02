@@ -20,9 +20,14 @@ export default function Impact() {
             {t("title")}
           </h2>
           
-          <p className="text-xl text-tavyro-text2 mb-12">
-            {t("subtitle")}
-          </p>
+          <div className="mb-12 space-y-4 md:space-y-5">
+            <p className="text-xl text-tavyro-text2 leading-relaxed">
+              {t("subtitle")}
+            </p>
+            <p className="text-xl text-tavyro-text2 leading-relaxed">
+              {t("clarityNote")}
+            </p>
+          </div>
 
           <div className="p-8 md:p-10 bg-white rounded-xl border-2 border-tavyro-border shadow-md">
             <ul className="space-y-4 text-left">

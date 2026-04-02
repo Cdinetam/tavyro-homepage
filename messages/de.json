@@ -30,6 +30,7 @@
   "Impact": {
     "title": "Was wir bewirken",
     "subtitle": "Wir stärken Ihr Unternehmen dort, wo Menschen, Kultur und Strategie zusammenkommen.",
+    "clarityNote": "Unklare Ausgangslagen führen selten zu guten Entscheidungen. In solchen Fällen wird die Richtung zunächst auf Ebene Geschäftsleitung geklärt, bevor operative Schritte folgen.",
     "items": {
       "0": "Führungsqualität und Entscheidungsstärke erhöhen",
       "1": "HR- und Compliance-Risiken minimieren",
@@ -65,7 +66,7 @@
       },
       "1": {
         "title": "Organisation & Transformation",
-        "description": "HR-Digitalisierung, People Analytics und praxisnahe KI-Use-Cases im HR – von der Standortbestimmung bis zur Umsetzung.",
+        "description": "Wir schaffen Klarheit in Organisation, Rollen, Prozessen und Umsetzung.",
         "features": {
           "0": "Operating Model, Rollen und RACI",
           "1": "Reorganisationen, Change und Kommunikation",
@@ -86,7 +87,7 @@
       },
       "3": {
         "title": "Add-on: Employee Care Line",
-        "description": "Die Employee Care Line ist ein vertrauliches Gesprächsangebot für Mitarbeitende im Unternehmen. Sie dient als neutrale Anlaufstelle zur Orientierung und Entlastung und wird durch TaVyro durchgeführt. Es werden keine Individualfälle an das Unternehmen zurückgemeldet; Rückmeldungen erfolgen ausschliesslich in anonymisierter und aggregierter Form. Bereits als eigenständiges Angebot entfaltet die Employee Care Line Wirkung, weil Mitarbeitende ein diskretes, professionelles Gesprächsfenster erhalten, als Signal von Wertschätzung, psychologischer Sicherheit und aktiver Fürsorge."
+        "description": "Die Employee Care Line ist ein vertrauliches Gesprächsangebot für Mitarbeitende im Unternehmen. Sie dient als neutrale Anlaufstelle zur Orientierung und Entlastung und wird durch TaVyro durchgeführt. Es werden keine Individualfälle an das Unternehmen zurückgemeldet; Rückmeldungen erfolgen ausschliesslich in anonymisierter und aggregierter Form.\n\nBereits als eigenständiges Angebot entfaltet die Employee Care Line Wirkung, weil Mitarbeitende ein diskretes, professionelles Gesprächsfenster erhalten, als Signal von Wertschätzung, psychologischer Sicherheit und aktiver Fürsorge."
       }
     }
   },
@@ -133,8 +134,7 @@
     "title": "Über TaVyro",
     "description": "TaVyro ist ein <strong>Boutique Advisory mit Sitz in Zürich</strong> für CEOs, Geschäftsleitungen und Verwaltungsräte. Der Fokus liegt auf Führung, Organisation und HR-Governance sowie auf der pragmatischen Weiterentwicklung von People- und HR-Strukturen – von der Standortbestimmung über die Priorisierung bis zur Umsetzung in klaren, wirksamen Schritten.",
     "leadAdvisor": "Lead Advisor: <strong>Tam Nguyen</strong> mit über 20 Jahren Erfahrung als CHRO und HR-Führungskraft in internationalen und Schweizer Unternehmen.",
-    "advisorNetwork": "TaVyro ergänzt Mandate bei Bedarf mit einem erprobten Netzwerk von Senior Advisors und Fachexperten, die Gesamtverantwortung und Steuerung bleiben bei TaVyro.",
-    "aiFocus": "Besonderer Fokus liegt darauf, KI- und digitale HR-Trends in pragmatische, geschäftsrelevante People-Lösungen für Schweizer KMU und Scale-ups zu übersetzen.",
+    "accountabilityBlock": "TaVyro übernimmt die Verantwortung auf Geschäftsleitungsebene. Bei Bedarf werden gezielt Senior Experten beigezogen, die Gesamtverantwortung bleibt bei TaVyro. Fokus auf pragmatische Lösungen für Führung und Organisation, digitale und KI-basierte Ansätze werden dort eingesetzt, wo sie echten Mehrwert schaffen.",
     "qualificationsTitle": "Ausbildungen & Qualifikationen",
     "qualifications": {
       "0": "Arbeits- und Organisationspsychologie (lic. phil./MSc)",

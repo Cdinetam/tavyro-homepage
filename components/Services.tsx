@@ -37,9 +37,11 @@ export default function Services() {
                     </h3>
                   </div>
                   <div className="p-6 md:p-8 flex flex-col flex-grow">
-                    <p className="text-tavyro-text2 mb-4 leading-relaxed text-sm md:text-base">
-                      {description}
-                    </p>
+                    {description.trim().length > 0 && (
+                      <p className="text-tavyro-text2 mb-4 leading-relaxed text-sm md:text-base whitespace-pre-line">
+                        {description}
+                      </p>
+                    )}
                     {features.length > 0 && (
                       <ul className="list-none space-y-2 mt-auto">
                         {features.map((item, itemIndex) => (
