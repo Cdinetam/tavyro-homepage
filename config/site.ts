@@ -19,7 +19,10 @@ export const siteConfig = {
     phone: "+41XXXXXXXXX",
   },
   address: {
-    addressLocality: "Zurich",
+    addressLocality: {
+      de: "Zürich",
+      en: "Zurich",
+    },
     addressRegion: "ZH",
     addressCountry: "CH",
   },

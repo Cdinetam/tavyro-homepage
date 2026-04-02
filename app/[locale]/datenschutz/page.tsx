@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { isSiteLocale } from "@/config/site";
 import { getCanonical, getLanguageAlternates } from "@/lib/seo";
-import { useTranslations } from "next-intl";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "@/i18n/navigation";
@@ -27,8 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Datenschutz() {
-  const t = useTranslations("Datenschutz");
+export default async function Datenschutz({ params }: Props) {
+  const { locale } = await params;
+  const safeLocale = isSiteLocale(locale) ? locale : "de";
+  const t = await getTranslations({ locale: safeLocale, namespace: "Datenschutz" });
 
   return (
     <>
@@ -61,7 +62,7 @@ export default function Datenschutz() {
                     <p className="text-tavyro-text2 leading-relaxed">
                       <strong className="text-tavyro-text">TaVyro GmbH</strong>
                       <br />
-                      Albisriederstrasse 248, CH-8047 Zurich, Schweiz
+                      Albisriederstrasse 248, CH-8047 {safeLocale === "de" ? "Zürich" : "Zurich"}, Schweiz
                       <br />
                       E-Mail:{" "}
                       <a

@@ -56,7 +56,7 @@ export default function StructuredData({
     ...(hasValidPhone ? { telephone: siteConfig.contact.phone } : {}),
     address: {
       "@type": "PostalAddress",
-      addressLocality: siteConfig.address.addressLocality,
+      addressLocality: siteConfig.address.addressLocality[locale],
       addressRegion: siteConfig.address.addressRegion,
       addressCountry: siteConfig.address.addressCountry,
     },

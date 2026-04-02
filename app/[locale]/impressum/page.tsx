@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { isSiteLocale } from "@/config/site";
 import { getCanonical, getLanguageAlternates } from "@/lib/seo";
-import { useTranslations } from "next-intl";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "@/i18n/navigation";
@@ -27,8 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Impressum() {
-  const t = useTranslations("Impressum");
+export default async function Impressum({ params }: Props) {
+  const { locale } = await params;
+  const safeLocale = isSiteLocale(locale) ? locale : "de";
+  const t = await getTranslations({ locale: safeLocale, namespace: "Impressum" });
 
   return (
     <>
@@ -60,7 +61,7 @@ export default function Impressum() {
                     TaVyro GmbH
                   </p>
                   <p>Albisriederstrasse 248</p>
-                  <p>CH-8047 Zurich</p>
+                  <p>CH-8047 {safeLocale === "de" ? "Zürich" : "Zurich"}</p>
                   <p>Schweiz</p>
                 </div>
               </div>
