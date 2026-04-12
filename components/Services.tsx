@@ -66,12 +66,16 @@ export default function Services() {
               );
             })}
           </div>
-          {locale === "en" && (
+          {(locale === "en" || locale === "de") && (
             <p className="mt-10 text-center text-tavyro-text2 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
               {t.rich("fractionalChroLandingTeaser", {
                 link: (chunks) => (
                   <Link
-                    href="/fractional-chro-zurich"
+                    href={
+                      locale === "en"
+                        ? "/fractional-chro-zurich"
+                        : "/fractional-chro-schweiz"
+                    }
                     className="text-tavyro-brand-700 font-medium underline underline-offset-4 hover:text-tavyro-brand-900"
                   >
                     {chunks}

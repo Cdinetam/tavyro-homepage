@@ -155,14 +155,46 @@ export default function Footer() {
                   {t("offers")}
                 </a>
               </li>
-              <li>
-                <Link
-                  href={locale === "en" ? "/fractional-chro-zurich" : "/fractional-chro-schweiz"}
-                  className="hover:text-white transition-colors"
-                >
-                  {t("fractionalChroPage")}
-                </Link>
-              </li>
+              {locale === "de" && (
+                <>
+                  <li>
+                    <Link
+                      href="/fractional-chro-schweiz"
+                      className="hover:text-white transition-colors"
+                    >
+                      {t("fractionalChroSchweiz")}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/fractional-chro-zurich"
+                      className="hover:text-white transition-colors"
+                    >
+                      {t("fractionalChroZuerich")}
+                    </Link>
+                  </li>
+                </>
+              )}
+              {locale === "en" && (
+                <>
+                  <li>
+                    <Link
+                      href="/fractional-chro-zurich"
+                      className="hover:text-white transition-colors"
+                    >
+                      {t("fractionalChroZurich")}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/fractional-chro-switzerland"
+                      className="hover:text-white transition-colors"
+                    >
+                      {t("fractionalChroSwitzerland")}
+                    </Link>
+                  </li>
+                </>
+              )}
               <li>
                 <Link 
                   href="/erstgespraech-buchen" 

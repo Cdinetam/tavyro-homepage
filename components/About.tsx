@@ -39,12 +39,11 @@ export default function About() {
                 <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
                   {t("accountabilityBlock")}
                 </p>
-                {locale === "en" && (
+                {(locale === "en" || locale === "de") && (
                   <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
                     {t.rich("fractionalChroLandingTeaser", {
                       link: (chunks) => (
-                        <Link
-                          href="/fractional-chro-zurich"
+                        <Link href="/fractional-chro-zurich"
                           className="text-tavyro-brand-700 font-medium underline underline-offset-4 hover:text-tavyro-brand-900"
                         >
                           {chunks}

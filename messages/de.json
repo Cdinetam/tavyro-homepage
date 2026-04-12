@@ -17,7 +17,8 @@
     "headline": "Fractional CHRO für Schweizer KMU",
     "subheadline": "TaVyro begleitet CEOs, Geschäftsleitungen und Verwaltungsräte als <strong>Fractional CHRO / Strategic People Partner</strong> – unabhängig, umsetzungsnah und mit messbarer Wirkung.",
     "ctaPrimary": "Erstgespräch buchen",
-    "ctaSecondary": "Leistungen ansehen"
+    "ctaSecondary": "Leistungen ansehen",
+    "seoLink": "Fractional CHRO in der Schweiz oder in Zürich? <link>Mehr erfahren</link>"
   },
   "TrustAnchors": {
     "items": {
@@ -89,7 +90,8 @@
         "title": "Add-on: Employee Care Line",
         "description": "Die Employee Care Line ist ein vertrauliches Gesprächsangebot für Mitarbeitende im Unternehmen. Sie dient als neutrale Anlaufstelle zur Orientierung und Entlastung und wird durch TaVyro durchgeführt. Es werden keine Individualfälle an das Unternehmen zurückgemeldet; Rückmeldungen erfolgen ausschliesslich in anonymisierter und aggregierter Form.\n\nBereits als eigenständiges Angebot entfaltet die Employee Care Line Wirkung, weil Mitarbeitende ein diskretes, professionelles Gesprächsfenster erhalten, als Signal von Wertschätzung, psychologischer Sicherheit und aktiver Fürsorge."
       }
-    }
+    },
+    "fractionalChroLandingTeaser": "Senior HR-Führung ohne Vollzeit-CHRO: die <link>Übersicht Fractional CHRO Schweiz</link> mit typischen Situationen und Mandatslogik."
   },
   "Pricing": {
     "title": "Angebote",
@@ -141,7 +143,8 @@
       "1": "CAS Executive Management",
       "2": "CAS Digitalisierung & Künstliche Intelligenz im HRM",
       "3": "Arbeitssprache: D/E/F"
-    }
+    },
+    "fractionalChroLandingTeaser": "Fokus Zürich und Umgebung: die <link>Seite Fractional CHRO Zürich</link> mit Umfang, Abgrenzung und FAQ."
   },
   "QuoteBanner": {
     "testimonials": {
@@ -245,7 +248,8 @@
     "services": "Leistungen",
     "offers": "Angebote",
     "aboutTavyro": "Über TaVyro",
-    "fractionalChroPage": "Fractional CHRO Schweiz",
+    "fractionalChroSchweiz": "Fractional CHRO Schweiz",
+    "fractionalChroZuerich": "Fractional CHRO Zürich",
     "bookCall": "Erstgespräch buchen",
     "legalTitle": "Rechtliches",
     "impressum": "Impressum",
@@ -348,5 +352,245 @@
     "jurisdictionContent": "Es gilt ausschliesslich schweizerisches Recht. Gerichtsstand ist Zürich, Schweiz.",
     "changeNote": "Änderungen und Irrtümer vorbehalten.",
     "backHome": "Zurück zur Startseite"
+  },
+  "FractionalChroZurichPage": {
+    "meta": {
+      "titleAbsolute": "Fractional CHRO Zürich | Fractional CHRO Schweiz | TaVyro",
+      "description": "Fractional CHRO in Zürich für KMU, Gründerinnen, Geschäftsleitungen und Verwaltungsräte. TaVyro liefert strategische HR-Führung, Governance und organisatorische Klarheit ohne Vollzeit-CHRO."
+    },
+    "hero": {
+      "h1": "Fractional CHRO Zürich",
+      "supporting": "TaVyro ist eine Boutique-Advisory mit Sitz in Zürich. Wir liefern strategische HR- und Organisationsführung für Schweizer KMU, Gründerinnen, Geschäftsleitungen und Verwaltungsräte—eingebunden, strategisch und umsetzungsnah—ohne eine Vollzeitfunktion als Chief Human Resources Officer aufzubauen.",
+      "ctaPrimary": "Erstgespräch vereinbaren",
+      "ctaSecondary": "So arbeitet TaVyro"
+    },
+    "why": {
+      "title": "Warum Unternehmen in Zürich und der Schweiz einen Fractional CHRO wählen",
+      "p1": "Zürich steht für ein anspruchsvolles KMU-Umfeld: internationaler Wettbewerb, angespannter Talentmarkt und Verwaltungsräte, die klare Governance und belastbare Umsetzung erwarten. Viele Organisationen wachsen aus informellen People-Praktiken heraus, bevor sich eine Vollzeit-CHRO rechnet—oder sie brauchen in bestimmten Phasen Seniorität am Führungstisch ohne Dauerbesetzung.",
+      "p2": "Ein Fractional CHRO bringt C-Level-Perspektive zu Kultur, Organisation und Personal. Im Zentrum stehen Klarheit auf Führungsebene, disziplinierte Umsetzung und Entlastung von CEO und Geschäftsleitung, wenn People-Themen Strategie, Kunden und Operatives verdrängen."
+    },
+    "situations": {
+      "title": "Typische Situationen mit Mehrwert",
+      "items": {
+        "0": "Schnelles Wachstum, neue Märkte oder M&A mit steigender Führungs- und Organisationskomplexität",
+        "1": "Keine senior HR-Führung am Tisch—oder eine Lücke zwischen tauglichem People/OPS und Erwartungen der Geschäftsleitung",
+        "2": "CEO oder CFO trägt People-Themen, die auf Führungsebene verankert werden sollten",
+        "3": "VR oder Eigentümerinnen wünschen eine unabhängige Senior-Sicht zu Kultur, Risiko, Nachfolge oder Organisationsgesundheit",
+        "4": "Transformation, Reorganisation oder Reibung im Führungsteam, die erfahrene, ruhige Urteilsbildung braucht",
+        "5": "Stärkere Governance, Compliance und Umsetzungsdisziplin—ohne sofort eine permanente Executive-Stelle zu besetzen"
+      }
+    },
+    "what": {
+      "title": "Was TaVyro konkret leistet",
+      "intro": "TaVyro arbeitet als TaVyro—mit klarer Verantwortung gegenüber Ihrer Geschäftsleitung, nicht als wechselndes Team von Junior-Beraterinnen. Typischer Umfang:",
+      "items": {
+        "0": "People-Strategie im Einklang mit Geschäftsprioritäten und VR-Erwartungen",
+        "1": "Organisationsdesign: Rollen, Struktur, Führungsrhythmus und Entscheidungsrechte",
+        "2": "Executive- und Führungssparring—diskret, direkt, passend für Schweizer KMU",
+        "3": "HR-Governance, arbeitsrechtssensible Bewertung und Eskalationsunterstützung wo nötig",
+        "4": "Entscheidungsunterstützung zu Executive-HR (Nachfolgedenken, Vergütungsrahmen, sensible Fälle)",
+        "5": "Transformation und Umsetzung—hands-on wo Wirkung entstehen muss, nicht Folien ohne Ownership"
+      },
+      "outro": "Wir verbinden Ausrichtung mit pragmatischer Umsetzung. Digitale Werkzeuge oder Analytics setzen wir dort ein, wo sie Entscheidungsqualität verbessern—ohne People-Führung zum IT-Projekt zu machen."
+    },
+    "different": {
+      "title": "Warum TaVyro anders ist",
+      "intro": "TaVyro ist keine klassische HR-Beratung, kein Staffing und kein reiner Interims-Ersatz für eine Vakanz. Das Modell ist eine tief eingebundene Senior-Partnerschaft für ein definiertes Mandat, mit skalierbarer Intensität und Kontinuität im Urteil.",
+      "vsConsultants": {
+        "title": "Im Vergleich zu HR-Beratung",
+        "body": "Beratung optimiert oft Deliverables und Projektphasen. TaVyro optimiert Führungswirkung: Priorisierung mit der Geschäftsleitung, Governance unter Druck und Umsetzung, die in Ihrer Organisation weiterlaufen kann."
+      },
+      "vsInterim": {
+        "title": "Im Vergleich zu Interim HR",
+        "body": "Interim fokussiert häufig Betriebsstabilität oder Vakanz. TaVyro betont strategisches Sparring, organisatorische Klarheit und selektive Umsetzung auf Führungsebene—ohne Operatives zu vernachlässigen, wo es brennt."
+      },
+      "vsFullTime": {
+        "title": "Im Vergleich zu einer Vollzeit-CHRO",
+        "body": "Eine permanente CHRO ist bei manchen Profilen richtig. Wo Timing, Kosten oder Reifegrad das nicht tragen, liefert ein Fractional-Modell Seniorität mit einem Footprint, der zur echten Bedürfnislage passt."
+      },
+      "vsLargeFirms": {
+        "title": "Im Vergleich zu grossen Häusern mit wechselnden Teams",
+        "body": "Sie arbeiten mit einer Boutique: durchgehende Senior-Ansprechperson, diskrete Bearbeitung sensibler Themen, Rat für Schweizer KMU—keine generischen Playbooks und kein ständig wechselndes Team."
+      }
+    },
+    "mandate": {
+      "title": "So läuft ein Mandat typischerweise",
+      "p1": "Wir starten aus Ihrer Situation und Ihren Zielen—nicht aus einem starren Katalog. Die Zusammenarbeit ist meist teilzeitintegriert über Wochen und Monate: Rhythmus mit CEO und Geschäftsleitung, klare Prioritäten und Unterstützung dort, wo der Engpass sitzt.",
+      "p2": "Die Intensität skaliert mit dem Bedarf—höher zu Beginn einer Transformation, leichter in der Stabilisierung. Ziel ist Kontinuität im Urteil und in der Beziehung, nicht lose Einzelaktionen."
+    },
+    "local": {
+      "title": "Zürich und die Schweiz",
+      "p1": "TaVyro ist in Zürich verwurzelt und arbeitet mit KMU, Gründerinnen, Geschäftsleitungen und Verwaltungsräten in der ganzen Schweiz. Die Zusammenarbeit ist oft hybrid; inhaltlich orientieren wir uns an lokaler Praxis, Sprache und Governance-Erwartungen.",
+      "p2": "Für die schweizweite Darstellung oder die englischsprachige Zurich-Seite nutzen Sie die Verweise unten.",
+      "link1Label": "Fractional CHRO Schweiz (DE)",
+      "link1Path": "/fractional-chro-schweiz",
+      "link1Locale": "",
+      "link2Label": "Fractional CHRO Zurich (EN)",
+      "link2Path": "/fractional-chro-zurich",
+      "link2Locale": "en"
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "items": {
+        "0": {
+          "q": "Was ist ein Fractional CHRO?",
+          "a": "Ein Fractional CHRO liefert teilzeitig HR- und Organisationsführung auf Executive-Level—eingebunden bei CEO und Führungsteam—ohne Vollzeit-CHRO auf Lohn. Es geht um Ausrichtung, Governance und pragmatische Umsetzung dort, wo es zählt."
+        },
+        "1": {
+          "q": "Eignet sich das für KMU?",
+          "a": "Ja. Viele Schweizer KMU erreichen einen Punkt, an dem People, Kultur und Organisation strategisch bremst, eine Vollzeit-CHRO aber (noch) nicht sinnvoll ist. Das Fractional-Modell kalibriert Seniorität auf die reale Bedarfstiefe."
+        },
+        "2": {
+          "q": "Worin unterscheidet sich das von Interim HR?",
+          "a": "Interim steht oft für Kontinuität oder Vakanz. TaVyro als Fractional CHRO betont Sparring auf Führungsebene, organisatorische Klarheit, Governance und selektive Umsetzung—ausgerichtet auf den Führungstisch, nicht nur auf den HR-Posteingang."
+        },
+        "3": {
+          "q": "Wann braucht ein Unternehmen einen Fractional CHRO?",
+          "a": "Typische Auslöser: Wachstum, Transformation, Führungswechsel, VR-Fragen zu Kultur oder Risiko, Überlast der Geschäftsleitung mit People-Themen oder die Notwendigkeit, HR-Governance zu professionalisieren ohne sofortige Dauerbesetzung."
+        },
+        "4": {
+          "q": "Kann ein Fractional CHRO CEO und Geschäftsleitung unterstützen?",
+          "a": "Das ist Kern des Modells. TaVyro arbeitet an Priorisierung, schwierigen Entscheidungen und Alignment—diskret, mit Klarheit und Umsetzungsorientierung."
+        },
+        "5": {
+          "q": "Arbeiten Sie nur in Zürich oder in der ganzen Schweiz?",
+          "a": "TaVyro ist in Zürich angesiedelt und betreut Mandanten in der ganzen Schweiz—vor Ort, wenn es hilft, remote, wenn es effizient ist, jeweils mit Schweizer Kontext."
+        },
+        "6": {
+          "q": "Ist TaVyro eine Personalmarke oder eine Firma?",
+          "a": "TaVyro ist die kommerzielle Marke und Vertragspartnerin. Seniorität steckt hinter TaVyro; die Verantwortung gegenüber Kundinnen liegt bei der Gesellschaft, nicht als losgelöstes Personalprofil."
+        },
+        "7": {
+          "q": "Wie läuft Vertraulichkeit bei sensiblen Themen?",
+          "a": "People-Themen auf Führungsebene brauchen Diskretion. Mandate werden mit klaren Grenzen, professioneller Vertraulichkeit und pragmatischen Eskalationspfaden strukturiert."
+        }
+      }
+    },
+    "final": {
+      "title": "Ein ruhiger nächster Schritt",
+      "body": "Wenn die beschriebenen Situationen passen, ist ein Erstgespräch der einfachste Weg, Fit, Timing und Umfang zu klären—ohne Druck, mit fokussierter Einschätzung.",
+      "cta": "Erstgespräch vereinbaren",
+      "homeLink": "Zurück zur Startseite"
+    }
+  },
+  "FractionalChroSchweizPage": {
+    "meta": {
+      "titleAbsolute": "Fractional CHRO Schweiz | Fractional CHRO Zürich | TaVyro",
+      "description": "Fractional CHRO in der Schweiz für KMU, Gründerinnen, Geschäftsleitungen und Verwaltungsräte. TaVyro bietet strategische HR-Führung, Governance und Klarheit in Organisation und Führung—mit Zürich als Basis und Mandaten schweizweit."
+    },
+    "hero": {
+      "h1": "Fractional CHRO Schweiz",
+      "supporting": "TaVyro ist eine Boutique-Advisory mit Sitz in Zürich und begleitet KMU, Gründerinnen, Geschäftsleitungen und Verwaltungsräte in der ganzen Schweiz. Sie erhalten strategische HR- und Organisationsführung auf Executive-Level—diskret, belastbar und umsetzungsnah—ohne Vollzeit-CHRO.",
+      "ctaPrimary": "Erstgespräch vereinbaren",
+      "ctaSecondary": "So arbeitet TaVyro"
+    },
+    "why": {
+      "title": "Warum Schweizer Unternehmen einen Fractional CHRO wählen",
+      "p1": "In der Schweiz treffen ambitionierte KMU auf knappe Talente, steigende Governance-Erwartungen und Wachstumsphasen, die informelle People-Strukturen überfordern. Viele Führungsteams brauchen C-Level-Urteil zu Kultur, Organisation und HR-Risiko, bevor sich eine permanente CHRO rechnet—oder sie haben eine starke HR-Operativ, aber kein Sparring auf Geschäftsleitungsebene.",
+      "p2": "Ein Fractional CHRO richtet People-Strategie an Geschäftsprioritäten aus, schafft Klarheit am Führungstisch und unterstützt VR und CEO bei sensiblen Themen—ohne Overhead einer Vollzeit-Executive-Rolle."
+    },
+    "situations": {
+      "title": "Typische Situationen mit Mehrwert",
+      "items": {
+        "0": "Nationales oder internationales Wachstum mit wachsender Führungs- und Organisationskomplexität",
+        "1": "Keine senior HR-Stimme in der Geschäftsleitung—oder Lücke zwischen Operativ und VR-Erwartung",
+        "2": "CEO oder CFO überlastet mit Kultur-, People- und Compliance-Themen",
+        "3": "Eigentümerinnen oder VR wünschen eine unabhängige Senior-Sicht zu Risiko, Nachfolge oder Kultur",
+        "4": "Transformation, Reorganisation oder Reibung im Führungsteam",
+        "5": "Stärkere Governance und Umsetzungsdisziplin schweizweit—ohne sofortige Dauerbesetzung als CHRO"
+      }
+    },
+    "what": {
+      "title": "Was TaVyro konkret leistet",
+      "intro": "TaVyro arbeitet als TaVyro—mit Verantwortung gegenüber Ihrer Geschäftsleitung. Typischer Umfang:",
+      "items": {
+        "0": "People-Strategie im Einklang mit Strategie, Wachstum und VR",
+        "1": "Organisationsdesign: Rollen, Struktur, Führungsrhythmus, Entscheidungsrechte",
+        "2": "Executive- und Führungssparring—diskret, direkt, für Schweizer KMU",
+        "3": "HR-Governance, arbeitsrechtssensible Bewertung, Eskalationsunterstützung",
+        "4": "Executive-HR-Entscheidungsunterstützung (Nachfolgedenken, Vergütung, sensible Fälle)",
+        "5": "Transformation und Umsetzung—hands-on wo nötig, ohne Folien ohne Ownership"
+      },
+      "outro": "Ausrichtung und pragmatische Umsetzung gehören zusammen; digitale Werkzeuge nur dort, wo sie Entscheidungen verbessern."
+    },
+    "different": {
+      "title": "Warum TaVyro anders ist",
+      "intro": "TaVyro ist keine klassische HR-Beratung, kein Staffing und kein reiner Interims-Ersatz. Das Modell ist eine eingebundene Senior-Partnerschaft mit skalierbarer Intensität und Kontinuität im Urteil.",
+      "vsConsultants": {
+        "title": "Im Vergleich zu HR-Beratung",
+        "body": "Beratung lebt oft von Deliverables und Phasen. TaVyro optimiert Führungswirkung: Priorisierung, belastbare Governance und nachhaltige Umsetzung."
+      },
+      "vsInterim": {
+        "title": "Im Vergleich zu Interim HR",
+        "body": "Interim stabilisiert oft den Betrieb. TaVyro betont strategisches Sparring, Klarheit und selektive Umsetzung auf Führungsebene."
+      },
+      "vsFullTime": {
+        "title": "Im Vergleich zu einer Vollzeit-CHRO",
+        "body": "Permanent passt zu manchen Profilen. Fractional kalibriert Seniorität auf den echten Bedarf."
+      },
+      "vsLargeFirms": {
+        "title": "Im Vergleich zu grossen Häusern",
+        "body": "Boutique: gleiche Senior-Ansprache, Diskretion, Massstab KMU—keine Standardplaybooks."
+      }
+    },
+    "mandate": {
+      "title": "So läuft ein Mandat typischerweise",
+      "p1": "Start aus Zielen und Kontext. Meist teilzeitintegriert über Wochen und Monate: Rhythmus mit CEO und Geschäftsleitung, klare Prioritäten, Fokus auf Engpässe.",
+      "p2": "Intensität skaliert mit Bedarf; Kontinuität im Urteil steht im Vordergrund."
+    },
+    "local": {
+      "title": "Schweiz und Zürich",
+      "p1": "TaVyro arbeitet schweizweit, mit Zürich als Geschäftsbasis. Zusammenarbeit hybrid: vor Ort, wenn es hilft; remote, wenn es effizient ist.",
+      "p2": "Für den Zürich-Fokus auf Deutsch oder die englischsprachige Switzerland-Seite:",
+      "link1Label": "Fractional CHRO Zürich (DE)",
+      "link1Path": "/fractional-chro-zurich",
+      "link1Locale": "",
+      "link2Label": "Fractional CHRO Switzerland (EN)",
+      "link2Path": "/fractional-chro-switzerland",
+      "link2Locale": "en"
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "items": {
+        "0": {
+          "q": "Was ist ein Fractional CHRO?",
+          "a": "Teilzeitige HR- und Organisationsführung auf Executive-Level, eingebunden bei CEO und Führungsteam—ohne Vollzeit-CHRO."
+        },
+        "1": {
+          "q": "Eignet sich das für KMU in der Schweiz?",
+          "a": "Ja. Viele KMU brauchen Seniorität am Führungstisch, bevor sich eine Vollzeitrolle rechnet."
+        },
+        "2": {
+          "q": "Worin unterscheidet sich das von Interim HR?",
+          "a": "Interim fokussiert oft Kontinuität oder Vakanz. TaVyro betont Sparring, Governance und Umsetzung auf Führungsebene."
+        },
+        "3": {
+          "q": "Wann braucht man einen Fractional CHRO?",
+          "a": "Bei Wachstum, Transformation, Führungswechseln, VR-Fragen oder Professionalisierung der HR-Governance ohne sofortige Dauerbesetzung."
+        },
+        "4": {
+          "q": "Unterstützen Sie Geschäftsleitung und CEO?",
+          "a": "Ja—Priorisierung, schwierige Entscheidungen und Alignment sind Kern."
+        },
+        "5": {
+          "q": "Arbeiten Sie in der ganzen Schweiz?",
+          "a": "Ja. Basis Zürich, Mandate schweizweit."
+        },
+        "6": {
+          "q": "TaVyro als Firma oder Personalmarke?",
+          "a": "TaVyro ist Marke und Vertragspartnerin; Verantwortung liegt bei der Gesellschaft."
+        },
+        "7": {
+          "q": "Wie läuft Vertraulichkeit?",
+          "a": "Klare Mandatsgrenzen, professionelle Vertraulichkeit, pragmatische Eskalation."
+        }
+      }
+    },
+    "final": {
+      "title": "Ein ruhiger nächster Schritt",
+      "body": "Für schweizweite oder hybride Zusammenarbeit ist das Erstgespräch der direkte Einstieg.",
+      "cta": "Erstgespräch vereinbaren",
+      "homeLink": "Zurück zur Startseite"
+    }
   }
 }

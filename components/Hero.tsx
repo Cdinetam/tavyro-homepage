@@ -53,12 +53,16 @@ export default function Hero() {
               {t("ctaSecondary")}
             </button>
           </div>
-          {locale === "en" && (
+          {(locale === "en" || locale === "de") && (
             <p className="mt-6 text-sm md:text-base text-white/90 drop-shadow-lg">
               {t.rich("seoLink", {
                 link: (chunks) => (
                   <Link
-                    href="/fractional-chro-zurich"
+                    href={
+                      locale === "en"
+                        ? "/fractional-chro-zurich"
+                        : "/fractional-chro-schweiz"
+                    }
                     className="underline underline-offset-4 hover:text-white"
                   >
                     {chunks}
