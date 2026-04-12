@@ -1,7 +1,11 @@
-import { useTranslations } from "next-intl";
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function Services() {
   const t = useTranslations("Services");
+  const locale = useLocale();
 
   const serviceKeys = ["0", "1", "2", "3"] as const;
 
@@ -62,6 +66,20 @@ export default function Services() {
               );
             })}
           </div>
+          {locale === "en" && (
+            <p className="mt-10 text-center text-tavyro-text2 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+              {t.rich("fractionalChroLandingTeaser", {
+                link: (chunks) => (
+                  <Link
+                    href="/fractional-chro-zurich"
+                    className="text-tavyro-brand-700 font-medium underline underline-offset-4 hover:text-tavyro-brand-900"
+                  >
+                    {chunks}
+                  </Link>
+                ),
+              })}
+            </p>
+          )}
         </div>
       </div>
     </section>

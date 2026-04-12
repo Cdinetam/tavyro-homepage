@@ -90,7 +90,8 @@
         "title": "Add-on: Employee Care Line",
         "description": "The Employee Care Line is a confidential support service for employees within the organization. It serves as a neutral point of contact for orientation and relief and is provided by TaVyro. No individual cases are reported back to the company; feedback is provided exclusively in anonymized and aggregated form.\n\nEven as a standalone offering, the Employee Care Line creates impact because employees receive a discreet, professional space for conversation – as a signal of appreciation, psychological safety and active care."
       }
-    }
+    },
+    "fractionalChroLandingTeaser": "If you need senior HR leadership without a full-time CHRO, see how TaVyro supports SMEs as a <link>Fractional CHRO in Zurich and across Switzerland</link>."
   },
   "Pricing": {
     "title": "Plans",
@@ -142,7 +143,8 @@
       "1": "CAS Executive Management",
       "2": "CAS Digitalization & Artificial Intelligence in HRM",
       "3": "Working languages: DE/EN/FR"
-    }
+    },
+    "fractionalChroLandingTeaser": "For scope, typical situations and how mandates work, read the <link>dedicated Fractional CHRO Zurich page</link>."
   },
   "QuoteBanner": {
     "testimonials": {
@@ -349,5 +351,115 @@
     "jurisdictionContent": "Swiss law applies exclusively. The place of jurisdiction is Zurich, Switzerland.",
     "changeNote": "Subject to changes and errors.",
     "backHome": "Back to homepage"
+  },
+  "FractionalChroZurichPage": {
+    "hero": {
+      "supporting": "TaVyro is a Zurich-based boutique advisory. We provide senior HR and organizational leadership for Swiss SMEs, founders, executive teams and boards—embedded, strategic and practical—without a full-time Chief Human Resources Officer on the payroll.",
+      "ctaPrimary": "Book an initial conversation",
+      "ctaSecondary": "See how TaVyro works"
+    },
+    "why": {
+      "title": "Why companies in Zurich and Switzerland choose a Fractional CHRO",
+      "p1": "Zurich sits at the centre of a demanding SME landscape: international competition, tight talent markets, and boards that expect clear governance and execution. Many organizations outgrow informal people practices long before a full-time CHRO is warranted—or they need senior judgment on specific chapters without a permanent seat at the executive table.",
+      "p2": "A Fractional CHRO brings C-level perspective on people, culture and organization. The emphasis is clarity at leadership level, disciplined follow-through and relief for CEOs and executive teams when people topics risk crowding out strategy, customers and operational priorities."
+    },
+    "situations": {
+      "title": "Typical situations where a Fractional CHRO adds value",
+      "items": {
+        "0": "Rapid growth, new markets or M&A with rising leadership and organizational complexity",
+        "1": "No senior HR leadership in place—or a gap between a capable people/ops team and executive-level expectations",
+        "2": "CEO or CFO carrying people topics that belong at leadership-table level",
+        "3": "Board or owners seeking an independent senior view on culture, risk, succession or organizational health",
+        "4": "Transformation, restructuring or friction in the leadership team that needs calm, experienced judgment",
+        "5": "Stronger governance, compliance and implementation discipline—without committing to a permanent executive hire"
+      }
+    },
+    "what": {
+      "title": "What TaVyro actually does",
+      "intro": "TaVyro works as TaVyro—with clear accountability to your executive team, not as a rotating cast of junior consultants. Typical scope includes:",
+      "items": {
+        "0": "People strategy aligned with business priorities and board expectations",
+        "1": "Organizational design: roles, structure, leadership cadence and decision rights",
+        "2": "Executive and leadership sparring—discreet, direct, suited to Swiss SMEs",
+        "3": "HR governance, employment-law-aware judgment and escalation support where needed",
+        "4": "Executive-level HR decision support (succession thinking, compensation frameworks, sensitive cases)",
+        "5": "Transformation and implementation support—selective hands-on work where execution must land, not slide decks without ownership"
+      },
+      "outro": "We combine direction with pragmatic execution. Where digital tools or analytics add decision quality, we use them proportionately—without turning people leadership into a technology project."
+    },
+    "different": {
+      "title": "Why TaVyro is different",
+      "intro": "TaVyro is not classic HR consulting, staff augmentation, or a temporary vacancy filler. The model is a deeply embedded senior partner for a defined mandate, with scalable intensity and continuity of judgment.",
+      "vsConsultants": {
+        "title": "Versus HR consultants",
+        "body": "Consulting often optimizes for deliverables and project phases. TaVyro optimizes for leadership outcomes: prioritization with the executive team, governance that holds under pressure, and implementation that your organization can run after the mandate evolves."
+      },
+      "vsInterim": {
+        "title": "Versus interim HR managers",
+        "body": "Interim roles frequently focus on stabilizing operations or filling a seat. TaVyro’s Fractional CHRO work is strategic and relational at executive level—sparring, design and decision support—while remaining practical about what must be executed now."
+      },
+      "vsFullTime": {
+        "title": "Versus a full-time CHRO hire",
+        "body": "A permanent CHRO is the right answer for some scale and complexity profiles. Where timing, cost or organizational maturity do not justify a full-time role, a fractional model provides senior coverage with a footprint that matches the real need."
+      },
+      "vsLargeFirms": {
+        "title": "Versus large consulting firms with rotating teams",
+        "body": "You work with TaVyro as a boutique: consistent senior contact, discreet handling of sensitive topics, and advice shaped for Swiss SMEs—not a parade of unfamiliar faces or generic playbooks."
+      }
+    },
+    "mandate": {
+      "title": "How a mandate typically works",
+      "p1": "We start from your situation and outcomes—not a fixed catalogue. Engagement is usually part-time and integrated over weeks and months: a steady cadence with the CEO and executive team, explicit priorities, and hands-on support where the bottleneck sits.",
+      "p2": "Intensity scales with need—sharper at the front of a transformation, lighter during stabilization. The aim is continuity of judgment and relationship rather than a sequence of disconnected interventions."
+    },
+    "local": {
+      "title": "Zurich and Switzerland",
+      "p1": "TaVyro is based in Zurich and works with SMEs, founders, executive teams and boards across Switzerland. Collaboration is often hybrid; substance is always grounded in local practice, language and governance expectations.",
+      "p2": "For German-speaking visitors, our overview of Fractional CHRO in Switzerland is also available in German."
+    },
+    "localDeLinkLabel": "Fractional CHRO Schweiz (DE)",
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "0": {
+          "q": "What is a Fractional CHRO?",
+          "a": "A Fractional CHRO provides part-time, executive-level HR and organizational leadership—embedded with the CEO and leadership team—without a full-time Chief Human Resources Officer on payroll. The role combines direction, governance and pragmatic implementation where it matters."
+        },
+        "1": {
+          "q": "Is a Fractional CHRO suitable for SMEs?",
+          "a": "Yes. Swiss SMEs often reach a point where people, culture and organization become strategic constraints, yet a full-time CHRO is premature or uneconomical. A fractional model matches seniority to the real footprint of the need."
+        },
+        "2": {
+          "q": "How is a Fractional CHRO different from an interim HR leader?",
+          "a": "Interim assignments often emphasize operational continuity or filling a vacancy. Fractional CHRO work at TaVyro emphasizes executive sparring, organizational clarity, governance and selective implementation—aligned with the leadership table rather than only the HR inbox."
+        },
+        "3": {
+          "q": "When does a company need a Fractional CHRO?",
+          "a": "Typical triggers include rapid growth, transformation, leadership transitions, board-level questions on culture or risk, overload of people topics on the CEO agenda, or the need to professionalize HR governance without an immediate permanent hire."
+        },
+        "4": {
+          "q": "Can a Fractional CHRO support the CEO and executive team?",
+          "a": "That is the core of the model. TaVyro works with the executive team on prioritization, difficult decisions and alignment—discreetly and with a bias for clarity, accountability and execution."
+        },
+        "5": {
+          "q": "Do you work only in Zurich or across Switzerland?",
+          "a": "TaVyro is based in Zurich and serves clients across Switzerland. Meetings and collaboration are structured pragmatically—on-site when valuable, remote when efficient—always with attention to Swiss context."
+        },
+        "6": {
+          "q": "Is TaVyro a personal brand or a firm?",
+          "a": "TaVyro is the commercial brand and contracting party. Senior expertise sits behind TaVyro; accountability to clients is with the advisory, not as a standalone personal profile page."
+        },
+        "7": {
+          "q": "How do confidentiality and sensitive topics work?",
+          "a": "Executive-level people topics require discretion. Mandates are structured with clear boundaries, professional confidentiality and pragmatic escalation paths appropriate to the situation and stakeholders involved."
+        }
+      }
+    },
+    "final": {
+      "title": "A calm next step",
+      "body": "If the situations above resonate, an initial conversation is the simplest way to clarify fit, timing and scope. No hype—just a focused assessment of whether TaVyro can add value in your context.",
+      "cta": "Book an initial conversation",
+      "homeLink": "Back to homepage"
+    }
   }
 }

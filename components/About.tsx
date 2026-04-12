@@ -1,8 +1,12 @@
-import { useTranslations } from "next-intl";
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import QuoteBanner from "@/components/QuoteBanner";
 
 export default function About() {
   const t = useTranslations("About");
+  const locale = useLocale();
 
   const qualifications = [
     t("qualifications.0"),
@@ -35,6 +39,20 @@ export default function About() {
                 <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
                   {t("accountabilityBlock")}
                 </p>
+                {locale === "en" && (
+                  <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
+                    {t.rich("fractionalChroLandingTeaser", {
+                      link: (chunks) => (
+                        <Link
+                          href="/fractional-chro-zurich"
+                          className="text-tavyro-brand-700 font-medium underline underline-offset-4 hover:text-tavyro-brand-900"
+                        >
+                          {chunks}
+                        </Link>
+                      ),
+                    })}
+                  </p>
+                )}
               </div>
             </div>
 

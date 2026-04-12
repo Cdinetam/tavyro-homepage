@@ -50,6 +50,17 @@ export default async function FractionalChroSwitzerlandPage({ params }: Props) {
               strategic people partner. You gain C-level CHRO capability without
               hiring a full-time role.
             </p>
+            <p className="text-base text-tavyro-text2 mb-8 leading-relaxed">
+              For Zurich as a business base and a fuller view of the Fractional
+              CHRO model, see the{" "}
+              <Link
+                href="/fractional-chro-zurich"
+                className="text-tavyro-brand-700 font-medium underline underline-offset-4 hover:text-tavyro-brand-900"
+              >
+                Fractional CHRO Zurich
+              </Link>{" "}
+              page.
+            </p>
             <h2 className="text-2xl md:text-3xl font-semibold text-tavyro-text mb-4">
               When a Fractional CHRO is the right fit
             </h2>
