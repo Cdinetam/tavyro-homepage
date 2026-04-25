@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>TaVyro | CEO/GL-Selbstcheck für People und Organisation</title>
+  <meta name="description" content="Erkennen Sie in wenigen Minuten, wo Führungsaufwand, Rollenunklarheit, Fluktuation oder Governance-Risiken Wirkung und Tempo bremsen. Ohne Registrierung. Für CEO, GL und VR.">
+  <meta property="og:title" content="TaVyro | CEO/GL-Selbstcheck für People und Organisation">
+  <meta property="og:description" content="16 gezielte Fragen. Sofortige Einordnung. Indikative Wirkungsrechnung. Für Geschäftsleitung und Verwaltungsrat.">
+  <meta property="og:type" content="website">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-bg: #FAFAF8;
+      --c-surface: #FFFFFF;
+      --c-surface-2: #F4F3EF;
+      --c-border: rgba(0,0,0,0.08);
+      --c-border-md: rgba(0,0,0,0.14);
+      --c-text-1: #1A1A18;
+      --c-text-2: #5A5A56;
+      --c-text-3: #9A9A94;
+      --c-green: #1D9E75;
+      --c-green-bg: #E1F5EE;
+      --c-green-dark: #0F6E56;
+      --c-green-brand: #2D6A4F;
+      --c-yellow: #BA7517;
+      --c-yellow-bg: #FAEEDA;
+      --c-red: #A32D2D;
+      --c-red-bg: #FCEBEB;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+    }
+
+    /* ── iOS / Android global fixes ──────────────────────── */
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    body {
+      font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--c-bg);
+      color: var(--c-text-1);
+      font-size: 15px;
+      line-height: 1.6;
+      /* NO overscroll-behavior, NO -webkit-overflow-scrolling on body */
+    }
+    /* Prevents iOS zoom on input focus — font-size must be >= 16px */
+    input, select, textarea, button { font-size: 16px; font-family: inherit; }
+    * { -webkit-tap-highlight-color: transparent; }
+    .opt-btn, .risk-opt, .submit-btn, .dash-cta, .cta-primary, .cta-secondary {
+      touch-action: manipulation;
+    }
+
+    /* ── Range slider — iOS needs webkit prefixes ─────────── */
+    input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--c-border-md);
+      outline: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      height: 4px; border-radius: 2px; background: var(--c-border-md);
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--c-green-brand);
+      cursor: pointer;
+      margin-top: -10px;
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--c-green-brand);
+      border: none; cursor: pointer;
+    }
+
+    /* ── Select — iOS hides arrow without this ───────────── */
+    select {
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239A9A94' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 30px;
+    }
+
+    /* ── Layout ─────────────────────────────────────────────
+       Mobile (default): single column, sidebar below content.
+       Desktop (min-width 900px): side-by-side flex layout.
+       The sidebar is ALWAYS after <main> in the DOM — no CSS order tricks.
+    ─────────────────────────────────────────────────────── */
+    .page-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .main {
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    /* Sidebar: plain block on mobile, no sticky, no overflow */
+    .sidebar {
+      padding: 2rem 1.25rem;
+      border-top: 1px solid var(--c-border-md);
+      background: var(--c-surface);
+    }
+
+    /* ── Sidebar: NUR auf Desktop sichtbar ──────────────── */
+    .sidebar {
+      display: none; /* versteckt auf Mobile/iOS */
+      padding: 2rem 1.25rem;
+      background: var(--c-surface);
+    }
+
+    /* Mobile Zusammenfassung: NUR auf Mobile sichtbar ─────── */
+    .mobile-summary {
+      display: block;
+      background: var(--c-surface);
+      border-top: 1px solid var(--c-border-md);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Desktop layout */
+    @media (min-width: 900px) {
+      .page-wrap {
+        display: flex;
+        align-items: flex-start;
+      }
+      .main {
+        flex: 1;
+        padding: 2.5rem 2rem 4rem;
+        max-width: 720px;
+        min-width: 0;
+      }
+      .sidebar {
+        display: block; /* sichtbar auf Desktop */
+        width: 290px;
+        flex-shrink: 0;
+        border-left: 1px solid var(--c-border-md);
+        position: sticky;
+        top: 0;
+        max-height: 100vh;
+        overflow-y: auto;
+      }
+      .sidebar::-webkit-scrollbar { width: 4px; }
+      .sidebar::-webkit-scrollbar-track { background: transparent; }
+      .sidebar::-webkit-scrollbar-thumb { background: var(--c-border-md); border-radius: 2px; }
+      .mobile-summary { display: none; } /* versteckt auf Desktop */
+    }
+
+    /* ── Brand ──────────────────────────────────────────── */
+    .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 0.2rem; }
+    .brand-mark {
+      width: 32px; height: 32px; background: var(--c-green-brand);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .brand-mark span { color: #fff; font-size: 15px; font-weight: 600; }
+    .brand-name { font-size: 19px; font-weight: 600; letter-spacing: -0.5px; color: var(--c-text-1); }
+    .brand-tag { font-size: 12px; color: var(--c-text-3); margin-bottom: 0.6rem; padding-left: 42px; }
+
+    .intro-block { margin-bottom: 1.5rem; padding-left: 42px; }
+    .intro-title { font-size: 17px; font-weight: 600; color: var(--c-text-1); line-height: 1.35; margin-bottom: 0.35rem; }
+    .intro-sub { font-size: 13px; color: var(--c-text-2); line-height: 1.6; }
+    @media (max-width: 899px) {
+      .intro-block { padding-left: 0; }
+      .brand-tag   { padding-left: 0; }
+    }
+
+    /* ── Trust note ─────────────────────────────────────── */
+    .trust-note {
+      font-size: 11px; color: var(--c-text-3);
+      line-height: 1.55; margin-bottom: 2rem;
+      padding: 0.6rem 0.85rem;
+      border-left: 2px solid var(--c-border-md);
+    }
+
+    /* ── Progress ───────────────────────────────────────── */
+    .progress-wrap { margin-bottom: 2rem; }
+    .progress-track { height: 3px; background: var(--c-border-md); border-radius: 2px; margin-bottom: 5px; overflow: hidden; }
+    .progress-fill { height: 3px; border-radius: 2px; background: var(--c-green-brand); transition: width 0.35s ease; width: 0%; }
+    .progress-label { font-size: 12px; color: var(--c-text-3); }
+
+    /* ── Phase header ───────────────────────────────────── */
+    .phase-hd { display: flex; align-items: center; gap: 10px; margin: 2.25rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 0.5px solid var(--c-border); }
+    .phase-pill { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+    .phase-pill-1 { background: #E0F0E9; color: #0F6E56; }
+    .phase-pill-2 { background: #EAF3DE; color: #3B6D11; }
+    .phase-pill-3 { background: #E6F1FB; color: #185FA5; }
+    .phase-name { font-size: 13px; font-weight: 500; color: var(--c-text-2); }
+
+    /* ── Question card ──────────────────────────────────── */
+    .q-card { background: var(--c-surface); border: 0.5px solid var(--c-border); border-radius: var(--radius-lg); padding: 1.1rem 1.25rem; margin-bottom: 0.65rem; }
+    .q-num { font-size: 11px; color: var(--c-text-3); margin-bottom: 4px; font-weight: 500; }
+    .q-text { font-size: 14px; font-weight: 500; color: var(--c-text-1); margin-bottom: 0.85rem; line-height: 1.5; }
+
+    /* ── Options ────────────────────────────────────────── */
+    .opts { display: flex; flex-direction: column; gap: 6px; }
+    .opt-btn {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 0.5px solid var(--c-border);
+      cursor: pointer; background: transparent;
+      text-align: left; width: 100%;
+    }
+    .opt-btn.sel-g { border-color: var(--c-green); background: var(--c-green-bg); }
+    .opt-btn.sel-y { border-color: var(--c-yellow); background: var(--c-yellow-bg); }
+    .opt-btn.sel-r { border-color: var(--c-red); background: var(--c-red-bg); }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+    .dot-g { background: var(--c-green); }
+    .dot-y { background: var(--c-yellow); }
+    .dot-r { background: var(--c-red); }
+    .opt-inner { flex: 1; }
+    .opt-lbl { font-size: 11px; font-weight: 600; margin-bottom: 2px; }
+    .lbl-g { color: var(--c-green-dark); }
+    .lbl-y { color: var(--c-yellow); }
+    .lbl-r { color: var(--c-red); }
+    .opt-txt { font-size: 13px; color: var(--c-text-1); line-height: 1.45; }
+
+    /* ── Submit button ──────────────────────────────────── */
+    .submit-btn {
+      width: 100%; margin-top: 2rem; padding: 16px 24px;
+      border-radius: var(--radius-md); background: var(--c-green-brand);
+      color: #fff; font-size: 14px; font-weight: 600; border: none; cursor: pointer;
+    }
+    .submit-btn:active { background: var(--c-green); }
+
+    /* ── Results ────────────────────────────────────────── */
+    .results-section { display: none; margin-top: 2.5rem; }
+    .results-section.show { display: block; }
+    .r-card { background: var(--c-surface); border: 0.5px solid var(--c-border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1rem; }
+    .r-title { font-size: 15px; font-weight: 600; color: var(--c-text-1); margin-bottom: 0.85rem; }
+
+    .score-summary { font-size: 13px; line-height: 1.6; padding: 0.85rem 1rem; border-radius: var(--radius-md); margin-bottom: 1.1rem; border-left: 3px solid var(--c-border-md); }
+    .score-summary.low  { border-left-color: var(--c-green);  background: var(--c-green-bg);  color: var(--c-green-dark); }
+    .score-summary.mid  { border-left-color: var(--c-yellow); background: var(--c-yellow-bg); color: #7A4D0A; }
+    .score-summary.high { border-left-color: var(--c-red);    background: var(--c-red-bg);    color: var(--c-red); }
+
+    .priority-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 0.5px solid var(--c-border); }
+    .priority-item:last-child { border: none; padding-bottom: 0; }
+    .p-num { width: 26px; height: 26px; flex-shrink: 0; background: var(--c-red-bg); color: var(--c-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; }
+    .p-title { font-size: 13px; font-weight: 500; color: var(--c-text-1); }
+    .p-cost  { font-size: 12px; color: var(--c-red); margin-top: 2px; font-weight: 500; }
+    .p-desc  { font-size: 12px; color: var(--c-text-2); margin-top: 2px; line-height: 1.4; }
+
+    .cta-wrap { display: flex; gap: 10px; margin-top: 1.5rem; flex-wrap: wrap; }
+    .cta-primary {
+      flex: 1; min-width: 160px; padding: 12px 16px; border-radius: var(--radius-md);
+      background: var(--c-green-brand); color: #fff; font-size: 13px; font-weight: 600;
+      border: none; cursor: pointer; text-align: center; text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .cta-primary:active { background: var(--c-green); }
+    @media (max-width: 899px) {
+      .cta-wrap { flex-direction: column; }
+      .cta-primary { min-width: 0; width: 100%; }
+    }
+
+    /* ── Calc ───────────────────────────────────────────── */
+    .calc-intro { font-size: 13px; color: var(--c-text-2); margin-bottom: 1.25rem; line-height: 1.6; }
+    .slider-group { margin-bottom: 1rem; }
+    .slider-lbl { font-size: 12px; color: var(--c-text-2); margin-bottom: 5px; }
+    .slider-row { display: flex; align-items: center; gap: 10px; }
+    .slider-row input[type=range] { flex: 1; min-width: 0; }
+    .slider-val { font-size: 12px; font-weight: 600; min-width: 90px; text-align: right; color: var(--c-text-1); }
+
+    .dropdown-row { display: flex; align-items: center; gap: 10px; }
+    .dropdown-row select {
+      flex: 1; min-width: 0; padding: 8px 30px 8px 10px;
+      border-radius: var(--radius-sm); border: 0.5px solid var(--c-border-md);
+      background: var(--c-surface); color: var(--c-text-1);
+      font-size: 16px; cursor: pointer; outline: none;
+    }
+    .gl-total-hint { font-size: 12px; font-weight: 500; color: var(--c-text-2); margin-top: 6px; }
+    .gl-cap-hint   { font-size: 11px; color: var(--c-text-3); margin-top: 3px; }
+
+    .risk-select-wrap { margin-bottom: 1rem; }
+    .risk-select-lbl { font-size: 12px; color: var(--c-text-2); margin-bottom: 6px; }
+    .risk-options { display: flex; gap: 6px; flex-wrap: wrap; }
+    .risk-opt { padding: 8px 16px; border-radius: 20px; border: 0.5px solid var(--c-border-md); font-size: 12px; font-weight: 500; cursor: pointer; background: transparent; color: var(--c-text-2); }
+    .risk-opt.active-low  { background: var(--c-green-bg);  border-color: var(--c-green);  color: var(--c-green-dark); }
+    .risk-opt.active-mid  { background: var(--c-yellow-bg); border-color: var(--c-yellow); color: #7A4D0A; }
+    .risk-opt.active-high { background: var(--c-red-bg);    border-color: var(--c-red);    color: var(--c-red); }
+
+    .calc-breakdown { margin: 1rem 0 0.5rem; }
+    .cb-row { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 0.5px solid var(--c-border); gap: 8px; }
+    .cb-row:last-child { border: none; }
+    .cb-label { color: var(--c-text-2); flex: 1; }
+    .cb-val   { font-weight: 500; color: var(--c-text-1); white-space: nowrap; }
+
+    .total-box { background: var(--c-green-bg); border: 0.5px solid var(--c-green); border-radius: var(--radius-md); padding: 1rem 1.2rem; margin-top: 1rem; }
+    .total-lbl { font-size: 11px; font-weight: 600; color: var(--c-green-dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+    .total-val { font-size: 26px; font-weight: 600; color: var(--c-green-dark); letter-spacing: -0.5px; }
+    .roi-row { display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 0.5px solid rgba(15,110,86,0.2); }
+    .roi-label { font-size: 11px; color: var(--c-green-dark); opacity: 0.8; }
+    .roi-val   { font-size: 13px; font-weight: 600; color: var(--c-green-dark); }
+    .total-sub { font-size: 11px; color: var(--c-green-dark); margin-top: 6px; opacity: 0.75; line-height: 1.55; }
+
+    .scenarios-wrap { margin-top: 1rem; }
+    .scenarios-hd { font-size: 10px; font-weight: 600; color: var(--c-text-3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.5rem; }
+    .scenarios { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 6px; }
+    .scenario { border: 0.5px solid var(--c-border); border-radius: var(--radius-md); padding: 0.75rem 0.5rem; text-align: center; }
+    .scenario-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-text-3); margin-bottom: 4px; }
+    .scenario-val   { font-size: 13px; font-weight: 600; color: var(--c-text-1); word-break: break-all; }
+    .scenario-pct   { font-size: 10px; color: var(--c-text-3); margin-top: 2px; }
+    .scenario.s-real { border-color: var(--c-green); background: var(--c-green-bg); }
+    .scenario.s-real .scenario-label { color: var(--c-green-dark); }
+    .scenario.s-real .scenario-val   { color: var(--c-green-dark); }
+    .scenario.s-real .scenario-pct   { color: var(--c-green); }
+
+    /* ── Sidebar internals ──────────────────────────────── */
+    .dash-hd { font-size: 11px; font-weight: 600; color: var(--c-text-3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 1.1rem; padding-bottom: 0.5rem; border-bottom: 0.5px solid var(--c-border); }
+    .metric { background: var(--c-surface-2); border-radius: var(--radius-md); padding: 0.85rem 1rem; margin-bottom: 0.6rem; }
+    .metric-lbl { font-size: 11px; color: var(--c-text-3); margin-bottom: 4px; }
+    .metric-val { font-size: 22px; font-weight: 600; letter-spacing: -0.5px; transition: color 0.3s; }
+    .metric-sub { font-size: 11px; color: var(--c-text-3); margin-top: 2px; }
+    .risk-track { height: 5px; background: var(--c-border-md); border-radius: 3px; margin: 7px 0; overflow: hidden; }
+    .risk-fill  { height: 5px; border-radius: 3px; transition: width 0.4s, background 0.4s; width: 0%; }
+    .breakdown { margin-top: 1.2rem; }
+    .bk-row { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 0.5px solid var(--c-border); }
+    .bk-row:last-child { border: none; }
+    .bk-label { color: var(--c-text-2); flex: 1; padding-right: 6px; font-size: 11px; }
+    .bk-val   { font-weight: 500; white-space: nowrap; }
+    .cost-block { margin-top: 1.3rem; }
+    .cost-hd { font-size: 10px; font-weight: 600; color: var(--c-text-3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.5rem; }
+    .cost-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; gap: 6px; }
+    .cost-lbl { color: var(--c-text-2); flex: 1; font-size: 11px; }
+    .cost-v   { font-weight: 500; color: var(--c-text-1); white-space: nowrap; font-size: 11px; }
+    .dash-cta { width: 100%; margin-top: 1.2rem; padding: 12px; border-radius: var(--radius-sm); background: var(--c-green-brand); color: #fff; font-size: 12px; font-weight: 600; border: none; cursor: pointer; }
+    .dash-cta:active { background: var(--c-green); }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ══ MAIN ══════════════════════════════════════════════ -->
+  <main class="main">
+
+    <div class="brand">
+      <div class="brand-mark"><span>T</span></div>
+      <div class="brand-name">TaVyro</div>
+    </div>
+    <div class="brand-tag">Executive Diagnostic · 2026</div>
+
+    <div class="intro-block">
+      <div class="intro-title">CEO/GL-Selbstcheck für People und Organisation</div>
+      <div class="intro-sub">Erkennen Sie in wenigen Minuten, wo Führungsaufwand, Rollenunklarheit, Fluktuation oder Governance-Risiken Wirkung und Tempo bremsen.</div>
+    </div>
+
+    <div class="trust-note">
+      Ohne Registrierung. 16 gezielte Fragen. Die Auswertung liefert eine erste Management-Orientierung auf Basis vereinfachter Modellannahmen — sie ersetzt keine vertiefte Analyse.
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 von 16 Fragen beantwortet</div>
+    </div>
+
+    <div id="questionsContainer"></div>
+
+    <!-- Mobile Live-Übersicht (nur auf Mobile/iOS sichtbar, auf Desktop ausgeblendet) -->
+    <div class="mobile-summary" id="mobileSummary">
+      <div class="dash-hd" style="margin-bottom:0.75rem;">Live-Analyse</div>
+      <div class="metric" style="margin-bottom:0.5rem;">
+        <div class="metric-lbl">Prioritätsindex</div>
+        <div class="metric-val" id="riskScoreMob" style="color:var(--c-text-3);">—</div>
+        <div class="risk-track"><div class="risk-fill" id="riskBarMob"></div></div>
+        <div class="metric-sub" id="riskLabelMob">Beantworte die Fragen um die Analyse zu sehen</div>
+      </div>
+      <div class="metric">
+        <div class="metric-lbl">Gebundene Management-Aufmerksamkeit / Jahr</div>
+        <div class="metric-val" id="ceoHoursMob" style="color:var(--c-text-3);">—</div>
+        <div class="metric-sub" id="ceoChfSubMob" style="display:none;"></div>
+        <div class="metric-sub">indikativ modelliert aus 16 Fragen</div>
+      </div>
+    </div>
+
+    <!-- ERGEBNISSE -->
+    <div class="results-section" id="resultsSection">
+
+      <div class="r-card">
+        <div class="r-title">Ihre 3 wichtigsten Prioritäten</div>
+        <div class="score-summary" id="scoreSummary"></div>
+        <div id="priorityList"></div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary">Prioritäten mit TaVyro einordnen</a>
+        </div>
+      </div>
+
+      <div class="r-card">
+        <div class="r-title">Orientierungsrechnung für CEO und GL</div>
+        <p class="calc-intro">Die folgende Berechnung arbeitet mit vereinfachten Modellannahmen zu Führungsentlastung, vermiedener Fluktuation und Risikoexposition. Sie liefert eine indikative Grössenordnung — kein individuelles Gutachten. Passen Sie die Parameter auf Ihre Organisation an.</p>
+
+        <div class="slider-group">
+          <div class="slider-lbl">Organisationsgrösse und Folgekostenrisiko</div>
+          <div class="slider-row">
+            <input type="range" min="5" max="280" step="1" value="30" id="slTeam" oninput="updateCalc()">
+            <span class="slider-val" id="slTeamVal">30 MA</span>
+          </div>
+          <div style="font-size:11px;color:var(--c-text-3);margin-top:4px;">Mitarbeitendenzahl als Näherungswert für Komplexität und potenzielle Kosten des Nichtstuns</div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-lbl">Betroffene GL-Mitglieder</div>
+          <div class="dropdown-row">
+            <select id="glMembers" onchange="updateCalc()">
+              <option value="1" selected>1 Mitglied</option>
+              <option value="2">2 Mitglieder</option>
+              <option value="3">3 Mitglieder</option>
+              <option value="4">4 Mitglieder</option>
+              <option value="5">5 Mitglieder</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-lbl">Durchschnittlich entlastbare GL-Zeit pro betroffenes Mitglied pro Woche</div>
+          <div class="slider-row">
+            <input type="range" min="0" max="8" step="1" value="4" id="slCEO" oninput="updateCalc()">
+            <span class="slider-val" id="slCEOVal">4 h/Wo.</span>
+          </div>
+          <div class="gl-total-hint">Gesamte entlastbare Management-Aufmerksamkeit: <span id="glTotalDisplay">4</span> h/Woche</div>
+          <div class="gl-cap-hint" id="glCapHint" style="display:none;">Für die Orientierungsrechnung wird die entlastbare Management-Aufmerksamkeit auf maximal 30 h/Woche begrenzt.</div>
+          <div style="font-size:11px;color:var(--c-text-3);margin-top:3px;">Management-Zeit wird indikativ bewertet.</div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-lbl">Vermiedene Abgänge pro Jahr (Kostenansatz skaliert nach Teamgrösse)</div>
+          <div class="slider-row">
+            <input type="range" min="0" max="10" step="1" value="2" id="slFluk" oninput="updateCalc()">
+            <span class="slider-val" id="slFlukVal">2 Personen</span>
+          </div>
+        </div>
+
+        <div class="risk-select-wrap">
+          <div class="risk-select-lbl">Governance- und Compliance-Risikoexposition</div>
+          <div class="risk-options">
+            <button class="risk-opt" id="riskLow"  onclick="setRisk('low')">Niedrig</button>
+            <button class="risk-opt active-mid" id="riskMid" onclick="setRisk('mid')">Mittel</button>
+            <button class="risk-opt" id="riskHigh" onclick="setRisk('high')">Erhöht</button>
+          </div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-lbl">Geschätzte TaVyro-Investition pro Jahr (CHF)</div>
+          <div class="slider-row">
+            <input type="range" min="12000" max="180000" step="1000" value="24000" id="slInvest" oninput="updateCalc()">
+            <span class="slider-val" id="slInvestVal">CHF&nbsp;24'000</span>
+          </div>
+        </div>
+
+        <div class="calc-breakdown">
+          <div class="cb-row"><span class="cb-label">Wert entlasteter GL-Kapazität</span><span class="cb-val" id="calcCEO">—</span></div>
+          <div class="cb-row"><span class="cb-label">Vermiedene Fluktuation</span><span class="cb-val" id="calcFluk">—</span></div>
+          <div class="cb-row"><span class="cb-label">Governance-Risikoexposition vermieden</span><span class="cb-val" id="calcComp">—</span></div>
+        </div>
+
+        <div class="total-box">
+          <div class="total-lbl">Brutto-Potenzial (Einsparung + Risikominimierung)</div>
+          <div class="total-val" id="totalVal">—</div>
+          <div class="roi-row" style="margin-top:0.75rem;padding-top:0.75rem;">
+            <span class="roi-label">abzgl. TaVyro-Investition</span>
+            <span class="roi-val" id="roiInvestDisplay" style="opacity:0.75;">—</span>
+          </div>
+          <div class="roi-row" style="border-top:0.5px solid rgba(15,110,86,0.35);margin-top:0.4rem;padding-top:0.5rem;">
+            <span class="roi-label" style="font-weight:600;">Netto-Effekt pro Jahr</span>
+            <span class="roi-val" id="nettoVal" style="font-size:16px;">—</span>
+          </div>
+          <div class="roi-row">
+            <span class="roi-label">Verhältnis Potenzial / Investition</span>
+            <span class="roi-val" id="roiVal">—</span>
+          </div>
+          <div class="total-sub">Die Berechnung ist ein Orientierungswert. Das tatsächliche Potenzial hängt von Ausgangslage, Führungsstruktur, Fluktuation, Rollenklärung und Reifegrad der Organisation ab.<br><br>Die monetäre Risikoannahme basiert auf einer angenommenen Governance- und Compliance-Exposition. Die qualitative Einordnung im Selbstcheck ergibt sich separat aus Ihren Antworten.</div>
+        </div>
+
+        <div class="scenarios-wrap">
+          <div class="scenarios-hd">Szenarien</div>
+          <div class="scenarios">
+            <div class="scenario s-cons">
+              <div class="scenario-label">Konservativ</div>
+              <div class="scenario-val" id="scCons">—</div>
+              <div class="scenario-pct">Netto, konservative Annahme</div>
+            </div>
+            <div class="scenario s-real">
+              <div class="scenario-label">Realistisch</div>
+              <div class="scenario-val" id="scReal">—</div>
+              <div class="scenario-pct">Netto, Basisszenario</div>
+            </div>
+            <div class="scenario s-ambi">
+              <div class="scenario-label">Ambitioniert</div>
+              <div class="scenario-val" id="scAmbi">—</div>
+              <div class="scenario-pct">Netto, ambitionierte Annahme</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /results-section -->
+
+    <div id="validationMsg" style="display:none;margin-top:0.75rem;padding:0.7rem 1rem;border-radius:var(--radius-sm);background:var(--c-red-bg);border:0.5px solid var(--c-red);font-size:13px;color:var(--c-red);line-height:1.5;"></div>
+
+    <button class="submit-btn" id="submitBtn" onclick="validateAndShow()">
+      Prioritäten anzeigen →
+    </button>
+
+  </main>
+
+  <!-- ══ SIDEBAR — physisch nach Main, kein CSS-Order-Trick ═ -->
+  <aside class="sidebar">
+    <div class="dash-hd">Live-Analyse</div>
+
+    <div class="metric">
+      <div class="metric-lbl">Prioritätsindex</div>
+      <div class="metric-val" id="riskScore" style="color:var(--c-text-3);">—</div>
+      <div class="risk-track"><div class="risk-fill" id="riskBar"></div></div>
+      <div class="metric-sub" id="riskLabel">Noch keine Antworten</div>
+    </div>
+
+    <div class="metric">
+      <div class="metric-lbl">Gebundene Management-Aufmerksamkeit / Jahr</div>
+      <div class="metric-val" id="ceoHours" style="color:var(--c-text-3);">—</div>
+      <div class="metric-sub" id="ceoChfSub" style="display:none;"></div>
+      <div class="metric-sub">indikativ modelliert aus 16 Fragen</div>
+    </div>
+
+    <div class="metric">
+      <div class="metric-lbl">Governance-Risiko (Qualitativ)</div>
+      <div class="metric-val" id="complianceRisk" style="color:var(--c-text-3);">—</div>
+      <div class="metric-sub" id="complianceRiskSub">Aus Antworten Fragen 13–16</div>
+    </div>
+
+    <div class="breakdown">
+      <div class="bk-row"><span class="bk-label">Phase 1 · Führung &amp; Entscheid</span><span class="bk-val" id="p1score" style="color:var(--c-text-3);">—</span></div>
+      <div class="bk-row"><span class="bk-label">Phase 2 · Talente &amp; Ausführung</span><span class="bk-val" id="p2score" style="color:var(--c-text-3);">—</span></div>
+      <div class="bk-row"><span class="bk-label">Phase 3 · Governance &amp; Betrieb</span><span class="bk-val" id="p3score" style="color:var(--c-text-3);">—</span></div>
+    </div>
+
+    <div class="cost-block">
+      <div class="cost-hd">Einordnung</div>
+      <div class="cost-row"><span class="cost-lbl">Führungsaufwand</span><span class="cost-v" id="sideQual1" style="color:var(--c-text-3);">—</span></div>
+      <div class="cost-row"><span class="cost-lbl">Organisationsreife</span><span class="cost-v" id="sideQual2" style="color:var(--c-text-3);">—</span></div>
+      <div class="cost-row"><span class="cost-lbl">Governance-Risiko</span><span class="cost-v" id="sideQual3" style="color:var(--c-text-3);">—</span></div>
+    </div>
+
+    <button class="dash-cta" onclick="validateAndShow()">Prioritäten anzeigen →</button>
+  </aside>
+
+</div><!-- /page-wrap -->
+
+<script>
+const questions = [
+  { id:1, phase:1, num:"01", text:"Wie stark binden Personalthemen Ihre persönliche Aufmerksamkeit, obwohl sie auf Führungs- oder Organisationsebene gelöst werden sollten?", opts:[{c:"g",l:"Gut",t:"Nur punktuell. Die meisten Themen werden vorbereitet oder entschieden, bevor sie bei mir landen."},{c:"y",l:"Teilweise",t:"Regelmässig. Ich werde bei Konflikten, Führungsfragen oder Einzelfällen beigezogen."},{c:"r",l:"Kritisch",t:"Übermässig. Ich bin zentrale Eskalationsstelle für viele Personalthemen — die gebundene GL-Kapazität ist erheblich."}], costs:{r:118000,y:40500} },
+  { id:2, phase:1, num:"02", text:"Erhalten Sie bei People- und Organisationsthemen entscheidungsreife Empfehlungen oder primär operative Einzelthemen?", opts:[{c:"g",l:"Gut",t:"Ja, HR liefert entscheidungsreife Vorlagen mit klarer Empfehlung. Der Abstimmungsaufwand ist minimal."},{c:"y",l:"Teilweise",t:"Teils — operative Themen laufen gut, bei strategischen Entscheiden fehlt jedoch die Vorarbeit."},{c:"r",l:"Kritisch",t:"Nein, HR ist primär mit Administration und Payroll beschäftigt. Strategisches Sparring findet nicht statt."}], costs:{r:63000,y:18000} },
+  { id:3, phase:1, num:"03", text:"Sind Rollen, Verantwortungen und Prozesse so klar definiert, dass die Organisation ohne wesentliche Reibungsverluste skalieren kann?", opts:[{c:"g",l:"Gut",t:"Ja, Zuständigkeiten sind klar geregelt. Wir sind strukturell bereit für Wachstum."},{c:"y",l:"Teilweise",t:"Teils — historisch gewachsene Strukturen erzeugen Doppelspurigkeiten und ungeklärte Zuständigkeiten."},{c:"r",l:"Kritisch",t:"Nein, viele Abläufe und Verantwortungen sind unklar und erzeugen operative Reibung und Verluste."}], costs:{r:78500,y:22500} },
+  { id:4, phase:1, num:"04", text:"Trifft Ihr Kader Personalentscheide innerhalb klarer Leitplanken eigenständig oder werden heikle Themen regelmässig an Sie eskaliert?", opts:[{c:"g",l:"Gut",t:"Ja, die Führungspersonen handeln eigenständig innerhalb klarer Leitplanken. Eskalationen sind die Ausnahme."},{c:"y",l:"Teilweise",t:"Teils — das Kader ist fachlich kompetent, schiebt jedoch unbequeme Entscheide regelmässig nach oben."},{c:"r",l:"Kritisch",t:"Nein, ich muss vieles selbst entscheiden. Das Kader ist in der Führungsverantwortung noch nicht vollständig souverän."}], costs:{r:52500,y:15000} },
+  { id:5, phase:1, num:"05", text:"Haben Sie eine klare People-Strategie mit Roadmap, die auf Ihre Geschäftsziele der nächsten 3 Jahre einzahlt?", opts:[{c:"g",l:"Gut",t:"Ja, wir haben eine Roadmap. Wir wissen, welche Fähigkeiten und Rollen wir wann brauchen."},{c:"y",l:"Teilweise",t:"Teils — gute Absichten, aber das Tagesgeschäft absorbiert die Kapazität für strategische Planung."},{c:"r",l:"Kritisch",t:"Nein, wir operieren reaktiv. People-Themen werden als Konsequenz von Krisen angegangen, nicht proaktiv gesteuert."}], costs:{r:87500,y:22500} },
+  { id:6, phase:2, num:"06", text:"Werden kritische Fähigkeiten im Unternehmen systematisch aufgebaut — auch in digitalen und AI-nahen Kompetenzfeldern?", opts:[{c:"g",l:"Gut",t:"Ja, wir investieren systematisch in Weiterbildung und Kompetenzaufbau. Das Team ist technologisch gut positioniert."},{c:"y",l:"Teilweise",t:"Teils — Weiterbildung erfolgt auf Anfrage, ein strukturiertes System zur Kompetenzentwicklung fehlt jedoch."},{c:"r",l:"Kritisch",t:"Nein, systematischer Kompetenzaufbau findet nicht statt. Die Lücke zur Konkurrenz wächst."}], costs:{r:70000,y:18000} },
+  { id:7, phase:2, num:"07", text:"Gibt es in Ihrer Organisation einen vertrauenswürdigen Rahmen, um Konflikte, Spannungen oder Grenzthemen frühzeitig anzusprechen?", opts:[{c:"g",l:"Gut",t:"Ja, es gibt einen klaren Rahmen. Spannungen werden früh adressiert, bevor sie eskalieren."},{c:"y",l:"Teilweise",t:"Teils — Gesprächsmöglichkeiten bestehen, aber heikle Themen werden oft gemieden oder erst spät sichtbar."},{c:"r",l:"Kritisch",t:"Nein, Konflikte werden meist erst bei Kündigung oder Eskalation sichtbar. Die Früherkennung fehlt."}], costs:{r:61000,y:15000} },
+  { id:8, phase:2, num:"08", text:"Ist die Nachfolge für Schlüsselpositionen so geregelt, dass ein Abgang keine wesentliche Betriebsstörung verursacht?", opts:[{c:"g",l:"Gut",t:"Ja, Wissen ist dokumentiert und für kritische Rollen existieren Nachfolgepläne."},{c:"y",l:"Teilweise",t:"Teils — Schlüsselpersonen sind bekannt, ein schriftlicher Nachfolgeplan fehlt jedoch für den Ernstfall."},{c:"r",l:"Kritisch",t:"Nein, wir sind in mehreren Positionen von Einzelpersonen abhängig. Ein Abgang hätte erhebliche operative Konsequenzen."}], costs:{r:140000,y:30000} },
+  { id:9, phase:2, num:"09", text:"Ist Ihre Positionierung als Arbeitgeber so differenziert, dass sich qualifizierte Talente aktiv bei Ihnen bewerben?", opts:[{c:"g",l:"Gut",t:"Ja, unsere Arbeitgebermarke ist klar positioniert. Initiativbewerbungen qualifizierter Profile sind regelmässig."},{c:"y",l:"Teilweise",t:"Teils — wir gelten als solider Arbeitgeber, heben uns im Wettbewerb um Talente jedoch kaum ab."},{c:"r",l:"Kritisch",t:"Nein, unsere Sichtbarkeit als Arbeitgeber ist gering. Rekrutierung ist aufwändig und führt nicht konsistent zu guten Besetzungen."}], costs:{r:52500,y:15000} },
+  { id:10, phase:2, num:"10", text:"Sind Ihre Rekrutierungsprozesse so strukturiert, dass qualifizierte Kandidaten nicht durch Verzögerungen verloren gehen?", opts:[{c:"g",l:"Gut",t:"Ja, wir entscheiden schnell und strukturiert. Rekrutierung ist ein Wettbewerbsvorteil."},{c:"y",l:"Teilweise",t:"Teils — Entscheidungsprozesse sind zögerlich. Qualifizierte Kandidaten springen gelegentlich ab."},{c:"r",l:"Kritisch",t:"Nein, Stellen bleiben zu lange offen. Die operative Belastung des bestehenden Teams steigt und Qualitätsverluste entstehen."}], costs:{r:43500,y:12000} },
+  { id:11, phase:2, num:"11", text:"Sind Ihre Vergütungsstrukturen marktgerecht, transparent und nachvollziehbar für das Team?", opts:[{c:"g",l:"Gut",t:"Ja, wir haben ein klares, marktgerechtes System. Vergütung ist kein wiederkehrendes Streitthema."},{c:"y",l:"Teilweise",t:"Teils — die Vergütung orientiert sich an Einzelfällen. Ungeklärte Fragen zur Fairness entstehen gelegentlich."},{c:"r",l:"Kritisch",t:"Nein, es fehlt eine klare Struktur. Vergütungsunterschiede führen zu Demotivation und vermeidbaren Abgängen."}], costs:{r:70000,y:15000} },
+  { id:12, phase:2, num:"12", text:"Sind neue Mitarbeitende nach 4 Wochen so integriert, dass sie vollständig produktiv und engagiert in ihrer Rolle arbeiten?", opts:[{c:"g",l:"Gut",t:"Ja, wir haben einen strukturierten Onboarding-Prozess. Neue Mitarbeitende werden schnell produktiv."},{c:"y",l:"Teilweise",t:"Teils — die Einarbeitung hängt von der jeweiligen Führungsperson ab. Die Qualität ist nicht konsistent."},{c:"r",l:"Kritisch",t:"Nein, die Probezeit ist kritisch. Frühfluktuation verursacht erhebliche Kosten und bindet Führungskapazität."}], costs:{r:52500,y:12000} },
+  { id:13, phase:3, num:"13", text:"Sind relevante Personal-Kennzahlen und Dokumente digital verfügbar, ohne Aufwand in verteilten Ablagesystemen zu suchen?", opts:[{c:"g",l:"Gut",t:"Ja, wir arbeiten mit einer klaren digitalen Struktur. Informationen sind auf Knopfdruck abrufbar."},{c:"y",l:"Teilweise",t:"Teils — Grundinformationen sind vorhanden, aber in verteilten Systemen und Tabellen schwer zugänglich."},{c:"r",l:"Kritisch",t:"Nein, die Administration ist papier- oder tabellengestützt. Informationssuche bindet Zeit und erzeugt Fehlerrisiken."}], costs:{r:35000,y:9000} },
+  { id:14, phase:3, num:"14", text:"Werden krankheitsbedingte Absenzen aktiv begleitet, sodass Ausfallzeiten und Versicherungskosten kontrolliert bleiben?", opts:[{c:"g",l:"Gut",t:"Ja, wir haben ein aktives Absenzmanagement ab Tag 1. Ausfallzeiten und Kosten sind unter Kontrolle."},{c:"y",l:"Teilweise",t:"Teils — wir reagieren auf Absenzen, haben aber kein strukturiertes Früherkennungs- oder Präventionssystem."},{c:"r",l:"Kritisch",t:"Nein, die Krankheitsquote ist erhöht. Versicherungsprämien und Ausfall-Kosten entwickeln sich negativ."}], costs:{r:61000,y:15000} },
+  { id:15, phase:3, num:"15", text:"Sind Verträge, Reglemente, Datenschutz und arbeitsrechtliche Grundlagen aktuell und konsistent umgesetzt?", opts:[{c:"g",l:"Gut",t:"Ja, alle Grundlagen sind aktuell geprüft und konsistent implementiert. Wir sind audit-sicher aufgestellt."},{c:"y",l:"Teilweise",t:"Teils — Verträge sind mehrheitlich in Ordnung, aber bei Datenschutz und neueren Anforderungen besteht Unsicherheit."},{c:"r",l:"Kritisch",t:"Nein, Grundlagen sind veraltet oder inkonsistent umgesetzt. Wir stehen rechtlich auf unsicherem Fundament."}], costs:{r:35000,y:7500} },
+  { id:16, phase:3, num:"16", text:"Ist Ihre Arbeitszeiterfassung so aufgesetzt, dass Sie Pflichten und Nachweise jederzeit belastbar erbringen können?", opts:[{c:"g",l:"Gut",t:"Ja, die Erfassung ist digital, vollständig und revisionssicher. Nachweise sind jederzeit verfügbar."},{c:"y",l:"Teilweise",t:"Teils — Zeiterfassung findet statt, aber die Revisionssicherheit ist nicht vollständig gewährleistet."},{c:"r",l:"Kritisch",t:"Nein, die Erfassung ist lückenhaft oder nicht belastbar. Bei einer behördlichen Kontrolle besteht erhebliche Risikoexposition."}], costs:{r:35000,y:7500} }
+];
+
+const phaseInfo = {
+  1: { label:"Phase 1", name:"Führung und Entscheidungsfähigkeit", pillClass:"phase-pill-1" },
+  2: { label:"Phase 2", name:"Talente und Ausführungskraft",       pillClass:"phase-pill-2" },
+  3: { label:"Phase 3", name:"Governance und Betriebssicherheit",  pillClass:"phase-pill-3" }
+};
+
+const answers = {};
+let riskLevel = 'mid';
+
+function renderQuestions() {
+  const container = document.getElementById('questionsContainer');
+  let lastPhase = 0;
+  questions.forEach(q => {
+    if (q.phase !== lastPhase) {
+      lastPhase = q.phase;
+      const ph = phaseInfo[q.phase];
+      const hd = document.createElement('div');
+      hd.className = 'phase-hd';
+      hd.innerHTML = '<span class="phase-pill ' + ph.pillClass + '">' + ph.label + '</span><span class="phase-name">' + ph.name + '</span>';
+      container.appendChild(hd);
+    }
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.innerHTML = '<div class="q-num">Frage ' + q.num + '</div><div class="q-text">' + q.text + '</div><div class="opts" id="opts-' + q.id + '"></div>';
+    container.appendChild(card);
+    const optsDiv = card.querySelector('#opts-' + q.id);
+    q.opts.forEach(function(o) {
+      const btn = document.createElement('button');
+      btn.className = 'opt-btn';
+      btn.innerHTML = '<div class="dot dot-' + o.c + '"></div><div class="opt-inner"><div class="opt-lbl lbl-' + o.c + '">' + o.l + '</div><div class="opt-txt">' + o.t + '</div></div>';
+      btn.onclick = function() { selectOpt(q.id, o.c, optsDiv, btn); };
+      optsDiv.appendChild(btn);
+    });
+  });
+}
+
+function selectOpt(qId, color, optsDiv, btn) {
+  optsDiv.querySelectorAll('.opt-btn').forEach(function(b) { b.className = 'opt-btn'; });
+  btn.className = 'opt-btn sel-' + (color === 'g' ? 'g' : color === 'y' ? 'y' : 'r');
+  answers[qId] = color;
+  updateProgress();
+  updateDashboard();
+}
+
+function updateProgress() {
+  const count = Object.keys(answers).length;
+  document.getElementById('progressBar').style.width = (count / 16 * 100) + '%';
+  document.getElementById('progressLabel').textContent = count + ' von 16 Fragen beantwortet';
+  document.getElementById('submitBtn').style.opacity = count < 16 ? '0.5' : '1';
+}
+
+function setRisk(level) {
+  riskLevel = level;
+  ['Low','Mid','High'].forEach(function(l) {
+    const btn = document.getElementById('risk' + l);
+    btn.className = 'risk-opt' + (l.toLowerCase() === level ? ' active-' + l.toLowerCase() : '');
+  });
+  updateCalc();
+}
+
+function chf(n) {
+  if (n === null || n === undefined) return '—';
+  return 'CHF\u202F' + Math.round(n).toLocaleString('de-CH');
+}
+function pct(n) { return n + '%'; }
+function scoreColor(s) {
+  if (s < 30) return 'var(--c-green)';
+  if (s < 60) return 'var(--c-yellow)';
+  return 'var(--c-red)';
+}
+
+function flukCostPerPerson(team) {
+  if (team > 200) return 22000;
+  if (team > 120) return 18000;
+  if (team > 50)  return 15000;
+  return 12000;
+}
+
+function compCostByRisk(risk) {
+  if (risk === 'low')  return 10000;
+  if (risk === 'high') return 50000;
+  return 25000;
+}
+
+function calculateBoundGLHours() {
+  var h = 0;
+  var map = {1:{r:90,y:35},2:{r:45,y:18},3:{r:35,y:12},4:{r:60,y:22},5:{r:30,y:10},6:{r:15,y:5},7:{r:20,y:7},8:{r:25,y:8},9:{r:10,y:4},10:{r:15,y:5},11:{r:12,y:4},12:{r:18,y:6},13:{r:10,y:3},14:{r:8,y:3},15:{r:10,y:3},16:{r:8,y:2}};
+  Object.keys(map).forEach(function(id) {
+    var a = answers[parseInt(id)];
+    if (a === 'r') h += map[id].r;
+    else if (a === 'y') h += map[id].y;
+  });
+  return h;
+}
+
+function getPriorityBand(score, reds) {
+  if (reds >= 4 || score >= 60) return 'high';
+  if (score < 30 && reds < 2)   return 'low';
+  return 'mid';
+}
+
+function formatPriorityCost(q, answerColor) {
+  var raw = answerColor === 'r' ? (q.costs && q.costs.r || 0) : (q.costs && q.costs.y || 0);
+  var rounded = Math.round(raw / 5000) * 5000;
+  return 'Geschätzter Hebel: rund CHF\u202F' + rounded.toLocaleString('de-CH') + '\u202F/ Jahr';
+}
+
+function updateDashboard() {
+  var vals = Object.values(answers);
+  if (!vals.length) return;
+  var reds    = vals.filter(function(v){return v==='r';}).length;
+  var yellows = vals.filter(function(v){return v==='y';}).length;
+  var score   = Math.round((reds * 2 + yellows) / (vals.length * 2) * 100);
+  var band    = getPriorityBand(score, reds);
+  var bandColor = { low:'var(--c-green)', mid:'var(--c-yellow)', high:'var(--c-red)' };
+  var bandText  = { low:'Gut positioniert', mid:'Priorisierung empfohlen', high:'Klarer Handlungsbedarf' };
+  document.getElementById('riskScore').textContent    = pct(score);
+  document.getElementById('riskScore').style.color    = bandColor[band];
+  document.getElementById('riskBar').style.width      = pct(score);
+  document.getElementById('riskBar').style.background = bandColor[band];
+  document.getElementById('riskLabel').textContent    = bandText[band];
+  // Mobile Duplikat
+  document.getElementById('riskScoreMob').textContent    = pct(score);
+  document.getElementById('riskScoreMob').style.color    = bandColor[band];
+  document.getElementById('riskBarMob').style.width      = pct(score);
+  document.getElementById('riskBarMob').style.background = bandColor[band];
+  document.getElementById('riskLabelMob').textContent    = bandText[band];
+
+  var glH = calculateBoundGLHours();
+  var glChfVal = Math.round(glH * 350);
+  var ceoEl = document.getElementById('ceoHours');
+  var ceoChfSub = document.getElementById('ceoChfSub');
+  ceoEl.textContent = glH > 0 ? glH + '\u202Fh' : '—';
+  ceoEl.style.color = glH > 200 ? 'var(--c-red)' : glH > 80 ? 'var(--c-yellow)' : 'var(--c-text-3)';
+  if (glH > 0) {
+    ceoChfSub.textContent = 'CHF\u202F' + glChfVal.toLocaleString('de-CH') + '\u202F/ Jahr';
+    ceoChfSub.style.display = '';
+  } else { ceoChfSub.style.display = 'none'; }
+  // Mobile Duplikat
+  var ceoMob = document.getElementById('ceoHoursMob');
+  var ceoChfMob = document.getElementById('ceoChfSubMob');
+  ceoMob.textContent = glH > 0 ? glH + '\u202Fh' : '—';
+  ceoMob.style.color = glH > 200 ? 'var(--c-red)' : glH > 80 ? 'var(--c-yellow)' : 'var(--c-text-3)';
+  if (glH > 0) {
+    ceoChfMob.textContent = 'CHF\u202F' + glChfVal.toLocaleString('de-CH') + '\u202F/ Jahr';
+    ceoChfMob.style.display = '';
+  } else { ceoChfMob.style.display = 'none'; }
+
+  var govQs = [13,14,15,16].map(function(id){return answers[id];}).filter(Boolean);
+  var govR = govQs.filter(function(v){return v==='r';}).length;
+  var govY = govQs.filter(function(v){return v==='y';}).length;
+  var govScore = govQs.length ? Math.round((govR*2+govY)/(govQs.length*2)*100) : null;
+  var compEl = document.getElementById('complianceRisk');
+  if (govScore === null) { compEl.textContent='—'; compEl.style.color='var(--c-text-3)'; }
+  else if (govScore < 30) { compEl.textContent='Niedrig'; compEl.style.color='var(--c-green)'; }
+  else if (govScore < 60) { compEl.textContent='Mittel';  compEl.style.color='var(--c-yellow)'; }
+  else                    { compEl.textContent='Erhöht';  compEl.style.color='var(--c-red)'; }
+
+  function qualLabel(qIds) {
+    var qs = qIds.map(function(id){return answers[id];}).filter(Boolean);
+    if (!qs.length) return {text:'—',color:'var(--c-text-3)'};
+    var r = qs.filter(function(v){return v==='r';}).length;
+    var y = qs.filter(function(v){return v==='y';}).length;
+    var s = Math.round((r*2+y)/(qs.length*2)*100);
+    if (s<30) return {text:'Niedrig',color:'var(--c-green)'};
+    if (s<60) return {text:'Mittel', color:'var(--c-yellow)'};
+    return {text:'Hoch',color:'var(--c-red)'};
+  }
+  var q1=qualLabel([1,2,3,4,5]), q2=qualLabel([6,7,8,9,10,11,12]), q3=qualLabel([13,14,15,16]);
+  var s1=document.getElementById('sideQual1'), s2=document.getElementById('sideQual2'), s3=document.getElementById('sideQual3');
+  s1.textContent=q1.text; s1.style.color=q1.color;
+  s2.textContent=q2.text; s2.style.color=q2.color;
+  s3.textContent=q3.text; s3.style.color=q3.color;
+
+  [1,2,3].forEach(function(p) {
+    var pAns = questions.filter(function(q){return q.phase===p;}).map(function(q){return answers[q.id];}).filter(Boolean);
+    var el = document.getElementById('p'+p+'score');
+    if (!pAns.length) { el.textContent='—'; return; }
+    var pR=pAns.filter(function(v){return v==='r';}).length;
+    var pY=pAns.filter(function(v){return v==='y';}).length;
+    var ps=Math.round((pR*2+pY)/(pAns.length*2)*100);
+    el.textContent=pct(ps); el.style.color=scoreColor(ps);
+  });
+}
+
+function updateCalc() {
+  var team             = parseInt(document.getElementById('slTeam').value);
+  var glMembers        = parseInt(document.getElementById('glMembers').value);
+  var glHoursPerMember = parseInt(document.getElementById('slCEO').value);
+  var fluk             = parseInt(document.getElementById('slFluk').value);
+  var invest           = parseInt(document.getElementById('slInvest').value);
+
+  var totalGLHoursPerWeek = Math.min(30, glMembers * glHoursPerMember);
+  var capActive = (glMembers * glHoursPerMember) > 30;
+
+  document.getElementById('slTeamVal').textContent    = team + ' MA';
+  document.getElementById('slCEOVal').textContent     = glHoursPerMember + ' h/Wo.';
+  document.getElementById('slFlukVal').textContent    = fluk + ' Personen';
+  document.getElementById('slInvestVal').textContent  = 'CHF\u202F' + invest.toLocaleString('de-CH');
+  document.getElementById('glTotalDisplay').textContent = totalGLHoursPerWeek;
+  document.getElementById('glCapHint').style.display  = capActive ? '' : 'none';
+
+  var ceoSaving = totalGLHoursPerWeek * 46 * 350;
+  var costPerPerson = flukCostPerPerson(team);
+  var flukSaving = fluk * costPerPerson;
+  var baseComp = compCostByRisk(riskLevel);
+  var normalized = Math.max(0, Math.min(1, (team - 5) / (280 - 5)));
+  var compMultiplier = 1.0 + normalized * 0.8;
+  var compSaving = Math.round(baseComp * compMultiplier);
+
+  var totalPotential = ceoSaving + flukSaving + compSaving;
+  var nettoEffect    = totalPotential - invest;
+  var roi = invest > 0 ? (totalPotential / invest).toFixed(1) : '—';
+
+  document.getElementById('calcCEO').textContent   = chf(ceoSaving);
+  document.getElementById('calcFluk').textContent  = chf(flukSaving) + '\u202F(' + chf(costPerPerson) + '/Person)';
+  document.getElementById('calcComp').textContent  = chf(compSaving);
+  document.getElementById('totalVal').textContent  = chf(totalPotential);
+  document.getElementById('roiInvestDisplay').textContent = '− ' + chf(invest);
+  var nettoEl = document.getElementById('nettoVal');
+  nettoEl.textContent = chf(nettoEffect);
+  nettoEl.style.color = nettoEffect >= 0 ? 'var(--c-green-dark)' : 'var(--c-red)';
+  document.getElementById('roiVal').textContent = roi !== '—' ? roi + 'x' : '—';
+  document.getElementById('scCons').textContent = chf(Math.round(totalPotential * 0.7) - invest);
+  document.getElementById('scReal').textContent = chf(nettoEffect);
+  document.getElementById('scAmbi').textContent = chf(Math.round(totalPotential * 1.3) - invest);
+}
+
+function validateAndShow() {
+  var missing = questions.filter(function(q){return !answers[q.id];}).map(function(q){return q.num;});
+  var msgEl = document.getElementById('validationMsg');
+  if (missing.length > 0) {
+    msgEl.textContent = missing.length === 1
+      ? 'Frage ' + missing.join(', ') + ' wurde noch nicht beantwortet. Bitte alle 16 Fragen ausfüllen, bevor Sie die Analyse starten.'
+      : 'Die folgenden Fragen wurden noch nicht beantwortet: ' + missing.join(', ') + '. Bitte alle 16 Fragen ausfüllen.';
+    msgEl.style.display = '';
+    msgEl.scrollIntoView({ behavior:'auto', block:'nearest' });
+    return;
+  }
+  msgEl.style.display = 'none';
+  showResults();
+}
+
+function showResults() {
+  var section = document.getElementById('resultsSection');
+  section.classList.add('show');
+  setTimeout(function() { section.scrollIntoView({ behavior:'auto', block:'start' }); }, 50);
+
+  var vals    = Object.values(answers);
+  var reds    = vals.filter(function(v){return v==='r';}).length;
+  var yellows = vals.filter(function(v){return v==='y';}).length;
+  var score   = Math.round((reds*2+yellows)/(vals.length*2)*100);
+  var band    = getPriorityBand(score, reds);
+
+  var summaryEl = document.getElementById('scoreSummary');
+  var summaryText = {
+    low:  'Ihre Organisation wirkt in zentralen People- und Führungsthemen gut aufgestellt. Der grösste Hebel liegt voraussichtlich in gezielter Schärfung und Absicherung.',
+    mid:  'Ihre Organisation zeigt mehrere Punkte, an denen Führungsaufwand, Rollenunklarheit oder operative Reibung Wirkung kosten. Eine gezielte Priorisierung auf Ebene CEO und GL ist sinnvoll.',
+    high: 'Aktuell bindet Ihre Organisation voraussichtlich zu viel Management-Aufmerksamkeit in Themen, die strukturell lösbar wären. Der grösste Hebel liegt in Führungsentlastung, Rollenklarheit und professionellerer organisatorischer Steuerung.'
+  };
+  summaryEl.className   = 'score-summary ' + band;
+  summaryEl.textContent = summaryText[band];
+
+  var redQs = questions.filter(function(q){return answers[q.id]==='r';}).sort(function(a,b){return (b.costs&&b.costs.r||0)-(a.costs&&a.costs.r||0);});
+  var yelQs = questions.filter(function(q){return answers[q.id]==='y';}).sort(function(a,b){return (b.costs&&b.costs.y||0)-(a.costs&&a.costs.y||0);});
+  var top3  = redQs.concat(yelQs).slice(0, 3);
+
+  var list = document.getElementById('priorityList');
+  list.innerHTML = '';
+  if (!top3.length) {
+    list.innerHTML = '<p style="font-size:13px;color:var(--c-green-dark);padding:0.5rem 0;">Keine kritischen Handlungsfelder identifiziert — Ihre Organisation ist solide aufgestellt.</p>';
+  } else {
+    top3.forEach(function(q, i) {
+      var item = document.createElement('div');
+      item.className = 'priority-item';
+      var answeredOpt = q.opts.filter(function(o){return o.c===answers[q.id];})[0];
+      var answerColor = answers[q.id];
+      var titleRaw = q.text.split('?')[0].split(',')[0].trim();
+      var costLine = formatPriorityCost(q, answerColor);
+      item.innerHTML = '<div class="p-num">' + (i+1) + '</div><div style="flex:1;min-width:0;"><div class="p-title">Frage ' + q.num + ' · ' + titleRaw + '</div><div class="p-cost">' + costLine + '</div><div class="p-desc">' + (answeredOpt ? answeredOpt.t : '') + '</div></div>';
+      list.appendChild(item);
+    });
+  }
+
+  var suggestedTotalHours = Math.min(30, Math.max(0, Math.round(calculateBoundGLHours() / 46)));
+  var suggestedMembers = 1;
+  if      (suggestedTotalHours >= 25) suggestedMembers = 5;
+  else if (suggestedTotalHours >= 19) suggestedMembers = 4;
+  else if (suggestedTotalHours >= 13) suggestedMembers = 3;
+  else if (suggestedTotalHours >= 7)  suggestedMembers = 2;
+  var suggestedHPM = Math.min(8, Math.max(0, Math.ceil(suggestedTotalHours / suggestedMembers)));
+  document.getElementById('glMembers').value = suggestedMembers;
+  document.getElementById('slCEO').value     = suggestedHPM;
+
+  var flukRed = [7,8,9,10,11,12].filter(function(id){return answers[id]==='r';}).length;
+  var flukYel = [7,8,9,10,11,12].filter(function(id){return answers[id]==='y';}).length;
+  document.getElementById('slFluk').value = Math.min(10, Math.max(0, Math.round(flukRed*1.2+flukYel*0.5)));
+
+  var govAnswers = [13,14,15,16].map(function(id){return answers[id];}).filter(Boolean);
+  var gR = govAnswers.filter(function(v){return v==='r';}).length;
+  var gY = govAnswers.filter(function(v){return v==='y';}).length;
+  var gScore = govAnswers.length ? Math.round((gR*2+gY)/(govAnswers.length*2)*100) : 0;
+  setRisk(gScore < 30 ? 'low' : gScore < 60 ? 'mid' : 'high');
+
+  updateCalc();
+}
+
+renderQuestions();
+</script>
+</body>
+</html>

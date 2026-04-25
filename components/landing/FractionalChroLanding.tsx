@@ -121,6 +121,16 @@ export default async function FractionalChroLanding({
                 >
                   {t("hero.ctaSecondary")}
                 </Link>
+                <a
+                  href="/tavyro-hr-health-check.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex justify-center items-center px-5 py-3 rounded-md border border-tavyro-brand-300 text-tavyro-text font-medium hover:bg-tavyro-surface transition-colors w-full sm:w-auto text-center"
+                >
+                  {locale === "de"
+                    ? "CEO/GL Selbstcheck"
+                    : "CEO/Executive Team Self-Check"}
+                </a>
               </div>
             </div>
           </div>
