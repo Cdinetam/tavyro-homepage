@@ -87,6 +87,12 @@ export default function Navigation() {
             >
               {t("offers")}
             </a>
+            <Link
+              href="/executive-intelligence"
+              className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
+            >
+              {t("executiveIntelligence")}
+            </Link>
 
             {/* Language Switch */}
             <div className="flex items-center text-sm font-medium">
@@ -185,6 +191,13 @@ export default function Navigation() {
               >
                 {t("offers")}
               </a>
+              <Link
+                href="/executive-intelligence"
+                className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                {t("executiveIntelligence")}
+              </Link>
 
               {/* Mobile Language Switch */}
               <div className="flex items-center text-sm font-medium py-2">

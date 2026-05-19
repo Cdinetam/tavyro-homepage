@@ -3,13 +3,20 @@
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
 
 export default function Footer() {
   const t = useTranslations("Footer");
   const locale = useLocale();
+  const pathname = usePathname();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const scrollToSection = (id: string) => {
+    if (pathname !== "/") {
+      window.location.href = `/${locale}/#${id}`;
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -73,7 +80,22 @@ export default function Footer() {
                 {openFaqIndex === index && (
                   <div className="px-6 pb-6 pt-0">
                     <p className="text-tavyro-secondary-200 text-sm md:text-base leading-relaxed">
-                      {t(`faqs.${key}.answer`)}
+                      {t.rich(`faqs.${key}.answer`, {
+                        link: (chunks) => (
+                          <a
+                            href={
+                              locale === "de"
+                                ? "https://fractional-chro.ch/"
+                                : "https://fractional-chro.ch/index-en.html"
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline underline-offset-4 hover:text-white transition-colors"
+                          >
+                            {chunks}
+                          </a>
+                        ),
+                      })}
                     </p>
                   </div>
                 )}
@@ -155,45 +177,33 @@ export default function Footer() {
                   {t("offers")}
                 </a>
               </li>
+              <li>
+                <Link
+                  href="/executive-intelligence"
+                  className="hover:text-white transition-colors"
+                >
+                  {t("executiveIntelligence")}
+                </Link>
+              </li>
               {locale === "de" && (
-                <>
-                  <li>
-                    <Link
-                      href="/fractional-chro-schweiz"
-                      className="hover:text-white transition-colors"
-                    >
-                      {t("fractionalChroSchweiz")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/fractional-chro-zurich"
-                      className="hover:text-white transition-colors"
-                    >
-                      {t("fractionalChroZuerich")}
-                    </Link>
-                  </li>
-                </>
+                <li>
+                  <Link
+                    href="/fractional-chro-schweiz"
+                    className="hover:text-white transition-colors"
+                  >
+                    {t("fractionalChroSchweiz")}
+                  </Link>
+                </li>
               )}
               {locale === "en" && (
-                <>
-                  <li>
-                    <Link
-                      href="/fractional-chro-zurich"
-                      className="hover:text-white transition-colors"
-                    >
-                      {t("fractionalChroZurich")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/fractional-chro-switzerland"
-                      className="hover:text-white transition-colors"
-                    >
-                      {t("fractionalChroSwitzerland")}
-                    </Link>
-                  </li>
-                </>
+                <li>
+                  <Link
+                    href="/fractional-chro-switzerland"
+                    className="hover:text-white transition-colors"
+                  >
+                    {t("fractionalChroSwitzerland")}
+                  </Link>
+                </li>
               )}
               <li>
                 <Link 

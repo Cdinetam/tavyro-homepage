@@ -11,14 +11,21 @@
     "services": "Leistungen",
     "offers": "Angebote",
     "about": "Über TaVyro",
+    "executiveIntelligence": "Executive Intelligence",
     "cta": "Erstgespräch buchen"
+  },
+  "ExecutiveIntelligencePage": {
+    "meta": {
+      "titleAbsolute": "TaVyro – Executive Intelligence",
+      "description": "Executive Intelligence verbindet People, Organisation, Governance und Business Intelligence – Muster sichtbar machen, die Business Performance beeinflussen."
+    }
   },
   "Hero": {
     "headline": "Fractional CHRO für Schweizer KMU",
     "subheadline": "TaVyro begleitet CEOs, Geschäftsleitungen und Verwaltungsräte als <strong>Fractional CHRO / Strategic People Partner</strong> – unabhängig, umsetzungsnah und mit messbarer Wirkung.",
     "ctaPrimary": "Erstgespräch buchen",
     "ctaSecondary": "Leistungen ansehen",
-    "seoLink": "Fractional CHRO in der Schweiz oder in Zürich? <link>Mehr erfahren</link>"
+    "seoLink": "CEO/GL Selbstcheck: <link>Jetzt starten</link>"
   },
   "TrustAnchors": {
     "items": {
@@ -215,7 +222,7 @@
       },
       "8": {
         "question": "Was bedeutet Fractional CHRO?",
-        "answer": "Ein Fractional CHRO ist eine strategische HR-Leitungsfunktion auf Mandatsbasis oder Teilzeit. Unternehmen erhalten CHRO-Kompetenz auf C-Level-Niveau, ohne eine Vollzeitstelle zu besetzen. Ein Fractional CHRO arbeitet eng mit der Geschäftsleitung zusammen, übernimmt Verantwortung für People- und Organisationsthemen und stärkt Struktur, Entscheidungsqualität und Umsetzungskraft, bleibt dabei jedoch extern und unabhängig. TaVyro arbeitet sich in Ihre Organisation ein, versteht Kultur, Mitarbeitende, Dynamiken und Entscheidungswege und setzt gemeinsam mit Ihnen wirksame Lösungen um. Häufig wird dieser Ansatz auch als CHRO as a Service, externe HR-Leitung oder strategische HR-Beratung für die Geschäftsleitung verstanden."
+        "answer": "Ein Fractional CHRO ist eine strategische HR-Leitungsfunktion auf Mandatsbasis oder Teilzeit. Unternehmen erhalten CHRO-Kompetenz auf C-Level-Niveau, ohne eine Vollzeitstelle zu besetzen. Ein Fractional CHRO arbeitet eng mit der Geschäftsleitung zusammen, übernimmt Verantwortung für People- und Organisationsthemen und stärkt Struktur, Entscheidungsqualität und Umsetzungskraft, bleibt dabei jedoch extern und unabhängig. TaVyro arbeitet sich in Ihre Organisation ein, versteht Kultur, Mitarbeitende, Dynamiken und Entscheidungswege und setzt gemeinsam mit Ihnen wirksame Lösungen um. Häufig wird dieser Ansatz auch als CHRO as a Service, externe HR-Leitung oder strategische HR-Beratung für die Geschäftsleitung verstanden. <link>Weiterführende Informationen</link>"
       },
       "9": {
         "question": "Was kostet ein Fractional CHRO in der Schweiz?",
@@ -248,13 +255,14 @@
     "services": "Leistungen",
     "offers": "Angebote",
     "aboutTavyro": "Über TaVyro",
+    "executiveIntelligence": "Executive Intelligence",
     "fractionalChroSchweiz": "Fractional CHRO Schweiz",
-    "fractionalChroZuerich": "Fractional CHRO Zürich",
+    "fractionalChroZuerich": "Fractional CHRO Schweiz",
     "bookCall": "Erstgespräch buchen",
     "legalTitle": "Rechtliches",
     "impressum": "Impressum",
     "privacy": "Datenschutz",
-    "copyright": "© {year} TaVyro GmbH. Alle Rechte vorbehalten."
+    "copyright": "Copyright by TaVyro GmbH · © {year}. Alle Rechte vorbehalten."
   },
   "Erstgespraech": {
     "pageTitle": "Erstgespräch buchen",
@@ -362,7 +370,7 @@
       "h1": "Fractional CHRO Zürich",
       "supporting": "TaVyro ist eine Boutique-Advisory mit Sitz in Zürich. Wir liefern strategische HR- und Organisationsführung für Schweizer KMU, Gründerinnen, Geschäftsleitungen und Verwaltungsräte—eingebunden, strategisch und umsetzungsnah—ohne eine Vollzeitfunktion als Chief Human Resources Officer aufzubauen.",
       "ctaPrimary": "Erstgespräch vereinbaren",
-      "ctaSecondary": "So arbeitet TaVyro"
+      "ctaSecondary": "Leistungen ansehen"
     },
     "why": {
       "title": "Warum Unternehmen in Zürich und der Schweiz einen Fractional CHRO wählen",
@@ -482,7 +490,7 @@
       "h1": "Fractional CHRO Schweiz",
       "supporting": "TaVyro ist eine Boutique-Advisory mit Sitz in Zürich und begleitet KMU, Gründerinnen, Geschäftsleitungen und Verwaltungsräte in der ganzen Schweiz. Sie erhalten strategische HR- und Organisationsführung auf Executive-Level—diskret, belastbar und umsetzungsnah—ohne Vollzeit-CHRO.",
       "ctaPrimary": "Erstgespräch vereinbaren",
-      "ctaSecondary": "So arbeitet TaVyro"
+      "ctaSecondary": "Leistungen ansehen"
     },
     "why": {
       "title": "Warum Schweizer Unternehmen einen Fractional CHRO wählen",
@@ -502,7 +510,7 @@
     },
     "what": {
       "title": "Was TaVyro konkret leistet",
-      "intro": "TaVyro arbeitet als TaVyro—mit Verantwortung gegenüber Ihrer Geschäftsleitung. Typischer Umfang:",
+      "intro": "TaVyro arbeitet als Sparrings- und Umsetzungspartner mit Verantwortung gegenüber Ihrer Geschäftsleitung. Typischer Umfang:",
       "items": {
         "0": "People-Strategie im Einklang mit Strategie, Wachstum und VR",
         "1": "Organisationsdesign: Rollen, Struktur, Führungsrhythmus, Entscheidungsrechte",
