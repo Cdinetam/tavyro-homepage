@@ -3,13 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 
 export default function Navigation() {
   const t = useTranslations("Navigation");
   const locale = useLocale();
   const pathname = usePathname();
-  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
@@ -27,8 +26,22 @@ export default function Navigation() {
     setIsOpen(false);
   };
 
+  /**
+   * Full page navigation (not client router.replace) so iOS Safari reliably
+   * applies locale, middleware cookie, and fresh RSC payload — fixes broken EN toggle on mobile.
+   */
   const switchLocale = (newLocale: "de" | "en") => {
-    router.replace(pathname, { locale: newLocale });
+    if (newLocale === locale) {
+      setIsOpen(false);
+      return;
+    }
+    setIsOpen(false);
+    const normalized =
+      pathname.startsWith("/") ? pathname : `/${pathname}`;
+    const pathOnly = normalized === "/" ? "" : normalized;
+    window.location.assign(
+      `/${newLocale}${pathOnly}${window.location.search}${window.location.hash}`
+    );
   };
 
   return (
@@ -95,24 +108,32 @@ export default function Navigation() {
             </Link>
 
             {/* Language Switch */}
-            <div className="flex items-center text-sm font-medium">
+            <div className="flex items-center gap-1 text-sm font-medium">
               <button
+                type="button"
                 onClick={() => switchLocale("de")}
-                className={`transition-colors ${
+                aria-label="Deutsch"
+                aria-current={locale === "de" ? "true" : undefined}
+                className={`touch-manipulation min-h-11 min-w-11 rounded-md px-2 transition-colors ${
                   locale === "de"
                     ? "text-tavyro-text font-bold"
-                    : "text-tavyro-text2 hover:text-tavyro-text"
+                    : "text-tavyro-text2 hover:text-tavyro-text active:bg-tavyro-brand-100"
                 }`}
               >
                 DE
               </button>
-              <span className="text-tavyro-border mx-1.5">|</span>
+              <span className="text-tavyro-border select-none" aria-hidden>
+                |
+              </span>
               <button
+                type="button"
                 onClick={() => switchLocale("en")}
-                className={`transition-colors ${
+                aria-label="English"
+                aria-current={locale === "en" ? "true" : undefined}
+                className={`touch-manipulation min-h-11 min-w-11 rounded-md px-2 transition-colors ${
                   locale === "en"
                     ? "text-tavyro-text font-bold"
-                    : "text-tavyro-text2 hover:text-tavyro-text"
+                    : "text-tavyro-text2 hover:text-tavyro-text active:bg-tavyro-brand-100"
                 }`}
               >
                 EN
@@ -200,27 +221,32 @@ export default function Navigation() {
               </Link>
 
               {/* Mobile Language Switch */}
-              <div className="flex items-center text-sm font-medium py-2">
+              <div className="flex flex-col gap-2 text-sm font-medium py-2">
                 <button
+                  type="button"
                   onClick={() => switchLocale("de")}
-                  className={`transition-colors ${
+                  aria-label="Deutsch"
+                  aria-current={locale === "de" ? "true" : undefined}
+                  className={`touch-manipulation min-h-12 w-full rounded-md border border-tavyro-border px-4 py-3 text-left transition-colors ${
                     locale === "de"
-                      ? "text-tavyro-text font-bold"
-                      : "text-tavyro-text2 hover:text-tavyro-text"
+                      ? "border-tavyro-text bg-tavyro-brand-50 text-tavyro-text font-bold"
+                      : "text-tavyro-text2 active:bg-tavyro-brand-100"
                   }`}
                 >
-                  DE
+                  DE — Deutsch
                 </button>
-                <span className="text-tavyro-border mx-1.5">|</span>
                 <button
+                  type="button"
                   onClick={() => switchLocale("en")}
-                  className={`transition-colors ${
+                  aria-label="English"
+                  aria-current={locale === "en" ? "true" : undefined}
+                  className={`touch-manipulation min-h-12 w-full rounded-md border border-tavyro-border px-4 py-3 text-left transition-colors ${
                     locale === "en"
-                      ? "text-tavyro-text font-bold"
-                      : "text-tavyro-text2 hover:text-tavyro-text"
+                      ? "border-tavyro-text bg-tavyro-brand-50 text-tavyro-text font-bold"
+                      : "text-tavyro-text2 active:bg-tavyro-brand-100"
                   }`}
                 >
-                  EN
+                  EN — English
                 </button>
               </div>
 
