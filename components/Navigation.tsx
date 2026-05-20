@@ -5,11 +5,24 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 
+/** Path after locale prefix, e.g. "" or "/erstgespraech-buchen" (next-intl pathname is locale-agnostic). */
+function pathSuffix(pathname: string): string {
+  const normalized = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  return normalized === "/" ? "" : normalized;
+}
+
+function localeHref(locale: "de" | "en", pathname: string): string {
+  return `/${locale}${pathSuffix(pathname)}`;
+}
+
 export default function Navigation() {
   const t = useTranslations("Navigation");
   const locale = useLocale();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  const deHref = localeHref("de", pathname);
+  const enHref = localeHref("en", pathname);
 
   const scrollToSection = (id: string) => {
     // If not on homepage, navigate to homepage with hash
@@ -17,7 +30,7 @@ export default function Navigation() {
       window.location.href = `/${locale}/#${id}`;
       return;
     }
-    
+
     // If on homepage, smooth scroll to section
     const element = document.getElementById(id);
     if (element) {
@@ -26,47 +39,26 @@ export default function Navigation() {
     setIsOpen(false);
   };
 
-  /**
-   * Full page navigation (not client router.replace) so iOS Safari reliably
-   * applies locale, middleware cookie, and fresh RSC payload — fixes broken EN toggle on mobile.
-   */
-  const switchLocale = (newLocale: "de" | "en") => {
-    if (newLocale === locale) {
-      setIsOpen(false);
-      return;
-    }
-    setIsOpen(false);
-    const normalized =
-      pathname.startsWith("/") ? pathname : `/${pathname}`;
-    const pathOnly = normalized === "/" ? "" : normalized;
-    window.location.assign(
-      `/${newLocale}${pathOnly}${window.location.search}${window.location.hash}`
-    );
-  };
-
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-tavyro-border z-50 [color-scheme:light]">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-tavyro-border bg-white/95 backdrop-blur-sm [color-scheme:light]">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-24 md:h-28 py-4 md:py-6">
-          <Link
-            href="/"
-            className="flex items-center"
-          >
+        <div className="flex h-24 items-center justify-between py-4 md:h-28 md:py-6">
+          <Link href="/" className="flex items-center">
             <Image
               src="/logo-tavyro.svg"
               alt="TaVyro Logo"
               width={240}
               height={64}
-              className="h-14 md:h-16 w-auto"
+              className="h-14 w-auto md:h-16"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden items-center space-x-8 md:flex">
             <Link
               href="/"
-              className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
+              className="text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
             >
               {t("home")}
             </Link>
@@ -76,7 +68,7 @@ export default function Navigation() {
                 e.preventDefault();
                 scrollToSection("leistungen");
               }}
-              className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
+              className="text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
             >
               {t("services")}
             </a>
@@ -86,7 +78,7 @@ export default function Navigation() {
                 e.preventDefault();
                 scrollToSection("ueber");
               }}
-              className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
+              className="text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
             >
               {t("about")}
             </a>
@@ -96,53 +88,63 @@ export default function Navigation() {
                 e.preventDefault();
                 scrollToSection("angebote");
               }}
-              className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
+              className="text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
             >
               {t("offers")}
             </a>
             <Link
               href="/executive-intelligence"
-              className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors"
+              className="text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
             >
               {t("executiveIntelligence")}
             </Link>
 
-            {/* Language Switch */}
+            {/* Language switch: native <a> — reliable on iOS Safari inside fixed header */}
             <div className="flex items-center gap-1 text-sm font-medium">
-              <button
-                type="button"
-                onClick={() => switchLocale("de")}
-                aria-label="Deutsch"
-                aria-current={locale === "de" ? "true" : undefined}
-                className={`touch-manipulation min-h-11 min-w-11 rounded-md px-2 transition-colors ${
-                  locale === "de"
-                    ? "text-tavyro-text font-bold"
-                    : "text-tavyro-text2 hover:text-tavyro-text active:bg-tavyro-brand-100"
-                }`}
-              >
-                DE
-              </button>
-              <span className="text-tavyro-border select-none" aria-hidden>
+              {locale === "de" ? (
+                <span
+                  className="touch-manipulation min-h-11 min-w-11 cursor-default rounded-md px-2 font-bold text-tavyro-text"
+                  aria-current="page"
+                >
+                  DE
+                </span>
+              ) : (
+                <a
+                  href={deHref}
+                  hrefLang="de"
+                  lang="de"
+                  className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
+                  aria-label="Deutsch"
+                >
+                  DE
+                </a>
+              )}
+              <span className="select-none text-tavyro-border" aria-hidden>
                 |
               </span>
-              <button
-                type="button"
-                onClick={() => switchLocale("en")}
-                aria-label="English"
-                aria-current={locale === "en" ? "true" : undefined}
-                className={`touch-manipulation min-h-11 min-w-11 rounded-md px-2 transition-colors ${
-                  locale === "en"
-                    ? "text-tavyro-text font-bold"
-                    : "text-tavyro-text2 hover:text-tavyro-text active:bg-tavyro-brand-100"
-                }`}
-              >
-                EN
-              </button>
+              {locale === "en" ? (
+                <span
+                  className="touch-manipulation min-h-11 min-w-11 cursor-default rounded-md px-2 font-bold text-tavyro-text"
+                  aria-current="page"
+                >
+                  EN
+                </span>
+              ) : (
+                <a
+                  href={enHref}
+                  hrefLang="en"
+                  lang="en"
+                  className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
+                  aria-label="English"
+                >
+                  EN
+                </a>
+              )}
             </div>
 
             <Link
               href="/erstgespraech-buchen"
-              className="btn-primary text-sm px-5 py-2.5"
+              className="btn-primary px-5 py-2.5 text-sm"
             >
               {t("cta")}
             </Link>
@@ -150,12 +152,15 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-tavyro-text2 hover:text-tavyro-text"
-            aria-label="Menu"
+            className="touch-manipulation p-3 text-tavyro-text2 min-[480px]:p-2 md:hidden [-webkit-tap-highlight-color:transparent]"
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav-panel"
+            aria-label={isOpen ? "Menü schliessen" : "Menü öffnen"}
           >
             <svg
-              className="w-6 h-6"
+              className="h-6 w-6"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -174,85 +179,100 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-tavyro-border">
+          <div
+            id="mobile-nav-panel"
+            className="max-h-[calc(100dvh-5.5rem)] overflow-y-auto overflow-x-hidden border-t border-tavyro-border py-4 md:hidden [-webkit-overflow-scrolling:touch]"
+          >
             <div className="flex flex-col space-y-4">
               <Link
                 href="/"
-                className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
+                className="touch-manipulation py-2 text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
+                onClick={() => setIsOpen(false)}
               >
                 {t("home")}
               </Link>
               <a
                 href="#leistungen"
+                className="touch-manipulation py-2 text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("leistungen");
                 }}
-                className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
               >
                 {t("services")}
               </a>
               <a
                 href="#ueber"
+                className="touch-manipulation py-2 text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("ueber");
                 }}
-                className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
               >
                 {t("about")}
               </a>
               <a
                 href="#angebote"
+                className="touch-manipulation py-2 text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("angebote");
                 }}
-                className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
               >
                 {t("offers")}
               </a>
               <Link
                 href="/executive-intelligence"
-                className="text-sm font-medium text-tavyro-text2 hover:text-tavyro-text transition-colors py-2"
+                className="touch-manipulation py-2 text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
                 onClick={() => setIsOpen(false)}
               >
                 {t("executiveIntelligence")}
               </Link>
 
-              {/* Mobile Language Switch */}
-              <div className="flex flex-col gap-2 text-sm font-medium py-2">
-                <button
-                  type="button"
-                  onClick={() => switchLocale("de")}
-                  aria-label="Deutsch"
-                  aria-current={locale === "de" ? "true" : undefined}
-                  className={`touch-manipulation min-h-12 w-full rounded-md border border-tavyro-border px-4 py-3 text-left transition-colors ${
-                    locale === "de"
-                      ? "border-tavyro-text bg-tavyro-brand-50 text-tavyro-text font-bold"
-                      : "text-tavyro-text2 active:bg-tavyro-brand-100"
-                  }`}
-                >
-                  DE — Deutsch
-                </button>
-                <button
-                  type="button"
-                  onClick={() => switchLocale("en")}
-                  aria-label="English"
-                  aria-current={locale === "en" ? "true" : undefined}
-                  className={`touch-manipulation min-h-12 w-full rounded-md border border-tavyro-border px-4 py-3 text-left transition-colors ${
-                    locale === "en"
-                      ? "border-tavyro-text bg-tavyro-brand-50 text-tavyro-text font-bold"
-                      : "text-tavyro-text2 active:bg-tavyro-brand-100"
-                  }`}
-                >
-                  EN — English
-                </button>
+              {/* Mobile language: full-width native links (iOS-safe) */}
+              <div className="flex flex-col gap-2 py-2 text-sm font-medium">
+                {locale === "de" ? (
+                  <span
+                    className="min-h-12 w-full rounded-md border border-tavyro-text bg-tavyro-brand-50 px-4 py-3 text-left font-bold text-tavyro-text"
+                    aria-current="page"
+                  >
+                    DE — Deutsch
+                  </span>
+                ) : (
+                  <a
+                    href={deHref}
+                    hrefLang="de"
+                    lang="de"
+                    className="touch-manipulation flex min-h-12 w-full items-center rounded-md border border-tavyro-border px-4 py-3 text-left text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    DE — Deutsch
+                  </a>
+                )}
+                {locale === "en" ? (
+                  <span
+                    className="min-h-12 w-full rounded-md border border-tavyro-text bg-tavyro-brand-50 px-4 py-3 text-left font-bold text-tavyro-text"
+                    aria-current="page"
+                  >
+                    EN — English
+                  </span>
+                ) : (
+                  <a
+                    href={enHref}
+                    hrefLang="en"
+                    lang="en"
+                    className="touch-manipulation flex min-h-12 w-full items-center rounded-md border border-tavyro-border px-4 py-3 text-left text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    EN — English
+                  </a>
+                )}
               </div>
 
               <Link
                 href="/erstgespraech-buchen"
-                className="btn-primary text-sm px-5 py-2.5 text-center"
+                className="btn-primary py-2.5 text-center text-sm"
+                onClick={() => setIsOpen(false)}
               >
                 {t("cta")}
               </Link>
