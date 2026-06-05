@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,63 +44,25 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);font-size:15px;line-height:1.65;overflow-x:hidden}
 
-/* ── HEADER (matches tavyro.ch Navigation.tsx) ── */
-body{padding-top:6rem}
-@media(min-width:768px){body{padding-top:7rem}}
-.site-header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border-bottom:1px solid #D7DDE1;color-scheme:light}
-.header-wrap{max-width:80rem;margin:0 auto;padding-left:1rem;padding-right:1rem}
-@media(min-width:640px){.header-wrap{padding-left:1.5rem;padding-right:1.5rem}}
-@media(min-width:1024px){.header-wrap{padding-left:2rem;padding-right:2rem}}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:6rem;padding:1rem 0;overflow:visible}
-@media(min-width:768px){.header-inner{height:7rem;padding:1.5rem 0;gap:2rem}}
-.header-logo{display:flex;flex-shrink:0;align-items:center;text-decoration:none;padding-left:.5rem}
-@media(min-width:640px){.header-logo{padding-left:1rem}}
-@media(min-width:768px){.header-logo{padding-left:2rem;margin-right:3rem}}
-@media(min-width:1024px){.header-logo{padding-left:2.5rem;margin-right:4rem}}
-@media(min-width:1280px){.header-logo{margin-right:5rem}}
-.header-logo img{display:block;height:3rem;width:auto;max-width:11.5rem}
-@media(min-width:640px){.header-logo img{max-width:12.5rem}}
-@media(min-width:768px){.header-logo img{height:3.5rem;max-width:13.5rem}}
-@media(min-width:1024px){.header-logo img{height:4rem;max-width:15rem}}
-.header-bar{display:flex;flex:1;min-width:0;align-items:center;justify-content:flex-end;gap:1rem}
-.header-nav{display:none;align-items:center;flex-shrink:0;gap:0}
-.header-nav a{font-size:.875rem;line-height:1.25rem;font-weight:500;color:#506364;text-decoration:none;white-space:nowrap;transition:color .2s;-webkit-tap-highlight-color:transparent}
-.header-nav a:hover{color:#132A32}
-.header-end{display:none;align-items:center;flex-shrink:0;gap:1rem}
-.header-lang{display:flex;align-items:center;gap:.25rem;font-size:.875rem;font-weight:500}
-.lang-active,.lang-link,.lang-cell{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;min-width:2.75rem;padding:0 .5rem;border-radius:.375rem;text-decoration:none;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.lang-active{font-weight:700;color:#132A32;cursor:default}
-.lang-link{color:#506364}
-.lang-link:hover{color:#132A32;background:#EEF1F3}
-.lang-sep{color:#D7DDE1;user-select:none;line-height:1}
-.nav-cta{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;padding:.625rem 1.25rem;font-size:.875rem;line-height:1.25rem;font-weight:500;color:#fff!important;background:#265464!important;border-radius:.5rem;text-decoration:none!important;white-space:nowrap;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);transition:all .2s}
-.nav-cta:hover{background:#1D404C!important;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}
-.nav-toggle{display:flex;align-items:center;justify-content:center;padding:.75rem;margin:0;border:0;background:transparent;color:#506364;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;flex-shrink:0}
-.nav-toggle svg{width:1.5rem;height:1.5rem;display:block}
-.nav-check{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;opacity:0;pointer-events:none}
-.nav-mobile-only{display:block}
-@media(min-width:768px){
-  .header-nav{display:flex;gap:1.5rem}
-  .header-end{display:flex}
-  .nav-toggle{display:none}
-  .nav-mobile-only{display:none!important}
-}
-@media(min-width:1024px){.header-nav{gap:2rem}.header-end{gap:1rem}}
-@media(max-width:1200px) and (min-width:768px){.header-nav{gap:1.25rem}.header-nav a{font-size:.8125rem}}
+/* ── HEADER ── */
+header{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--br);padding:0 5vw;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo-img{height:30px;width:auto}
+
+nav{display:flex;align-items:center;gap:.2rem}
+nav a{font-size:.81rem;font-weight:400;color:var(--tm);text-decoration:none;padding:.4rem .85rem;border-radius:3px;transition:color .17s,background .17s}
+nav a:hover{color:var(--p);background:var(--pl)}
+.nav-cta{background:var(--p)!important;color:var(--wh)!important;font-weight:500;margin-left:.4rem;transition:background .17s,transform .12s!important}
+.nav-cta:hover{background:var(--pd)!important;transform:translateY(-1px)}
 
 /* ── HERO ── */
-.hero{background:var(--p);padding:5rem 0 5.5rem;position:relative;overflow:hidden}
+.hero{background:var(--p);padding:80px 5vw 90px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 85% 50%,rgba(255,255,255,.07) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 5% 90%,rgba(0,0,0,.1) 0%,transparent 60%);pointer-events:none}
-.hero-inner{max-width:80rem;margin:0 auto;padding:0 1rem;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:center;position:relative;z-index:1}
-@media(min-width:640px){.hero-inner{padding:0 1.5rem}}
-@media(min-width:1024px){.hero-inner{padding:0 2rem}}
-.hero-copy{text-align:center;display:flex;flex-direction:column;align-items:center}
-.hero h1,.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4.2vw,3.7rem);font-weight:300;color:var(--wh);line-height:1.12;margin:0 0 1.3rem;text-align:center}
-.hero-title .line{display:block}
-.hero h1 em,.hero-title em{font-style:italic;color:rgba(255,255,255,.72)}
-.hero-sub{font-size:.97rem;color:rgba(255,255,255,.68);line-height:1.72;max-width:470px;margin:0 auto 2.1rem;font-weight:300;text-align:center}
-.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;justify-content:center;width:100%}
+.hero-inner{max-width:1100px;display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:center;position:relative;z-index:1}
 
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4.2vw,3.7rem);font-weight:300;color:var(--wh);line-height:1.14;margin-bottom:1.3rem;margin-top:0.5rem}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,.72)}
+.hero-sub{font-size:.97rem;color:rgba(255,255,255,.68);line-height:1.72;max-width:470px;margin-bottom:2.1rem;font-weight:300}
+.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap}
 .btn-wh{display:inline-block;padding:.78rem 1.75rem;background:var(--wh);color:var(--p);border-radius:3px;font-size:.82rem;font-weight:600;text-decoration:none;transition:background .17s,transform .12s,box-shadow .17s}
 .btn-wh:hover{background:var(--pl);transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.12)}
 .btn-owh{display:inline-block;padding:.78rem 1.55rem;border:1px solid rgba(255,255,255,.38);color:var(--wh);border-radius:3px;font-size:.82rem;font-weight:400;text-decoration:none;transition:border-color .17s,background .17s}
@@ -223,8 +185,6 @@ p.sub{color:var(--tm);font-size:.94rem;font-weight:300;line-height:1.72;max-widt
 .rm-items li{font-size:.81rem;color:var(--tm);padding:.38rem 0;border-bottom:1px solid var(--br);display:flex;align-items:center;gap:.52rem}
 .rm-items li:last-child{border-bottom:none}
 .rm-items li::before{content:'→';color:var(--p);font-size:.69rem;flex-shrink:0}
-.rm-items a{color:inherit;text-decoration:none;transition:color .17s}
-.rm-items a:hover{color:var(--p)}
 
 /* ── TABLE ── */
 .tbl-sec{padding:88px 5vw;background:var(--bga);border-bottom:1px solid var(--br)}
@@ -257,21 +217,6 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 .rv.in{opacity:1;transform:translateY(0)}
 
 /* ── RESPONSIVE ── */
-@media(max-width:767px){
-  body{padding-top:6rem}
-  .header-inner{height:6rem;padding:1rem 0}
-  .header-logo{flex:0 1 auto;min-width:0;max-width:calc(100% - 3.5rem)}
-  .header-logo img{height:3.5rem;max-width:100%;object-fit:contain}
-  .header-wrap{position:relative}
-  .header-bar{gap:.5rem}
-  .header-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid #D7DDE1;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:.5rem 1rem 1rem;max-height:calc(100dvh - 6rem);overflow-y:auto;-webkit-overflow-scrolling:touch;z-index:49}
-  #nav-open:checked+.header-wrap .header-nav{display:flex}
-  .header-nav a{padding:.75rem .5rem;font-size:.875rem;border-bottom:1px solid #D7DDE1}
-  .header-nav a:last-of-type:not(.nav-cta){border-bottom:1px solid #D7DDE1}
-  .header-nav .nav-cta{margin-top:.5rem;text-align:center;justify-content:center}
-  .header-nav .header-lang{margin-top:.5rem;padding:.5rem 0;justify-content:flex-start;border-bottom:none}
-  .nav-mobile-only.nav-cta{display:inline-flex!important}
-}
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr}
   .hero-card{display:none}
@@ -280,215 +225,19 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
   .prod-grid{grid-template-columns:1fr 1fr}
   .pt.feat{flex-direction:column;gap:1rem}
   .rm-grid{grid-template-columns:1fr}
+  nav a:not(.nav-cta){display:none}
 }
 @media(max-width:600px){
   .prod-grid,.ei-grid{grid-template-columns:1fr}
   .hero h1{font-size:2.35rem}
 }
-
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
-<header class="site-header">
-  <input type="checkbox" id="nav-open" class="nav-check" aria-hidden="true" tabindex="-1">
-  <div class="header-wrap">
-    <div class="header-inner">
-      <a href="/en" class="header-logo" aria-label="TaVyro – Home">
-        <img src="/logo-tavyro.svg" alt="TaVyro" width="240" height="64" decoding="async">
-      </a>
-      <div class="header-bar">
-        <nav id="navPanel" class="header-nav" aria-label="Main navigation">
-          <a href="/en">Home</a>
-          <a href="/en#leistungen">Services</a>
-          <a href="/en#angebote">Plans</a>
-          <a href="/en#ueber">About TaVyro</a>
-          <a href="/en/executive-intelligence">TaVyro Executive Intelligence®</a>
-          <a href="/en/erstgespraech-buchen" class="nav-cta nav-mobile-only">Book consultation</a>
-          <div class="header-lang nav-mobile-only" aria-label="Language">
-            <a href="/de/executive-intelligence" hreflang="de" lang="de" class="lang-link lang-cell">DE</a>
-            <span class="lang-sep" aria-hidden="true">|</span>
-            <span class="lang-active lang-cell" aria-current="page">EN</span>
-          </div>
-        </nav>
-        <div class="header-end">
-          <a href="/en/erstgespraech-buchen" class="nav-cta">Book consultation</a>
-          <div class="header-lang" aria-label="Language">
-            <a href="/de/executive-intelligence" hreflang="de" lang="de" class="lang-link lang-cell">DE</a>
-            <span class="lang-sep" aria-hidden="true">|</span>
-            <span class="lang-active lang-cell" aria-current="page">EN</span>
-          </div>
-        </div>
-        <label for="nav-open" class="nav-toggle" aria-label="Open menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </label>
-      </div>
-    </div>
-  </div>
-</header>
-
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <h1 class="hero-title">
-        <span class="line">TaVyro Executive Intelligence®</span>
-        <span class="line">for People & Organisation</span>
-      </h1>
-      <p class="hero-sub">Companies invest in HR systems, AI tools, ERP and dashboards – yet report the same symptoms. TaVyro connects people, governance and business intelligence into one clear picture.</p>
-      <div class="hero-btns">
-        <a href="#usecase" class="btn-wh">View use case</a>
-        <a href="#intelligence" class="btn-owh">How TaVyro makes connections visible</a>
-      </div>
-    </div>
-    <div class="hero-card">
-      <div class="hc-hd">
-        <span class="hc-title">TaVyro Executive Intelligence® · Live</span>
-        <span class="hc-live">Live</span>
-      </div>
-      <div class="hc-grid">
-        <div class="hc-metric"><div class="hm-lbl">Sales cycle</div><div class="hm-val">+22<span style="font-size:.95rem">%</span></div><div class="hm-dl up">↑ vs. prior quarter</div></div>
-        <div class="hc-metric"><div class="hm-lbl">Turnover</div><div class="hm-val">+14<span style="font-size:.95rem">%</span></div><div class="hm-dl up">↑ Product team</div></div>
-        <div class="hc-metric"><div class="hm-lbl">Management meetings</div><div class="hm-val">+35<span style="font-size:.95rem">%</span></div><div class="hm-dl up">↑ Escalations</div></div>
-        <div class="hc-metric"><div class="hm-lbl">Project delays</div><div class="hm-val">+18<span style="font-size:.95rem">%</span></div><div class="hm-dl up">↑ Operations</div></div>
-      </div>
-      <div class="hc-insight">
-        <div class="hi-lbl">Executive recommendation · AI</div>
-        <div class="hi-txt">The cause is <strong>not a capacity gap</strong>, but an unclear interface between product, operations and sales – with increased leadership load.</div>
-      </div>
-      <ul class="hc-list">
-        <li>Prioritise role clarity</li>
-        <li>Define decision rights</li>
-        <li>Establish AI governance</li>
-        <li>Adapt leadership model</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section class="prob-sec" id="produkt">
-  <div class="wrap">
-    <div class="eyebrow">The opportunity</div>
-    <h2 class="sh">Lots of data.<br><em>No organisational intelligence.</em></h2>
-    <p class="sub">CEOs report the same symptoms despite massive system investments – the causes sit between functions.</p>
-    <div class="prob-grid">
-      <div>
-        <div class="eyebrow" style="margin-top:2.4rem;margin-bottom:1rem">Typical symptoms</div>
-        <ul class="sym-list">
-          <li><span class="sym-dot">!</span>Decisions take longer than necessary</li>
-          <li><span class="sym-dot">!</span>The same topics escalate to the executive team</li>
-          <li><span class="sym-dot">!</span>Roles and responsibilities are unclear</li>
-          <li><span class="sym-dot">!</span>Leaders spend too much time on operations</li>
-          <li><span class="sym-dot">!</span>AI is used – but without governance</li>
-          <li><span class="sym-dot">!</span>Projects slip despite additional resources</li>
-          <li><span class="sym-dot">!</span>People issues surface only after damage is done</li>
-        </ul>
-      </div>
-      <div>
-        <div class="eyebrow" style="margin-top:2.4rem;margin-bottom:1rem">Examples of connections</div>
-        <div class="conn-grid">
-          <div class="conn-row"><span class="cc">Rising turnover</span><span class="ca">→</span><span class="ce">More customer complaints</span></div>
-          <div class="conn-row"><span class="cc">Unclear accountability</span><span class="ca">→</span><span class="ce">Longer sales cycles</span></div>
-          <div class="conn-row"><span class="cc">Leadership overload</span><span class="ca">→</span><span class="ce">Project delays</span></div>
-          <div class="conn-row"><span class="cc">Missing AI governance</span><span class="ca">→</span><span class="ce">Inefficient decisions</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EI LAYER -->
-<section class="ei-sec" id="intelligence">
-  <div class="wrap">
-    <div class="eyebrow">TaVyro Executive Intelligence® Layer</div>
-    <h2 class="sh">Six dimensions.<br><em>One clear picture.</em></h2>
-    <p class="sub">TaVyro Executive Intelligence® connects AI with people, organisation, governance and business intelligence – making visible the patterns that influence business performance.</p>
-    <div class="ei-grid">
-      <div class="ei-card"><div class="ei-ico">👥</div><div class="ei-name">People Intelligence</div><div class="ei-desc">HRIS, roles, skills, turnover – Talent risks are identified proactively.</div></div>
-      <div class="ei-card"><div class="ei-ico">🏛</div><div class="ei-name">Organisation Intelligence</div><div class="ei-desc">Org charts, decision paths, spans of control – making structural bottlenecks visible.</div></div>
-      <div class="ei-card"><div class="ei-ico">🔄</div><div class="ei-name">Workforce Intelligence</div><div class="ei-desc">Capacity, utilisation, transformation –<br>making AI impact measurable.</div></div>
-      <div class="ei-card"><div class="ei-ico">⚖️</div><div class="ei-name">Governance Intelligence</div><div class="ei-desc">Policies, AI guidelines, decision models – compliance at a glance.</div></div>
-      <div class="ei-card"><div class="ei-ico">📊</div><div class="ei-name">Business Intelligence</div><div class="ei-desc">CRM, pipeline, project status – linking people patterns and business performance.</div></div>
-      <div class="ei-card"><div class="ei-ico">🧭</div><div class="ei-name">Decision Intelligence</div><div class="ei-desc">Decision quality, speed and clarity at CEO and executive team level.</div></div>
-    </div>
-    <div class="eyebrow" style="margin-top:2.3rem;margin-bottom:.85rem">Connected data sources</div>
-    <div class="ds-wrap">
-      <span class="ds-tag"><b>People</b>HRIS · Org charts · Skills · Turnover</span>
-      <span class="ds-tag"><b>Business</b>CRM · Pipeline · Customer feedback · Project status</span>
-      <span class="ds-tag"><b>Operations</b>ERP · Tickets · SLA · Projekttools</span>
-      <span class="ds-tag"><b>Governance</b>Policies · AI guidelines · Decision models</span>
-      <span class="ds-tag"><b>Collaboration</b>Teams · Jira · Survey data</span>
-    </div>
-  </div>
-</section>
-
-<!-- USE CASE -->
-<section class="uc-sec" id="usecase">
-  <div class="wrap">
-    <div class="eyebrow">Use case · Live example</div>
-    <h2 class="sh">TaVyro Executive Intelligence®<br><em>in practice.</em></h2>
-    <p class="sub">Four signals from different systems. One clear diagnosis. Four concrete actions.</p>
-    <div class="uc-grid">
-      <div>
-        <div class="eyebrow" style="margin-bottom:.8rem">Detected signals</div>
-        <ul class="sig-list">
-          <li class="sig-item"><div class="sig-bar" style="background:#c0392b"></div><div class="sig-body"><div class="sig-src" style="color:#c0392b">CRM <span class="sig-dl" style="color:#c0392b">+22%</span></div><div class="sig-txt">Sales cycle has lengthened significantly vs. prior quarter</div></div></li>
-          <li class="sig-item"><div class="sig-bar" style="background:#e67e22"></div><div class="sig-body"><div class="sig-src" style="color:#e67e22">HR <span class="sig-dl" style="color:#e67e22">+14%</span></div><div class="sig-txt">Turnover in the product team has risen above average</div></div></li>
-          <li class="sig-item"><div class="sig-bar" style="background:#b7950b"></div><div class="sig-body"><div class="sig-src" style="color:#b7950b">Teams <span class="sig-dl" style="color:#b7950b">+35%</span></div><div class="sig-txt">Management meetings with escalation character have increased sharply</div></div></li>
-          <li class="sig-item"><div class="sig-bar" style="background:var(--p)"></div><div class="sig-body"><div class="sig-src" style="color:var(--p)">Operations <span class="sig-dl" style="color:var(--p)">+18%</span></div><div class="sig-txt">Project delays despite unchanged resources</div></div></li>
-        </ul>
-      </div>
-      <div>
-        <div class="verdict">
-          <div class="v-lbl">Executive recommendation · AI analysis</div>
-          <p class="v-txt">The likely cause is <strong>not a capacity gap</strong>, but an unclear interface between product, operations and sales – with increased leadership load at executive level.</p>
-          <div class="eyebrow" style="margin-bottom:.75rem">Recommended actions</div>
-          <ul class="meas">
-            <li>Prioritise role clarity at interfaces</li>
-            <li>Define and communicate decision rights clearly</li>
-            <li>Establish an AI governance framework</li>
-            <li>Adapt leadership model and delegation</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ROADMAP -->
-<section class="rm-sec">
-  <div class="wrap">
-    <div class="eyebrow">Implementation horizon</div>
-    <h2 class="sh">Three phases.<br><em>From now to next.</em></h2>
-    <div class="rm-grid">
-      <div class="rm-card"><div class="rm-dot" style="background:var(--p)"></div><div class="rm-lbl">Immediate</div><div class="rm-title">Quick Wins</div><ul class="rm-items"><li><a href="/en#leistungen">AI Readiness Assessment</a></li><li><a href="/en/tavyro-hr-health-check.html">CEO/Executive Team Self-Check Full Report</a></li><li><a href="/en#leistungen">Fractional CHRO + AI</a></li><li><a href="/en#angebote">AI leadership programme</a></li></ul></div>
-      <div class="rm-card"><div class="rm-dot" style="background:#b7950b"></div><div class="rm-lbl">6–12 months</div><div class="rm-title">Improve decision logic and steering</div><ul class="rm-items"><li>Detect decision bottlenecks earlier</li><li>Connect governance and AI in a controlled way</li><li>Compare executive patterns across companies</li><li>Establish a practical intelligence methodology</li></ul></div>
-      <div class="rm-card"><div class="rm-dot" style="background:var(--brd)"></div><div class="rm-lbl">13–36 months</div><div class="rm-title">Scale TaVyro Executive Intelligence®</div><ul class="rm-items"><li>Embed TaVyro Executive Intelligence®</li><li>Systematise organisational patterns and decision logic</li><li>Further standardise practice-based intelligence methodology</li><li>Establish continuous TaVyro Executive Intelligence® services</li></ul></div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- CTA -->
-<section class="cta-sec">
-  <div class="eyebrow">Next step</div>
-  <h2 class="sh">Ready for your<br><em>consultation?</em></h2>
-  <p class="sub">In 30 minutes, clarify whether TaVyro Executive Intelligence® or another TaVyro offering delivers the greatest leverage for your company.</p>
-  <div class="cta-btns">
-    <a href="/en/erstgespraech-buchen" class="btn-wh">Book consultation</a>
-    <a href="mailto:hello@tavyro.ch" class="btn-owh">hello@tavyro.ch</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <a href="/en" style="display:flex;align-items:center"><svg height="38" style="width:auto;display:block;filter:brightness(0) invert(1)" id="Logo_Text_Pfad" data-name="Logo + Text Pfad" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1474.7394409 992.8935988">
+<header>
+  <a href="https://www.tavyro.ch/de" style="display:flex;align-items:center"><svg height="52" style="width:auto;display:block" id="Logo_Text_Pfad" data-name="Logo + Text Pfad" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1474.7394409 992.8935988">
   <defs>
     <style>
       .cls-1 {
@@ -587,24 +336,278 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
     <path class="cls-10" d="M1160.8058152,645.8420242c-.0882114.0110243-.1984631.0441057-.3418088.0882114s-.2977115.0551301-.4741176.0551301c-.3528458,0-.6285003-.0882114-.8159433-.2646301s-.2756545-.4961789-.2756545-.9592764v-4.5097072h-.8710607v-.5954147h.8710607v-1.7090568h.7166949v1.7090568h1.1577521v.5954147h-1.1577521v4.2230284c0,.1543658,0,.2866788.0110201.3969431,0,.1102601.0330772.1984716.0661544.2756545.0440973.0661586.0992316.1212886.187443.1543658s.1984631.0441057.3528458.0441057c.0992316,0,.187443,0,.2866746-.0220529.0992316-.0110243.1984631-.0330772.2866746-.0551301v.5843861l.0000168-.0110285Z"/>
   </g>
 </svg></a>
-  <small>© 2026 TaVyro GmbH · Albisriederstrasse 248 · CH-8047 Zurich · <a href="tel:+41786868089" style="color:inherit">+41 78 686 80 89</a></small>
   <nav>
-    <a href="/en">tavyro.ch</a>
-    <a href="/en/impressum">Legal notice</a>
-    <a href="/en/datenschutz">Privacy policy</a>
+    <a href="https://www.tavyro.ch/de">Home</a>
+    <a href="https://www.tavyro.ch/de#leistungen">Leistungen</a>
+    <a href="https://www.tavyro.ch/de#angebote">Angebote</a>
+    <a href="https://www.tavyro.ch/de#ueber-uns">Über uns</a>
+    <a href="https://www.tavyro.ch/de/erstgespraech-buchen" class="nav-cta">Erstgespräch buchen</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>TaVyro Executive Intelligence®<br>for People &<br>Organisation</h1>
+      <p class="hero-sub">Unternehmen investieren in HR-Systeme, AI Tools, ERP und Dashboards und berichten dennoch über dieselben Symptome. TaVyro verbindet People, Governance und Business Intelligence zu einem klaren Bild.</p>
+      <div class="hero-btns">
+        <a href="#usecase" class="btn-wh">Use Case ansehen</a>
+        <a href="#portfolio" class="btn-owh">Wie TaVyro Zusammenhänge sichtbar macht</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-hd">
+        <span class="hc-title">TaVyro Executive Intelligence® · Live</span>
+        <span class="hc-live">Aktiv</span>
+      </div>
+      <div class="hc-grid">
+        <div class="hc-metric"><div class="hm-lbl">Sales Zyklus</div><div class="hm-val">+22<span style="font-size:.95rem">%</span></div><div class="hm-dl up">↑ vs. Vorquartal</div></div>
+        <div class="hc-metric"><div class="hm-lbl">Fluktuation</div><div class="hm-val">+14<span style="font-size:.95rem">%</span></div><div class="hm-dl up">↑ Product Team</div></div>
+        <div class="hc-metric"><div class="hm-lbl">Mgmt Meetings</div><div class="hm-val">+35<span style="font-size:.95rem">%</span></div><div class="hm-dl up">↑ Eskalationen</div></div>
+        <div class="hc-metric"><div class="hm-lbl">Projektverzögerungen</div><div class="hm-val">+18<span style="font-size:.95rem">%</span></div><div class="hm-dl up">↑ Operations</div></div>
+      </div>
+      <div class="hc-insight">
+        <div class="hi-lbl">Executive Empfehlung · KI</div>
+        <div class="hi-txt">Die Ursache ist <strong>nicht Kapazitätsmangel</strong>, sondern eine unklare Schnittstelle zwischen Product, Operations und Sales mit erhöhter Führungsbelastung.</div>
+      </div>
+      <ul class="hc-list">
+        <li>Rollenklärung priorisieren</li>
+        <li>Decision Rights definieren</li>
+        <li>AI Governance etablieren</li>
+        <li>Führungsmodell anpassen</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="prob-sec" id="produkt">
+  <div class="wrap">
+    <div class="eyebrow">Die Opportunität</div>
+    <h2 class="sh">Viele Daten.<br><em>Keine Organisationsintelligenz.</em></h2>
+    <p class="sub">CEOs berichten trotz massiver Systeminvestitionen über dieselben Symptome – die Ursachen liegen zwischen den Bereichen.</p>
+    <div class="prob-grid">
+      <div>
+        <div class="eyebrow" style="margin-top:2.4rem;margin-bottom:1rem">Typische Symptome</div>
+        <ul class="sym-list">
+          <li><span class="sym-dot">!</span>Entscheidungen dauern länger als nötig</li>
+          <li><span class="sym-dot">!</span>Dieselben Themen eskalieren zur Geschäftsleitung</li>
+          <li><span class="sym-dot">!</span>Rollen und Verantwortlichkeiten sind unklar</li>
+          <li><span class="sym-dot">!</span>Führungskräfte verbringen zu viel Zeit im Operativen</li>
+          <li><span class="sym-dot">!</span>AI wird genutzt – aber ohne Governance</li>
+          <li><span class="sym-dot">!</span>Projekte verzögern sich trotz zusätzlicher Ressourcen</li>
+          <li><span class="sym-dot">!</span>People-Themen werden erst sichtbar, wenn Schaden eingetreten ist</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-top:2.4rem;margin-bottom:1rem">Beispiele für Zusammenhänge</div>
+        <div class="conn-grid">
+          <div class="conn-row"><span class="cc">Steigende Fluktuation</span><span class="ca">→</span><span class="ce">Höhere Kundenbeschwerden</span></div>
+          <div class="conn-row"><span class="cc">Unklare Verantwortlichkeiten</span><span class="ca">→</span><span class="ce">Längere Sales-Zyklen</span></div>
+          <div class="conn-row"><span class="cc">Führungsüberlastung</span><span class="ca">→</span><span class="ce">Projektverzögerungen</span></div>
+          <div class="conn-row"><span class="cc">Fehlende AI Governance</span><span class="ca">→</span><span class="ce">Ineffiziente Entscheidungen</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EI LAYER -->
+<section class="ei-sec" id="intelligence">
+  <div class="wrap">
+    <div class="eyebrow">TaVyro Executive Intelligence® Layer</div>
+    <h2 class="sh">Sechs Dimensionen.<br><em>Ein klares Gesamtbild.</em></h2>
+    <p class="sub">TaVyro Executive Intelligence® verbindet AI mit People, Organisation, Governance und Business Intelligence und macht Muster sichtbar, die Business Performance beeinflussen.</p>
+    <div class="ei-grid">
+      <div class="ei-card"><div class="ei-ico">👥</div><div class="ei-name">People Intelligence</div><div class="ei-desc">HRIS, Rollen, Skills, Fluktuation – Talentrisiken werden proaktiv erkannt.</div></div>
+      <div class="ei-card"><div class="ei-ico">🏛</div><div class="ei-name">Organisation Intelligence</div><div class="ei-desc">Organigramme, Entscheidungswege, Führungsspannen – strukturelle Engpässe sichtbar machen.</div></div>
+      <div class="ei-card"><div class="ei-ico">🔄</div><div class="ei-name">Workforce Intelligence</div><div class="ei-desc">Kapazitäten, Auslastung, Transformation –<br>AI-Auswirkungen messbar machen.</div></div>
+      <div class="ei-card"><div class="ei-ico">⚖️</div><div class="ei-name">Governance Intelligence</div><div class="ei-desc">Policies, AI Richtlinien, Entscheidungsmodelle – Compliance auf einen Blick.</div></div>
+      <div class="ei-card"><div class="ei-ico">📊</div><div class="ei-name">Business Intelligence</div><div class="ei-desc">CRM, Pipeline, Projektstatus – Verbindung zwischen People-Mustern und Business Performance.</div></div>
+      <div class="ei-card"><div class="ei-ico">🧭</div><div class="ei-name">Decision Intelligence</div><div class="ei-desc">Entscheidungsqualität, Geschwindigkeit und Klarheit auf CEO- und GL-Ebene.</div></div>
+    </div>
+    <div class="eyebrow" style="margin-top:2.3rem;margin-bottom:.85rem">Angebundene Datenquellen</div>
+    <div class="ds-wrap">
+      <span class="ds-tag"><b>People</b>HRIS · Organigramme · Skills · Fluktuation</span>
+      <span class="ds-tag"><b>Business</b>CRM · Pipeline · Kundenfeedback · Projektstatus</span>
+      <span class="ds-tag"><b>Operations</b>ERP · Tickets · SLA · Projekttools</span>
+      <span class="ds-tag"><b>Governance</b>Policies · AI Richtlinien · Entscheidungsmodelle</span>
+      <span class="ds-tag"><b>Collaboration</b>Teams · Jira · Survey Daten</span>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASE -->
+<section class="uc-sec" id="usecase">
+  <div class="wrap">
+    <div class="eyebrow">Use Case · Live Beispiel</div>
+    <h2 class="sh">TaVyro Executive Intelligence®<br><em>in der Praxis.</em></h2>
+    <p class="sub">Vier Signale aus verschiedenen Systemen. Eine klare Diagnose. Vier konkrete Massnahmen.</p>
+    <div class="uc-grid">
+      <div>
+        <div class="eyebrow" style="margin-bottom:.8rem">Erkannte Signale</div>
+        <ul class="sig-list">
+          <li class="sig-item"><div class="sig-bar" style="background:#c0392b"></div><div class="sig-body"><div class="sig-src" style="color:#c0392b">CRM <span class="sig-dl" style="color:#c0392b">+22%</span></div><div class="sig-txt">Sales Zyklus verlängert sich deutlich gegenüber Vorquartal</div></div></li>
+          <li class="sig-item"><div class="sig-bar" style="background:#e67e22"></div><div class="sig-body"><div class="sig-src" style="color:#e67e22">HR <span class="sig-dl" style="color:#e67e22">+14%</span></div><div class="sig-txt">Fluktuation im Product Team überdurchschnittlich gestiegen</div></div></li>
+          <li class="sig-item"><div class="sig-bar" style="background:#b7950b"></div><div class="sig-body"><div class="sig-src" style="color:#b7950b">Teams <span class="sig-dl" style="color:#b7950b">+35%</span></div><div class="sig-txt">Management Meetings mit Eskalationscharakter stark angestiegen</div></div></li>
+          <li class="sig-item"><div class="sig-bar" style="background:var(--p)"></div><div class="sig-body"><div class="sig-src" style="color:var(--p)">Operations <span class="sig-dl" style="color:var(--p)">+18%</span></div><div class="sig-txt">Projektverzögerungen trotz unveränderter Ressourcen</div></div></li>
+        </ul>
+      </div>
+      <div>
+        <div class="verdict">
+          <div class="v-lbl">Executive Empfehlung · KI-Analyse</div>
+          <p class="v-txt">Die wahrscheinliche Ursache ist <strong>nicht Kapazitätsmangel</strong>, sondern eine unklare Schnittstelle zwischen Product, Operations und Sales – mit erhöhter Führungsbelastung auf GL-Ebene.</p>
+          <div class="eyebrow" style="margin-bottom:.75rem">Empfohlene Massnahmen</div>
+          <ul class="meas">
+            <li>Rollenklärung an den Schnittstellen priorisieren</li>
+            <li>Decision Rights klar definieren und kommunizieren</li>
+            <li>AI Governance Rahmen etablieren</li>
+            <li>Führungsmodell und Delegation anpassen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ROADMAP -->
+<section class="rm-sec">
+  <div class="wrap">
+    <div class="eyebrow">Umsetzungshorizont</div>
+    <h2 class="sh">Drei Phasen.<br><em>Von jetzt bis morgen.</em></h2>
+    <div class="rm-grid">
+      <div class="rm-card"><div class="rm-dot" style="background:var(--p)"></div><div class="rm-lbl">Sofort umsetzbar</div><div class="rm-title">Quick Wins</div><ul class="rm-items"><li>AI Readiness Assessment</li><li>CEO/GL Selfcheck Full Report</li><li>Fractional CHRO + AI</li><li>AI Leadership Programm</li></ul></div>
+      <div class="rm-card"><div class="rm-dot" style="background:#b7950b"></div><div class="rm-lbl">6–12 Monate</div><div class="rm-title">Entscheidungslogik und Steuerung verbessern</div><ul class="rm-items"><li>Entscheidungsengpässe früher erkennen</li><li>Governance und AI kontrolliert verbinden</li><li>Executive Muster über mehrere Unternehmen vergleichen</li><li>Praxisnahe Intelligence Methodik etablieren</li></ul></div>
+      <div class="rm-card"><div class="rm-dot" style="background:var(--brd)"></div><div class="rm-lbl">13–36 Monate</div><div class="rm-title">TaVyro Executive Intelligence® skalieren</div><ul class="rm-items"><li>TaVyro Executive Intelligence® verankern</li><li>Organisationsmuster und Entscheidungslogiken systematisieren</li><li>Praxisbasierte Intelligence Methodik weiter standardisieren</li><li>Kontinuierliche TaVyro Executive Intelligence® Services etablieren</li></ul></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="eyebrow">Nächster Schritt</div>
+  <h2 class="sh">Bereit für das<br><em>Erstgespräch?</em></h2>
+  <p class="sub">Klären Sie in 30 Minuten, ob TaVyro Executive Intelligence® oder ein anderes TaVyro-Produkt den grössten Hebel für Ihr Unternehmen bietet.</p>
+  <div class="cta-btns">
+    <a href="https://www.tavyro.ch/de/erstgespraech-buchen" class="btn-wh">Erstgespräch buchen</a>
+    <a href="mailto:hello@tavyro.ch" class="btn-owh">hello@tavyro.ch</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://www.tavyro.ch/de" style="display:flex;align-items:center"><svg height="38" style="width:auto;display:block;filter:brightness(0) invert(1)" id="Logo_Text_Pfad" data-name="Logo + Text Pfad" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1474.7394409 992.8935988">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Unbenannter_Verlauf_110-4);
+      }
+
+      .cls-2 {
+        fill: url(#Unbenannter_Verlauf_110-5);
+      }
+
+      .cls-3 {
+        fill: url(#Unbenannter_Verlauf_110-6);
+      }
+
+      .cls-4 {
+        fill: url(#Unbenannter_Verlauf_110-7);
+      }
+
+      .cls-5 {
+        fill: url(#Unbenannter_Verlauf_110-2);
+      }
+
+      .cls-6 {
+        fill: url(#Unbenannter_Verlauf_110-3);
+      }
+
+      .cls-7 {
+        isolation: isolate;
+      }
+
+      .cls-8 {
+        fill: url(#Unbenannter_Verlauf_111);
+      }
+
+      .cls-9 {
+        fill: url(#Unbenannter_Verlauf_110);
+      }
+
+      .cls-10 {
+        fill: #333;
+      }
+    </style>
+    <linearGradient id="Unbenannter_Verlauf_110" data-name="Unbenannter Verlauf 110" x1="958.4536674" y1="-24.2859862" x2="981.6136693" y2="-44.985938" gradientTransform="translate(0 572.668335) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c3e50"/>
+      <stop offset="1" stop-color="#10639a"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_111" data-name="Unbenannter Verlauf 111" x1="961.2264687" y1="-21.1752257" x2="984.3964679" y2="-41.8751764" gradientTransform="translate(0 572.668335) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c3e50"/>
+      <stop offset="1" stop-color="#10639a"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_110-2" data-name="Unbenannter Verlauf 110" x1="984.6471431" y1="-15.9024512" x2="1102.4471384" y2="-44.6924903" xlink:href="#Unbenannter_Verlauf_110"/>
+    <linearGradient id="Unbenannter_Verlauf_110-3" data-name="Unbenannter Verlauf 110" x1="985.598348" y1="-12.0175828" x2="1103.3983384" y2="-40.7975495" xlink:href="#Unbenannter_Verlauf_110"/>
+    <linearGradient id="Unbenannter_Verlauf_110-4" data-name="Unbenannter Verlauf 110" x1="983.398098" y1="-29.6916863" x2="1101.1880903" y2="-58.4716536" xlink:href="#Unbenannter_Verlauf_110"/>
+    <linearGradient id="Unbenannter_Verlauf_110-5" data-name="Unbenannter Verlauf 110" x1="981.3908158" y1="-29.2574776" x2="1099.1908141" y2="-58.0374441" xlink:href="#Unbenannter_Verlauf_110"/>
+    <linearGradient id="Unbenannter_Verlauf_110-6" data-name="Unbenannter Verlauf 110" x1="982.5477788" y1="-24.5298558" x2="1100.3377716" y2="-53.3098855" xlink:href="#Unbenannter_Verlauf_110"/>
+    <linearGradient id="Unbenannter_Verlauf_110-7" data-name="Unbenannter Verlauf 110" x1="984.1891268" y1="-20.3068405" x2="1101.9891299" y2="-49.0968794" xlink:href="#Unbenannter_Verlauf_110"/>
+  </defs>
+  <g>
+    <path class="cls-9" d="M978.9799864,601.6395843c-.3500004.2199998-.6900005.5100002-.9699993.73-1.7900009,1.4299998-3.3800011,3.0799994-4.79,4.8499999-1.6800003,2.1000004-3.1199999,4.3799992-4.3499994,6.6800003h0c-1.2299995-2.2999992-2.6700001-4.5699997-4.3499999-6.6800003-1.4099998-1.7700005-3-3.4200001-4.79-4.8499999-.28-.2199998-.62-.5099998-.97-.73-.29.5700002-.46,1.2200003-.46,1.8999996,0,1.0100002.36,1.9400005.95,2.6599998,0,0,.01.0200005.02.0200005.24.29.47.54.5899999.6700001,3.26,3.5599995,5.6900003,7.8199997,7.9499996,11.9599991.0299997.0799999.0699997.1499996.1199999.2099991h0c.21.2999992.5500002.5.9499998.5h0c.3900003,0,.7399998-.2000008.9499998-.5h0c.0500002-.0699997.0900002-.1399994.1199999-.2099991,2.2600002-4.1399994,4.6899996-8.3999996,7.9499998-11.96.1200008-.1300001.3400002-.3800001.5900002-.6700001,0,0,.0100002-.0200005.0200005-.0200005.5900002-.7300005.9500008-1.6499996.9500008-2.6599998,0-.6899996-.1700001-1.3299999-.4599991-1.9000001l-.0200024.0000014Z"/>
+    <path class="cls-8" d="M966.6799862,604.169584c.4700003.6000004.9399996,1.2600002,1.4399996,2.0100002.0200005.0500002.0500002.1000004.0799999.1499996h0c.1499996.21.3900003.3500004.6599998.3500004h0c.2700005,0,.5200005-.1400003.6599998-.3500004h0c.0299997-.0500002.0600004-.1000004.0799999-.1499996.5-.75.9700003-1.4099998,1.4400005-2.0100002,1.3699999-1.75,2.6800003-2.9499998,4.2999992-4-.5300007-.5-1.2399998-.8200002-2.0299997-.8200002h-8.9099989c-.79,0-1.5.3099999-2.0299997.8200002,1.6300001,1.0500002,2.9400001,2.25,4.3000002,4h.0099993Z"/>
+  </g>
+  <g>
+    <path class="cls-5" d="M1079.2599899,600.9591602c-.2699966-.04-.5400009-.04-1.0500031-.04-3.0299988,0-5.3899994,1.8999996-5.9300003,4.54v-2.4800005c0-1.1599998-.2699966-1.4700003-1.4400024-1.4700003h-.8499985c-1.1600037,0-1.4700012.3100004-1.4700012,1.4700003v15.6299992c0,1.1599998.3099976,1.4400005,1.4700012,1.4400005h1.1200027c1.1200027,0,1.4400024-.2700005,1.4400024-1.4400005v-7.25c0-5.04,3.0999985-6.71,5.2799988-6.71.4300003,0,.8499985,0,1.2799988.1199999.6999969.0799999,1.1600037-.1899996,1.1600037-1.1199999v-1.4700003c0-.9300003-.3899994-1.1199999-1.0100021-1.1999998v-.0199986Z"/>
+    <path class="cls-6" d="M1092.2899811,601.0791601c-6.1299973,0-10.1200027,3.3400002-10.1200027,9.6199989s3.9199982,9.7399998,10.1200027,9.7399998c6.1999969,0,10.1600037-3.4099998,10.1600037-9.7399998s-3.9900055-9.6199999-10.1600037-9.6199989ZM1092.2899811,616.9791597c-3.7200012,0-5.9700012-2.3700008-5.9700012-6.2800007s2.25-6.1700001,5.9700012-6.1700001,6.0099945,2.29,6.0099945,6.1700001-2.25,6.2800007-6.0099945,6.2800007Z"/>
+    <path class="cls-1" d="M1011.5599892,597.8291603v-.97c0-1.16-.3100014-1.47-1.4399986-1.47h-17.9599991c-1.1599998,0-1.4400005.31-1.4400005,1.47v.97c0,1.1600001.2700005,1.4400003,1.4400005,1.4400003h6.9799995v19.3400002c0,1.1599998.2700005,1.4400005,1.4399986,1.4400005h1.4700012c1.1199989,0,1.4399986-.2700005,1.4399986-1.4400005v-19.3400002h6.6300011c1.1199989,0,1.4399986-.27,1.4399986-1.4400003Z"/>
+    <path class="cls-2" d="M1018.2399895,601.0791601c-3.0299988,0-5.3100014.8100004-6.9399986,2.0900002-.5400009.3900003-1.2000008,1.1599998-.2299995,1.9400005l.7400017.5799999c.7400017.6199999,1.0499992.6199999,1.75.2700005,1.1599998-.7799997,2.4000015-1.1999998,4.6199989-1.1999998,2.9099998,0,4.9599991.8900003,5,4.3399992h-4.5400009c-6.7099991,0-9.1499977,2.4400005-9.1499977,5.7800007,0,3.6900005,2.6399994,5.5500011,6.9799995,5.5500011,3.0600014,0,5.7400017-.8500004,6.9799995-2.5200005l.1599998.8099995c.3499985,1.1200008.579998,1.3999996,1.7499962,1.3999996h.4700012c1.1600037,0,1.3600006-.3099995,1.3600006-1.4699993v-9.6200008c0-5.8600006-3.8800011-7.9499998-8.9199982-7.9499998h0l-.0300026-.000001ZM1023.169986,612.9791597c0,3.2999992-3.3400002,4.2299995-5.9300003,4.2299995-1.75,0-3.6500015-.6200008-3.6500015-2.4799995,0-1.710001,1.5900002-2.6399994,5.0400009-2.6399994h4.5400009v.8899994Z"/>
+    <path class="cls-3" d="M1063.2699844,601.4991602h-1.5899963c-1.1600037,0-1.5500031.3100004-1.9400024,1.3599997l-5.1999969,13.499999-4.0400009-11.1199999-2.2799988,6.2599993,3.8099976,10.5699997c.4700012,1.2800007-2.2300034,2.9000015-4.1299973,2.9000015-.3499985,0-.6200027-.0800018-.8899994-.0800018-.4700012,0-.7399979.3499985-.8499985,1.2799988l-.0800018.7400017c-.1200027.6599998.0800018,1.0900002.3499985,1.2799988.3499985.3100014.9300003.3499985,1.5500031.3899994.4700012.0400009.8899994,0,1.3199997,0,3.3000031-.1899986,5.4300003-2.0900002,7.0999985-6.3600006l.8499985-2.1700001,6.9400024-17.1800003c.4300003-1.0900002.1900024-1.3599997-.9300003-1.3599997h0l.0099945-.0099955Z"/>
+    <path class="cls-4" d="M1051.3399841,596.7491602c.4300003-1.09.2300034-1.36-.9300003-1.36h-1.8600006c-1.1200027,0-1.5100021.27-1.8600006,1.4l-7.5199966,18.170001-7.3300018-18.1700001c-.3099976-1.12-.7399979-1.4-1.8600006-1.4h-1.8600006c-1.1200027,0-1.3199997.27-.9700012,1.4l9.2299957,21.8999996c.3499985,1.0900002,1.2399979,1.3600006,2.4000015,1.3600006h.75c1.1299973,0,2.0500031-.2700005,2.4400024-1.3600006l9.3700027-21.9400005Z"/>
+  </g>
+  <g class="cls-7">
+    <path class="cls-10" d="M999.139991,645.8199713v-8.5783656h3.1314349c.5513089,0,1.0144064.0661586,1.3782723.187443s.6505447.2977073.8600406.5292561c.2094959.2205244.3528374.474126.4410488.7718333s.1212886.5954147.1212886.9151748c0,.474126-.0992358.8710691-.2866788,1.1798008-.1984716.3087317-.4410488.5513089-.7608048.7277276s-.661569.3087317-1.0585121.3748902-.7828577.1102601-1.1798008.1102601h-1.8303455v3.7819796h-.8159433ZM1001.8083242,641.3433413c.3859146,0,.7167033-.0220529,1.0254349-.0771829.2977073-.0441057.5623333-.132313.7718333-.2646301.2094959-.132313.3748902-.3087317.4851503-.5402846.1102601-.2315487.1764187-.5182317.1764187-.8820934,0-.5402846-.1764187-.948252-.5292561-1.2239065s-.9151748-.418996-1.687004-.418996h-2.0949756v3.4070893h1.8634227l-.0110243.0000042Z"/>
+    <path class="cls-10" d="M1007.045759,642.8980323c0,.3307845.0441057.6505447.132313.948252.0882114.2977073.2205244.5513089.3859146.7718333.1653944.2205244.3859146.3969431.6505447.5182317.2646301.132313.5623333.1984716.9041463.1984716.4630975,0,.8710691-.1212886,1.2018536-.3638659s.5513089-.5954147.661569-1.0474878h.7938862c-.0882114.2977073-.1984716.5623333-.341813.8159391-.1433415.2536016-.3197602.4630975-.5402846.6505447-.2094959.187443-.4630975.3307845-.7608048.4300203s-.6395204.1543658-1.0254349.1543658c-.4961789,0-.9151748-.0882114-1.2790365-.2536016-.3528374-.1653944-.6505447-.3969431-.8820934-.6836219s-.3969431-.6284918-.5072032-1.0254349-.1653944-.8159391-.1653944-1.2680122.0661586-.8820934.1984716-1.2790365.3197602-.7387519.5623333-1.0364593c.2425773-.2977073.5402846-.5292561.8820934-.7056748.3528374-.1653944.7497805-.2536016,1.1908293-.2536016.8490163,0,1.5216138.2866788,1.9957398.8710691.4851503.5843861.7277276,1.4334024.7167033,2.5470488h-4.7853617l.0110285.0110201ZM1011.0703158,642.3026177c0-.2977073-.0441057-.5843861-.1212886-.8490163s-.2094959-.4961789-.3638659-.6946504c-.1653944-.1984716-.3638659-.3528374-.6174675-.4630975s-.5292561-.1764187-.8490163-.1764187-.5954147.0551301-.8379877.1764187c-.2425773.1212886-.4520732.2756545-.6174675.474126s-.3087317.4300203-.4079674.6946504-.1653944.5402846-.1984716.8379877h4.0245568-.0110243Z"/>
+    <path class="cls-10" d="M1015.9438847,645.9853615c-.3969431,0-.7718333-.0771829-1.1136422-.2094959-.341813-.132313-.6505447-.341813-.9041463-.606439-.2536016-.2756545-.4630975-.606439-.6174675-1.0144064-.1543658-.4079674-.2315487-.8820934-.2315487-1.422378,0-.4520732.0551301-.8710691.1764187-1.2680122s.2977073-.7387519.5402846-1.0254349c.2425773-.2977073.5402846-.5292561.893122-.6946504s.7718333-.2536016,1.2459594-.2536016.9041463.0882114,1.2569837.2536016c.3528374.1764187.6505447.3969431.893122.6946504.2425773.2866788.418996.6284918.5292561,1.0254349s.1764187.8269634.1764187,1.2790365c0,.4961789-.0661586.9372235-.1984716,1.3341666s-.3307845.7387519-.5733618,1.0254349c-.2536016.2866788-.5513089.5072032-.9041463.661569s-.7497805.2315487-1.1687764.2315487l-.0000042-.0110243ZM1018.0388603,642.7326422c0-.3638659-.0441057-.7056748-.1212886-1.0254349s-.1984716-.5954147-.3638659-.8269634-.3859146-.418996-.6395204-.5513089c-.2646301-.132313-.5843861-.1984716-.9703049-.1984716s-.6946504.0771829-.9592764.2205244c-.2646301.1433415-.4851503.341813-.6505447.5843861s-.2866788.5182317-.3638659.8379877c-.0771829.3197602-.1212886.6395204-.1212886.9703049,0,.3859146.0441057.7277276.132313,1.0585121.0882114.3197602.2205244.5954147.3969431.8269634s.3969431.4079674.6505447.5402846.5623333.187443.9041463.187443c.3748902,0,.6946504-.0771829.9592764-.2205244.2646301-.1433415.4851503-.341813.6505447-.5843861.1653944-.2425773.2866788-.5292561.3638659-.8379877.0771829-.3087317.1212886-.6284918.1212886-.9592764l.0110327-.0220529Z"/>
+    <path class="cls-10" d="M1021.1702952,648.2457314h-.7167033v-8.6004184h.7167033v1.080565h.0220529c.0992358-.1984716.2315487-.3748902.3969431-.5402846.1653944-.1543658.341813-.2866788.5402846-.3969431.1984716-.0992358.3969431-.187443.606439-.2425773.2094959-.0551301.4079674-.0882114.606439-.0882114.4961789,0,.9261992.0882114,1.2790365.2536016.3528374.1653944.6395204.3969431.8600406.6836219.2315487.2866788.3859146.6284918.4961789,1.0254349.0992358.3969431.1543658.8269634.1543658,1.2790365,0,.4300203-.0551301.8379877-.1653944,1.2349308-.1102601.3969431-.2756545.7387519-.5072032,1.0364593s-.5072032.5402846-.8600406.7167033c-.341813.1764187-.7497805.2646301-1.2239065.2646301-.4410488,0-.8600406-.0992358-1.2569837-.2866788-.3969431-.1984716-.7167033-.4851503-.948252-.8600406v3.4401707ZM1021.1702952,642.7546908c0,.3528374.0441057.6836219.1433415.9923578.0992358.3197602.2315487.5843861.4079674.8269634.1764187.2315487.3969431.418996.6505447.5623333s.5513089.2094959.8710691.2094959c.3638659,0,.6836219-.0771829.9592764-.2205244s.4961789-.341813.6725976-.5954147.2977073-.5513089.3859146-.8820934c.0771829-.341813.1102601-.7056748.0992358-1.0915935,0-.3859146-.0551301-.7277276-.1653944-1.0254349-.1102601-.2977073-.2536016-.5513089-.4520732-.7608048s-.4079674-.3638659-.661569-.474126-.5292561-.1653944-.8379877-.1653944c-.3307845,0-.6284918.0661586-.893122.1984716s-.4851503.3197602-.6505447.5513089c-.1764187.2315487-.3087317.5072032-.3969431.8379877-.0882114.3197602-.132313.6725976-.132313,1.0474878v-.0110201Z"/>
+    <path class="cls-10" d="M1028.0175511,645.8199713v-8.5783656h.7166991v8.5783656h-.7166991Z"/>
+    <path class="cls-10" d="M1031.259246,642.8980323c0,.3307845.0441057.6505447.1323172.948252s.2205202.5513089.3859146.7718333.3859146.3969431.6505405.5182317c.2646259.132313.5623375.1984716.9041463.1984716.4630975,0,.8710691-.1212886,1.2018494-.3638659.3307887-.2425773.5513089-.5954147.661569-1.0474878h.7938862c-.0882114.2977073-.1984716.5623333-.3418088.8159391-.1433373.2536016-.3197602.4630975-.5402804.6505447-.2095001.187443-.4630975.3307845-.760809.4300203-.2977031.0992358-.6395204.1543658-1.0254349.1543658-.4961747,0-.9151748-.0882114-1.2790407-.2536016-.3528374-.1653944-.6505405-.3969431-.8820976-.6836219s-.3969431-.6284918-.5072032-1.0254349-.1653944-.8159391-.1653944-1.2680122.0661544-.8820934.1984716-1.2790365.3197602-.7387519.5623375-1.0364593.5402804-.5292561.8820976-.7056748c.3528374-.1653944.7497805-.2536016,1.1908293-.2536016.849012,0,1.5216096.2866788,1.9957356.8710691.4851545.5843861.7277318,1.4334024.7167033,2.5470488h-4.7853574l.0110285.0110201ZM1035.2838029,642.3026177c0-.2977073-.0441057-.5843861-.1212886-.8490163s-.2095001-.4961789-.3638659-.6946504c-.1653944-.1984716-.3638659-.3528374-.6174633-.4630975s-.5292603-.1764187-.849012-.1764187-.5954147.0551301-.8379919.1764187-.4520774.2756545-.6174633.474126-.3087317.4300203-.4079716.6946504c-.0992316.2646301-.1653944.5402846-.1984716.8379877h4.0245568-.0110285Z"/>
+    <path class="cls-10" d="M1041.1166523,635.7861463v11.908272h-.7167033v-11.908272h.7167033Z"/>
+    <path class="cls-10" d="M1044.8986319,641.5418129c0-.6284918.0882114-1.212878.2536058-1.7641869s.4189918-1.0254349.760809-1.4334024c.3307887-.4079674.7497805-.7277276,1.234935-.9703049.4961747-.2425773,1.0585121-.3528374,1.6980325-.3528374s1.2569837.1212886,1.7531583.3528374c.5072032.2315487.926195.5513089,1.2680122.9703049.3418088.4079674.5954147.893122.760809,1.4444309s.2536058,1.1467236.2536058,1.7641869-.0882114,1.2018536-.2536058,1.7421382-.4189918,1.0144064-.760809,1.4334024c-.3307887.4079674-.7497805.7277276-1.2459551.9703049s-1.0805692.3528374-1.7421382.3528374-1.234935-.1212886-1.7421382-.3528374c-.4961747-.2425773-.9151748-.5623333-1.2459551-.9703049-.3307887-.4079674-.5843861-.8820934-.7497805-1.4334024-.1653944-.5402846-.2536058-1.1246707-.2536058-1.7421382l.0110201-.0110285ZM1048.9011317,645.3568696c.5513089,0,1.0364635-.1102601,1.4334066-.3197602.3969431-.2094959.7277318-.4961789.9923578-.8379877s.4520774-.7497805.5733576-1.212878c.1212886-.4630975.187443-.9372235.187443-1.4444309,0-.5954147-.0771829-1.1246707-.2205202-1.5987967s-.3638659-.8710691-.6395204-1.212878c-.2756545-.3307845-.6174633-.5843861-1.0144064-.7608048s-.8379919-.2646301-1.3341666-.2646301c-.5513089,0-1.0254349.1102601-1.422378.3197602-.3969431.2094959-.7277318.4961789-.9923578.8490163-.2536058.3528374-.4520774.7608048-.5733576,1.2239065-.1212886.4630975-.187443.9372235-.187443,1.4444309s.0661544.9923578.187443,1.4554552.3087317.8710691.5733576,1.212878c.2536058.3528374.5843861.6284918.9923578.8379877.3969431.2094959.8820976.3087317,1.4444267.3087317Z"/>
+    <path class="cls-10" d="M1055.4065787,645.8199713h-.7167033v-6.163634h.7167033v1.1577479h.0220487c.1984716-.4961789.4520774-.8379877.7718291-1.0254349.3087317-.1984716.7277318-.2866788,1.2459551-.2866788v.7718333c-.4079716,0-.7387519.0551301-1.0033863.187443-.2646259.132313-.474126.3197602-.6284918.5513089s-.2646259.5072032-.3197602.8159391c-.0551343.3087317-.0882114.6395204-.0882114.9813292v3.0211748l.0000168-.0110285Z"/>
+    <path class="cls-10" d="M1063.6431354,639.6453088h.7167033v5.5682193c0,.4079674-.0441057.8049105-.1212886,1.1798008-.0882114.3748902-.2315487.7056748-.4520774.9923578-.2095001.2866788-.5072032.5182317-.8820976.6836219-.374886.1653944-.849012.2536016-1.4444267.2536016-.4520774,0-.8379919-.0551301-1.1687722-.1764187s-.5954147-.2646301-.7938862-.4300203c-.2095001-.1764187-.3638659-.3638659-.474126-.5733618s-.1653944-.4079674-.1764229-.5843861h.760809c.0551343.2315487.1433373.418996.2646259.5623333s.2646259.2646301.4189918.341813c.1653944.0882114.3418088.1433415.5402804.1764187s.4079716.0441057.6174633.0441057c.4851545,0,.8710691-.0882114,1.1687722-.2536016.2977031-.1653944.5182317-.3859146.661569-.6505447.1543658-.2756545.2425773-.5733618.286683-.9151748s.0661544-.6946504.0551343-1.0474878c-.2315487.3859146-.5513089.6725976-.948252.8600406-.3969431.1984716-.8159349.2866788-1.2569837.2866788-.4630975,0-.8710691-.0882114-1.2239065-.2646301s-.6284918-.418996-.8600406-.7167033-.3969431-.6395204-.5072032-1.0364593-.1653944-.8049105-.1653944-1.2349308c0-.4520732.0551343-.8820934.1543658-1.2790365s.2646259-.7387519.4961747-1.0254349.5182317-.5182317.8600406-.6836219c.3528374-.1653944.7718291-.2536016,1.2790407-.2536016.1984716,0,.3969431.0220529.6064432.0882114s.4079716.132313.5954147.2425773c.1984716.0992358.374886.2315487.5402804.3969431.1653944.1543658.2977031.341813.3969431.5402846h.0220487v-1.080565l.033094-.0110285ZM1063.6431354,642.7546908c0-.3748902-.0441057-.7167033-.1323172-1.0474878-.0882114-.3197602-.2205202-.5954147-.3969431-.8379877-.1764229-.2315487-.3969431-.418996-.6505405-.5513089-.2646259-.132313-.5623375-.1984716-.8931178-.1984716-.2977031,0-.5843861.0551301-.8379919.1653944s-.474126.2646301-.661569.474126-.3418088.4630975-.4520774.7608048c-.1102601.2977073-.1653944.6395204-.1653944,1.0254349-.0110285.3859146.0110285.7497805.0992316,1.0915935.0771829.341813.2095001.6284918.3859146.8820934s.3969431.4520732.6725976.5954147c.2646259.1433415.5954147.2205244.9592806.2205244.3307887,0,.6174633-.0661586.8710691-.2094959.2536058-.1433415.474126-.3197602.6505405-.5623333.1764229-.2315487.3197602-.5072032.4079716-.8269634.0992316-.3087317.1433373-.6395204.1433373-.9923578l.0000084.0110201Z"/>
+    <path class="cls-10" d="M1069.2554562,642.2254348c.1323172-.0110243.2977031-.0441057.4851545-.0661586.187443-.0330772.3418088-.0771829.4630975-.132313s.187443-.1433415.2205202-.2756545.0441057-.2536016.0441057-.3638659c0-.3638659-.1212886-.661569-.3528374-.9041463s-.6284918-.3528374-1.1798008-.3528374c-.2425773,0-.474126.0220529-.6836261.0661586s-.3859146.1212886-.5402804.2315487-.2756545.2536016-.3859146.4300203c-.0992316.1764187-.1653944.4079674-.1984716.6725976h-.7277318c.0220487-.3638659.1102601-.6725976.2536058-.9372235.1433373-.2536016.3307887-.4630975.5513089-.6284918.2315487-.1653944.4851545-.2756545.7828577-.3528374s.6174633-.1102601.948252-.1102601c.3087317,0,.5954147.0330772.8710691.0992358s.5072032.1764187.7167033.3197602c.1984716.1433415.3638659.341813.474126.5954147.1102601.2425773.1764229.5513089.1764229.9041463v3.3629836c0,.2756545.0441057.4520732.1433373.5292561s.2977031.0551301.6064432-.0551301v.5623333c-.0551343.0110243-.1323172.0441057-.2425773.0661586-.1102601.0330772-.2095001.0441057-.3197602.0441057s-.2205202-.0110243-.3197602-.0330772c-.1212886-.0110243-.2095001-.0551301-.286683-.1102601-.0661544-.0551301-.1323172-.132313-.1764229-.2094959-.0441057-.0882114-.0771829-.1764187-.0882114-.2756545s-.0220487-.2094959-.0220487-.3197602c-.2977031.3307845-.6505405.5843861-1.0364635.7608048-.3859146.1764187-.8049147.2646301-1.2569837.2646301-.2756545,0-.5292603-.0330772-.7828577-.1102601-.2536058-.0661586-.474126-.187443-.661569-.3307845s-.3418088-.3307845-.4520774-.5513089c-.1102601-.2205244-.1653944-.474126-.1653944-.7828577,0-1.0474878.7167033-1.6649511,2.16113-1.8523983l.9923578-.132313-.0110201-.0220655ZM1070.4573141,642.5782722c-.2977031.132313-.6064432.2094959-.9151748.2536016s-.6174633.0661586-.926195.0992358c-.5513089.0441057-.9703007.1653944-1.2790407.3638659-.3087317.2094959-.4630975.5182317-.4630975.9372235,0,.187443.0330772.3528374.1102601.4961789s.1764229.2536016.2977031.341813c.1212886.0882114.2646259.1543658.4300203.1984716s.3307887.0661586.4961747.0661586c.286683,0,.5623375-.0330772.8379919-.1102601.2646259-.0661586.5072032-.1764187.7167033-.3307845.2095001-.1433415.374886-.3307845.5072032-.5623333.1212886-.2315487.187443-.4961789.187443-.8049105v-.9703049l.0000084.0220444Z"/>
+    <path class="cls-10" d="M1074.018765,645.8199713h-.7167033v-6.163634h.7167033v.8600406c.286683-.2977073.5843861-.5513089.8820976-.7387519.3087317-.187443.6725976-.2866788,1.1026179-.2866788.3859146,0,.7387519.0661586,1.0585121.1984716s.5954147.3638659.8269634.6836219c.1543658.2205244.2425773.4520732.2646259.6836219s.0441057.474126.0441057.7277276v4.0355812h-.7167033v-4.0245568c0-.5513089-.1212886-.9703049-.3638659-1.2459594s-.6505405-.418996-1.2239065-.418996c-.2205202,0-.4300203.0330772-.6064432.0992358-.187443.0661586-.3528374.1543658-.4961747.2646301-.1433373.1102601-.2756545.2425773-.374886.3748902-.0992316.1433415-.187443.2977073-.2425773.4520732-.0661544.1984716-.1102601.3859146-.1323172.5733618-.0110285.187443-.0220487.3748902-.0220487.5954147v3.3299064Z"/>
+    <path class="cls-10" d="M1080.2595861,638.3001179v-1.0585121h.7828577v1.0585121h-.7828577ZM1080.2926633,645.8199713v-6.163634h.7167033v6.163634h-.7167033Z"/>
+    <path class="cls-10" d="M1083.5123054,643.8903901c.1102601.5292561.3087317.9041463.5954147,1.1246707s.7056748.3307845,1.2459551.3307845c.2646259,0,.4851545-.0330772.6836261-.0992358s.3528374-.1433415.474126-.2536016.2205202-.2315487.2756545-.3638659c.0661544-.132313.0992316-.2756545.0992316-.4300203,0-.2977073-.0992316-.5292561-.286683-.6725976-.1984716-.1433415-.4410488-.2646301-.7277318-.341813-.2977031-.0882114-.6064432-.1543658-.948252-.2094959s-.661569-.1433415-.948252-.2646301c-.2977031-.1212886-.5402804-.2866788-.7277318-.5072032-.1984716-.2205244-.286683-.5402846-.286683-.9372235,0-.5182317.187443-.9372235.5623375-1.2680122.374886-.3307845.9151748-.4961789,1.5987925-.4961789s1.212878.1433415,1.6208496.4410488c.4189918.2977073.6725976.7938862.760809,1.499561h-.7277318c-.0661544-.474126-.2425773-.8159391-.5402804-1.0033821-.2977031-.1984716-.6725976-.2866788-1.1246665-.2866788s-.7938862.0992358-1.0364635.2866788c-.2425773.1984716-.3528374.4520732-.3528374.7718333,0,.2756545.0992316.4851503.286683.6395204.1984716.1433415.4410488.2646301.7387519.3528374.2977031.0882114.6064432.1764187.948252.2425773s.661569.1764187.948252.3087317.5402804.3087317.7277318.5292561c.1984716.2205244.286683.5292561.286683.9261992,0,.2977073-.0661544.5513089-.187443.7828577s-.2977031.418996-.5182317.5623333c-.2205202.1543658-.4851545.2646301-.7938862.341813s-.6395204.1102601-1.0033863.1102601-.6836261-.0551301-.9703007-.1653944c-.2756545-.1102601-.5182317-.2536016-.7167033-.4520732s-.3528374-.4079674-.4630975-.6725976c-.1102601-.2536016-.1764229-.5292561-.187443-.8269634h.7277318l-.0330772.0000042Z"/>
+    <path class="cls-10" d="M1092.1458052,642.2254348c.1323172-.0110243.2977031-.0441057.4851545-.0661586.187443-.0330772.3418088-.0771829.4630975-.132313s.187443-.1433415.2205202-.2756545.0441057-.2536016.0441057-.3638659c0-.3638659-.1212886-.661569-.3528374-.9041463-.2315487-.2315487-.6284918-.3528374-1.1908293-.3528374-.2425773,0-.474126.0220529-.6836261.0661586s-.3859146.1212886-.5402804.2315487-.286683.2536016-.3859146.4300203-.1653944.4079674-.1984716.6725976h-.7277318c.0220487-.3638659.1102601-.6725976.2536058-.9372235.1433373-.2536016.3307887-.4630975.5513089-.6284918.2315487-.1653944.4851545-.2756545.7828577-.3528374s.6174633-.1102601.948252-.1102601c.3087317,0,.5954147.0330772.8710691.0992358s.5072032.1764187.7167033.3197602c.1984716.1433415.3638659.341813.474126.5954147.1102601.2425773.1764229.5513089.1764229.9041463v3.3629836c0,.2756545.0441057.4520732.1433373.5292561s.2977031.0551301.5954147-.0551301v.5623333s-.1323172.0441057-.2425773.0661586c-.1102601.0330772-.2095001.0441057-.3197602.0441057s-.2205202-.0110243-.3197602-.0330772c-.1212886-.0110243-.2095001-.0551301-.286683-.1102601s-.1323172-.132313-.1764229-.2094959c-.0441057-.0882114-.0771829-.1764187-.0882114-.2756545s-.0220487-.2094959-.0220487-.3197602c-.2977031.3307845-.6505405.5843861-1.0364635.7608048-.3859146.1764187-.8049147.2646301-1.2569837.2646301-.2756545,0-.5292603-.0330772-.7828577-.1102601-.2536058-.0661586-.474126-.187443-.661569-.3307845-.187443-.1543658-.3418088-.3307845-.4520774-.5513089-.1102601-.2205244-.1653944-.474126-.1653944-.7828577,0-1.0474878.7167033-1.6649511,2.16113-1.8523983l.9923578-.132313.0110369-.0220655ZM1093.3476631,642.5782722c-.2977031.132313-.6064432.2094959-.9151748.2536016s-.6174633.0661586-.926195.0992358c-.5513089.0441057-.9703007.1653944-1.2790407.3638659-.3087317.2094959-.4630975.5182317-.4630975.9372235,0,.187443.0330772.3528374.1102601.4961789s.1764229.2536016.2977031.341813c.1212886.0882114.2646259.1543658.4300203.1984716s.3307887.0661586.4961747.0661586c.286683,0,.5623375-.0330772.8379919-.1102601s.5072032-.1764187.7167033-.3307845.374886-.3307845.5072032-.5623333.187443-.4961789.187443-.8049105v-.9703049l.0000084.0220444Z"/>
+    <path class="cls-10" d="M1098.3535407,645.8420242c-.0882114.0110243-.1984716.0441057-.3418088.0882114s-.2977031.0551301-.474126.0551301c-.3528374,0-.6284918-.0882114-.8159349-.2646301s-.2756545-.4961789-.2756545-.9592764v-4.5097072h-.8710691v-.5954147h.8710691v-1.7090568h.7167033v1.7090568h1.1577521v.5954147h-1.1577521v4.2230284c0,.1543658,0,.2866788.0110285.3969431,0,.1102601.0330772.1984716.0771829.2756545.0441057.0661586.0992316.1212886.187443.1543658s.1984716.0441057.3528374.0441057c.0992316,0,.187443,0,.286683-.0220529.0992316-.0110243.1984716-.0330772.286683-.0551301v.5843861l-.0110369-.0110285Z"/>
+    <path class="cls-10" d="M1099.8310446,638.3001179v-1.0585121h.7828661v1.0585121h-.7828661ZM1099.8751587,645.8199713v-6.163634h.7166949v6.163634h-.7166949Z"/>
+    <path class="cls-10" d="M1105.1236136,645.9853615c-.3969431,0-.7718291-.0771829-1.113638-.2094959s-.6505405-.341813-.9041547-.606439c-.2535974-.2756545-.4630975-.606439-.6174633-1.0144064s-.2315572-.8820934-.2315572-1.422378c0-.4520732.0551343-.8710691.1764229-1.2680122s.2977115-.7387519.5402888-1.0254349c.2425773-.2977073.5402888-.5292561.8931178-.6946504.3528458-.1653944.7718291-.2536016,1.2459636-.2536016s.9041547.0882114,1.2569837.2536016c.3528458.1764187.6505405.3969431.8931178.6946504.2425773.2866788.4190002.6284918.5292519,1.0254349.1102685.3969431.1764229.8269634.1764229,1.2790365,0,.4961789-.0661544.9372235-.1984631,1.3341666s-.3307887.7387519-.573366,1.0254349c-.2535974.2866788-.5513089.5072032-.9041547.661569s-.7387519.2315487-1.1687722.2315487v-.0110243ZM1107.2185977,642.7326422c0-.3638659-.0440973-.7056748-.1212886-1.0254349s-.1984631-.5954147-.3638659-.8269634c-.1653859-.2315487-.385923-.418996-.6395204-.5513089-.2646343-.132313-.5843861-.1984716-.9703091-.1984716s-.6946546.0771829-.9592721.2205244c-.2646343.1433415-.4851545.341813-.6505405.5843861s-.2866746.5182317-.3638659.8379877c-.0771913.3197602-.1212886.6395204-.1212886.9703049,0,.3859146.0440973.7277276.1323088,1.0585121.0882114.3197602.2205202.5954147.3969431.8269634s.3969431.4079674.6505405.5402846c.2646343.132313.562329.187443.9041547.187443.374886,0,.6946546-.0771829.9592721-.2205244.2646343-.1433415.4851545-.341813.6505405-.5843861.1653859-.2425773.2866746-.5292561.3638659-.8379877s.1212886-.6284918.1212886-.9592764l.0110369-.0220529Z"/>
+    <path class="cls-10" d="M1110.2618169,645.8199713h-.7166949v-6.163634h.7166949v.8600406c.2866746-.2977073.5843861-.5513089.8820976-.7387519s.6725976-.2866788,1.1026179-.2866788c.385923,0,.7387519.0661586,1.0585205.1984716s.5954062.3638659.8269634.6836219c.1543658.2205244.2425773.4520732.2646343.6836219.0330772.2315487.0440973.474126.0440973.7277276v4.0355812h-.7166949v-4.0245568c0-.5513089-.1212886-.9703049-.3638659-1.2459594s-.6505405-.418996-1.2239065-.418996c-.2205202,0-.4190002.0330772-.6064432.0992358s-.3418088.1543658-.4961747.2646301c-.1433457.1102601-.2756545.2425773-.374886.3748902-.0992316.1433415-.187443.2977073-.2425773.4520732-.0771913.1984716-.1102685.3859146-.1323088.5733618-.0110201.187443-.0220571.3748902-.0220571.5954147v3.3188779l-.0000168.0110285Z"/>
+    <path class="cls-10" d="M1119.3804712,635.7861463v11.908272h-.7166949v-11.908272h.7166949Z"/>
+    <path class="cls-10" d="M1123.9673487,645.8199713v-8.5783656h.8049063v8.5783656h-.8049063Z"/>
+    <path class="cls-10" d="M1127.7713938,645.8199713h-.7166949v-6.163634h.7166949v.9261992h.0220571c.187443-.3528374.4410404-.6284918.7828661-.8159391.3418088-.187443.7166949-.2756545,1.1246749-.2756545.2866746,0,.5292519.0330772.7277318.0992358s.3638659.1433415.5072116.2536016.2535974.2315487.3418088.3748902.1653859.2977073.2315572.4630975c.2095001-.4079674.4851545-.7056748.8269634-.9041463s.7387519-.2866788,1.1908293-.2866788c.4190002,0,.760809.0661586,1.0033863.2094959s.4410404.3197602.573366.5513089c.1323088.2315487.2205202.4851503.2646343.7828577.0440973.2977073.0661544.5954147.0661544.9041463v3.8922397h-.7166949v-4.2671299c0-.4410488-.0882114-.7938862-.2756545-1.0474878s-.5292519-.3859146-1.0474836-.3859146c-.2646343,0-.5182317.0551301-.760809.1764187s-.4520774.2866788-.6395204.5292561c-.0771913.0992358-.1433457.2205244-.1984631.3638659s-.0882114.2866788-.1212886.4300203c-.0330772.1543658-.0551343.2977073-.0661544.4520732s-.0220571.2866788-.0220571.418996v3.3188779h-.7166949v-4.2671299c0-.4410488-.0882114-.7938862-.2756545-1.0474878s-.5292519-.3859146-1.0474836-.3859146c-.2646343,0-.5182317.0551301-.760809.1764187s-.4520774.2866788-.6395204.5292561c-.0771913.0992358-.1433457.2205244-.1984631.3638659-.0551343.1433415-.0882114.2866788-.1212886.4300203-.0330772.1543658-.0551343.2977073-.0661544.4520732s-.0220571.2866788-.0220571.418996v3.3188779l.0330099.0110285Z"/>
+    <path class="cls-10" d="M1138.1359949,648.2457314h-.7166949v-8.6004184h.7166949v1.080565h.0220571c.0992316-.1984716.2315572-.3748902.3969431-.5402846.1653859-.1543658.3418088-.2866788.5402888-.3969431.1984631-.0992358.3969431-.187443.5954062-.2425773s.4079632-.0882114.6064432-.0882114c.4961747,0,.926195.0882114,1.2790407.2536016.3528458.1653944.6395204.3969431.8600406.6836219.2315572.2866788.385923.6284918.4961747,1.0254349.0992316.3969431.1543658.8269634.1543658,1.2790365,0,.4300203-.0551343.8379877-.1653859,1.2349308s-.2756545.7387519-.5072116,1.0364593-.5072116.5402846-.8600406.7167033-.7497721.2646301-1.2239065.2646301c-.4410404,0-.8600406-.0992358-1.2569837-.2866788-.3969431-.1984716-.7166949-.4851503-.948252-.8600406v3.4181137l.0110201.0220571ZM1138.1359949,642.7546908c0,.3528374.0440973.6836219.1433457.9923578.0992316.3197602.2315572.5843861.4079632.8269634.1764229.2315487.3969431.418996.6505405.5623333.2535974.1433415.5513089.2094959.8710607.2094959.3638659,0,.6836177-.0771829.9592721-.2205244s.4961747-.341813.6725976-.5954147.2977115-.5513089.385923-.8820934c.0771913-.341813.1102685-.7056748.0992316-1.0915935,0-.3859146-.0551343-.7277276-.1653859-1.0254349-.1102685-.2977073-.2535974-.5513089-.4520774-.7608048s-.4079632-.3638659-.6615774-.474126-.5292519-.1653944-.8379835-.1653944c-.3307887,0-.6285003.0661586-.8931178.1984716-.2646343.132313-.4851545.3197602-.6505405.5513089-.1764229.2315487-.3087317.5072032-.3969431.8379877-.0882114.3197602-.1323088.6725976-.1323088,1.0474878v-.0110201Z"/>
+    <path class="cls-10" d="M1147.7067266,642.2254348c.1323088-.0110243.2977115-.0441057.4851545-.0661586.187443-.0330772.3418088-.0771829.4630975-.132313s.187443-.1433415.2205202-.2756545.0440973-.2536016.0440973-.3638659c0-.3638659-.1212886-.661569-.3528458-.9041463-.2315572-.2315487-.6285003-.3528374-1.1908293-.3528374-.2425773,0-.4741176.0220529-.6836177.0661586s-.385923.1212886-.5402888.2315487-.2866746.2536016-.385923.4300203-.1653859.4079674-.1984631.6725976h-.7277318c.0220571-.3638659.1102685-.6725976.2535974-.9372235.1433457-.2536016.3307887-.4630975.5513089-.6284918.2315572-.1653944.4851545-.2756545.7828661-.3528374s.6174633-.1102601.948252-.1102601c.3087317,0,.5954062.0330772.8710607.0992358s.5072116.1764187.7166949.3197602c.1984631.1433415.3638659.341813.4741176.5954147.1102685.2425773.1764229.5513089.1764229.9041463v3.3629836c0,.2756545.0440973.4520732.1433457.5292561s.2977115.0551301.5954062-.0551301v.5623333s-.1323088.0441057-.2425773.0661586c-.1102685.0330772-.2095001.0441057-.3197518.0441057-.1102685,0-.2205202-.0110243-.3197518-.0330772-.1212886-.0110243-.2095001-.0551301-.2866746-.1102601-.0771913-.0551301-.1323088-.132313-.1764229-.2094959-.0440973-.0882114-.0771913-.1764187-.0882114-.2756545s-.0220571-.2094959-.0220571-.3197602c-.2977115.3307845-.6505405.5843861-1.0364635.7608048s-.8049063.2646301-1.2569837.2646301c-.2756545,0-.5292519-.0330772-.7828661-.1102601-.2535974-.0661586-.4741176-.187443-.6615774-.3307845-.187443-.1543658-.3418088-.3307845-.4520774-.5513089s-.1653859-.474126-.1653859-.7828577c0-1.0474878.7166949-1.6649511,2.1611384-1.8523983l.9923493-.132313.0110706-.0220655ZM1148.908576,642.5782722c-.2977115.132313-.6064432.2094959-.9151748.2536016s-.6174633.0661586-.926195.0992358c-.5513089.0441057-.9703091.1653944-1.2790407.3638659-.3087317.2094959-.4630975.5182317-.4630975.9372235,0,.187443.0330772.3528374.1102685.4961789s.1764229.2536016.2977115.341813.2646343.1543658.4300203.1984716.3307887.0661586.4961747.0661586c.2866746,0,.562329-.0330772.8379835-.1102601s.5072116-.1764187.7166949-.3307845.374886-.3307845.5072116-.5623333.187443-.4961789.187443-.8049105v-.9703049.0220444Z"/>
+    <path class="cls-10" d="M1156.1196893,641.5859186c-.1323088-.4630975-.3418088-.8159391-.6505405-1.080565-.3087317-.2536016-.7056748-.3859146-1.1798092-.3859146-.3638659,0-.6836177.0771829-.9372319.2315487s-.4741176.3528374-.6395204.5954147c-.1653859.2536016-.2866746.5292561-.3638659.8490163-.0771913.3087317-.1212886.6284918-.1212886.948252s.0330772.6395204.1102685.948252.1984631.5843861.3638659.8379877c.1653859.2425773.385923.4410488.6395204.5843861.2646343.1433415.5843861.2205244.948252.2205244.5292519,0,.9592721-.1433415,1.2790407-.4410488.3197518-.2977073.5292519-.6946504.6174633-1.212878h.760809c-.0661544.341813-.1653859.6505447-.3087317.9372235-.1433457.2756545-.3197518.5182317-.5402888.7277276s-.4741176.3638659-.7828661.474126c-.2977115.1102601-.6505405.1653944-1.0364635.1653944-.4961747,0-.9151748-.0882114-1.2790407-.2536016-.3528458-.1653944-.6505405-.3969431-.8820976-.6836219s-.3969431-.6284918-.5072116-1.0254349-.1653859-.8269634-.1653859-1.2790365c0-.4300203.0661544-.8379877.187443-1.2349308s.3087317-.7387519.5402888-1.0474878c.2425773-.2977073.5292519-.5402846.8820976-.7167033s.760809-.2646301,1.2239065-.2646301c.7166949,0,1.2900609.1653944,1.7311181.5072032s.7166949.8710691.8269634,1.5987967h-.7277318.0110369Z"/>
+    <path class="cls-10" d="M1160.8058152,645.8420242c-.0882114.0110243-.1984631.0441057-.3418088.0882114s-.2977115.0551301-.4741176.0551301c-.3528458,0-.6285003-.0882114-.8159433-.2646301s-.2756545-.4961789-.2756545-.9592764v-4.5097072h-.8710607v-.5954147h.8710607v-1.7090568h.7166949v1.7090568h1.1577521v.5954147h-1.1577521v4.2230284c0,.1543658,0,.2866788.0110201.3969431,0,.1102601.0330772.1984716.0661544.2756545.0440973.0661586.0992316.1212886.187443.1543658s.1984631.0441057.3528458.0441057c.0992316,0,.187443,0,.2866746-.0220529.0992316-.0110243.1984631-.0330772.2866746-.0551301v.5843861l.0000168-.0110285Z"/>
+  </g>
+</svg></a>
+  <small>© 2026 TaVyro GmbH · Albisriederstrasse 248 · CH-8047 Zürich · <a href="tel:+41786868089" style="color:inherit">+41 78 686 80 89</a></small>
+  <nav>
+    <a href="https://www.tavyro.ch/de">tavyro.ch</a>
+    <a href="https://www.tavyro.ch/de/impressum">Impressum</a>
+    <a href="https://www.tavyro.ch/de/datenschutz">Datenschutz</a>
   </nav>
 </footer>
 
-<script>
-(function(){
-  var cb=document.getElementById("nav-open");
-  var nav=document.getElementById("navPanel");
-  if(!cb||!nav)return;
-  nav.querySelectorAll("a").forEach(function(a){
-    a.addEventListener("click",function(){cb.checked=false;});
-  });
-})();
-</script>
 <script>
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });

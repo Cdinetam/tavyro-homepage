@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#265464">
-<title>TaVyro – Executive Intelligence</title>
+<title>TaVyro Executive Intelligence®</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -44,37 +44,63 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);font-size:15px;line-height:1.65;overflow-x:hidden}
 
-/* ── HEADER ── */
-.site-header{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--br)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 5vw;min-height:64px}
-.header-logo{display:flex;align-items:center;flex-shrink:0;text-decoration:none}
-.header-logo img{display:block;height:40px;width:auto;max-width:min(200px,42vw)}
-.header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.header-lang{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:500}
-.lang-active{color:var(--p);font-weight:600;padding:4px 6px}
-.lang-sep{color:var(--brd);user-select:none}
-.lang-link{color:var(--tm);text-decoration:none;padding:8px 10px;border-radius:3px;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.lang-link:hover{color:var(--p);background:var(--pl)}
-.nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid var(--br);border-radius:3px;background:var(--bg);color:var(--tm);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.nav-toggle svg{width:22px;height:22px}
+/* ── HEADER (matches tavyro.ch Navigation.tsx) ── */
+body{padding-top:6rem}
+@media(min-width:768px){body{padding-top:7rem}}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border-bottom:1px solid #D7DDE1;color-scheme:light}
+.header-wrap{max-width:80rem;margin:0 auto;padding-left:1rem;padding-right:1rem}
+@media(min-width:640px){.header-wrap{padding-left:1.5rem;padding-right:1.5rem}}
+@media(min-width:1024px){.header-wrap{padding-left:2rem;padding-right:2rem}}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:6rem;padding:1rem 0;overflow:visible}
+@media(min-width:768px){.header-inner{height:7rem;padding:1.5rem 0;gap:2rem}}
+.header-logo{display:flex;flex-shrink:0;align-items:center;text-decoration:none;padding-left:.5rem}
+@media(min-width:640px){.header-logo{padding-left:1rem}}
+@media(min-width:768px){.header-logo{padding-left:2rem;margin-right:3rem}}
+@media(min-width:1024px){.header-logo{padding-left:2.5rem;margin-right:4rem}}
+@media(min-width:1280px){.header-logo{margin-right:5rem}}
+.header-logo img{display:block;height:3rem;width:auto;max-width:11.5rem}
+@media(min-width:640px){.header-logo img{max-width:12.5rem}}
+@media(min-width:768px){.header-logo img{height:3.5rem;max-width:13.5rem}}
+@media(min-width:1024px){.header-logo img{height:4rem;max-width:15rem}}
+.header-bar{display:flex;flex:1;min-width:0;align-items:center;justify-content:flex-end;gap:1rem}
+.header-nav{display:none;align-items:center;flex-shrink:0;gap:0}
+.header-nav a{font-size:.875rem;line-height:1.25rem;font-weight:500;color:#506364;text-decoration:none;white-space:nowrap;transition:color .2s;-webkit-tap-highlight-color:transparent}
+.header-nav a:hover{color:#132A32}
+.header-end{display:none;align-items:center;flex-shrink:0;gap:1rem}
+.header-lang{display:flex;align-items:center;gap:.25rem;font-size:.875rem;font-weight:500}
+.lang-active,.lang-link,.lang-cell{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;min-width:2.75rem;padding:0 .5rem;border-radius:.375rem;text-decoration:none;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.lang-active{font-weight:700;color:#132A32;cursor:default}
+.lang-link{color:#506364}
+.lang-link:hover{color:#132A32;background:#EEF1F3}
+.lang-sep{color:#D7DDE1;user-select:none;line-height:1}
+.nav-cta{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;padding:.625rem 1.25rem;font-size:.875rem;line-height:1.25rem;font-weight:500;color:#fff!important;background:#265464!important;border-radius:.5rem;text-decoration:none!important;white-space:nowrap;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);transition:all .2s}
+.nav-cta:hover{background:#1D404C!important;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}
+.nav-toggle{display:flex;align-items:center;justify-content:center;padding:.75rem;margin:0;border:0;background:transparent;color:#506364;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;flex-shrink:0}
+.nav-toggle svg{width:1.5rem;height:1.5rem;display:block}
 .nav-check{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;opacity:0;pointer-events:none}
-.nav-toggle{position:relative;z-index:2}
-
-.header-nav{display:flex;align-items:center;gap:.2rem;flex-wrap:wrap}
-.header-nav a{font-size:.81rem;font-weight:400;color:var(--tm);text-decoration:none;padding:.4rem .85rem;border-radius:3px;transition:color .17s,background .17s;-webkit-tap-highlight-color:transparent}
-.header-nav a:hover{color:var(--p);background:var(--pl)}
-.nav-cta{background:var(--p)!important;color:var(--wh)!important;font-weight:500;margin-left:.4rem;transition:background .17s,transform .12s!important}
-.nav-cta:hover{background:var(--pd)!important;transform:translateY(-1px)}
+.nav-mobile-only{display:block}
+@media(min-width:768px){
+  .header-nav{display:flex;gap:1.5rem}
+  .header-end{display:flex}
+  .nav-toggle{display:none}
+  .nav-mobile-only{display:none!important}
+}
+@media(min-width:1024px){.header-nav{gap:2rem}.header-end{gap:1rem}}
+@media(max-width:1200px) and (min-width:768px){.header-nav{gap:1.25rem}.header-nav a{font-size:.8125rem}}
 
 /* ── HERO ── */
-.hero{background:var(--p);padding:80px 5vw 90px;position:relative;overflow:hidden}
+.hero{background:var(--p);padding:5rem 0 5.5rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 85% 50%,rgba(255,255,255,.07) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 5% 90%,rgba(0,0,0,.1) 0%,transparent 60%);pointer-events:none}
-.hero-inner{max-width:1100px;display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:center;position:relative;z-index:1}
+.hero-inner{max-width:80rem;margin:0 auto;padding:0 1rem;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:center;position:relative;z-index:1}
+@media(min-width:640px){.hero-inner{padding:0 1.5rem}}
+@media(min-width:1024px){.hero-inner{padding:0 2rem}}
+.hero-copy{text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero h1,.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4.2vw,3.7rem);font-weight:300;color:var(--wh);line-height:1.12;margin:0 0 1.3rem;text-align:center}
+.hero-title .line{display:block}
+.hero h1 em,.hero-title em{font-style:italic;color:rgba(255,255,255,.72)}
+.hero-sub{font-size:.97rem;color:rgba(255,255,255,.68);line-height:1.72;max-width:470px;margin:0 auto 2.1rem;font-weight:300;text-align:center}
+.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;justify-content:center;width:100%}
 
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4.2vw,3.7rem);font-weight:300;color:var(--wh);line-height:1.14;margin-bottom:1.3rem;margin-top:0.5rem}
-.hero h1 em{font-style:italic;color:rgba(255,255,255,.72)}
-.hero-sub{font-size:.97rem;color:rgba(255,255,255,.68);line-height:1.72;max-width:470px;margin-bottom:2.1rem;font-weight:300}
-.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap}
 .btn-wh{display:inline-block;padding:.78rem 1.75rem;background:var(--wh);color:var(--p);border-radius:3px;font-size:.82rem;font-weight:600;text-decoration:none;transition:background .17s,transform .12s,box-shadow .17s}
 .btn-wh:hover{background:var(--pl);transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.12)}
 .btn-owh{display:inline-block;padding:.78rem 1.55rem;border:1px solid rgba(255,255,255,.38);color:var(--wh);border-radius:3px;font-size:.82rem;font-weight:400;text-decoration:none;transition:border-color .17s,background .17s}
@@ -231,6 +257,21 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 .rv.in{opacity:1;transform:translateY(0)}
 
 /* ── RESPONSIVE ── */
+@media(max-width:767px){
+  body{padding-top:6rem}
+  .header-inner{height:6rem;padding:1rem 0}
+  .header-logo{flex:0 1 auto;min-width:0;max-width:calc(100% - 3.5rem)}
+  .header-logo img{height:3.5rem;max-width:100%;object-fit:contain}
+  .header-wrap{position:relative}
+  .header-bar{gap:.5rem}
+  .header-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid #D7DDE1;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:.5rem 1rem 1rem;max-height:calc(100dvh - 6rem);overflow-y:auto;-webkit-overflow-scrolling:touch;z-index:49}
+  #nav-open:checked+.header-wrap .header-nav{display:flex}
+  .header-nav a{padding:.75rem .5rem;font-size:.875rem;border-bottom:1px solid #D7DDE1}
+  .header-nav a:last-of-type:not(.nav-cta){border-bottom:1px solid #D7DDE1}
+  .header-nav .nav-cta{margin-top:.5rem;text-align:center;justify-content:center}
+  .header-nav .header-lang{margin-top:.5rem;padding:.5rem 0;justify-content:flex-start;border-bottom:none}
+  .nav-mobile-only.nav-cta{display:inline-flex!important}
+}
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr}
   .hero-card{display:none}
@@ -239,18 +280,12 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
   .prod-grid{grid-template-columns:1fr 1fr}
   .pt.feat{flex-direction:column;gap:1rem}
   .rm-grid{grid-template-columns:1fr}
-  .nav-toggle{display:flex}
-  .header-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--br);box-shadow:0 12px 28px rgba(0,0,0,.08);padding:8px 5vw 16px;max-height:calc(100dvh - 64px);overflow-y:auto;-webkit-overflow-scrolling:touch;z-index:199}
-  #nav-open:checked~.header-nav{display:flex}
-  .header-nav a{padding:14px 12px;font-size:.9rem;border-bottom:1px solid var(--br)}
-  .header-nav a:last-child{border-bottom:none}
-  .header-nav .nav-cta{margin:8px 0 0;text-align:center;padding:14px}
 }
 @media(max-width:600px){
   .prod-grid,.ei-grid{grid-template-columns:1fr}
   .hero h1{font-size:2.35rem}
-  .header-logo img{height:34px}
 }
+
 </style>
 </head>
 <body>
@@ -258,36 +293,50 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 <!-- HEADER -->
 <header class="site-header">
   <input type="checkbox" id="nav-open" class="nav-check" aria-hidden="true" tabindex="-1">
-  <div class="header-inner">
-    <a href="/de" class="header-logo" aria-label="TaVyro – Startseite">
-      <img src="/logo-tavyro.svg" alt="TaVyro" width="200" height="52" decoding="async">
-    </a>
-    <div class="header-actions">
-      <div class="header-lang" aria-label="Sprache">
-        <span class="lang-active" aria-current="page">DE</span>
-        <span class="lang-sep" aria-hidden="true">|</span>
-        <a href="/en/executive-intelligence" hreflang="en" lang="en" class="lang-link">EN</a>
+  <div class="header-wrap">
+    <div class="header-inner">
+      <a href="/de" class="header-logo" aria-label="TaVyro – Startseite">
+        <img src="/logo-tavyro.svg" alt="TaVyro" width="240" height="64" decoding="async">
+      </a>
+      <div class="header-bar">
+        <nav id="navPanel" class="header-nav" aria-label="Hauptnavigation">
+          <a href="/de">Home</a>
+          <a href="/de#leistungen">Leistungen</a>
+          <a href="/de#angebote">Angebote</a>
+          <a href="/de#ueber">Über TaVyro</a>
+          <a href="/de/executive-intelligence">TaVyro Executive Intelligence®</a>
+          <a href="/de/erstgespraech-buchen" class="nav-cta nav-mobile-only">Erstgespräch buchen</a>
+          <div class="header-lang nav-mobile-only" aria-label="Sprache">
+            <span class="lang-active lang-cell" aria-current="page">DE</span>
+            <span class="lang-sep" aria-hidden="true">|</span>
+            <a href="/en/executive-intelligence" hreflang="en" lang="en" class="lang-link lang-cell">EN</a>
+          </div>
+        </nav>
+        <div class="header-end">
+          <a href="/de/erstgespraech-buchen" class="nav-cta">Erstgespräch buchen</a>
+          <div class="header-lang" aria-label="Sprache">
+            <span class="lang-active lang-cell" aria-current="page">DE</span>
+            <span class="lang-sep" aria-hidden="true">|</span>
+            <a href="/en/executive-intelligence" hreflang="en" lang="en" class="lang-link lang-cell">EN</a>
+          </div>
+        </div>
+        <label for="nav-open" class="nav-toggle" aria-label="Menü öffnen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </label>
       </div>
-      <label for="nav-open" class="nav-toggle" aria-label="Menü öffnen">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </label>
     </div>
   </div>
-  <nav id="navPanel" class="header-nav" aria-label="Hauptnavigation">
-    <a href="/de">Home</a>
-    <a href="/de#leistungen">Leistungen</a>
-    <a href="/de#angebote">Angebote</a>
-    <a href="/de#ueber">Über TaVyro</a>
-    <a href="/de/erstgespraech-buchen" class="nav-cta">Erstgespräch buchen</a>
-  </nav>
 </header>
 
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div>
-      <h1>Executive<br><em>Intelligence</em><br>for People &<br>Organisation</h1>
+    <div class="hero-copy">
+      <h1 class="hero-title">
+        <span class="line">TaVyro Executive Intelligence®</span>
+        <span class="line">for People & Organisation</span>
+      </h1>
       <p class="hero-sub">Unternehmen investieren in HR-Systeme, AI Tools, ERP und Dashboards und berichten dennoch über dieselben Symptome. TaVyro verbindet People, Governance und Business Intelligence zu einem klaren Bild.</p>
       <div class="hero-btns">
         <a href="#usecase" class="btn-wh">Use Case ansehen</a>
@@ -296,7 +345,7 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
     </div>
     <div class="hero-card">
       <div class="hc-hd">
-        <span class="hc-title">Executive Intelligence · Live</span>
+        <span class="hc-title">TaVyro Executive Intelligence® · Live</span>
         <span class="hc-live">Aktiv</span>
       </div>
       <div class="hc-grid">
@@ -354,9 +403,9 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 <!-- EI LAYER -->
 <section class="ei-sec" id="intelligence">
   <div class="wrap">
-    <div class="eyebrow">Executive Intelligence Layer</div>
+    <div class="eyebrow">TaVyro Executive Intelligence® Layer</div>
     <h2 class="sh">Sechs Dimensionen.<br><em>Ein klares Gesamtbild.</em></h2>
-    <p class="sub">Executive Intelligence verbindet AI mit People, Organisation, Governance und Business Intelligence und macht Muster sichtbar, die Business Performance beeinflussen.</p>
+    <p class="sub">TaVyro Executive Intelligence® verbindet AI mit People, Organisation, Governance und Business Intelligence und macht Muster sichtbar, die Business Performance beeinflussen.</p>
     <div class="ei-grid">
       <div class="ei-card"><div class="ei-ico">👥</div><div class="ei-name">People Intelligence</div><div class="ei-desc">HRIS, Rollen, Skills, Fluktuation – Talentrisiken werden proaktiv erkannt.</div></div>
       <div class="ei-card"><div class="ei-ico">🏛</div><div class="ei-name">Organisation Intelligence</div><div class="ei-desc">Organigramme, Entscheidungswege, Führungsspannen – strukturelle Engpässe sichtbar machen.</div></div>
@@ -380,7 +429,7 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 <section class="uc-sec" id="usecase">
   <div class="wrap">
     <div class="eyebrow">Use Case · Live Beispiel</div>
-    <h2 class="sh">Executive Intelligence<br><em>in der Praxis.</em></h2>
+    <h2 class="sh">TaVyro Executive Intelligence®<br><em>in der Praxis.</em></h2>
     <p class="sub">Vier Signale aus verschiedenen Systemen. Eine klare Diagnose. Vier konkrete Massnahmen.</p>
     <div class="uc-grid">
       <div>
@@ -419,7 +468,7 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
     <div class="rm-grid">
       <div class="rm-card"><div class="rm-dot" style="background:var(--p)"></div><div class="rm-lbl">Sofort umsetzbar</div><div class="rm-title">Quick Wins</div><ul class="rm-items"><li><a href="/de#leistungen">AI Readiness Assessment</a></li><li><a href="/tavyro-hr-health-check.html">CEO/GL-Selbstcheck Full Report</a></li><li><a href="/de#leistungen">Fractional CHRO + AI</a></li><li><a href="/de#angebote">AI Leadership Programm</a></li></ul></div>
       <div class="rm-card"><div class="rm-dot" style="background:#b7950b"></div><div class="rm-lbl">6–12 Monate</div><div class="rm-title">Entscheidungslogik und Steuerung verbessern</div><ul class="rm-items"><li>Entscheidungsengpässe früher erkennen</li><li>Governance und AI kontrolliert verbinden</li><li>Executive Muster über mehrere Unternehmen vergleichen</li><li>Praxisnahe Intelligence Methodik etablieren</li></ul></div>
-      <div class="rm-card"><div class="rm-dot" style="background:var(--brd)"></div><div class="rm-lbl">13–36 Monate</div><div class="rm-title">Executive Intelligence skalieren</div><ul class="rm-items"><li>Executive Intelligence verankern</li><li>Organisationsmuster und Entscheidungslogiken systematisieren</li><li>Praxisbasierte Intelligence Methodik weiter standardisieren</li><li>Kontinuierliche Executive Intelligence Services etablieren</li></ul></div>
+      <div class="rm-card"><div class="rm-dot" style="background:var(--brd)"></div><div class="rm-lbl">13–36 Monate</div><div class="rm-title">TaVyro Executive Intelligence® skalieren</div><ul class="rm-items"><li>TaVyro Executive Intelligence® verankern</li><li>Organisationsmuster und Entscheidungslogiken systematisieren</li><li>Praxisbasierte Intelligence Methodik weiter standardisieren</li><li>Kontinuierliche TaVyro Executive Intelligence® Services etablieren</li></ul></div>
     </div>
   </div>
 </section>
@@ -430,7 +479,7 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 <section class="cta-sec">
   <div class="eyebrow">Nächster Schritt</div>
   <h2 class="sh">Bereit für das<br><em>Erstgespräch?</em></h2>
-  <p class="sub">Klären Sie in 30 Minuten, ob Executive Intelligence oder ein anderes TaVyro-Produkt den grössten Hebel für Ihr Unternehmen bietet.</p>
+  <p class="sub">Klären Sie in 30 Minuten, ob TaVyro Executive Intelligence® oder ein anderes TaVyro-Produkt den grössten Hebel für Ihr Unternehmen bietet.</p>
   <div class="cta-btns">
     <a href="/de/erstgespraech-buchen" class="btn-wh">Erstgespräch buchen</a>
     <a href="mailto:hello@tavyro.ch" class="btn-owh">hello@tavyro.ch</a>

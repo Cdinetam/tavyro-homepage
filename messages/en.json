@@ -11,18 +11,18 @@
     "services": "Services",
     "offers": "Plans",
     "about": "About TaVyro",
-    "executiveIntelligence": "Executive Intelligence",
+    "executiveIntelligence": "TaVyro Executive Intelligence®",
     "cta": "Book consultation"
   },
   "ExecutiveIntelligencePage": {
     "meta": {
-      "titleAbsolute": "TaVyro – Executive Intelligence",
-      "description": "Executive Intelligence connects people, organisation, governance and business intelligence – making visible the patterns that influence business performance."
+      "titleAbsolute": "TaVyro Executive Intelligence®",
+      "description": "TaVyro Executive Intelligence® connects people, organisation, governance and business intelligence – making visible the patterns that influence business performance."
     }
   },
   "Hero": {
     "headline": "Fractional CHRO for Swiss SMEs",
-    "subheadline": "TaVyro supports CEOs, executive teams and boards as <strong>Fractional CHRO / Strategic People Partner</strong> – independent, hands-on and with measurable impact.",
+    "subheadline": "TaVyro supports CEOs, executive teams and boards as <strong>Fractional CHRO / Executive Advisor for People & Organization</strong> – independent, hands-on and with measurable impact.",
     "ctaPrimary": "Book consultation",
     "ctaSecondary": "View services",
     "seoLink": "CEO/Executive Team Self-Check: <link>Start now</link>"
@@ -63,7 +63,7 @@
     "title": "Services for CEOs, Executive Teams and Boards",
     "items": {
       "0": {
-        "title": "Fractional CHRO / Strategic People Partner",
+        "title": "Fractional CHRO / Executive Advisor for People & Organization",
         "description": "External HR leadership role for executive teams and boards:",
         "features": {
           "0": "Relieves and advises the executive team on people and organizational matters",
@@ -255,7 +255,7 @@
     "services": "Services",
     "offers": "Plans",
     "aboutTavyro": "About TaVyro",
-    "executiveIntelligence": "Executive Intelligence",
+    "executiveIntelligence": "TaVyro Executive Intelligence®",
     "fractionalChroZurich": "Fractional CHRO Switzerland",
     "fractionalChroSwitzerland": "Fractional CHRO Switzerland",
     "bookCall": "Book consultation",
@@ -348,7 +348,7 @@
     "registerUid": "UID: CHE-376.686.218",
     "registerForm": "Legal form: Limited liability company (GmbH)",
     "purposeTitle": "Purpose of the company",
-    "purposeContent": "Fractional CHRO Services, Strategic People Advisory, Executive Advisory & Sparring, HR consulting and organizational development for executive teams, boards and leaders.",
+    "purposeContent": "Fractional CHRO Services, Executive Advisor for People & Organization, Executive Advisory & Sparring, HR consulting and organizational development for executive teams, boards and leaders.",
     "disclaimerTitle": "Disclaimer",
     "disclaimerContent": "Liability for content: The content of our pages has been created with the utmost care. However, we cannot guarantee the accuracy, completeness and timeliness of the content.",
     "disclaimerLinks": "Liability for links: Our website contains links to external third-party websites over whose content we have no influence. Therefore, we cannot accept any liability for this third-party content.",
