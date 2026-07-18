@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import forWhomImage from "@/images/TaVyro Für wen.jpg";
+import forWhomImage from "@/images/tavyro-fuer-wen.jpg";
 
 export default function TargetAudience() {
   const t = useTranslations("TargetAudience");
