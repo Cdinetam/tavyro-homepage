@@ -12,12 +12,19 @@
     "offers": "Plans",
     "about": "About TaVyro",
     "executiveIntelligence": "TaVyro Executive Intelligence®",
+    "trustRoom": "Trust Room",
     "cta": "Book consultation"
   },
   "ExecutiveIntelligencePage": {
     "meta": {
       "titleAbsolute": "TaVyro Executive Intelligence®",
       "description": "TaVyro Executive Intelligence® connects people, organisation, governance and business intelligence – making visible the patterns that influence business performance."
+    }
+  },
+  "TrustRoomPage": {
+    "meta": {
+      "titleAbsolute": "Trust Room — TaVyro Executive Intelligence®",
+      "description": "The Executive Intelligence space for the conversations leaders cannot have anywhere else."
     }
   },
   "Hero": {

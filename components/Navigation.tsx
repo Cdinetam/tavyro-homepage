@@ -42,20 +42,23 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-tavyro-border bg-white/95 backdrop-blur-sm [color-scheme:light]">
       <div className="container-custom">
-        <div className="flex h-24 items-center justify-between py-4 md:h-28 md:py-6">
-          <Link href="/" className="flex items-center">
+        <div className="flex h-24 items-center justify-between gap-4 py-4 md:h-28 md:gap-8 md:py-6">
+          <Link
+            href="/"
+            className="flex shrink-0 items-center pl-2 sm:pl-4 md:pl-8 lg:pl-10 md:mr-12 lg:mr-16 xl:mr-20"
+          >
             <Image
               src="/logo-tavyro.svg"
               alt="TaVyro Logo"
               width={240}
               height={64}
-              className="h-14 w-auto md:h-16"
+              className="h-12 w-auto max-w-[11.5rem] sm:max-w-[12.5rem] md:h-14 md:max-w-[13.5rem] lg:h-16 lg:max-w-[15rem]"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center space-x-8 md:flex">
+          <div className="hidden shrink-0 items-center space-x-6 lg:space-x-8 md:flex">
             <Link
               href="/"
               className="text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
@@ -98,56 +101,64 @@ export default function Navigation() {
             >
               {t("executiveIntelligence")}
             </Link>
-
-            {/* Language switch: native <a> — reliable on iOS Safari inside fixed header */}
-            <div className="flex items-center gap-1 text-sm font-medium">
-              {locale === "de" ? (
-                <span
-                  className="touch-manipulation min-h-11 min-w-11 cursor-default rounded-md px-2 font-bold text-tavyro-text"
-                  aria-current="page"
-                >
-                  DE
-                </span>
-              ) : (
-                <a
-                  href={deHref}
-                  hrefLang="de"
-                  lang="de"
-                  className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
-                  aria-label="Deutsch"
-                >
-                  DE
-                </a>
-              )}
-              <span className="select-none text-tavyro-border" aria-hidden>
-                |
-              </span>
-              {locale === "en" ? (
-                <span
-                  className="touch-manipulation min-h-11 min-w-11 cursor-default rounded-md px-2 font-bold text-tavyro-text"
-                  aria-current="page"
-                >
-                  EN
-                </span>
-              ) : (
-                <a
-                  href={enHref}
-                  hrefLang="en"
-                  lang="en"
-                  className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
-                  aria-label="English"
-                >
-                  EN
-                </a>
-              )}
-            </div>
-
             <Link
-              href="/erstgespraech-buchen"
-              className="btn-primary px-5 py-2.5 text-sm"
+              href="/trust-room"
+              className="text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
             >
-              {t("cta")}
+              {t("trustRoom")}
             </Link>
+
+            <div className="flex items-center gap-3 lg:gap-4">
+              <Link
+                href="/erstgespraech-buchen"
+                className="btn-primary shrink-0 px-5 py-2.5 text-sm"
+              >
+                {t("cta")}
+              </Link>
+
+              {/* Language switch: right of CTA — native <a> for iOS Safari */}
+              <div className="flex items-center gap-1 text-sm font-medium">
+                {locale === "de" ? (
+                  <span
+                    className="touch-manipulation flex min-h-11 min-w-11 cursor-default items-center justify-center rounded-md px-2 font-bold text-tavyro-text"
+                    aria-current="page"
+                  >
+                    DE
+                  </span>
+                ) : (
+                  <a
+                    href={deHref}
+                    hrefLang="de"
+                    lang="de"
+                    className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
+                    aria-label="Deutsch"
+                  >
+                    DE
+                  </a>
+                )}
+                <span className="select-none text-tavyro-border" aria-hidden>
+                  |
+                </span>
+                {locale === "en" ? (
+                  <span
+                    className="touch-manipulation flex min-h-11 min-w-11 cursor-default items-center justify-center rounded-md px-2 font-bold text-tavyro-text"
+                    aria-current="page"
+                  >
+                    EN
+                  </span>
+                ) : (
+                  <a
+                    href={enHref}
+                    hrefLang="en"
+                    lang="en"
+                    className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
+                    aria-label="English"
+                  >
+                    EN
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -228,8 +239,23 @@ export default function Navigation() {
               >
                 {t("executiveIntelligence")}
               </Link>
+              <Link
+                href="/trust-room"
+                className="touch-manipulation py-2 text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
+                onClick={() => setIsOpen(false)}
+              >
+                {t("trustRoom")}
+              </Link>
 
-              {/* Mobile language: full-width native links (iOS-safe) */}
+              <Link
+                href="/erstgespraech-buchen"
+                className="btn-primary py-2.5 text-center text-sm"
+                onClick={() => setIsOpen(false)}
+              >
+                {t("cta")}
+              </Link>
+
+              {/* Mobile language: after CTA */}
               <div className="flex flex-col gap-2 py-2 text-sm font-medium">
                 {locale === "de" ? (
                   <span
@@ -268,14 +294,6 @@ export default function Navigation() {
                   </a>
                 )}
               </div>
-
-              <Link
-                href="/erstgespraech-buchen"
-                className="btn-primary py-2.5 text-center text-sm"
-                onClick={() => setIsOpen(false)}
-              >
-                {t("cta")}
-              </Link>
             </div>
           </div>
         )}

@@ -12,12 +12,19 @@
     "offers": "Angebote",
     "about": "Über TaVyro",
     "executiveIntelligence": "TaVyro Executive Intelligence®",
+    "trustRoom": "Trust Room",
     "cta": "Erstgespräch buchen"
   },
   "ExecutiveIntelligencePage": {
     "meta": {
       "titleAbsolute": "TaVyro Executive Intelligence®",
       "description": "TaVyro Executive Intelligence® verbindet People, Organisation, Governance und Business Intelligence – Muster sichtbar machen, die Business Performance beeinflussen."
+    }
+  },
+  "TrustRoomPage": {
+    "meta": {
+      "titleAbsolute": "Trust Room — TaVyro Executive Intelligence®",
+      "description": "Der Executive Intelligence Space für die Gespräche, die Führungskräfte sonst nirgends führen können."
     }
   },
   "Hero": {
