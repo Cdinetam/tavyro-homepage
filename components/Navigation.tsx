@@ -224,29 +224,44 @@ export default function Navigation() {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="touch-manipulation rounded-md border border-tavyro-border p-2.5 text-tavyro-text min-[480px]:p-2 [-webkit-tap-highlight-color:transparent]"
+              className="touch-manipulation rounded-md border border-tavyro-border p-2.5 min-[480px]:p-2 [-webkit-tap-highlight-color:transparent]"
               aria-expanded={isOpen}
               aria-controls="mobile-nav-panel"
               aria-label={isOpen ? "Menü schliessen" : "Menü öffnen"}
             >
-              <svg
-                width="28"
-                height="28"
-                className="h-7 w-7"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+              <span
                 aria-hidden="true"
+                style={{
+                  position: "relative",
+                  display: "block",
+                  width: "26px",
+                  height: "20px",
+                }}
               >
-                {isOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+                {[0, 8.5, 17].map((top, i) => (
+                  <span
+                    key={top}
+                    style={{
+                      position: "absolute",
+                      left: 0,
+                      width: "100%",
+                      height: "3px",
+                      borderRadius: "2px",
+                      backgroundColor: "#132A32",
+                      transition: "transform .2s ease, opacity .2s ease, top .2s ease",
+                      top: isOpen ? "8.5px" : `${top}px`,
+                      transform: isOpen
+                        ? i === 0
+                          ? "rotate(45deg)"
+                          : i === 2
+                          ? "rotate(-45deg)"
+                          : "none"
+                        : "none",
+                      opacity: isOpen && i === 1 ? 0 : 1,
+                    }}
+                  />
+                ))}
+              </span>
             </button>
           </div>
         </div>
