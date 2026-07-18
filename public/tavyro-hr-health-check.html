@@ -10,6 +10,14 @@
   <meta property="og:title" content="TaVyro | CEO/GL-Selbstcheck für People und Organisation">
   <meta property="og:description" content="16 gezielte Fragen. Sofortige Einordnung. Indikative Wirkungsrechnung. Für Geschäftsleitung und Verwaltungsrat.">
   <meta property="og:type" content="website">
+  <script>
+    window.va =
+      window.va ||
+      function () {
+        (window.vaq = window.vaq || []).push(arguments);
+      };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -255,6 +263,14 @@
     .p-title { font-size: 13px; font-weight: 500; color: var(--c-text-1); }
     .p-cost  { font-size: 12px; color: var(--c-red); margin-top: 2px; font-weight: 500; }
     .p-desc  { font-size: 12px; color: var(--c-text-2); margin-top: 2px; line-height: 1.4; }
+    .priority-note {
+      margin-top: 0.75rem;
+      padding-top: 0.65rem;
+      border-top: 0.5px solid var(--c-border);
+      font-size: 11px;
+      color: var(--c-text-3);
+      line-height: 1.5;
+    }
 
     .cta-wrap { display: flex; gap: 10px; margin-top: 1.5rem; flex-wrap: wrap; }
     .cta-primary {
@@ -339,8 +355,72 @@
     .cost-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; gap: 6px; }
     .cost-lbl { color: var(--c-text-2); flex: 1; font-size: 11px; }
     .cost-v   { font-weight: 500; color: var(--c-text-1); white-space: nowrap; font-size: 11px; }
-    .dash-cta { width: 100%; margin-top: 1.2rem; padding: 12px; border-radius: var(--radius-sm); background: var(--c-green-brand); color: #fff; font-size: 12px; font-weight: 600; border: none; cursor: pointer; }
+    .dash-report-btn {
+      width: 100%;
+      margin-top: 0.7rem;
+      padding: 11px 12px;
+      border-radius: var(--radius-sm);
+      background: #fff;
+      color: var(--c-green-dark);
+      font-size: 12px;
+      font-weight: 600;
+      border: 0.5px solid rgba(15, 110, 86, 0.35);
+      cursor: pointer;
+    }
+    .dash-report-btn:active { background: var(--c-amber-bg); }
+    .dash-cta { width: 100%; margin-top: 0.8rem; padding: 12px; border-radius: var(--radius-sm); background: var(--c-green-brand); color: #fff; font-size: 12px; font-weight: 600; border: none; cursor: pointer; }
     .dash-cta:active { background: var(--c-green); }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 26, 24, 0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 50;
+    }
+    .modal-backdrop.show { display: flex; }
+    .modal-card {
+      width: min(560px, 100%);
+      background: #fff;
+      border: 0.5px solid rgba(0, 0, 0, 0.12);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
+    .modal-title { font-size: 16px; font-weight: 600; margin-bottom: 0.75rem; }
+    .modal-grid { display: grid; gap: 0.65rem; }
+    .modal-grid label { display:block; font-size: 12px; color: var(--c-text-2); margin-bottom: 0.25rem; }
+    .modal-grid input {
+      width: 100%;
+      border: 0.5px solid rgba(0, 0, 0, 0.18);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      font-size: 13px;
+      font-family: inherit;
+    }
+    .modal-actions {
+      display:flex;
+      gap:0.5rem;
+      justify-content:flex-end;
+      margin-top:0.9rem;
+    }
+    .modal-btn {
+      border: 0.5px solid rgba(0,0,0,0.18);
+      background: #fff;
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .modal-btn.primary {
+      background: var(--c-green-brand);
+      color:#fff;
+      border-color: var(--c-green-brand);
+    }
+    .modal-note { font-size:11px; color:var(--c-text-3); margin-top:0.5rem; line-height:1.45; }
   </style>
 </head>
 <body>
@@ -396,8 +476,11 @@
         <div class="r-title">Ihre 3 wichtigsten Prioritäten</div>
         <div class="score-summary" id="scoreSummary"></div>
         <div id="priorityList"></div>
+        <div class="priority-note" id="priorityNote">
+          Hinweis: Die Hebel bei den Top-Prioritäten sind themenspezifische Richtwerte. Sie sind nicht summierbar und nicht 1:1 mit der monetären Orientierungsrechnung gleichzusetzen.
+        </div>
         <div class="cta-wrap">
-          <a href="#" class="cta-primary">Prioritäten mit TaVyro einordnen</a>
+          <a href="#slTeam" class="cta-primary">Orientierungsrechnung ausfüllen</a>
         </div>
       </div>
 
@@ -408,8 +491,8 @@
         <div class="slider-group">
           <div class="slider-lbl">Organisationsgrösse und Folgekostenrisiko</div>
           <div class="slider-row">
-            <input type="range" min="5" max="280" step="1" value="30" id="slTeam" oninput="updateCalc()">
-            <span class="slider-val" id="slTeamVal">30 MA</span>
+            <input type="range" min="5" max="280" step="1" value="100" id="slTeam" oninput="updateCalc()">
+            <span class="slider-val" id="slTeamVal">100 MA</span>
           </div>
           <div style="font-size:11px;color:var(--c-text-3);margin-top:4px;">Mitarbeitendenzahl als Näherungswert für Komplexität und potenzielle Kosten des Nichtstuns</div>
         </div>
@@ -418,11 +501,12 @@
           <div class="slider-lbl">Betroffene GL-Mitglieder</div>
           <div class="dropdown-row">
             <select id="glMembers" onchange="updateCalc()">
-              <option value="1" selected>1 Mitglied</option>
-              <option value="2">2 Mitglieder</option>
+              <option value="1">1 Mitglied</option>
+              <option value="2" selected>2 Mitglieder</option>
               <option value="3">3 Mitglieder</option>
               <option value="4">4 Mitglieder</option>
               <option value="5">5 Mitglieder</option>
+              <option value="6">6 Mitglieder</option>
             </select>
           </div>
         </div>
@@ -430,10 +514,10 @@
         <div class="slider-group">
           <div class="slider-lbl">Durchschnittlich entlastbare GL-Zeit pro betroffenes Mitglied pro Woche</div>
           <div class="slider-row">
-            <input type="range" min="0" max="8" step="1" value="4" id="slCEO" oninput="updateCalc()">
-            <span class="slider-val" id="slCEOVal">4 h/Wo.</span>
+            <input type="range" min="0" max="8" step="1" value="6" id="slCEO" oninput="updateCalc()">
+            <span class="slider-val" id="slCEOVal">6 h/Wo.</span>
           </div>
-          <div class="gl-total-hint">Gesamte entlastbare Management-Aufmerksamkeit: <span id="glTotalDisplay">4</span> h/Woche</div>
+          <div class="gl-total-hint">Gesamte entlastbare Management-Aufmerksamkeit: <span id="glTotalDisplay">12</span> h/Woche</div>
           <div class="gl-cap-hint" id="glCapHint" style="display:none;">Für die Orientierungsrechnung wird die entlastbare Management-Aufmerksamkeit auf maximal 30 h/Woche begrenzt.</div>
           <div style="font-size:11px;color:var(--c-text-3);margin-top:3px;">Management-Zeit wird indikativ bewertet.</div>
         </div>
@@ -458,8 +542,8 @@
         <div class="slider-group">
           <div class="slider-lbl">Geschätzte TaVyro-Investition pro Jahr (CHF)</div>
           <div class="slider-row">
-            <input type="range" min="12000" max="180000" step="1000" value="24000" id="slInvest" oninput="updateCalc()">
-            <span class="slider-val" id="slInvestVal">CHF&nbsp;24'000</span>
+            <input type="range" min="12000" max="180000" step="1000" value="80000" id="slInvest" oninput="updateCalc()">
+            <span class="slider-val" id="slInvestVal">CHF&nbsp;80'000</span>
           </div>
         </div>
 
@@ -484,7 +568,7 @@
             <span class="roi-label">Verhältnis Potenzial / Investition</span>
             <span class="roi-val" id="roiVal">—</span>
           </div>
-          <div class="total-sub">Die Berechnung ist ein Orientierungswert. Das tatsächliche Potenzial hängt von Ausgangslage, Führungsstruktur, Fluktuation, Rollenklärung und Reifegrad der Organisation ab.<br><br>Die monetäre Risikoannahme basiert auf einer angenommenen Governance- und Compliance-Exposition. Die qualitative Einordnung im Selbstcheck ergibt sich separat aus Ihren Antworten.</div>
+          <div class="total-sub">Die Berechnung ist ein Orientierungswert. Das tatsächliche Potenzial hängt von Ausgangslage, Führungsstruktur, Fluktuation, Rollenklärung und Reifegrad der Organisation ab.<br><br>Die monetäre Risikoannahme basiert auf einer angenommenen Governance- und Compliance-Exposition. Die qualitative Einordnung im Selbstcheck ergibt sich separat aus Ihren Antworten. Bei höherem Prioritätsindex werden die Hebelannahmen moderat angehoben, bleiben jedoch bewusst konservativ.</div>
         </div>
 
         <div class="scenarios-wrap">
@@ -508,6 +592,11 @@
           </div>
         </div>
 
+      </div>
+
+      <div id="postResultsActions" style="margin-top:0.9rem;">
+        <button class="dash-report-btn" id="downloadSummaryBtn" onclick="downloadExecutiveSummaryPdf()">Executive Summary herunterladen</button>
+        <button class="dash-report-btn" id="generateReportBtn" onclick="openFullReportModal()">Full Report kostenlos bestellen</button>
       </div>
     </div><!-- /results-section -->
 
@@ -556,18 +645,119 @@
       <div class="cost-row"><span class="cost-lbl">Governance-Risiko</span><span class="cost-v" id="sideQual3" style="color:var(--c-text-3);">—</span></div>
     </div>
 
-    <button class="dash-cta" onclick="validateAndShow()">Prioritäten anzeigen →</button>
+    <button class="dash-cta" onclick="window.location.href='/de/erstgespraech-buchen'">Prioritäten mit TaVyro einordnen</button>
   </aside>
 
 </div><!-- /page-wrap -->
 
+<div class="modal-backdrop" id="reportModal">
+  <div class="modal-card">
+    <div class="modal-title" id="reportModalTitle">Full Report kostenlos bestellen</div>
+    <div id="reportConfirmation" style="display:none;">
+      <div class="modal-title" style="margin-bottom:0.75rem;">Bestätigung</div>
+      <div class="modal-note" id="reportConfirmationText">
+        Ihr kostenlose Bestellung des Full Reports ist eingetroffen. Sie werden diesen innerhalb der nächsten 48h erhalten. Vielen Dank!
+      </div>
+      <div class="modal-actions" style="margin-top:1rem;">
+        <button type="button" class="modal-btn primary" onclick="closeFullReportModal()">OK</button>
+      </div>
+    </div>
+    <form id="reportLeadForm" class="modal-grid">
+      <div>
+        <label for="leadFirstName" id="lblFirstName">Vorname</label>
+        <input id="leadFirstName" name="firstName" required />
+      </div>
+      <div>
+        <label for="leadLastName" id="lblLastName">Nachname</label>
+        <input id="leadLastName" name="lastName" required />
+      </div>
+      <div>
+        <label for="leadCompany" id="lblCompany">Unternehmen</label>
+        <input id="leadCompany" name="company" required />
+      </div>
+      <div>
+        <label for="leadEmail" id="lblEmail">E-Mail-Adresse</label>
+        <input id="leadEmail" name="email" type="email" required />
+      </div>
+      <div>
+        <label for="leadPhone" id="lblPhone">Telefonnummer (optional)</label>
+        <input id="leadPhone" name="phone" />
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="modal-btn" id="reportCancelBtn" onclick="closeFullReportModal()">Abbrechen</button>
+        <button type="submit" class="modal-btn primary" id="reportSubmitBtn">Bestellen und senden</button>
+      </div>
+      <div class="modal-note" id="reportModalNote">Nach dem Senden erhalten Sie den Full Report kostenlos per E-Mail innerhalb der nächsten 48 Stunden. Sie müssen nichts selbst generieren oder exportieren.</div>
+    </form>
+  </div>
+</div>
+
 <script>
-const questions = [
+const params = new URLSearchParams(window.location.search);
+const IS_EN = window.location.pathname.startsWith('/en/') || params.get('lang') === 'en';
+const TRACK_CONTEXT = IS_EN ? "en" : "de";
+let hasTrackedStarted = false;
+let hasTrackedCompleted = false;
+
+function getOrCreateSessionId() {
+  var key = 'tavyro_selfcheck_session_id';
+  try {
+    var existing = localStorage.getItem(key);
+    if (existing) return existing;
+    var generated =
+      (window.crypto && window.crypto.randomUUID)
+        ? window.crypto.randomUUID()
+        : String(Date.now()) + '-' + Math.random().toString(16).slice(2);
+    localStorage.setItem(key, generated);
+    return generated;
+  } catch (_) {
+    return 'anon-' + String(Date.now());
+  }
+}
+
+const SESSION_ID = getOrCreateSessionId();
+
+function trackEvent(name, data) {
+  var eventPayload = {
+    locale: TRACK_CONTEXT,
+    path: window.location.pathname,
+    session_id: SESSION_ID,
+    data: data || {},
+  };
+
+  if (typeof window.va === 'function') {
+    window.va('event', {
+      name: name,
+      data: Object.assign({}, eventPayload),
+    });
+  }
+
+  var body = JSON.stringify(
+    Object.assign({ event_name: name }, eventPayload)
+  );
+
+  try {
+    if (navigator.sendBeacon) {
+      var blob = new Blob([body], { type: 'application/json' });
+      navigator.sendBeacon('/api/selfcheck-event', blob);
+      return;
+    }
+  } catch (_) {}
+
+  fetch('/api/selfcheck-event', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: body,
+    keepalive: true,
+  }).catch(function() {});
+}
+
+const questionsDe = [
   { id:1, phase:1, num:"01", text:"Wie stark binden Personalthemen Ihre persönliche Aufmerksamkeit, obwohl sie auf Führungs- oder Organisationsebene gelöst werden sollten?", opts:[{c:"g",l:"Gut",t:"Nur punktuell. Die meisten Themen werden vorbereitet oder entschieden, bevor sie bei mir landen."},{c:"y",l:"Teilweise",t:"Regelmässig. Ich werde bei Konflikten, Führungsfragen oder Einzelfällen beigezogen."},{c:"r",l:"Kritisch",t:"Übermässig. Ich bin zentrale Eskalationsstelle für viele Personalthemen — die gebundene GL-Kapazität ist erheblich."}], costs:{r:118000,y:40500} },
   { id:2, phase:1, num:"02", text:"Erhalten Sie bei People- und Organisationsthemen entscheidungsreife Empfehlungen oder primär operative Einzelthemen?", opts:[{c:"g",l:"Gut",t:"Ja, HR liefert entscheidungsreife Vorlagen mit klarer Empfehlung. Der Abstimmungsaufwand ist minimal."},{c:"y",l:"Teilweise",t:"Teils — operative Themen laufen gut, bei strategischen Entscheiden fehlt jedoch die Vorarbeit."},{c:"r",l:"Kritisch",t:"Nein, HR ist primär mit Administration und Payroll beschäftigt. Strategisches Sparring findet nicht statt."}], costs:{r:63000,y:18000} },
   { id:3, phase:1, num:"03", text:"Sind Rollen, Verantwortungen und Prozesse so klar definiert, dass die Organisation ohne wesentliche Reibungsverluste skalieren kann?", opts:[{c:"g",l:"Gut",t:"Ja, Zuständigkeiten sind klar geregelt. Wir sind strukturell bereit für Wachstum."},{c:"y",l:"Teilweise",t:"Teils — historisch gewachsene Strukturen erzeugen Doppelspurigkeiten und ungeklärte Zuständigkeiten."},{c:"r",l:"Kritisch",t:"Nein, viele Abläufe und Verantwortungen sind unklar und erzeugen operative Reibung und Verluste."}], costs:{r:78500,y:22500} },
   { id:4, phase:1, num:"04", text:"Trifft Ihr Kader Personalentscheide innerhalb klarer Leitplanken eigenständig oder werden heikle Themen regelmässig an Sie eskaliert?", opts:[{c:"g",l:"Gut",t:"Ja, die Führungspersonen handeln eigenständig innerhalb klarer Leitplanken. Eskalationen sind die Ausnahme."},{c:"y",l:"Teilweise",t:"Teils — das Kader ist fachlich kompetent, schiebt jedoch unbequeme Entscheide regelmässig nach oben."},{c:"r",l:"Kritisch",t:"Nein, ich muss vieles selbst entscheiden. Das Kader ist in der Führungsverantwortung noch nicht vollständig souverän."}], costs:{r:52500,y:15000} },
-  { id:5, phase:1, num:"05", text:"Haben Sie eine klare People-Strategie mit Roadmap, die auf Ihre Geschäftsziele der nächsten 3 Jahre einzahlt?", opts:[{c:"g",l:"Gut",t:"Ja, wir haben eine Roadmap. Wir wissen, welche Fähigkeiten und Rollen wir wann brauchen."},{c:"y",l:"Teilweise",t:"Teils — gute Absichten, aber das Tagesgeschäft absorbiert die Kapazität für strategische Planung."},{c:"r",l:"Kritisch",t:"Nein, wir operieren reaktiv. People-Themen werden als Konsequenz von Krisen angegangen, nicht proaktiv gesteuert."}], costs:{r:87500,y:22500} },
+  { id:5, phase:1, num:"05", text:"Haben Sie eine klare People und Organisationsplanung, die Ihre Geschäftsziele der nächsten drei Jahre unterstützt?", opts:[{c:"g",l:"Gut",t:"Ja, wir haben eine Roadmap. Wir wissen, welche Fähigkeiten und Rollen wir wann brauchen."},{c:"y",l:"Teilweise",t:"Teils — gute Absichten, aber das Tagesgeschäft absorbiert die Kapazität für strategische Planung."},{c:"r",l:"Kritisch",t:"Nein, wir operieren reaktiv. People-Themen werden als Konsequenz von Krisen angegangen, nicht proaktiv gesteuert."}], costs:{r:87500,y:22500} },
   { id:6, phase:2, num:"06", text:"Werden kritische Fähigkeiten im Unternehmen systematisch aufgebaut — auch in digitalen und AI-nahen Kompetenzfeldern?", opts:[{c:"g",l:"Gut",t:"Ja, wir investieren systematisch in Weiterbildung und Kompetenzaufbau. Das Team ist technologisch gut positioniert."},{c:"y",l:"Teilweise",t:"Teils — Weiterbildung erfolgt auf Anfrage, ein strukturiertes System zur Kompetenzentwicklung fehlt jedoch."},{c:"r",l:"Kritisch",t:"Nein, systematischer Kompetenzaufbau findet nicht statt. Die Lücke zur Konkurrenz wächst."}], costs:{r:70000,y:18000} },
   { id:7, phase:2, num:"07", text:"Gibt es in Ihrer Organisation einen vertrauenswürdigen Rahmen, um Konflikte, Spannungen oder Grenzthemen frühzeitig anzusprechen?", opts:[{c:"g",l:"Gut",t:"Ja, es gibt einen klaren Rahmen. Spannungen werden früh adressiert, bevor sie eskalieren."},{c:"y",l:"Teilweise",t:"Teils — Gesprächsmöglichkeiten bestehen, aber heikle Themen werden oft gemieden oder erst spät sichtbar."},{c:"r",l:"Kritisch",t:"Nein, Konflikte werden meist erst bei Kündigung oder Eskalation sichtbar. Die Früherkennung fehlt."}], costs:{r:61000,y:15000} },
   { id:8, phase:2, num:"08", text:"Ist die Nachfolge für Schlüsselpositionen so geregelt, dass ein Abgang keine wesentliche Betriebsstörung verursacht?", opts:[{c:"g",l:"Gut",t:"Ja, Wissen ist dokumentiert und für kritische Rollen existieren Nachfolgepläne."},{c:"y",l:"Teilweise",t:"Teils — Schlüsselpersonen sind bekannt, ein schriftlicher Nachfolgeplan fehlt jedoch für den Ernstfall."},{c:"r",l:"Kritisch",t:"Nein, wir sind in mehreren Positionen von Einzelpersonen abhängig. Ein Abgang hätte erhebliche operative Konsequenzen."}], costs:{r:140000,y:30000} },
@@ -581,11 +771,38 @@ const questions = [
   { id:16, phase:3, num:"16", text:"Ist Ihre Arbeitszeiterfassung so aufgesetzt, dass Sie Pflichten und Nachweise jederzeit belastbar erbringen können?", opts:[{c:"g",l:"Gut",t:"Ja, die Erfassung ist digital, vollständig und revisionssicher. Nachweise sind jederzeit verfügbar."},{c:"y",l:"Teilweise",t:"Teils — Zeiterfassung findet statt, aber die Revisionssicherheit ist nicht vollständig gewährleistet."},{c:"r",l:"Kritisch",t:"Nein, die Erfassung ist lückenhaft oder nicht belastbar. Bei einer behördlichen Kontrolle besteht erhebliche Risikoexposition."}], costs:{r:35000,y:7500} }
 ];
 
-const phaseInfo = {
-  1: { label:"Phase 1", name:"Führung und Entscheidungsfähigkeit", pillClass:"phase-pill-1" },
-  2: { label:"Phase 2", name:"Talente und Ausführungskraft",       pillClass:"phase-pill-2" },
-  3: { label:"Phase 3", name:"Governance und Betriebssicherheit",  pillClass:"phase-pill-3" }
-};
+const questionsEn = [
+  { id:1, phase:1, num:"01", text:"How strongly do people topics consume your attention, although they should be solved at leadership or organizational level?", opts:[{c:"g",l:"Good",t:"Only occasionally. Most topics are prepared or decided before they reach me."},{c:"y",l:"Partly",t:"Regularly. I get pulled in for conflicts, leadership questions or individual cases."},{c:"r",l:"Critical",t:"Excessively. I am the central escalation point for many people topics — executive capacity is significantly tied up."}], costs:{r:118000,y:40500} },
+  { id:2, phase:1, num:"02", text:"Do you receive decision-ready recommendations on people and organization topics, or mainly operational single issues?", opts:[{c:"g",l:"Good",t:"Yes, HR delivers decision-ready input with clear recommendations. Alignment effort is minimal."},{c:"y",l:"Partly",t:"Partly — operations work, but for strategic decisions the preparation is not sufficient."},{c:"r",l:"Critical",t:"No, HR is mainly occupied with administration and payroll. Strategic sparring is missing."}], costs:{r:63000,y:18000} },
+  { id:3, phase:1, num:"03", text:"Are roles, responsibilities and processes clear enough for the organization to scale without major friction losses?", opts:[{c:"g",l:"Good",t:"Yes, responsibilities are clear. Structurally we are ready for growth."},{c:"y",l:"Partly",t:"Partly — historically grown structures create overlaps and unclear ownership."},{c:"r",l:"Critical",t:"No, many workflows and responsibilities are unclear and create operational friction."}], costs:{r:78500,y:22500} },
+  { id:4, phase:1, num:"04", text:"Does your management team make people decisions independently within clear guardrails, or are difficult topics regularly escalated to you?", opts:[{c:"g",l:"Good",t:"Yes, leaders act independently within clear guardrails. Escalations are the exception."},{c:"y",l:"Partly",t:"Partly — leaders are capable but often pass uncomfortable decisions upward."},{c:"r",l:"Critical",t:"No, I still need to decide too much myself. Leadership accountability is not yet fully established."}], costs:{r:52500,y:15000} },
+  { id:5, phase:1, num:"05", text:"Do you have a clear people and organization plan that supports your business goals over the next three years?", opts:[{c:"g",l:"Good",t:"Yes, we have a roadmap and know which capabilities and roles we need, and when."},{c:"y",l:"Partly",t:"Partly — the intent is clear, but day-to-day business limits strategic planning capacity."},{c:"r",l:"Critical",t:"No, we operate reactively. People topics are addressed only when issues escalate."}], costs:{r:87500,y:22500} },
+  { id:6, phase:2, num:"06", text:"Are critical capabilities built systematically — including digital and AI-related skills?", opts:[{c:"g",l:"Good",t:"Yes, we invest systematically in capability development. The team is well positioned technologically."},{c:"y",l:"Partly",t:"Partly — training is provided on request, but there is no structured capability framework."},{c:"r",l:"Critical",t:"No, capability development is not systematic. The gap to competitors is widening."}], costs:{r:70000,y:18000} },
+  { id:7, phase:2, num:"07", text:"Is there a trusted framework to address conflicts, tensions and sensitive topics early?", opts:[{c:"g",l:"Good",t:"Yes, there is a clear framework. Tensions are addressed early before escalation."},{c:"y",l:"Partly",t:"Partly — channels exist, but sensitive topics are often avoided or become visible too late."},{c:"r",l:"Critical",t:"No, conflicts often surface only at termination or escalation. Early detection is missing."}], costs:{r:61000,y:15000} },
+  { id:8, phase:2, num:"08", text:"Is succession planning for key roles established so that a departure does not cause major business disruption?", opts:[{c:"g",l:"Good",t:"Yes, knowledge is documented and succession plans exist for critical roles."},{c:"y",l:"Partly",t:"Partly — key roles are identified, but formal succession planning is missing."},{c:"r",l:"Critical",t:"No, we depend on individuals in several key roles. A departure would have a major operational impact."}], costs:{r:140000,y:30000} },
+  { id:9, phase:2, num:"09", text:"Is your employer positioning differentiated enough that qualified talent applies proactively?", opts:[{c:"g",l:"Good",t:"Yes, our employer brand is clear and we regularly receive qualified direct applications."},{c:"y",l:"Partly",t:"Partly — we are seen as solid, but do not clearly stand out in talent competition."},{c:"r",l:"Critical",t:"No, employer visibility is low. Recruiting is costly and does not consistently deliver strong hires."}], costs:{r:52500,y:15000} },
+  { id:10, phase:2, num:"10", text:"Are your recruiting processes structured so qualified candidates are not lost due to delays?", opts:[{c:"g",l:"Good",t:"Yes, we decide quickly and in a structured way. Recruiting is a competitive advantage."},{c:"y",l:"Partly",t:"Partly — decision-making is slow. Qualified candidates occasionally drop out."},{c:"r",l:"Critical",t:"No, positions remain open too long. Existing teams are overloaded and quality suffers."}], costs:{r:43500,y:12000} },
+  { id:11, phase:2, num:"11", text:"Are your compensation structures market-aligned, transparent and understandable for the team?", opts:[{c:"g",l:"Good",t:"Yes, we have a clear market-aligned system. Compensation is not a recurring conflict."},{c:"y",l:"Partly",t:"Partly — compensation is case-based and fairness questions arise occasionally."},{c:"r",l:"Critical",t:"No, there is no clear structure. Differences create demotivation and avoidable attrition."}], costs:{r:70000,y:15000} },
+  { id:12, phase:2, num:"12", text:"Are new employees integrated after 4 weeks so they can work fully productive and engaged in role?", opts:[{c:"g",l:"Good",t:"Yes, onboarding is structured and new hires become productive quickly."},{c:"y",l:"Partly",t:"Partly — onboarding quality depends on the individual manager."},{c:"r",l:"Critical",t:"No, probation periods are risky. Early attrition causes significant costs and leadership burden."}], costs:{r:52500,y:12000} },
+  { id:13, phase:3, num:"13", text:"Are relevant people KPIs and documents digitally available without searching across scattered folders?", opts:[{c:"g",l:"Good",t:"Yes, we have a clear digital setup. Information is available on demand."},{c:"y",l:"Partly",t:"Partly — basics exist, but access across systems and spreadsheets is inefficient."},{c:"r",l:"Critical",t:"No, administration is paper/spreadsheet-heavy. Finding information costs time and creates errors."}], costs:{r:35000,y:9000} },
+  { id:14, phase:3, num:"14", text:"Are sickness absences actively managed to keep downtime and insurance costs under control?", opts:[{c:"g",l:"Good",t:"Yes, we have active absence management from day 1. Costs and downtime are controlled."},{c:"y",l:"Partly",t:"Partly — we react to absences, but lack early-detection and prevention structure."},{c:"r",l:"Critical",t:"No, absence rates are elevated. Insurance and absence costs develop negatively."}], costs:{r:61000,y:15000} },
+  { id:15, phase:3, num:"15", text:"Are contracts, policies, data protection and labor-law foundations up to date and consistently implemented?", opts:[{c:"g",l:"Good",t:"Yes, foundations are current, reviewed and consistently implemented. We are audit-safe."},{c:"y",l:"Partly",t:"Partly — contracts are mostly okay, but uncertainty exists in data protection and newer requirements."},{c:"r",l:"Critical",t:"No, foundations are outdated or inconsistent. We are on uncertain legal ground."}], costs:{r:35000,y:7500} },
+  { id:16, phase:3, num:"16", text:"Is your time-tracking setup robust enough to provide reliable records and legal evidence at any time?", opts:[{c:"g",l:"Good",t:"Yes, tracking is digital, complete and audit-ready. Evidence is available at any time."},{c:"y",l:"Partly",t:"Partly — tracking exists, but audit robustness is not fully ensured."},{c:"r",l:"Critical",t:"No, tracking is incomplete or unreliable. In an inspection, risk exposure is significant."}], costs:{r:35000,y:7500} }
+];
+
+let questions = IS_EN ? questionsEn : questionsDe;
+
+const phaseInfo = IS_EN
+  ? {
+      1: { label: "Phase 1", name: "Leadership and decision capability", pillClass: "phase-pill-1" },
+      2: { label: "Phase 2", name: "Talent and execution capability", pillClass: "phase-pill-2" },
+      3: { label: "Phase 3", name: "Governance and operational resilience", pillClass: "phase-pill-3" },
+    }
+  : {
+      1: { label:"Phase 1", name:"Führung und Entscheidungsfähigkeit", pillClass:"phase-pill-1" },
+      2: { label:"Phase 2", name:"Talente und Ausführungskraft",       pillClass:"phase-pill-2" },
+      3: { label:"Phase 3", name:"Governance und Betriebssicherheit",  pillClass:"phase-pill-3" }
+    };
 
 const answers = {};
 let riskLevel = 'mid';
@@ -604,7 +821,7 @@ function renderQuestions() {
     }
     const card = document.createElement('div');
     card.className = 'q-card';
-    card.innerHTML = '<div class="q-num">Frage ' + q.num + '</div><div class="q-text">' + q.text + '</div><div class="opts" id="opts-' + q.id + '"></div>';
+    card.innerHTML = '<div class="q-num">' + (IS_EN ? 'Question ' : 'Frage ') + q.num + '</div><div class="q-text">' + q.text + '</div><div class="opts" id="opts-' + q.id + '"></div>';
     container.appendChild(card);
     const optsDiv = card.querySelector('#opts-' + q.id);
     q.opts.forEach(function(o) {
@@ -621,6 +838,10 @@ function selectOpt(qId, color, optsDiv, btn) {
   optsDiv.querySelectorAll('.opt-btn').forEach(function(b) { b.className = 'opt-btn'; });
   btn.className = 'opt-btn sel-' + (color === 'g' ? 'g' : color === 'y' ? 'y' : 'r');
   answers[qId] = color;
+  if (!hasTrackedStarted) {
+    hasTrackedStarted = true;
+    trackEvent('selfcheck_started', { first_question_id: qId });
+  }
   updateProgress();
   updateDashboard();
 }
@@ -628,7 +849,9 @@ function selectOpt(qId, color, optsDiv, btn) {
 function updateProgress() {
   const count = Object.keys(answers).length;
   document.getElementById('progressBar').style.width = (count / 16 * 100) + '%';
-  document.getElementById('progressLabel').textContent = count + ' von 16 Fragen beantwortet';
+  document.getElementById('progressLabel').textContent = IS_EN
+    ? count + ' of 16 questions answered'
+    : count + ' von 16 Fragen beantwortet';
   document.getElementById('submitBtn').style.opacity = count < 16 ? '0.5' : '1';
 }
 
@@ -653,16 +876,16 @@ function scoreColor(s) {
 }
 
 function flukCostPerPerson(team) {
-  if (team > 200) return 22000;
-  if (team > 120) return 18000;
-  if (team > 50)  return 15000;
-  return 12000;
+  if (team > 200) return 28000;
+  if (team > 120) return 23000;
+  if (team > 50)  return 19000;
+  return 15000;
 }
 
 function compCostByRisk(risk) {
-  if (risk === 'low')  return 10000;
-  if (risk === 'high') return 50000;
-  return 25000;
+  if (risk === 'low')  return 15000;
+  if (risk === 'high') return 70000;
+  return 35000;
 }
 
 function calculateBoundGLHours() {
@@ -682,10 +905,25 @@ function getPriorityBand(score, reds) {
   return 'mid';
 }
 
+function getPriorityStats() {
+  var vals = Object.values(answers);
+  var reds = vals.filter(function(v){ return v === 'r'; }).length;
+  var yellows = vals.filter(function(v){ return v === 'y'; }).length;
+  var score = vals.length ? Math.round((reds * 2 + yellows) / (vals.length * 2) * 100) : 0;
+  return {
+    score: score,
+    reds: reds,
+    yellows: yellows,
+    band: getPriorityBand(score, reds),
+  };
+}
+
 function formatPriorityCost(q, answerColor) {
   var raw = answerColor === 'r' ? (q.costs && q.costs.r || 0) : (q.costs && q.costs.y || 0);
   var rounded = Math.round(raw / 5000) * 5000;
-  return 'Geschätzter Hebel: rund CHF\u202F' + rounded.toLocaleString('de-CH') + '\u202F/ Jahr';
+  return IS_EN
+    ? 'Estimated leverage: approx. CHF\u202F' + rounded.toLocaleString('de-CH') + '\u202F/ year'
+    : 'Geschätzter Hebel: rund CHF\u202F' + rounded.toLocaleString('de-CH') + '\u202F/ Jahr';
 }
 
 function updateDashboard() {
@@ -696,7 +934,9 @@ function updateDashboard() {
   var score   = Math.round((reds * 2 + yellows) / (vals.length * 2) * 100);
   var band    = getPriorityBand(score, reds);
   var bandColor = { low:'var(--c-green)', mid:'var(--c-yellow)', high:'var(--c-red)' };
-  var bandText  = { low:'Gut positioniert', mid:'Priorisierung empfohlen', high:'Klarer Handlungsbedarf' };
+  var bandText  = IS_EN
+    ? { low: 'Well positioned', mid: 'Prioritization recommended', high: 'Clear need for action' }
+    : { low:'Gut positioniert', mid:'Priorisierung empfohlen', high:'Klarer Handlungsbedarf' };
   document.getElementById('riskScore').textContent    = pct(score);
   document.getElementById('riskScore').style.color    = bandColor[band];
   document.getElementById('riskBar').style.width      = pct(score);
@@ -710,7 +950,7 @@ function updateDashboard() {
   document.getElementById('riskLabelMob').textContent    = bandText[band];
 
   var glH = calculateBoundGLHours();
-  var glChfVal = Math.round(glH * 350);
+  var glChfVal = Math.round(glH * 420);
   var ceoEl = document.getElementById('ceoHours');
   var ceoChfSub = document.getElementById('ceoChfSub');
   ceoEl.textContent = glH > 0 ? glH + '\u202Fh' : '—';
@@ -735,9 +975,9 @@ function updateDashboard() {
   var govScore = govQs.length ? Math.round((govR*2+govY)/(govQs.length*2)*100) : null;
   var compEl = document.getElementById('complianceRisk');
   if (govScore === null) { compEl.textContent='—'; compEl.style.color='var(--c-text-3)'; }
-  else if (govScore < 30) { compEl.textContent='Niedrig'; compEl.style.color='var(--c-green)'; }
-  else if (govScore < 60) { compEl.textContent='Mittel';  compEl.style.color='var(--c-yellow)'; }
-  else                    { compEl.textContent='Erhöht';  compEl.style.color='var(--c-red)'; }
+  else if (govScore < 30) { compEl.textContent=IS_EN ? 'Low' : 'Niedrig'; compEl.style.color='var(--c-green)'; }
+  else if (govScore < 60) { compEl.textContent=IS_EN ? 'Medium' : 'Mittel';  compEl.style.color='var(--c-yellow)'; }
+  else                    { compEl.textContent=IS_EN ? 'Elevated' : 'Erhöht';  compEl.style.color='var(--c-red)'; }
 
   function qualLabel(qIds) {
     var qs = qIds.map(function(id){return answers[id];}).filter(Boolean);
@@ -745,9 +985,9 @@ function updateDashboard() {
     var r = qs.filter(function(v){return v==='r';}).length;
     var y = qs.filter(function(v){return v==='y';}).length;
     var s = Math.round((r*2+y)/(qs.length*2)*100);
-    if (s<30) return {text:'Niedrig',color:'var(--c-green)'};
-    if (s<60) return {text:'Mittel', color:'var(--c-yellow)'};
-    return {text:'Hoch',color:'var(--c-red)'};
+    if (s<30) return {text:IS_EN ? 'Low' : 'Niedrig',color:'var(--c-green)'};
+    if (s<60) return {text:IS_EN ? 'Medium' : 'Mittel', color:'var(--c-yellow)'};
+    return {text:IS_EN ? 'High' : 'Hoch',color:'var(--c-red)'};
   }
   var q1=qualLabel([1,2,3,4,5]), q2=qualLabel([6,7,8,9,10,11,12]), q3=qualLabel([13,14,15,16]);
   var s1=document.getElementById('sideQual1'), s2=document.getElementById('sideQual2'), s3=document.getElementById('sideQual3');
@@ -778,18 +1018,25 @@ function updateCalc() {
 
   document.getElementById('slTeamVal').textContent    = team + ' MA';
   document.getElementById('slCEOVal').textContent     = glHoursPerMember + ' h/Wo.';
-  document.getElementById('slFlukVal').textContent    = fluk + ' Personen';
+  document.getElementById('slFlukVal').textContent    = fluk + (IS_EN ? ' people' : ' Personen');
   document.getElementById('slInvestVal').textContent  = 'CHF\u202F' + invest.toLocaleString('de-CH');
   document.getElementById('glTotalDisplay').textContent = totalGLHoursPerWeek;
   document.getElementById('glCapHint').style.display  = capActive ? '' : 'none';
 
-  var ceoSaving = totalGLHoursPerWeek * 46 * 350;
+  var priorityStats = getPriorityStats();
+  var bandMultiplier = priorityStats.band === 'high'
+    ? { ceo: 1.08, fluk: 1.12, comp: 1.12 }
+    : priorityStats.band === 'mid'
+      ? { ceo: 1.04, fluk: 1.06, comp: 1.06 }
+      : { ceo: 1.0, fluk: 1.0, comp: 1.0 };
+
+  var ceoSaving = Math.round(totalGLHoursPerWeek * 46 * 420 * bandMultiplier.ceo);
   var costPerPerson = flukCostPerPerson(team);
-  var flukSaving = fluk * costPerPerson;
+  var flukSaving = Math.round(fluk * costPerPerson * bandMultiplier.fluk);
   var baseComp = compCostByRisk(riskLevel);
   var normalized = Math.max(0, Math.min(1, (team - 5) / (280 - 5)));
   var compMultiplier = 1.0 + normalized * 0.8;
-  var compSaving = Math.round(baseComp * compMultiplier);
+  var compSaving = Math.round(baseComp * compMultiplier * bandMultiplier.comp);
 
   var totalPotential = ceoSaving + flukSaving + compSaving;
   var nettoEffect    = totalPotential - invest;
@@ -814,8 +1061,12 @@ function validateAndShow() {
   var msgEl = document.getElementById('validationMsg');
   if (missing.length > 0) {
     msgEl.textContent = missing.length === 1
-      ? 'Frage ' + missing.join(', ') + ' wurde noch nicht beantwortet. Bitte alle 16 Fragen ausfüllen, bevor Sie die Analyse starten.'
-      : 'Die folgenden Fragen wurden noch nicht beantwortet: ' + missing.join(', ') + '. Bitte alle 16 Fragen ausfüllen.';
+      ? (IS_EN
+          ? 'Question ' + missing.join(', ') + ' has not been answered yet. Please complete all 16 questions before starting the analysis.'
+          : 'Frage ' + missing.join(', ') + ' wurde noch nicht beantwortet. Bitte alle 16 Fragen ausfüllen, bevor Sie die Analyse starten.')
+      : (IS_EN
+          ? 'The following questions are still unanswered: ' + missing.join(', ') + '. Please complete all 16 questions.'
+          : 'Die folgenden Fragen wurden noch nicht beantwortet: ' + missing.join(', ') + '. Bitte alle 16 Fragen ausfüllen.');
     msgEl.style.display = '';
     msgEl.scrollIntoView({ behavior:'auto', block:'nearest' });
     return;
@@ -829,18 +1080,22 @@ function showResults() {
   section.classList.add('show');
   setTimeout(function() { section.scrollIntoView({ behavior:'auto', block:'start' }); }, 50);
 
-  var vals    = Object.values(answers);
-  var reds    = vals.filter(function(v){return v==='r';}).length;
-  var yellows = vals.filter(function(v){return v==='y';}).length;
-  var score   = Math.round((reds*2+yellows)/(vals.length*2)*100);
-  var band    = getPriorityBand(score, reds);
+  var stats = getPriorityStats();
+  var score = stats.score;
+  var band = stats.band;
 
   var summaryEl = document.getElementById('scoreSummary');
-  var summaryText = {
-    low:  'Ihre Organisation wirkt in zentralen People- und Führungsthemen gut aufgestellt. Der grösste Hebel liegt voraussichtlich in gezielter Schärfung und Absicherung.',
-    mid:  'Ihre Organisation zeigt mehrere Punkte, an denen Führungsaufwand, Rollenunklarheit oder operative Reibung Wirkung kosten. Eine gezielte Priorisierung auf Ebene CEO und GL ist sinnvoll.',
-    high: 'Aktuell bindet Ihre Organisation voraussichtlich zu viel Management-Aufmerksamkeit in Themen, die strukturell lösbar wären. Der grösste Hebel liegt in Führungsentlastung, Rollenklarheit und professionellerer organisatorischer Steuerung.'
-  };
+  var summaryText = IS_EN
+    ? {
+        low: 'Your organization appears well positioned in key people and leadership topics. The biggest leverage likely lies in targeted sharpening and safeguarding.',
+        mid: 'Your organization shows several areas where leadership load, unclear roles or operational friction reduce impact. Focused prioritization at CEO and executive team level is recommended.',
+        high: 'At present, your organization likely ties up too much management attention in topics that should be solved structurally. The largest leverage lies in leadership relief, role clarity and stronger organizational steering. The financial model is still conservative, but with a high priority index the leverage assumptions are moderately increased.',
+      }
+    : {
+        low:  'Ihre Organisation wirkt in zentralen People- und Führungsthemen gut aufgestellt. Der grösste Hebel liegt voraussichtlich in gezielter Schärfung und Absicherung.',
+        mid:  'Ihre Organisation zeigt mehrere Punkte, an denen Führungsaufwand, Rollenunklarheit oder operative Reibung Wirkung kosten. Eine gezielte Priorisierung auf Ebene CEO und GL ist sinnvoll.',
+        high: 'Aktuell bindet Ihre Organisation voraussichtlich zu viel Management-Aufmerksamkeit in Themen, die strukturell lösbar wären. Der grösste Hebel liegt in Führungsentlastung, Rollenklarheit und professionellerer organisatorischer Steuerung. Das Finanzmodell bleibt konservativ, bei hohem Prioritätsindex werden die Hebelannahmen jedoch moderat angehoben.'
+      };
   summaryEl.className   = 'score-summary ' + band;
   summaryEl.textContent = summaryText[band];
 
@@ -851,7 +1106,9 @@ function showResults() {
   var list = document.getElementById('priorityList');
   list.innerHTML = '';
   if (!top3.length) {
-    list.innerHTML = '<p style="font-size:13px;color:var(--c-green-dark);padding:0.5rem 0;">Keine kritischen Handlungsfelder identifiziert — Ihre Organisation ist solide aufgestellt.</p>';
+    list.innerHTML = IS_EN
+      ? '<p style="font-size:13px;color:var(--c-green-dark);padding:0.5rem 0;">No critical action areas identified — your organization appears well positioned.</p>'
+      : '<p style="font-size:13px;color:var(--c-green-dark);padding:0.5rem 0;">Keine kritischen Handlungsfelder identifiziert — Ihre Organisation ist solide aufgestellt.</p>';
   } else {
     top3.forEach(function(q, i) {
       var item = document.createElement('div');
@@ -860,7 +1117,7 @@ function showResults() {
       var answerColor = answers[q.id];
       var titleRaw = q.text.split('?')[0].split(',')[0].trim();
       var costLine = formatPriorityCost(q, answerColor);
-      item.innerHTML = '<div class="p-num">' + (i+1) + '</div><div style="flex:1;min-width:0;"><div class="p-title">Frage ' + q.num + ' · ' + titleRaw + '</div><div class="p-cost">' + costLine + '</div><div class="p-desc">' + (answeredOpt ? answeredOpt.t : '') + '</div></div>';
+      item.innerHTML = '<div class="p-num">' + (i+1) + '</div><div style="flex:1;min-width:0;"><div class="p-title">' + (IS_EN ? 'Question ' : 'Frage ') + q.num + ' · ' + titleRaw + '</div><div class="p-cost">' + costLine + '</div><div class="p-desc">' + (answeredOpt ? answeredOpt.t : '') + '</div></div>';
       list.appendChild(item);
     });
   }
@@ -875,20 +1132,457 @@ function showResults() {
   document.getElementById('glMembers').value = suggestedMembers;
   document.getElementById('slCEO').value     = suggestedHPM;
 
-  var flukRed = [7,8,9,10,11,12].filter(function(id){return answers[id]==='r';}).length;
-  var flukYel = [7,8,9,10,11,12].filter(function(id){return answers[id]==='y';}).length;
-  document.getElementById('slFluk').value = Math.min(10, Math.max(0, Math.round(flukRed*1.2+flukYel*0.5)));
-
-  var govAnswers = [13,14,15,16].map(function(id){return answers[id];}).filter(Boolean);
-  var gR = govAnswers.filter(function(v){return v==='r';}).length;
-  var gY = govAnswers.filter(function(v){return v==='y';}).length;
-  var gScore = govAnswers.length ? Math.round((gR*2+gY)/(govAnswers.length*2)*100) : 0;
-  setRisk(gScore < 30 ? 'low' : gScore < 60 ? 'mid' : 'high');
+  // Standard defaults requested for the orientation calculation:
+  // - avoided departures: 2 people
+  // - governance risk: mid
+  // - TaVyro investment: 80k CHF
+  document.getElementById('slFluk').value = 2;
+  document.getElementById('slInvest').value = 80000;
+  setRisk('mid');
 
   updateCalc();
+
+  if (!hasTrackedCompleted) {
+    hasTrackedCompleted = true;
+    trackEvent('selfcheck_completed', {
+      answered_count: Object.keys(answers).length,
+    });
+  }
+
+  var submitBtn = document.getElementById('submitBtn');
+  submitBtn.textContent = IS_EN
+    ? 'Review priorities with TaVyro'
+    : 'Prioritäten mit TaVyro einordnen';
+  submitBtn.onclick = function() {
+    trackEvent('selfcheck_cta_clicked', { cta: 'bottom_submit_button' });
+    window.location.href = IS_EN ? '/en/erstgespraech-buchen' : '/de/erstgespraech-buchen';
+  };
 }
 
+function escHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function getTopPriorities(limit) {
+  var redQs = questions.filter(function(q){ return answers[q.id] === 'r'; })
+    .sort(function(a,b){ return (b.costs && b.costs.r || 0) - (a.costs && a.costs.r || 0); });
+  var yelQs = questions.filter(function(q){ return answers[q.id] === 'y'; })
+    .sort(function(a,b){ return (b.costs && b.costs.y || 0) - (a.costs && a.costs.y || 0); });
+  return redQs.concat(yelQs).slice(0, limit || 3);
+}
+
+function getDynamicResultIntro(locale, band) {
+  if (locale === 'en') {
+    if (band === 'high') {
+      return 'Your organization currently ties up above-average management attention in structurally solvable topics. The strongest leverage lies in leadership relief and clearer accountabilities.';
+    }
+    if (band === 'mid') {
+      return 'Your organization shows noticeable friction in leadership and organizational clarity. The strongest leverage lies in clearer accountabilities and targeted management relief.';
+    }
+    return 'Your organization appears comparatively well positioned. The strongest leverage lies in sharpening ownership and systematically securing your current leadership quality.';
+  }
+  if (band === 'high') {
+    return 'Ihre Organisation bindet aktuell überdurchschnittlich viel Management-Aufmerksamkeit in strukturell lösbaren Themen. Der grösste Hebel liegt in der Führungsentlastung und klareren Verantwortlichkeiten.';
+  }
+  if (band === 'mid') {
+    return 'Ihre Organisation zeigt spürbare Reibung in Führung und organisatorischer Klarheit. Der grösste Hebel liegt in klareren Verantwortlichkeiten und gezielter Führungsentlastung.';
+  }
+  return 'Ihre Organisation wirkt aktuell vergleichsweise gut aufgestellt. Der grösste Hebel liegt in der weiteren Schärfung von Verantwortlichkeiten und der systematischen Absicherung der Führungsqualität.';
+}
+
+function getReportData() {
+  var vals = Object.values(answers);
+  var reds = vals.filter(function(v){return v === 'r';}).length;
+  var yellows = vals.filter(function(v){return v === 'y';}).length;
+  var score = Math.round((reds * 2 + yellows) / Math.max(1, vals.length * 2) * 100);
+  var band = getPriorityBand(score, reds);
+  var priorities = getTopPriorities(3).map(function(q, idx){
+    var answeredOpt = q.opts.filter(function(o){ return o.c === answers[q.id]; })[0];
+    return {
+      rank: idx + 1,
+      num: q.num,
+      question: q.text,
+      answer: answeredOpt ? answeredOpt.t : '—',
+      hebel: formatPriorityCost(q, answers[q.id]),
+    };
+  });
+  var allQuestions = questions.map(function(q){
+    var code = answers[q.id];
+    var answeredOpt = q.opts.filter(function(o){ return o.c === code; })[0];
+    return {
+      id: q.id,
+      num: q.num,
+      phase: q.phase,
+      question: q.text,
+      answerCode: code || '',
+      answerText: answeredOpt ? answeredOpt.t : '—'
+    };
+  });
+  return {
+    locale: IS_EN ? 'en' : 'de',
+    score: score,
+    band: band,
+    introText: getDynamicResultIntro(IS_EN ? 'en' : 'de', band),
+    priorities: priorities,
+    allQuestions: allQuestions,
+    calc: {
+      total: document.getElementById('totalVal').textContent,
+      invest: document.getElementById('roiInvestDisplay').textContent,
+      net: document.getElementById('nettoVal').textContent,
+      ratio: document.getElementById('roiVal').textContent,
+      ceo: document.getElementById('calcCEO').textContent,
+      fluk: document.getElementById('calcFluk').textContent,
+      comp: document.getElementById('calcComp').textContent,
+      scCons: document.getElementById('scCons').textContent,
+      scReal: document.getElementById('scReal').textContent,
+      scAmbi: document.getElementById('scAmbi').textContent
+    }
+  };
+}
+
+function buildExecutiveSummaryHtml(data) {
+  var dateStr = new Date().toLocaleDateString(data.locale === 'en' ? 'en-CH' : 'de-CH');
+  var heading = 'Executive Summary';
+  var prioritiesTitle = data.locale === 'en' ? 'Top priorities' : 'Top-Prioritaeten';
+  var calcTitle = data.locale === 'en' ? 'Orientation calculation for CEO and executive team' : 'Orientierungsrechnung fuer CEO und GL';
+  var summaryLines = data.priorities.map(function(p){
+    return '<li><strong>' + p.rank + '. ' + escHtml((data.locale === 'en' ? 'Question ' : 'Frage ') + p.num) + '</strong><br><span>' + escHtml(p.answer) + '</span><br><small>' + escHtml(p.hebel) + '</small></li>';
+  }).join('');
+
+  return '<!doctype html><html><head><meta charset="utf-8"><title>TaVyro Executive Summary</title>' +
+    '<style>body{font-family:"DM Sans",Arial,sans-serif;background:#f4f3ef;color:#1a1a18;margin:0} .wrap{max-width:860px;margin:0 auto;background:#fff} .cover{background:#2D6A4F;color:#fff;padding:34px} .cover h1{margin:0 0 6px;font-size:34px;letter-spacing:-0.5px} .cover p{margin:0;opacity:.88} .page{padding:26px 30px} h2{margin:0 0 10px;font-size:22px} .intro{background:#FCEBEB;border-left:4px solid #A32D2D;border-radius:10px;padding:12px 14px;margin-bottom:16px} .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px} .k{border:1px solid rgba(0,0,0,.13);border-radius:10px;padding:11px;background:#fff} .k b{display:block;font-size:12px;color:#5A5A56} .k span{font-size:24px;font-weight:700} ul{margin:0;padding-left:18px} li{margin-bottom:10px} .calc{background:#E1F5EE;border:1px solid rgba(29,158,117,.3);border-radius:10px;padding:12px} .row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.08)} .row:last-child{border-bottom:0} .row.total{font-weight:700}</style>' +
+    '</head><body>' +
+    '<div class="wrap"><div class="cover"><h1>TaVyro · ' + heading + '</h1><p>' + (data.locale === 'en' ? 'Date' : 'Datum') + ': ' + dateStr + '</p></div><div class="page">' +
+    '<div class="intro">' + escHtml(data.introText) + '</div>' +
+    '<div class="kpi">' +
+      '<div class="k"><b>' + (data.locale === 'en' ? 'Priority index' : 'Prioritaetsindex') + '</b><span>' + data.score + '%</span></div>' +
+      '<div class="k"><b>' + (data.locale === 'en' ? 'Critical topics' : 'Kritische Themen') + '</b><span>' + data.priorities.length + '</span></div>' +
+      '<div class="k"><b>' + (data.locale === 'en' ? 'Band' : 'Band') + '</b><span style="font-size:18px">' + escHtml(data.band) + '</span></div>' +
+    '</div>' +
+    '<h2>' + prioritiesTitle + '</h2><ul>' + summaryLines + '</ul>' +
+    '<h2 style="margin-top:18px;">' + calcTitle + '</h2>' +
+    '<div class="calc">' +
+      '<div class="row"><span>' + (data.locale === 'en' ? 'Gross potential' : 'Brutto-Potenzial') + '</span><strong>' + escHtml(data.calc.total) + '</strong></div>' +
+      '<div class="row"><span>' + (data.locale === 'en' ? 'TaVyro investment' : 'TaVyro-Investition') + '</span><strong>' + escHtml(data.calc.invest) + '</strong></div>' +
+      '<div class="row total"><span>' + (data.locale === 'en' ? 'Net effect p.a.' : 'Netto-Effekt p.a.') + '</span><strong>' + escHtml(data.calc.net) + '</strong></div>' +
+      '<div class="row"><span>' + (data.locale === 'en' ? 'Potential / investment ratio' : 'Potenzial / Investition') + '</span><strong>' + escHtml(data.calc.ratio) + '</strong></div>' +
+    '</div></div></div>' +
+    '<script>window.onload=function(){setTimeout(function(){window.print();},250);};<\/script></body></html>';
+}
+
+function buildFullReportHtml(data, lead) {
+  var dateStr = new Date().toLocaleDateString(data.locale === 'en' ? 'en-CH' : 'de-CH');
+  var title = data.locale === 'en' ? 'TaVyro Self-Check Full Report' : 'TaVyro Self-Check Vollbericht';
+  var intro = data.locale === 'en'
+    ? 'This editable report is generated automatically based on the submitted self-check.'
+    : 'Dieser editierbare Bericht wird automatisch auf Basis des ausgefuellten Selfchecks erstellt.';
+  var prioritiesHtml = data.priorities.map(function(p){
+    return '<li><strong>' + escHtml((data.locale === 'en' ? 'Question ' : 'Frage ') + p.num) + '</strong> — ' + escHtml(p.answer) + ' (' + escHtml(p.hebel) + ')</li>';
+  }).join('');
+  function phaseTitle(phase) {
+    if (data.locale === 'en') {
+      if (phase === 1) return 'Phase 1 - Leadership and decision quality';
+      if (phase === 2) return 'Phase 2 - Talent and execution';
+      return 'Phase 3 - Governance and operational reliability';
+    }
+    if (phase === 1) return 'Phase 1 - Fuehrung und Entscheidungsfaehigkeit';
+    if (phase === 2) return 'Phase 2 - Talente und Ausfuehrungskraft';
+    return 'Phase 3 - Governance und Betriebssicherheit';
+  }
+  function badge(code) {
+    if (data.locale === 'en') return code === 'r' ? 'Critical' : code === 'y' ? 'Partial' : code === 'g' ? 'Good' : '—';
+    return code === 'r' ? 'Kritisch' : code === 'y' ? 'Teilweise' : code === 'g' ? 'Gut' : '—';
+  }
+  var allAnswersByPhase = [1,2,3].map(function(phase){
+    var rows = data.allQuestions.filter(function(q){ return q.phase === phase; }).map(function(q){
+      return '<tr><td>' + escHtml(String(q.num)) + '</td><td>' + escHtml(q.question) + '</td><td>' + escHtml(badge(q.answerCode)) + '</td><td>' + escHtml(q.answerText) + '</td></tr>';
+    }).join('');
+    return '<h2>' + phaseTitle(phase) + '</h2><table><thead><tr><th>#</th><th>' + (data.locale === 'en' ? 'Question' : 'Frage') + '</th><th>' + (data.locale === 'en' ? 'Rating' : 'Bewertung') + '</th><th>' + (data.locale === 'en' ? 'Selected answer' : 'Ausgewaehlte Antwort') + '</th></tr></thead><tbody>' + rows + '</tbody></table>';
+  }).join('');
+  var scHd = data.locale === 'en' ? 'Scenarios (net effect)' : 'Szenarien (Netto-Effekt)';
+  var scL1 = data.locale === 'en' ? 'Conservative' : 'Konservativ';
+  var scL2 = data.locale === 'en' ? 'Realistic' : 'Realistisch';
+  var scL3 = data.locale === 'en' ? 'Ambitious' : 'Ambitioniert';
+  var scS1 = data.locale === 'en' ? 'Net, conservative assumption' : 'Netto, konservative Annahme';
+  var scS2 = data.locale === 'en' ? 'Net, baseline scenario' : 'Netto, Basisszenario';
+  var scS3 = data.locale === 'en' ? 'Net, ambitious assumption' : 'Netto, ambitionierte Annahme';
+  return '<!doctype html><html><head><meta charset="utf-8"><title>' + escHtml(title) + '</title>' +
+    '<style>body{font-family:"DM Sans",Arial,sans-serif;line-height:1.5;color:#1a1a18;background:#f4f3ef;margin:0} .wrap{max-width:980px;margin:0 auto;background:#fff} .cover{background:#2D6A4F;color:#fff;padding:32px} .cover h1{margin:0 0 7px;font-size:34px;letter-spacing:-0.5px} .cover p{margin:0;opacity:.85} .page{padding:24px 28px} h2{margin:20px 0 8px;font-size:20px} section{margin-bottom:16px} .muted{color:#666} .box{border:1px solid #d9d9d9;border-radius:10px;padding:12px;background:#fff} .edit{background:#fffdf2} table{width:100%;border-collapse:collapse;margin:8px 0 16px} th,td{border:1px solid #e5e5e5;padding:8px;vertical-align:top;font-size:12px} th{background:#f8f8f8;text-align:left} ul{margin:0;padding-left:18px} .scenarios-wrap{margin-top:1rem} .scenarios-hd{font-size:10px;font-weight:600;color:#9a9a94;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.5rem} .scenarios{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px} .scenario{border:0.5px solid rgba(0,0,0,.08);border-radius:10px;padding:.75rem .5rem;text-align:center} .scenario-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#9a9a94;margin-bottom:4px} .scenario-val{font-size:13px;font-weight:600;color:#1a1a18;word-break:break-word} .scenario-pct{font-size:10px;color:#9a9a94;margin-top:2px} .scenario.s-real{border-color:#1d9e75;background:#e1f5ee} .scenario.s-real .scenario-label{color:#0f6e56} .scenario.s-real .scenario-val{color:#0f6e56} .scenario.s-real .scenario-pct{color:#1d9e75} @media(max-width:640px){.scenarios{grid-template-columns:1fr}}</style>' +
+    '</head><body>' +
+    '<div class="wrap"><div class="cover"><h1>' + escHtml(title) + '</h1><p>' + escHtml(intro) + '</p></div><div class="page">' +
+    '<section class="box"><h2>' + (data.locale === 'en' ? 'Client details' : 'Kontaktdaten') + '</h2>' +
+    '<p><strong>' + (data.locale === 'en' ? 'Name' : 'Name') + ':</strong> ' + escHtml(lead.firstName + ' ' + lead.lastName) + '</p>' +
+    '<p><strong>' + (data.locale === 'en' ? 'Company' : 'Unternehmen') + ':</strong> ' + escHtml(lead.company) + '</p>' +
+    '<p><strong>Email:</strong> ' + escHtml(lead.email) + '</p>' +
+    '<p><strong>' + (data.locale === 'en' ? 'Phone' : 'Telefon') + ':</strong> ' + escHtml(lead.phone || '—') + '</p>' +
+    '<p><strong>' + (data.locale === 'en' ? 'Date' : 'Datum') + ':</strong> ' + escHtml(dateStr) + '</p></section>' +
+    '<section class="box"><h2>' + (data.locale === 'en' ? 'Executive summary' : 'Executive Summary') + '</h2>' +
+    '<p>' + escHtml(data.introText) + '</p>' +
+    '<p><strong>' + (data.locale === 'en' ? 'Priority index' : 'Prioritaetsindex') + ':</strong> ' + data.score + '% (' + escHtml(data.band) + ')</p>' +
+    '<ul>' + prioritiesHtml + '</ul>' +
+    '<p class="muted">' + (data.locale === 'en'
+      ? 'Note: Priority-lever estimates are topic-specific directional values. They are not additive and not directly equivalent to the monetary orientation calculation.'
+      : 'Hinweis: Die Hebel bei den Top-Prioritäten sind themenspezifische Richtwerte. Sie sind nicht summierbar und nicht direkt gleichzusetzen mit der monetären Orientierungsrechnung.') + '</p></section>' +
+    '<section class="box"><h2>' + (data.locale === 'en' ? 'Orientation calculation' : 'Orientierungsrechnung') + '</h2>' +
+    '<p><strong>' + (data.locale === 'en' ? 'Gross potential' : 'Brutto-Potenzial') + ':</strong> ' + escHtml(data.calc.total) + '</p>' +
+    '<p><strong>' + (data.locale === 'en' ? 'TaVyro investment' : 'TaVyro-Investition') + ':</strong> ' + escHtml(data.calc.invest) + '</p>' +
+    '<p><strong>' + (data.locale === 'en' ? 'Net effect p.a.' : 'Netto-Effekt p.a.') + ':</strong> ' + escHtml(data.calc.net) + '</p>' +
+    '<p><strong>' + (data.locale === 'en' ? 'Potential / investment' : 'Potenzial / Investition') + ':</strong> ' + escHtml(data.calc.ratio) + '</p>' +
+    '<div class="scenarios-wrap"><div class="scenarios-hd">' + escHtml(scHd) + '</div><div class="scenarios">' +
+    '<div class="scenario s-cons"><div class="scenario-label">' + escHtml(scL1) + '</div><div class="scenario-val">' + escHtml(data.calc.scCons) + '</div><div class="scenario-pct">' + escHtml(scS1) + '</div></div>' +
+    '<div class="scenario s-real"><div class="scenario-label">' + escHtml(scL2) + '</div><div class="scenario-val">' + escHtml(data.calc.scReal) + '</div><div class="scenario-pct">' + escHtml(scS2) + '</div></div>' +
+    '<div class="scenario s-ambi"><div class="scenario-label">' + escHtml(scL3) + '</div><div class="scenario-val">' + escHtml(data.calc.scAmbi) + '</div><div class="scenario-pct">' + escHtml(scS3) + '</div></div>' +
+    '</div></div>' +
+    '<p class="muted">' + (data.locale === 'en'
+      ? 'Note: The qualitative priority rating and the monetary orientation calculation are separate models. For higher priority-index results, leverage assumptions are moderately increased, while remaining intentionally conservative.'
+      : 'Hinweis: Die qualitative Prioritätsbewertung und die monetäre Orientierungsrechnung sind getrennte Modelle. Bei hohem Prioritätsindex werden die Hebelannahmen moderat angehoben, bleiben jedoch bewusst konservativ.') + '</p>' +
+    '</section>' +
+    '<section class="box"><h2>' + (data.locale === 'en' ? 'Complete questionnaire (1:1)' : 'Vollstaendiger Fragebogen (1:1)') + '</h2>' +
+    allAnswersByPhase + '</section>' +
+    '<section class="box edit" contenteditable="true"><h2>' + (data.locale === 'en' ? 'Advisor notes (editable)' : 'Beraternotizen (editierbar)') + '</h2>' +
+    '<p>' + (data.locale === 'en' ? 'Add tailored observations and recommendations here before exporting the report as PDF.' : 'Hier koennen Sie individuelle Beobachtungen und Empfehlungen ergaenzen, bevor der Bericht als PDF exportiert wird.') + '</p></section>' +
+    '</div></div></body></html>';
+}
+
+function downloadExecutiveSummaryPdf() {
+  if (!Object.keys(answers).length) return;
+  var data = getReportData();
+  var w = window.open('', '_blank');
+  if (!w) return;
+  w.document.open();
+  w.document.write(buildExecutiveSummaryHtml(data));
+  w.document.close();
+  trackEvent('selfcheck_cta_clicked', { cta: 'download_executive_summary' });
+}
+
+function openFullReportModal() {
+  var modal = document.getElementById('reportModal');
+  if (modal) modal.classList.add('show');
+  var formEl = document.getElementById('reportLeadForm');
+  if (formEl) formEl.style.display = '';
+  var confirmEl = document.getElementById('reportConfirmation');
+  if (confirmEl) confirmEl.style.display = 'none';
+}
+
+function closeFullReportModal() {
+  var modal = document.getElementById('reportModal');
+  if (modal) modal.classList.remove('show');
+}
+
+async function submitFullReportRequest(ev) {
+  ev.preventDefault();
+  var data = getReportData();
+  var form = ev.target;
+  var lead = {
+    firstName: form.firstName.value.trim(),
+    lastName: form.lastName.value.trim(),
+    company: form.company.value.trim(),
+    email: form.email.value.trim(),
+    phone: form.phone.value.trim()
+  };
+  var subject = IS_EN
+    ? 'Self-Check Full Report request: ' + lead.firstName + ' ' + lead.lastName
+    : 'Selfcheck Full-Report Anfrage: ' + lead.firstName + ' ' + lead.lastName;
+  var message = [
+    'Lead:',
+    '- Name: ' + lead.firstName + ' ' + lead.lastName,
+    '- Company: ' + lead.company,
+    '- Email: ' + lead.email,
+    '- Phone: ' + (lead.phone || '—'),
+    '',
+    'Selfcheck Summary:',
+    '- Locale: ' + data.locale,
+    '- Priority index: ' + data.score + '% (' + data.band + ')',
+    '- Gross potential: ' + data.calc.total,
+    '- Net effect p.a.: ' + data.calc.net,
+    '- Potential/investment ratio: ' + data.calc.ratio,
+    '',
+    'Top priorities:',
+    data.priorities.map(function(p){ return '  ' + p.rank + ') ' + (IS_EN ? 'Question ' : 'Frage ') + p.num + ' — ' + p.answer + ' (' + p.hebel + ')'; }).join('\n')
+  ].join('\n');
+
+  // Include full questionnaire result 1:1 (all answers + selected texts)
+  var fullAnswersBlock = (data.allQuestions || []).map(function(q) {
+    var phaseLabel = IS_EN
+      ? (q.phase === 1 ? 'Phase 1' : q.phase === 2 ? 'Phase 2' : 'Phase 3')
+      : (q.phase === 1 ? 'Phase 1' : q.phase === 2 ? 'Phase 2' : 'Phase 3');
+    return phaseLabel + '\n' +
+      (IS_EN ? 'Question ' : 'Frage ') + q.num + ' — ' + q.question + '\n' +
+      (IS_EN ? 'Selected answer' : 'Ausgewaehlte Antwort') + ': ' + q.answerText + ' [' + q.answerCode + ']';
+  }).join('\n\n');
+
+  var riskLabel = IS_EN
+    ? (riskLevel === 'low' ? 'Low' : riskLevel === 'mid' ? 'Medium' : 'Elevated')
+    : (riskLevel === 'low' ? 'Niedrig' : riskLevel === 'mid' ? 'Mittel' : 'Erhoeht');
+
+  // Include orientation parameters shown in the ROI section
+  var orientationParams = [
+    '',
+    'Orientation parameters:',
+    '- Team size: ' + (document.getElementById('slTeamVal') ? document.getElementById('slTeamVal').textContent : '—'),
+    '- Affected executive members: ' + (document.getElementById('slCEOVal') ? document.getElementById('slCEOVal').textContent : '—'),
+    '- Avoided departures: ' + (document.getElementById('slFlukVal') ? document.getElementById('slFlukVal').textContent : '—'),
+    '- Governance risk: ' + riskLabel,
+    '- TaVyro investment: ' + (document.getElementById('slInvestVal') ? document.getElementById('slInvestVal').textContent : '—')
+  ].join('\n');
+
+  var messageFull = message + '\n\n' + orientationParams + '\n\n' + 'Full questionnaire (1:1):\n' + fullAnswersBlock;
+
+  try {
+    await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'eefecccc-4850-4bce-81e9-d859ebd2c1a7',
+        subject: subject,
+        from_name: 'TaVyro Selfcheck',
+        email: lead.email,
+        to_email: 'hello@tavyro.ch',
+        message: messageFull
+      })
+    });
+  } catch (_) {}
+
+  // Swap modal content to confirmation (no report generation for the user)
+  var formEl = document.getElementById('reportLeadForm');
+  if (formEl) formEl.style.display = 'none';
+  var confirmEl = document.getElementById('reportConfirmation');
+  if (confirmEl) confirmEl.style.display = '';
+  trackEvent('selfcheck_cta_clicked', { cta: 'generate_full_report' });
+}
+
+function applyEnglishStatic() {
+  if (!IS_EN) return;
+  function setText(selector, value, index) {
+    if (typeof index === 'number') {
+      var list = document.querySelectorAll(selector);
+      if (list && list[index]) list[index].textContent = value;
+      return;
+    }
+    var el = document.querySelector(selector);
+    if (el) el.textContent = value;
+  }
+  function setAttr(selector, name, value) {
+    var el = document.querySelector(selector);
+    if (el) el.setAttribute(name, value);
+  }
+  function setHtml(selector, value) {
+    var el = document.querySelector(selector);
+    if (el) el.innerHTML = value;
+  }
+  document.documentElement.lang = 'en';
+  document.title = 'TaVyro | CEO/Executive Team Self-Check for People and Organization';
+  setAttr('meta[name="description"]', 'content', 'In just a few minutes, identify where leadership load, role ambiguity, attrition and governance risk are slowing impact and momentum. No registration required. For CEOs, executive teams and boards.');
+  setText('.intro-title', 'CEO/Executive Team Self-Check for People and Organization');
+  setText('.intro-sub', 'In just a few minutes, identify where leadership load, role ambiguity, attrition or governance risk are slowing impact and momentum.');
+  setText('.trust-note', 'No registration required. 16 focused questions. The evaluation provides initial management-level orientation based on simplified model assumptions — it does not replace an in-depth analysis.');
+  document.getElementById('progressLabel').textContent = '0 of 16 questions answered';
+  setText('.r-card .r-title', 'Your top 3 priorities');
+  var ctaPrimary = document.querySelector('.cta-primary');
+  if (ctaPrimary) {
+    ctaPrimary.textContent = 'Complete orientation calculation';
+    ctaPrimary.href = '#slTeam';
+  }
+  setText('.r-card .r-title', 'Orientation calculation for CEO and executive team', 1);
+  setText('.calc-intro', 'The following calculation uses simplified assumptions on leadership relief, avoided attrition and risk exposure. It provides an indicative order of magnitude — not an individual expert opinion. Adjust the parameters to your organization.');
+  setText('.slider-lbl', 'Organization size and downstream cost risk', 0);
+  setText('.slider-lbl', 'Affected executive team members', 1);
+  setText('.slider-lbl', 'Average executive time that can be freed up per affected member per week', 2);
+  setText('.slider-lbl', 'Avoided departures per year (cost approach scaled by team size)', 3);
+  setText('.slider-lbl', 'Estimated TaVyro investment per year (CHF)', 4);
+  setText('.slider-group div[style*="Mitarbeitendenzahl"]', 'Number of employees as an approximation for complexity and potential cost of inaction');
+  setHtml('.gl-total-hint', 'Total management attention that can be freed up: <span id="glTotalDisplay">12</span> h/week');
+  setText('.gl-cap-hint', 'For orientation purposes, freed-up management attention is capped at a maximum of 30 h/week.');
+  setText('.slider-group div[style*="Management-Zeit"]', 'Management time is valued as an indicative estimate.');
+  setText('.risk-select-lbl', 'Governance and compliance risk exposure');
+  if (document.getElementById('riskLow')) document.getElementById('riskLow').textContent = 'Low';
+  if (document.getElementById('riskMid')) document.getElementById('riskMid').textContent = 'Medium';
+  if (document.getElementById('riskHigh')) document.getElementById('riskHigh').textContent = 'Elevated';
+  setText('.cb-label', 'Value of relieved executive capacity', 0);
+  setText('.cb-label', 'Avoided attrition', 1);
+  setText('.cb-label', 'Avoided governance risk exposure', 2);
+  setText('.total-lbl', 'Gross potential (savings + risk reduction)');
+  setText('.roi-label', 'less TaVyro investment', 0);
+  setText('.roi-label', 'Net effect per year', 1);
+  setText('.roi-label', 'Potential / investment ratio', 2);
+  setHtml('.total-sub', 'This calculation provides an orientation value. Actual potential depends on your baseline, leadership setup, attrition, role clarity and organizational maturity.<br><br>The monetary risk assumption is based on estimated governance and compliance exposure. The qualitative self-check rating is derived separately from your answers. For higher priority-index results, leverage assumptions are moderately increased, while remaining intentionally conservative.');
+  setText('.scenarios-hd', 'Scenarios');
+  setText('.scenario-label', 'Conservative', 0);
+  setText('.scenario-label', 'Realistic', 1);
+  setText('.scenario-label', 'Ambitious', 2);
+  setText('.scenario-pct', 'Net, conservative assumption', 0);
+  setText('.scenario-pct', 'Net, baseline scenario', 1);
+  setText('.scenario-pct', 'Net, ambitious assumption', 2);
+  setText('.metric-lbl', 'Priority index', 0);
+  setText('.metric-lbl', 'Bound management attention / year', 1);
+  setText('.metric-sub', 'Answer the questions to see the analysis', 0);
+  setText('.metric-sub', 'Indicatively modeled from 16 questions', 2);
+  setText('.metric-lbl', 'Governance risk (qualitative)', 2);
+  setText('.cost-hd', 'Assessment');
+  setText('.cost-lbl', 'Leadership effort', 0);
+  setText('.cost-lbl', 'Organizational maturity', 1);
+  setText('.cost-lbl', 'Governance risk', 2);
+  setText('.dash-hd', 'Live analysis');
+  document.getElementById('riskLabel').textContent = 'Answer the questions to see the analysis';
+  document.getElementById('complianceRiskSub').textContent = 'From answers to questions 13–16';
+  var dashCta = document.querySelector('.dash-cta');
+  if (dashCta) {
+    dashCta.textContent = 'Review priorities with TaVyro';
+    dashCta.onclick = function() {
+      window.location.href = '/en/erstgespraech-buchen';
+    };
+  }
+  if (document.getElementById('downloadSummaryBtn')) document.getElementById('downloadSummaryBtn').textContent = 'Download Executive Summary';
+  if (document.getElementById('generateReportBtn')) document.getElementById('generateReportBtn').textContent = 'Order Full Report for free';
+  if (document.getElementById('reportModalTitle')) document.getElementById('reportModalTitle').textContent = 'Order Full Report for free';
+  if (document.getElementById('lblFirstName')) document.getElementById('lblFirstName').textContent = 'First name';
+  if (document.getElementById('lblLastName')) document.getElementById('lblLastName').textContent = 'Last name';
+  if (document.getElementById('lblCompany')) document.getElementById('lblCompany').textContent = 'Company';
+  if (document.getElementById('lblEmail')) document.getElementById('lblEmail').textContent = 'Email address';
+  if (document.getElementById('lblPhone')) document.getElementById('lblPhone').textContent = 'Phone number (optional)';
+  if (document.getElementById('reportCancelBtn')) document.getElementById('reportCancelBtn').textContent = 'Cancel';
+  if (document.getElementById('reportSubmitBtn')) document.getElementById('reportSubmitBtn').textContent = 'Order and send';
+  if (document.getElementById('reportModalNote')) document.getElementById('reportModalNote').textContent = 'After submitting, an editable full report opens in a new window. You can refine it and export it as PDF.';
+  if (document.getElementById('reportModalNote')) document.getElementById('reportModalNote').textContent = 'After submitting, we will send your free Full Report to your email within the next 48 hours.';
+  if (document.getElementById('reportConfirmationText')) document.getElementById('reportConfirmationText').textContent = 'Your free order of the Full Report has been received. You will receive it within the next 48 hours. Thank you!';
+  if (document.getElementById('priorityNote')) document.getElementById('priorityNote').textContent = 'Note: Leverage estimates for top priorities are topic-specific directional values. They are not additive and not directly equivalent to the monetary orientation calculation.';
+  document.getElementById('submitBtn').textContent = 'Show priorities →';
+}
+
+function attachDefaultCtaTracking() {
+  var ctaPrimary = document.querySelector('.cta-primary');
+  if (ctaPrimary) {
+    ctaPrimary.addEventListener('click', function() {
+      try {
+        var slider = document.getElementById('slTeam');
+        if (slider) {
+          slider.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } catch (_) {}
+      trackEvent('selfcheck_cta_clicked', { cta: 'priority_card_button' });
+    });
+  }
+  var dashCta = document.querySelector('.dash-cta');
+  if (dashCta) {
+    dashCta.addEventListener('click', function() {
+      trackEvent('selfcheck_cta_clicked', { cta: 'sidebar_button' });
+    });
+  }
+}
+
+applyEnglishStatic();
 renderQuestions();
+attachDefaultCtaTracking();
+var reportLeadForm = document.getElementById('reportLeadForm');
+if (reportLeadForm) {
+  reportLeadForm.addEventListener('submit', submitFullReportRequest);
+}
+trackEvent('selfcheck_open', { path: window.location.pathname });
 </script>
 </body>
 </html>

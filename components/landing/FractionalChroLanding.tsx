@@ -26,36 +26,6 @@ type Props = {
   jsonLdId: string;
 };
 
-function LocalLink({
-  label,
-  path,
-  linkLocale,
-  pageLocale,
-}: {
-  label: string;
-  path: string;
-  linkLocale: string;
-  pageLocale: SiteLocale;
-}) {
-  if (!label?.trim() || !path?.trim()) return null;
-  const href = path.startsWith("/") ? path : `/${path}`;
-  const useLocale: SiteLocale | undefined =
-    linkLocale === "de" || linkLocale === "en"
-      ? linkLocale !== pageLocale
-        ? linkLocale
-        : undefined
-      : undefined;
-  return (
-    <Link
-      href={href}
-      {...(useLocale ? { locale: useLocale } : {})}
-      className="text-tavyro-brand-700 font-medium underline underline-offset-4 hover:text-tavyro-brand-900"
-    >
-      {label}
-    </Link>
-  );
-}
-
 export default async function FractionalChroLanding({
   locale,
   namespace,
@@ -77,13 +47,6 @@ export default async function FractionalChroLanding({
     "@type": "FAQPage",
     mainEntity: faqMainEntity,
   };
-
-  const link1Label = t("local.link1Label");
-  const link1Path = t("local.link1Path");
-  const link1Locale = t("local.link1Locale");
-  const link2Label = t("local.link2Label");
-  const link2Path = t("local.link2Path");
-  const link2Locale = t("local.link2Locale");
 
   return (
     <>
@@ -122,10 +85,14 @@ export default async function FractionalChroLanding({
                   {t("hero.ctaSecondary")}
                 </Link>
                 <a
-                  href="/tavyro-hr-health-check.html"
+                  href={
+                    locale === "en"
+                      ? "/en/tavyro-hr-health-check.html"
+                      : "/tavyro-hr-health-check.html"
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex justify-center items-center px-5 py-3 rounded-md border border-tavyro-brand-300 text-tavyro-text font-medium hover:bg-tavyro-surface transition-colors w-full sm:w-auto text-center"
+                  className="btn-primary w-full sm:w-auto text-center"
                 >
                   {locale === "de"
                     ? "CEO/GL Selbstcheck"
@@ -236,48 +203,6 @@ export default async function FractionalChroLanding({
                 <p>{t("mandate.p1")}</p>
                 <p>{t("mandate.p2")}</p>
               </div>
-            </section>
-
-            <section
-              aria-labelledby="local-heading"
-              className="bg-tavyro-surface border border-tavyro-border rounded-xl p-6 md:p-8"
-            >
-              <h2
-                id="local-heading"
-                className="text-2xl md:text-3xl font-bold text-tavyro-text mb-4"
-              >
-                {t("local.title")}
-              </h2>
-              <p className="text-tavyro-text2 leading-relaxed mb-4">
-                {t("local.p1")}
-              </p>
-              <p className="text-tavyro-text2 leading-relaxed mb-4">
-                {t("local.p2")}
-              </p>
-              {(link1Label?.trim() || link2Label?.trim()) && (
-                <ul className="space-y-2 text-tavyro-text2">
-                  {link1Label?.trim() && link1Path?.trim() && (
-                    <li>
-                      <LocalLink
-                        label={link1Label}
-                        path={link1Path}
-                        linkLocale={link1Locale}
-                        pageLocale={locale}
-                      />
-                    </li>
-                  )}
-                  {link2Label?.trim() && link2Path?.trim() && (
-                    <li>
-                      <LocalLink
-                        label={link2Label}
-                        path={link2Path}
-                        linkLocale={link2Locale}
-                        pageLocale={locale}
-                      />
-                    </li>
-                  )}
-                </ul>
-              )}
             </section>
 
             <section aria-labelledby="faq-heading">
