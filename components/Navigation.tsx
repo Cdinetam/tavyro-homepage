@@ -224,17 +224,17 @@ export default function Navigation() {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="touch-manipulation p-3 text-tavyro-text2 min-[480px]:p-2 [-webkit-tap-highlight-color:transparent]"
+              className="touch-manipulation rounded-md border border-tavyro-border p-2.5 text-tavyro-text min-[480px]:p-2 [-webkit-tap-highlight-color:transparent]"
               aria-expanded={isOpen}
               aria-controls="mobile-nav-panel"
               aria-label={isOpen ? "Menü schliessen" : "Menü öffnen"}
             >
               <svg
-                className="h-6 w-6"
+                className="h-7 w-7"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
+                strokeWidth="2.5"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
