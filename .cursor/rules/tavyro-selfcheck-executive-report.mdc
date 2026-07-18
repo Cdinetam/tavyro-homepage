@@ -1,0 +1,63 @@
+---
+description: Standardprozess für kundenspezifische TaVyro Selfcheck-Reports
+alwaysApply: true
+---
+
+# TaVyro Selfcheck Executive Report Standard
+
+Wenn der User Selfcheck-Resultate liefert und einen Report wünscht, arbeite immer nach diesem Ablauf:
+
+1. **Datenbasis**
+- Nur gelieferte Resultate und verifizierbare Quellen verwenden.
+- Keine Annahmen erfinden, keine Spekulation.
+- Fehlende Pflichtdaten kurz und konkret nachfragen.
+
+2. **Kundenspezifische Einordnung**
+- Report individualisieren mit `name`, `company_name`, `industry`, `context` (falls vorhanden).
+- Bei Firmenkontext nur belastbare öffentliche Informationen nutzen (Website, Impressum, LinkedIn, Handelsregister etc.).
+- Firmen- und branchenspezifische Implikationen explizit ausformulieren (keine generischen Aussagen).
+- Konkrete, alltagsnahe Beispiele zur jeweiligen Firma/Branche integrieren (z. B. Mass Recruiting in Cleaning/Frontline-Rollen bei Facility Services).
+
+3. **Tonalität und Zielbild**
+- C-Level Stil: ruhig, präzise, sachlich, wirkorientiert.
+- Fokus auf Einordnung, Prioritäten, Implikation für CEO/GL.
+- Keine Buzzwords, keine Emojis, keine Marketing-Floskeln.
+
+4. **Inhaltliche Mindeststruktur (DE/EN je nach Anfrage)**
+- Titelbereich (TaVyro Executive Report, Datum, optional Name/Firma)
+- Im Titel-/Meta-Bereich kein Feld `Sprache`/`Language` verwenden.
+- Stattdessen Statusfeld verwenden: `Status: Vertraulich` (DE) bzw. `Status: Confidential` (EN).
+- Einordnung (2-3 Sätze, level-basiert)
+- Prioritätsindex mit Mapping (high/mid/low)
+- Top 3 Hebel mit Bedeutung + Hebelzeile
+- Abschnitt "Firmen-/Branchenspezifische Einordnung" mit klaren, operativen Bezügen zur konkreten Firma
+- Einordnung Organisation (Führung, Struktur, Risiken)
+- Orientierungsrechnung (Brutto, **TaVyro-Investition**, Netto, Verhältnis)
+- In der Orientierungsrechnung immer 3 Szenarien ausgeben: **Konservativ**, **Realistisch**, **Ambitioniert** (jeweils als Netto-Effekt).
+- Implikation für CEO/GL
+- Hinweis zu Modellannahmen
+- Im Full Report immer explizit erläutern: qualitative Prioritätsbewertung und monetäre Orientierungsrechnung sind getrennte Modelle; bei hohem Prioritätsindex werden Hebelannahmen moderat angehoben, bleiben jedoch konservativ.
+- Im Full Report immer explizit erläutern: Hebelwerte der Top-Prioritäten sind themenspezifische Richtwerte, **nicht summierbar** und nicht 1:1 mit der monetären Orientierungsrechnung gleichzusetzen.
+- Kein Quellenabschnitt im finalen Report ausgeben.
+- Kein 90-Tage-Plan im finalen Report ausgeben, ausser der User verlangt das explizit.
+
+5. **Erforderliche Tiefe im Full Report**
+- Report darf nicht nur oberflächliche Summary sein.
+- Antworten müssen explizit enthalten sein (mind. als konsolidierter Antwortteil; bei vorliegenden Daten idealerweise 1:1 pro Frage).
+- Zu jeder Antwort bzw. zu jedem Antwortblock eine kurze Advisory-Interpretation liefern (präzise, handlungsorientiert, ohne Spekulation).
+- Interpretation soll Bedeutung für Führungsentlastung, Strukturklarheit und Umsetzungsfähigkeit einordnen.
+- Advisory-Interpretationen müssen, wo sinnvoll, den konkreten Geschäftsmodus der Firma aufgreifen (z. B. Schichtbetrieb, Multi-Site, regulierte Umfelder, Projektgeschäft, Blue-/White-Collar-Mix).
+
+6. **Format**
+- Standardausgabe als sauberes HTML, PDF-konvertierbar.
+- Keine externen Stylesheets erforderlich.
+- Klarer, kompakter Aufbau (max. ca. 3 Seiten Inhalt).
+
+7. **Full-Report-Bestellung im Selfcheck-Kontext**
+- Wenn Prozess "Full Report bestellen" erwähnt wird, keine Sofort-Generierung für Endnutzer.
+- Ergebnisdaten vollständig (inkl. 16 Antworten + Orientierungsparameter) für interne Bearbeitung aufbereiten.
+
+8. **Sprachstandard Deutsch (Schweiz)**
+- Deutsch immer schweizerisch schreiben.
+- Nie das Zeichen `ß` verwenden; stattdessen `ss`.
+- Umlaute immer direkt als `ä`, `ö`, `ü` schreiben (nicht `ae`, `oe`, `ue`).

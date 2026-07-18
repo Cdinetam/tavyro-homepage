@@ -41,3 +41,7 @@ next-env.d.ts
 
 # archived files
 /archive/
+
+# Kundendaten / personenbezogene Reports (SENSIBEL - niemals committen!)
+/docs/reports/
+/Health Check/

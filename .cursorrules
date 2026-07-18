@@ -21,6 +21,10 @@ This project follows a clean, organized structure:
 └── archive/       # Archived/old files (ignored by git)
 ```
 
+## Branding & Footer
+
+- **Site footer (Copyright):** Im Footer zentrales Copyright mit Formulierung **„Copyright by TaVyro GmbH“**, ergänzt um **© {aktuelles Jahr}** und Kurzform der Rechte (DE: „Alle Rechte vorbehalten.“ / EN: „All rights reserved.“). Textquelle: `messages/de.json` und `messages/en.json` unter `Footer.copyright` — nicht hardcodiert in `Footer.tsx`.
+
 ## Rules
 
 1. **Keep root directory clean**: Only configuration files in root
