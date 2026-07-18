@@ -230,6 +230,8 @@ export default function Navigation() {
               aria-label={isOpen ? "Menü schliessen" : "Menü öffnen"}
             >
               <svg
+                width="28"
+                height="28"
                 className="h-7 w-7"
                 fill="none"
                 strokeLinecap="round"
@@ -237,6 +239,7 @@ export default function Navigation() {
                 strokeWidth="2.5"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
                 {isOpen ? (
                   <path d="M6 18L18 6M6 6l12 12" />
