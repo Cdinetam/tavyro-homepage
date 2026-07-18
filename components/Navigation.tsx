@@ -69,7 +69,7 @@ export default function Navigation() {
               alt="TaVyro Logo"
               width={240}
               height={64}
-              className="h-12 w-auto max-w-[11.5rem] sm:max-w-[12.5rem] md:h-14 md:max-w-[13.5rem] lg:h-16 lg:max-w-[15rem]"
+              className="h-11 w-auto max-w-[8.5rem] sm:h-12 sm:max-w-[12.5rem] md:h-14 md:max-w-[13.5rem] lg:h-16 lg:max-w-[15rem]"
               priority
             />
           </Link>
@@ -183,7 +183,7 @@ export default function Navigation() {
             <div className="flex items-center gap-0.5 text-sm font-medium">
               {locale === "de" ? (
                 <span
-                  className="flex min-h-11 min-w-9 items-center justify-center rounded-md px-1 font-bold text-tavyro-text"
+                  className="flex min-h-11 min-w-8 items-center justify-center rounded-md px-1 font-bold text-tavyro-text"
                   aria-current="page"
                 >
                   DE
@@ -193,7 +193,7 @@ export default function Navigation() {
                   href={deHref}
                   hrefLang="de"
                   lang="de"
-                  className="touch-manipulation flex min-h-11 min-w-9 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
+                  className="touch-manipulation flex min-h-11 min-w-8 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
                   aria-label="Deutsch"
                 >
                   DE
@@ -204,7 +204,7 @@ export default function Navigation() {
               </span>
               {locale === "en" ? (
                 <span
-                  className="flex min-h-11 min-w-9 items-center justify-center rounded-md px-1 font-bold text-tavyro-text"
+                  className="flex min-h-11 min-w-8 items-center justify-center rounded-md px-1 font-bold text-tavyro-text"
                   aria-current="page"
                 >
                   EN
@@ -214,7 +214,7 @@ export default function Navigation() {
                   href={enHref}
                   hrefLang="en"
                   lang="en"
-                  className="touch-manipulation flex min-h-11 min-w-9 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
+                  className="touch-manipulation flex min-h-11 min-w-8 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
                   aria-label="English"
                 >
                   EN
@@ -224,7 +224,7 @@ export default function Navigation() {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="touch-manipulation rounded-md border border-tavyro-border p-2.5 min-[480px]:p-2 [-webkit-tap-highlight-color:transparent]"
+              className="touch-manipulation shrink-0 rounded-md border border-tavyro-border p-2 [-webkit-tap-highlight-color:transparent]"
               aria-expanded={isOpen}
               aria-controls="mobile-nav-panel"
               aria-label={isOpen ? "Menü schliessen" : "Menü öffnen"}
