@@ -41,13 +41,6 @@ export default function ErstgespraechBuchen() {
     "idle" | "success" | "error"
   >("idle");
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -249,20 +242,6 @@ Gesendet über: tavyro.ch/de/erstgespraech-buchen
                   {t("teamsInfo")}
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button
-                    onClick={() => scrollToSection("booking")}
-                    className="btn-primary w-full sm:w-auto"
-                  >
-                    {t("bookTeamsCall")}
-                  </button>
-                  <button
-                    onClick={() => scrollToSection("ablauf")}
-                    className="btn-secondary w-full sm:w-auto"
-                  >
-                    {t("viewProcess")}
-                  </button>
-                </div>
               </section>
 
               {/* SECTION 2: ABLAUF */}

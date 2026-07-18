@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/config/site";
 import FractionalChroLanding from "@/components/landing/FractionalChroLanding";
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function FractionalChroSwitzerlandPage({ params }: Props) {
   const { locale } = await params;
   if (locale !== "en") {
-    notFound();
+    redirect("/de/fractional-chro-schweiz");
   }
 
   return (
