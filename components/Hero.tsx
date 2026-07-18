@@ -52,25 +52,21 @@ export default function Hero() {
             >
               {t("ctaSecondary")}
             </button>
+            {(locale === "en" || locale === "de") && (
+              <a
+                href={
+                  locale === "en"
+                    ? "/en/tavyro-hr-health-check.html"
+                    : "/tavyro-hr-health-check.html"
+                }
+                className="btn-primary w-full sm:w-auto text-center"
+              >
+                {locale === "de"
+                  ? "CEO/GL Selbstcheck"
+                  : "CEO/Executive Team Self-Check"}
+              </a>
+            )}
           </div>
-          {(locale === "en" || locale === "de") && (
-            <p className="mt-6 text-sm md:text-base text-white/90 drop-shadow-lg">
-              {t.rich("seoLink", {
-                link: (chunks) => (
-                  <Link
-                    href={
-                      locale === "en"
-                        ? "/fractional-chro-zurich"
-                        : "/fractional-chro-schweiz"
-                    }
-                    className="underline underline-offset-4 hover:text-white"
-                  >
-                    {chunks}
-                  </Link>
-                ),
-              })}
-            </p>
-          )}
         </div>
       </div>
     </section>
