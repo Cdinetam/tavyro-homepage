@@ -50,6 +50,7 @@
 <body class="bg-paper text-ink font-sans antialiased" style="line-height:1.5;">
 <style>
   .tr-burger{display:none;align-items:center;justify-content:center;color:#0f5a5e;cursor:pointer;padding:6px;margin:-6px;-webkit-tap-highlight-color:transparent}
+  .tr-mtop{display:none;align-items:center;gap:.75rem;flex-shrink:0}
   .tr-mnav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#fff;border-top:1px solid rgb(223 231 228);border-bottom:1px solid rgb(223 231 228);box-shadow:0 10px 24px rgba(0,0,0,.08);padding:.35rem 1.75rem 1.25rem;z-index:60}
   .tr-mnav a{padding:.85rem .25rem;font-size:15px;color:#16323f;text-decoration:none;border-bottom:1px solid #eef3f2}
   .tr-mnav .tr-mcta{margin-top:.8rem;background:#0f5a5e;color:#fff;text-align:center;border-radius:8px;padding:.85rem 1rem;font-weight:600;border-bottom:0}
@@ -57,6 +58,7 @@
   .tr-mnav .tr-mlang a{padding:0;border-bottom:0}
   @media(max-width:1023px){
     .tr-burger{display:inline-flex}
+    .tr-mtop{display:flex}
     .tr-mtoggle:checked ~ .tr-mnav{display:flex}
   }
 </style>
@@ -83,9 +85,16 @@
       </div>
     </div>
     <input type="checkbox" id="tr-menu" class="tr-mtoggle" hidden>
-    <label for="tr-menu" class="tr-burger" role="button" aria-label="Menü öffnen">
-      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </label>
+    <div class="tr-mtop">
+      <div class="flex items-center gap-1 text-[14px] font-semibold">
+        <span aria-current="page" style="color:#16323f">DE</span>
+        <span style="color:#5c6664">·</span>
+        <a href="/en/trust-room" style="color:#5c6664">EN</a>
+      </div>
+      <label for="tr-menu" class="tr-burger" role="button" aria-label="Menü öffnen">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </label>
+    </div>
     <div class="tr-mnav">
       <a href="/de">Home</a>
       <a href="/de/#leistungen">Leistungen</a>
@@ -93,7 +102,6 @@
       <a href="/de/#angebote">Angebote</a>
       <a href="/de/executive-intelligence">TaVyro Executive Intelligence®</a>
       <a href="/de/erstgespraech-buchen" class="tr-mcta">Erstgespräch buchen</a>
-      <div class="tr-mlang"><span aria-current="page" style="color:#16323f">DE</span><span style="color:#5c6664">·</span><a href="/en/trust-room" style="color:#5c6664">EN</a></div>
     </div>
   </div>
   <div class="max-w-[1280px] mx-auto px-7 py-3 border-t border-hline">
