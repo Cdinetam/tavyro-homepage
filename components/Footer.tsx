@@ -185,6 +185,14 @@ export default function Footer() {
                   {t("executiveIntelligence")}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/trust-room"
+                  className="hover:text-white transition-colors"
+                >
+                  {t("trustRoom")}
+                </Link>
+              </li>
               {locale === "de" && (
                 <li>
                   <Link
