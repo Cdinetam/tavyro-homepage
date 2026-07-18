@@ -11,8 +11,25 @@ function pathSuffix(pathname: string): string {
   return normalized === "/" ? "" : normalized;
 }
 
+/**
+ * Slugs that intentionally differ per locale (locale-specific landing pages).
+ * Ensures the language switch never points to a non-existent route (e.g. /en/fractional-chro-schweiz).
+ */
+const CROSS_LOCALE_PATHS: Record<string, { de: string; en: string }> = {
+  "/fractional-chro-schweiz": {
+    de: "/fractional-chro-schweiz",
+    en: "/fractional-chro-switzerland",
+  },
+  "/fractional-chro-switzerland": {
+    de: "/fractional-chro-schweiz",
+    en: "/fractional-chro-switzerland",
+  },
+};
+
 function localeHref(locale: "de" | "en", pathname: string): string {
-  return `/${locale}${pathSuffix(pathname)}`;
+  const suffix = pathSuffix(pathname);
+  const target = CROSS_LOCALE_PATHS[suffix]?.[locale] ?? suffix;
+  return `/${locale}${target}`;
 }
 
 export default function Navigation() {
@@ -161,31 +178,74 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            onClick={() => setIsOpen(!isOpen)}
-            className="touch-manipulation p-3 text-tavyro-text2 min-[480px]:p-2 md:hidden [-webkit-tap-highlight-color:transparent]"
-            aria-expanded={isOpen}
-            aria-controls="mobile-nav-panel"
-            aria-label={isOpen ? "Menü schliessen" : "Menü öffnen"}
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
+          {/* Mobile: Sprachumschalter (sichtbar im Header) + Menü-Button */}
+          <div className="flex items-center gap-1 md:hidden">
+            <div className="flex items-center gap-0.5 text-sm font-medium">
+              {locale === "de" ? (
+                <span
+                  className="flex min-h-11 min-w-9 items-center justify-center rounded-md px-1 font-bold text-tavyro-text"
+                  aria-current="page"
+                >
+                  DE
+                </span>
               ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
+                <a
+                  href={deHref}
+                  hrefLang="de"
+                  lang="de"
+                  className="touch-manipulation flex min-h-11 min-w-9 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
+                  aria-label="Deutsch"
+                >
+                  DE
+                </a>
               )}
-            </svg>
-          </button>
+              <span className="select-none text-tavyro-border" aria-hidden>
+                |
+              </span>
+              {locale === "en" ? (
+                <span
+                  className="flex min-h-11 min-w-9 items-center justify-center rounded-md px-1 font-bold text-tavyro-text"
+                  aria-current="page"
+                >
+                  EN
+                </span>
+              ) : (
+                <a
+                  href={enHref}
+                  hrefLang="en"
+                  lang="en"
+                  className="touch-manipulation flex min-h-11 min-w-9 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
+                  aria-label="English"
+                >
+                  EN
+                </a>
+              )}
+            </div>
+            <button
+              type="button"
+              onClick={() => setIsOpen(!isOpen)}
+              className="touch-manipulation p-3 text-tavyro-text2 min-[480px]:p-2 [-webkit-tap-highlight-color:transparent]"
+              aria-expanded={isOpen}
+              aria-controls="mobile-nav-panel"
+              aria-label={isOpen ? "Menü schliessen" : "Menü öffnen"}
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -254,46 +314,6 @@ export default function Navigation() {
               >
                 {t("cta")}
               </Link>
-
-              {/* Mobile language: after CTA */}
-              <div className="flex flex-col gap-2 py-2 text-sm font-medium">
-                {locale === "de" ? (
-                  <span
-                    className="min-h-12 w-full rounded-md border border-tavyro-text bg-tavyro-brand-50 px-4 py-3 text-left font-bold text-tavyro-text"
-                    aria-current="page"
-                  >
-                    DE — Deutsch
-                  </span>
-                ) : (
-                  <a
-                    href={deHref}
-                    hrefLang="de"
-                    lang="de"
-                    className="touch-manipulation flex min-h-12 w-full items-center rounded-md border border-tavyro-border px-4 py-3 text-left text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    DE — Deutsch
-                  </a>
-                )}
-                {locale === "en" ? (
-                  <span
-                    className="min-h-12 w-full rounded-md border border-tavyro-text bg-tavyro-brand-50 px-4 py-3 text-left font-bold text-tavyro-text"
-                    aria-current="page"
-                  >
-                    EN — English
-                  </span>
-                ) : (
-                  <a
-                    href={enHref}
-                    hrefLang="en"
-                    lang="en"
-                    className="touch-manipulation flex min-h-12 w-full items-center rounded-md border border-tavyro-border px-4 py-3 text-left text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    EN — English
-                  </a>
-                )}
-              </div>
             </div>
           </div>
         )}
