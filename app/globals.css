@@ -70,6 +70,14 @@
     @apply py-16 md:py-24;
   }
 
+  /* Executive heading style – matches TaVyro Executive Intelligence page (Cormorant Garamond, light) */
+  .section-heading {
+    @apply font-serif font-light text-tavyro-brand-900;
+    font-size: clamp(1.85rem, 3vw, 2.75rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }

@@ -9,7 +9,7 @@ export default function Pricing() {
     <section id="angebote" className="section-padding bg-white">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-tavyro-text mb-4 text-center">
+          <h2 className="section-heading mb-4 text-center">
             {t("title")}
           </h2>
           

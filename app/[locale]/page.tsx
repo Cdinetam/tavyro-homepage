@@ -5,7 +5,6 @@ import { getTranslations } from "next-intl/server";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import FractionalChroIntro from "@/components/FractionalChroIntro";
-import Impact from "@/components/Impact";
 import TargetAudience from "@/components/TargetAudience";
 import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
@@ -81,7 +80,6 @@ export default async function Home({ params }: Props) {
       <Navigation />
       <Hero />
       <FractionalChroIntro />
-      <Impact />
       <TargetAudience />
       <Services />
       <Pricing />

@@ -7,10 +7,7 @@ export default function FractionalChroIntro() {
     <section id="fractional-chro-intro" className="section-padding bg-white">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-tavyro-brand-600">
-            {t("eyebrow")}
-          </p>
-          <h2 className="mb-6 text-3xl md:text-4xl font-bold text-tavyro-text">
+          <h2 className="section-heading mb-6">
             {t("title")}
           </h2>
           <div className="space-y-5 text-left md:text-center">
