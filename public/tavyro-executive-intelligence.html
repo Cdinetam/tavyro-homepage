@@ -225,15 +225,19 @@ p.sub{color:var(--tm);font-size:.94rem;font-weight:300;line-height:1.72;max-widt
 .rm-items li::before{content:'→';color:var(--p);font-size:.69rem;flex-shrink:0}
 .rm-items a{color:inherit;text-decoration:none;transition:color .17s}
 .rm-items a:hover{color:var(--p)}
-/* Integrierter Ansatz — vertikale Journey (nutzt .rm-card + Reveal-System) */
-.jrn{margin-top:2.6rem;max-width:760px}
-.jrn-step{position:relative;padding-left:66px;padding-bottom:1.5rem}
-.jrn-step:last-child{padding-bottom:0}
-.jrn-step:not(:last-child)::before{content:'';position:absolute;left:22px;top:52px;bottom:-.4rem;width:1px;background:var(--br)}
-.jrn-node{position:absolute;left:0;top:6px;width:45px;height:45px;border-radius:50%;background:var(--pl);border:1px solid var(--pmu);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--p)}
-.jrn-name{font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--p);font-weight:600;margin-bottom:.5rem}
-.jrn-body{color:var(--tm);font-size:.88rem;font-weight:300;line-height:1.72;margin-top:.15rem}
-.jrn-close{margin-top:2.4rem;max-width:720px;color:var(--tm);font-size:.95rem;font-weight:300;line-height:1.75}
+/* Positionierung — drei gleichwertige Faehigkeits-Karten (nutzt .rm-grid/.rm-card + Reveal) */
+.pcard{position:relative;display:flex;flex-direction:column;overflow:hidden;transition:opacity .48s ease,transform .25s ease,box-shadow .25s ease}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--p);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.pcard:hover{box-shadow:0 6px 22px rgba(38,84,100,.09);transform:translateY(-2px)}
+.pcard:hover::before{transform:scaleX(1)}
+.pcard-name{font-family:'Cormorant Garamond',serif;font-size:1.24rem;font-weight:500;color:var(--pd);margin-bottom:.35rem}
+.pcard-sub{font-size:.72rem;letter-spacing:.05em;color:var(--p);font-weight:600;margin-bottom:1rem}
+.pcard-body{color:var(--tm);font-size:.85rem;font-weight:300;line-height:1.72}
+.pcard-body + .pcard-body{margin-top:.85rem}
+.jrn-intro{margin-top:1.1rem}
+.jrn-intro p{color:var(--tm);font-size:.94rem;font-weight:300;line-height:1.72;max-width:640px}
+.jrn-intro p + p{margin-top:.9rem}
+.jrn-close{margin-top:2.4rem;max-width:760px;color:var(--tm);font-size:.95rem;font-weight:300;line-height:1.75}
 
 /* ── TABLE ── */
 .tbl-sec{padding:88px 5vw;background:var(--bga);border-bottom:1px solid var(--br)}
@@ -293,9 +297,6 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 @media(max-width:600px){
   .prod-grid,.ei-grid{grid-template-columns:1fr}
   .hero h1{font-size:2.35rem}
-  .jrn-step{padding-left:56px}
-  .jrn-node{width:40px;height:40px;font-size:1.05rem;top:4px}
-  .jrn-step:not(:last-child)::before{left:19.5px;top:46px}
 }
 
 </style>
@@ -477,38 +478,35 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 <!-- ROADMAP -->
 <section class="rm-sec">
   <div class="wrap">
-    <div class="eyebrow">Integrierter Executive-Ansatz</div>
-    <h2 class="sh">Eine Führungsfrage.<br><em>Drei Dimensionen der Klarheit.</em></h2>
-    <p class="sub" style="max-width:660px">Führungsentscheidungen scheitern selten an fehlenden Informationen. Sie scheitern, wenn vertrauliche Führungsfragen, organisationale Realität und Umsetzung getrennt behandelt werden. TaVyro verbindet diese drei Dimensionen zu einem integrierten Executive-Ansatz und begleitet CEOs und Geschäftsleitungen vom Unklaren zur handlungssicheren Entscheidung.</p>
+    <div class="eyebrow">Drei komplementäre Fähigkeiten</div>
+    <h2 class="sh">Executive Klarheit.<br><em>Unterschiedliche Herausforderungen erfordern unterschiedliche Ansätze.</em></h2>
+    <div class="jrn-intro">
+      <p>Jede Führungssituation ist anders. Manche Führungskräfte brauchen einen vertraulichen Raum, um eine sensible Entscheidung zu durchdenken. Andere suchen evidenzbasierte organisationale Erkenntnis oder erfahrene Unterstützung auf Führungsebene während einer Transformation.</p>
+      <p>TaVyro bietet drei komplementäre Fähigkeiten. Jede stiftet für sich Wert. Gemeinsam ergeben sie einen integrierten Executive-Ansatz für komplexe Führungsherausforderungen.</p>
+    </div>
 
-    <div class="jrn">
-      <div class="jrn-step">
-        <div class="jrn-node">01</div>
-        <div class="rm-card">
-          <div class="jrn-name">TEI® Trust Room</div>
-          <div class="rm-title">Reflektieren, bevor Sie handeln.</div>
-          <p class="jrn-body">Der TEI® Trust Room ist eine geschützte, KI-gestützte Umgebung für sensible Führungsfragen — bewusst getrennt von Enterprise-KI und Unternehmenssystemen, in die solche Themen oft nicht gehören. TaVyro bietet vertrauliche Reflexion auf Führungsebene, strukturiertes Denken und Sparring auf Executive-Niveau, bevor Entscheidungen fallen oder die Organisation einbezogen wird.</p>
-        </div>
+    <div class="rm-grid">
+      <div class="rm-card pcard">
+        <div class="pcard-name">TEI® Trust Room</div>
+        <div class="pcard-sub">Vertrauliche Reflexion auf Führungsebene.</div>
+        <p class="pcard-body">Der TEI® Trust Room ist eine geschützte, KI-gestützte Umgebung für sensible Führungsfragen — bewusst getrennt von Enterprise-KI und Unternehmenssystemen, in die solche Themen oft nicht gehören.</p>
+        <p class="pcard-body">TaVyro bietet vertrauliche Reflexion auf Führungsebene, strukturiertes Denken und Sparring auf C-Level, bevor wichtige Entscheidungen fallen.</p>
       </div>
-      <div class="jrn-step">
-        <div class="jrn-node">02</div>
-        <div class="rm-card">
-          <div class="jrn-name">TaVyro Executive Intelligence®</div>
-          <div class="rm-title">Verstehen, was wirklich geschieht.</div>
-          <p class="jrn-body">TaVyro Executive Intelligence® verbindet qualitative und quantitative organisationale Signale, um Muster zu erkennen, evidenzbasierte Hypothesen zu bilden und Entscheidungsklarheit zu schaffen. Statt isolierter Kennzahlen erhalten Führungskräfte ein integriertes Bild dessen, was in der Organisation tatsächlich geschieht — und erkennen die eigentlichen Ursachen statt einzelner Symptome.</p>
-        </div>
+      <div class="rm-card pcard">
+        <div class="pcard-name">TaVyro Executive Intelligence®</div>
+        <div class="pcard-sub">Evidenzbasierte organisationale Intelligenz.</div>
+        <p class="pcard-body">TaVyro Executive Intelligence® verbindet qualitative und quantitative organisationale Signale, um Muster zu erkennen, evidenzbasierte Hypothesen zu bilden und Entscheidungsklarheit auf Führungsebene zu schaffen.</p>
+        <p class="pcard-body">Statt isolierter Kennzahlen erhalten Führungskräfte ein integriertes Verständnis dessen, was in der Organisation tatsächlich geschieht.</p>
       </div>
-      <div class="jrn-step">
-        <div class="jrn-node">03</div>
-        <div class="rm-card">
-          <div class="jrn-name">Fractional CHRO</div>
-          <div class="rm-title">Erkenntnis in Umsetzung überführen.</div>
-          <p class="jrn-body">Erkenntnis schafft erst dann Wert, wenn sie zu Handlung führt. TaVyro unterstützt CEOs, Geschäftsleitungen und Verwaltungsräte dabei, strategische Entscheidungen in Governance, organisationale Veränderung, Führungs-Alignment und nachhaltige Umsetzung zu überführen.</p>
-        </div>
+      <div class="rm-card pcard">
+        <div class="pcard-name">Fractional CHRO</div>
+        <div class="pcard-sub">Führung und Umsetzung auf Executive-Ebene.</div>
+        <p class="pcard-body">Erkenntnis schafft erst dann Wert, wenn sie zu Handlung wird.</p>
+        <p class="pcard-body">TaVyro unterstützt CEOs, Geschäftsleitungen und Verwaltungsräte dabei, strategische Entscheidungen in Governance, organisationale Veränderung, Führungs-Alignment und nachhaltige Umsetzung zu überführen.</p>
       </div>
     </div>
 
-    <p class="jrn-close">Von vertraulicher Reflexion über organisationale Intelligenz bis zur erfolgreichen Umsetzung: TaVyro begleitet Führungsentscheidungen vom ersten Gedanken bis zur nachhaltigen Wirkung in der Organisation.</p>
+    <p class="jrn-close">Jede Fähigkeit stiftet für sich Wert. Kombiniert ergeben sie einen integrierten Executive-Ansatz, der Führungskräfte von vertraulicher Reflexion über fundierte Entscheidungen bis zur erfolgreichen Umsetzung begleitet.</p>
   </div>
 </section>
 

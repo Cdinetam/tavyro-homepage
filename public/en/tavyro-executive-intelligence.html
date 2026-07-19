@@ -225,15 +225,19 @@ p.sub{color:var(--tm);font-size:.94rem;font-weight:300;line-height:1.72;max-widt
 .rm-items li::before{content:'→';color:var(--p);font-size:.69rem;flex-shrink:0}
 .rm-items a{color:inherit;text-decoration:none;transition:color .17s}
 .rm-items a:hover{color:var(--p)}
-/* Integrated approach — vertical journey (reuses .rm-card + reveal system) */
-.jrn{margin-top:2.6rem;max-width:760px}
-.jrn-step{position:relative;padding-left:66px;padding-bottom:1.5rem}
-.jrn-step:last-child{padding-bottom:0}
-.jrn-step:not(:last-child)::before{content:'';position:absolute;left:22px;top:52px;bottom:-.4rem;width:1px;background:var(--br)}
-.jrn-node{position:absolute;left:0;top:6px;width:45px;height:45px;border-radius:50%;background:var(--pl);border:1px solid var(--pmu);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--p)}
-.jrn-name{font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--p);font-weight:600;margin-bottom:.5rem}
-.jrn-body{color:var(--tm);font-size:.88rem;font-weight:300;line-height:1.72;margin-top:.15rem}
-.jrn-close{margin-top:2.4rem;max-width:720px;color:var(--tm);font-size:.95rem;font-weight:300;line-height:1.75}
+/* Positioning — three equal capability cards (reuses .rm-grid/.rm-card + reveal) */
+.pcard{position:relative;display:flex;flex-direction:column;overflow:hidden;transition:opacity .48s ease,transform .25s ease,box-shadow .25s ease}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--p);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.pcard:hover{box-shadow:0 6px 22px rgba(38,84,100,.09);transform:translateY(-2px)}
+.pcard:hover::before{transform:scaleX(1)}
+.pcard-name{font-family:'Cormorant Garamond',serif;font-size:1.24rem;font-weight:500;color:var(--pd);margin-bottom:.35rem}
+.pcard-sub{font-size:.72rem;letter-spacing:.05em;color:var(--p);font-weight:600;margin-bottom:1rem}
+.pcard-body{color:var(--tm);font-size:.85rem;font-weight:300;line-height:1.72}
+.pcard-body + .pcard-body{margin-top:.85rem}
+.jrn-intro{margin-top:1.1rem}
+.jrn-intro p{color:var(--tm);font-size:.94rem;font-weight:300;line-height:1.72;max-width:640px}
+.jrn-intro p + p{margin-top:.9rem}
+.jrn-close{margin-top:2.4rem;max-width:760px;color:var(--tm);font-size:.95rem;font-weight:300;line-height:1.75}
 
 /* ── TABLE ── */
 .tbl-sec{padding:88px 5vw;background:var(--bga);border-bottom:1px solid var(--br)}
@@ -293,9 +297,6 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 @media(max-width:600px){
   .prod-grid,.ei-grid{grid-template-columns:1fr}
   .hero h1{font-size:2.35rem}
-  .jrn-step{padding-left:56px}
-  .jrn-node{width:40px;height:40px;font-size:1.05rem;top:4px}
-  .jrn-step:not(:last-child)::before{left:19.5px;top:46px}
 }
 
 </style>
@@ -477,38 +478,35 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 <!-- ROADMAP -->
 <section class="rm-sec">
   <div class="wrap">
-    <div class="eyebrow">Integrated executive approach</div>
-    <h2 class="sh">One leadership challenge.<br><em>Three dimensions of clarity.</em></h2>
-    <p class="sub" style="max-width:660px">Executive decisions rarely fail because of missing information. They fail when confidential leadership questions, organisational reality and execution are treated separately. TaVyro connects these three dimensions into one integrated executive approach, helping CEOs and executive teams move from uncertainty to confident action.</p>
+    <div class="eyebrow">Three complementary capabilities</div>
+    <h2 class="sh">Executive clarity.<br><em>Different challenges require different approaches.</em></h2>
+    <div class="jrn-intro">
+      <p>Every executive situation is different. Some leaders need a confidential space to think through a sensitive decision. Others seek evidence-based organisational insight or experienced executive support during transformation.</p>
+      <p>TaVyro offers three complementary capabilities. Each delivers value independently. Together, they provide an integrated executive approach for complex leadership challenges.</p>
+    </div>
 
-    <div class="jrn">
-      <div class="jrn-step">
-        <div class="jrn-node">01</div>
-        <div class="rm-card">
-          <div class="jrn-name">TEI® Trust Room</div>
-          <div class="rm-title">Reflect before you act.</div>
-          <p class="jrn-body">The TEI® Trust Room is a protected, AI-supported environment for sensitive leadership questions — deliberately separated from enterprise AI and corporate systems where such topics often do not belong. TaVyro provides confidential executive reflection, structured thinking and executive-level sparring before decisions are made or the organisation becomes involved.</p>
-        </div>
+    <div class="rm-grid">
+      <div class="rm-card pcard">
+        <div class="pcard-name">TEI® Trust Room</div>
+        <div class="pcard-sub">Confidential executive reflection.</div>
+        <p class="pcard-body">The TEI® Trust Room is a protected, AI-supported environment for sensitive leadership questions — deliberately separated from enterprise AI and corporate systems where such topics often do not belong.</p>
+        <p class="pcard-body">TaVyro provides confidential executive reflection, structured thinking and C-level sparring before important decisions are made.</p>
       </div>
-      <div class="jrn-step">
-        <div class="jrn-node">02</div>
-        <div class="rm-card">
-          <div class="jrn-name">TaVyro Executive Intelligence®</div>
-          <div class="rm-title">Understand what is really happening.</div>
-          <p class="jrn-body">TaVyro Executive Intelligence® combines qualitative and quantitative organisational signals to identify patterns, generate evidence-based hypotheses and create decision clarity. Instead of isolated metrics, leaders receive an integrated view of what is actually happening across the organisation, revealing underlying causes rather than isolated symptoms.</p>
-        </div>
+      <div class="rm-card pcard">
+        <div class="pcard-name">TaVyro Executive Intelligence®</div>
+        <div class="pcard-sub">Evidence-based organisational intelligence.</div>
+        <p class="pcard-body">TaVyro Executive Intelligence® combines qualitative and quantitative organisational signals to identify patterns, generate evidence-based hypotheses and create executive decision clarity.</p>
+        <p class="pcard-body">Instead of isolated metrics, leaders gain an integrated understanding of what is actually happening across the organisation.</p>
       </div>
-      <div class="jrn-step">
-        <div class="jrn-node">03</div>
-        <div class="rm-card">
-          <div class="jrn-name">Fractional CHRO</div>
-          <div class="rm-title">Turn insight into execution.</div>
-          <p class="jrn-body">Insight only creates value when it leads to action. TaVyro supports CEOs, executive teams and boards in translating strategic decisions into governance, organisational change, leadership alignment and sustainable execution.</p>
-        </div>
+      <div class="rm-card pcard">
+        <div class="pcard-name">Fractional CHRO</div>
+        <div class="pcard-sub">Executive leadership and implementation.</div>
+        <p class="pcard-body">Insight creates value only when it becomes action.</p>
+        <p class="pcard-body">TaVyro supports CEOs, executive teams and boards in translating strategic decisions into governance, organisational change, leadership alignment and sustainable execution.</p>
       </div>
     </div>
 
-    <p class="jrn-close">From confidential reflection to organisational intelligence and successful execution, TaVyro supports executive decision-making from first thought to lasting organisational impact.</p>
+    <p class="jrn-close">Each capability delivers value on its own. Combined, they create an integrated executive approach that helps leaders move from confidential reflection to informed decisions and successful execution.</p>
   </div>
 </section>
 

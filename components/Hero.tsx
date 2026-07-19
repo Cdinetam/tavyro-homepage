@@ -7,13 +7,6 @@ export default function Hero() {
   const t = useTranslations("Hero");
   const locale = useLocale();
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <section id="top" className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden">
       {/* Hintergrundbild ohne Overlay */}
@@ -39,32 +32,43 @@ export default function Hero() {
             })}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-start">
             <Link
               href="/erstgespraech-buchen"
               className="btn-primary w-full sm:w-auto text-center"
             >
               {t("ctaPrimary")}
             </Link>
-            <button
-              onClick={() => scrollToSection("leistungen")}
-              className="btn-secondary w-full sm:w-auto"
-            >
-              {t("ctaSecondary")}
-            </button>
             {(locale === "en" || locale === "de") && (
-              <a
-                href={
-                  locale === "en"
-                    ? "/en/tavyro-hr-health-check.html"
-                    : "/tavyro-hr-health-check.html"
-                }
-                className="btn-primary w-full sm:w-auto text-center"
-              >
-                {locale === "de"
-                  ? "CEO/GL Selbstcheck"
-                  : "CEO/Executive Team Self-Check"}
-              </a>
+              <div className="group relative w-full sm:w-auto">
+                <a
+                  href={
+                    locale === "en"
+                      ? "/en/tavyro-hr-health-check.html"
+                      : "/tavyro-hr-health-check.html"
+                  }
+                  className="btn-primary block w-full text-center sm:w-auto"
+                >
+                  {locale === "de"
+                    ? "CEO/GL Selbstcheck"
+                    : "CEO/Executive Team Self-Check"}
+                </a>
+                <div
+                  role="tooltip"
+                  className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-3 w-80 max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-lg bg-white/95 p-4 text-left opacity-0 shadow-xl ring-1 ring-black/5 backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100"
+                >
+                  <p className="mb-1.5 font-semibold text-tavyro-text">
+                    {locale === "de"
+                      ? "Fokus auf das, was nur Sie tun können."
+                      : "Focus on what only you can do."}
+                  </p>
+                  <p className="text-sm leading-relaxed text-tavyro-text2">
+                    {locale === "de"
+                      ? "Schätzen Sie die Opportunitätskosten von Führungszeit, die in operative HR- und Organisationsthemen fliesst. Ein Fractional CHRO ermöglicht Ihrer Geschäftsleitung, sich auf Kunden, Wachstum und strategische Entscheidungen zu konzentrieren."
+                      : "Estimate the opportunity costs of executive time spent on operational HR and organisational matters. A Fractional CHRO enables your leadership team to focus on customers, growth and strategic decisions."}
+                  </p>
+                </div>
+              </div>
             )}
           </div>
         </div>
