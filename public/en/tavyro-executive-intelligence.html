@@ -225,6 +225,17 @@ p.sub{color:var(--tm);font-size:.94rem;font-weight:300;line-height:1.72;max-widt
 .rm-items li::before{content:'→';color:var(--p);font-size:.69rem;flex-shrink:0}
 .rm-items a{color:inherit;text-decoration:none;transition:color .17s}
 .rm-items a:hover{color:var(--p)}
+/* Integrated approach — vertical journey (reuses .rm-card + reveal system) */
+.jrn{margin-top:2.6rem;max-width:760px}
+.jrn-step{position:relative;padding-left:66px;padding-bottom:1.5rem}
+.jrn-step:last-child{padding-bottom:0}
+.jrn-step:not(:last-child)::before{content:'';position:absolute;left:22px;top:52px;bottom:-.4rem;width:1px;background:var(--br)}
+.jrn-node{position:absolute;left:0;top:6px;width:45px;height:45px;border-radius:50%;background:var(--pl);border:1px solid var(--pmu);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--p)}
+.jrn-name{font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--p);font-weight:600;margin-bottom:.5rem}
+.jrn-body{color:var(--tm);font-size:.88rem;font-weight:300;line-height:1.72;margin-top:.15rem}
+.jrn-close{margin-top:2.4rem;max-width:720px;color:var(--tm);font-size:.95rem;font-weight:300;line-height:1.75}
+.jrn-cta{margin-top:1.5rem;display:flex;align-items:center;flex-wrap:wrap;gap:1.1rem}
+.jrn-cta span{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:400;color:var(--pd)}
 
 /* ── TABLE ── */
 .tbl-sec{padding:88px 5vw;background:var(--bga);border-bottom:1px solid var(--br)}
@@ -284,6 +295,9 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 @media(max-width:600px){
   .prod-grid,.ei-grid{grid-template-columns:1fr}
   .hero h1{font-size:2.35rem}
+  .jrn-step{padding-left:56px}
+  .jrn-node{width:40px;height:40px;font-size:1.05rem;top:4px}
+  .jrn-step:not(:last-child)::before{left:19.5px;top:46px}
 }
 
 </style>
@@ -465,12 +479,41 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 <!-- ROADMAP -->
 <section class="rm-sec">
   <div class="wrap">
-    <div class="eyebrow">Implementation horizon</div>
-    <h2 class="sh">Three phases.<br><em>From now to next.</em></h2>
-    <div class="rm-grid">
-      <div class="rm-card"><div class="rm-dot" style="background:var(--p)"></div><div class="rm-lbl">Immediate</div><div class="rm-title">Quick Wins</div><ul class="rm-items"><li><a href="/en#leistungen">AI Readiness Assessment</a></li><li><a href="/en/tavyro-hr-health-check.html">CEO/Executive Team Self-Check Full Report</a></li><li><a href="/en#leistungen">Fractional CHRO + AI</a></li><li><a href="/en#angebote">AI leadership programme</a></li></ul></div>
-      <div class="rm-card"><div class="rm-dot" style="background:#b7950b"></div><div class="rm-lbl">6–12 months</div><div class="rm-title">Improve decision logic and steering</div><ul class="rm-items"><li>Detect decision bottlenecks earlier</li><li>Connect governance and AI in a controlled way</li><li>Compare executive patterns across companies</li><li>Establish a practical intelligence methodology</li></ul></div>
-      <div class="rm-card"><div class="rm-dot" style="background:var(--brd)"></div><div class="rm-lbl">13–36 months</div><div class="rm-title">Scale TaVyro Executive Intelligence®</div><ul class="rm-items"><li>Embed TaVyro Executive Intelligence®</li><li>Systematise organisational patterns and decision logic</li><li>Further standardise practice-based intelligence methodology</li><li>Establish continuous TaVyro Executive Intelligence® services</li></ul></div>
+    <div class="eyebrow">Integrated executive approach</div>
+    <h2 class="sh">One leadership challenge.<br><em>Three dimensions of clarity.</em></h2>
+    <p class="sub" style="max-width:660px">Executive decisions rarely fail because of missing information. They fail when confidential leadership questions, organisational reality and execution are treated separately. TaVyro connects these three dimensions into one integrated executive approach, helping CEOs and executive teams move from uncertainty to confident action.</p>
+
+    <div class="jrn">
+      <div class="jrn-step">
+        <div class="jrn-node">01</div>
+        <div class="rm-card">
+          <div class="jrn-name">TEI® Trust Room</div>
+          <div class="rm-title">Reflect before you act.</div>
+          <p class="jrn-body">The TEI® Trust Room is a protected, AI-supported environment for sensitive leadership questions — deliberately separated from enterprise AI and corporate systems where such topics often do not belong. TaVyro provides confidential executive reflection, structured thinking and executive-level sparring before decisions are made or the organisation becomes involved.</p>
+        </div>
+      </div>
+      <div class="jrn-step">
+        <div class="jrn-node">02</div>
+        <div class="rm-card">
+          <div class="jrn-name">TaVyro Executive Intelligence®</div>
+          <div class="rm-title">Understand what is really happening.</div>
+          <p class="jrn-body">TaVyro Executive Intelligence® combines qualitative and quantitative organisational signals to identify patterns, generate evidence-based hypotheses and create decision clarity. Instead of isolated metrics, leaders receive an integrated view of what is actually happening across the organisation, revealing underlying causes rather than isolated symptoms.</p>
+        </div>
+      </div>
+      <div class="jrn-step">
+        <div class="jrn-node">03</div>
+        <div class="rm-card">
+          <div class="jrn-name">Fractional CHRO</div>
+          <div class="rm-title">Turn insight into execution.</div>
+          <p class="jrn-body">Insight only creates value when it leads to action. TaVyro supports CEOs, executive teams and boards in translating strategic decisions into governance, organisational change, leadership alignment and sustainable execution.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="jrn-close">From confidential reflection to organisational intelligence and successful execution, TaVyro supports executive decision-making from first thought to lasting organisational impact.</p>
+    <div class="jrn-cta">
+      <span>Ready to discuss your leadership challenge?</span>
+      <a href="/en/erstgespraech-buchen" class="btn-s">Book a consultation</a>
     </div>
   </div>
 </section>

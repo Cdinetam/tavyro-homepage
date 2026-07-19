@@ -225,6 +225,17 @@ p.sub{color:var(--tm);font-size:.94rem;font-weight:300;line-height:1.72;max-widt
 .rm-items li::before{content:'→';color:var(--p);font-size:.69rem;flex-shrink:0}
 .rm-items a{color:inherit;text-decoration:none;transition:color .17s}
 .rm-items a:hover{color:var(--p)}
+/* Integrierter Ansatz — vertikale Journey (nutzt .rm-card + Reveal-System) */
+.jrn{margin-top:2.6rem;max-width:760px}
+.jrn-step{position:relative;padding-left:66px;padding-bottom:1.5rem}
+.jrn-step:last-child{padding-bottom:0}
+.jrn-step:not(:last-child)::before{content:'';position:absolute;left:22px;top:52px;bottom:-.4rem;width:1px;background:var(--br)}
+.jrn-node{position:absolute;left:0;top:6px;width:45px;height:45px;border-radius:50%;background:var(--pl);border:1px solid var(--pmu);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--p)}
+.jrn-name{font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--p);font-weight:600;margin-bottom:.5rem}
+.jrn-body{color:var(--tm);font-size:.88rem;font-weight:300;line-height:1.72;margin-top:.15rem}
+.jrn-close{margin-top:2.4rem;max-width:720px;color:var(--tm);font-size:.95rem;font-weight:300;line-height:1.75}
+.jrn-cta{margin-top:1.5rem;display:flex;align-items:center;flex-wrap:wrap;gap:1.1rem}
+.jrn-cta span{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:400;color:var(--pd)}
 
 /* ── TABLE ── */
 .tbl-sec{padding:88px 5vw;background:var(--bga);border-bottom:1px solid var(--br)}
@@ -284,6 +295,9 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 @media(max-width:600px){
   .prod-grid,.ei-grid{grid-template-columns:1fr}
   .hero h1{font-size:2.35rem}
+  .jrn-step{padding-left:56px}
+  .jrn-node{width:40px;height:40px;font-size:1.05rem;top:4px}
+  .jrn-step:not(:last-child)::before{left:19.5px;top:46px}
 }
 
 </style>
@@ -465,12 +479,41 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 <!-- ROADMAP -->
 <section class="rm-sec">
   <div class="wrap">
-    <div class="eyebrow">Umsetzungshorizont</div>
-    <h2 class="sh">Drei Phasen.<br><em>Von jetzt bis morgen.</em></h2>
-    <div class="rm-grid">
-      <div class="rm-card"><div class="rm-dot" style="background:var(--p)"></div><div class="rm-lbl">Sofort umsetzbar</div><div class="rm-title">Quick Wins</div><ul class="rm-items"><li><a href="/de#leistungen">AI Readiness Assessment</a></li><li><a href="/tavyro-hr-health-check.html">CEO/GL-Selbstcheck Full Report</a></li><li><a href="/de#leistungen">Fractional CHRO + AI</a></li><li><a href="/de#angebote">AI Leadership Programm</a></li></ul></div>
-      <div class="rm-card"><div class="rm-dot" style="background:#b7950b"></div><div class="rm-lbl">6–12 Monate</div><div class="rm-title">Entscheidungslogik und Steuerung verbessern</div><ul class="rm-items"><li>Entscheidungsengpässe früher erkennen</li><li>Governance und AI kontrolliert verbinden</li><li>Executive Muster über mehrere Unternehmen vergleichen</li><li>Praxisnahe Intelligence Methodik etablieren</li></ul></div>
-      <div class="rm-card"><div class="rm-dot" style="background:var(--brd)"></div><div class="rm-lbl">13–36 Monate</div><div class="rm-title">TaVyro Executive Intelligence® skalieren</div><ul class="rm-items"><li>TaVyro Executive Intelligence® verankern</li><li>Organisationsmuster und Entscheidungslogiken systematisieren</li><li>Praxisbasierte Intelligence Methodik weiter standardisieren</li><li>Kontinuierliche TaVyro Executive Intelligence® Services etablieren</li></ul></div>
+    <div class="eyebrow">Integrierter Executive-Ansatz</div>
+    <h2 class="sh">Eine Führungsfrage.<br><em>Drei Dimensionen der Klarheit.</em></h2>
+    <p class="sub" style="max-width:660px">Führungsentscheidungen scheitern selten an fehlenden Informationen. Sie scheitern, wenn vertrauliche Führungsfragen, organisationale Realität und Umsetzung getrennt behandelt werden. TaVyro verbindet diese drei Dimensionen zu einem integrierten Executive-Ansatz und begleitet CEOs und Geschäftsleitungen vom Unklaren zur handlungssicheren Entscheidung.</p>
+
+    <div class="jrn">
+      <div class="jrn-step">
+        <div class="jrn-node">01</div>
+        <div class="rm-card">
+          <div class="jrn-name">TEI® Trust Room</div>
+          <div class="rm-title">Reflektieren, bevor Sie handeln.</div>
+          <p class="jrn-body">Der TEI® Trust Room ist eine geschützte, KI-gestützte Umgebung für sensible Führungsfragen — bewusst getrennt von Enterprise-KI und Unternehmenssystemen, in die solche Themen oft nicht gehören. TaVyro bietet vertrauliche Reflexion auf Führungsebene, strukturiertes Denken und Sparring auf Executive-Niveau, bevor Entscheidungen fallen oder die Organisation einbezogen wird.</p>
+        </div>
+      </div>
+      <div class="jrn-step">
+        <div class="jrn-node">02</div>
+        <div class="rm-card">
+          <div class="jrn-name">TaVyro Executive Intelligence®</div>
+          <div class="rm-title">Verstehen, was wirklich geschieht.</div>
+          <p class="jrn-body">TaVyro Executive Intelligence® verbindet qualitative und quantitative organisationale Signale, um Muster zu erkennen, evidenzbasierte Hypothesen zu bilden und Entscheidungsklarheit zu schaffen. Statt isolierter Kennzahlen erhalten Führungskräfte ein integriertes Bild dessen, was in der Organisation tatsächlich geschieht — und erkennen die eigentlichen Ursachen statt einzelner Symptome.</p>
+        </div>
+      </div>
+      <div class="jrn-step">
+        <div class="jrn-node">03</div>
+        <div class="rm-card">
+          <div class="jrn-name">Fractional CHRO</div>
+          <div class="rm-title">Erkenntnis in Umsetzung überführen.</div>
+          <p class="jrn-body">Erkenntnis schafft erst dann Wert, wenn sie zu Handlung führt. TaVyro unterstützt CEOs, Geschäftsleitungen und Verwaltungsräte dabei, strategische Entscheidungen in Governance, organisationale Veränderung, Führungs-Alignment und nachhaltige Umsetzung zu überführen.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="jrn-close">Von vertraulicher Reflexion über organisationale Intelligenz bis zur erfolgreichen Umsetzung: TaVyro begleitet Führungsentscheidungen vom ersten Gedanken bis zur nachhaltigen Wirkung in der Organisation.</p>
+    <div class="jrn-cta">
+      <span>Bereit, Ihre Führungsfrage zu besprechen?</span>
+      <a href="/de/erstgespraech-buchen" class="btn-s">Erstgespräch buchen</a>
     </div>
   </div>
 </section>
