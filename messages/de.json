@@ -156,17 +156,27 @@
   },
   "About": {
     "title": "Über TaVyro",
-    "description": "TaVyro ist ein <strong>Boutique Advisory mit Sitz in Zürich</strong> für CEOs, Geschäftsleitungen und Verwaltungsräte. Der Fokus liegt auf Führung, Organisation und HR-Governance sowie auf der pragmatischen Weiterentwicklung von People- und HR-Strukturen – von der Standortbestimmung über die Priorisierung bis zur Umsetzung in klaren, wirksamen Schritten.",
-    "leadAdvisor": "Lead Advisor: <strong>Tam Nguyen</strong> mit über 20 Jahren Erfahrung als CHRO und HR-Führungskraft in internationalen und Schweizer Unternehmen.",
-    "accountabilityBlock": "TaVyro übernimmt die Verantwortung auf Geschäftsleitungsebene. Bei Bedarf werden gezielt Senior Experten beigezogen, die Gesamtverantwortung bleibt bei TaVyro. Fokus auf pragmatische Lösungen für Führung und Organisation, digitale und KI-basierte Ansätze werden dort eingesetzt, wo sie echten Mehrwert schaffen.",
-    "qualificationsTitle": "Ausbildungen & Qualifikationen",
-    "qualifications": {
-      "0": "Arbeits- und Organisationspsychologie (lic. phil./MSc)",
-      "1": "CAS Executive Management",
-      "2": "CAS Digitalisierung & Künstliche Intelligenz im HRM",
-      "3": "Arbeitssprache: D/E/F"
+    "description": "TaVyro ist ein Boutique Advisory mit Sitz in Zürich. Wir unterstützen CEOs, Geschäftsleitungen und Verwaltungsräte bei anspruchsvollen Fragen rund um People, Organisation, Führung und Transformation – in Schweizer und internationalen Unternehmen.",
+    "founderTitle": "Tam Nguyen – Gründer und Lead Advisor",
+    "bio1": "Tam Nguyen verfügt über mehr als 20 Jahre Erfahrung im Schweizerischen und internationalen HR-Management, davon mehrere Jahre als CHRO und Mitglied der Geschäftsleitung. Er war für Organisationen in der Schweiz, Europa und Asien tätig und kennt sowohl global aufgestellte Unternehmen als auch mittelständische Schweizer Strukturen.",
+    "bio2": "Als CHRO verantwortete er neben HR auch weitere Unternehmensfunktionen und war Mitglied von Verwaltungs- und Aufsichtsgremien in China und Korea. Seine Erfahrung umfasst unter anderem:",
+    "experience": {
+      "0": "HR-Strategie und Organisationsentwicklung",
+      "1": "Transformationen, Reorganisationen und Change",
+      "2": "Führung, Kultur und Executive Sparring",
+      "3": "Schweizer Arbeitsrecht und HR-Governance",
+      "4": "HR-Digitalisierung, People Analytics und KI",
+      "5": "Internationale und interkulturelle Zusammenarbeit"
     },
-    "fractionalChroLandingTeaser": "Fokus Zürich und Umgebung: die <link>Seite Fractional CHRO Zürich</link> mit Umfang, Abgrenzung und FAQ."
+    "bio3": "Tam Nguyen verbindet arbeits- und organisationspsychologische Expertise mit langjähriger Führungserfahrung und einem pragmatischen Blick auf die Umsetzung. Er unterstützt Geschäftsleitungen nicht nur beratend, sondern übernimmt als Fractional CHRO auch ausgewählte Verantwortung auf GL-Ebene.",
+    "bio4": "Je nach Aufgabenstellung zieht TaVyro gezielt erfahrene Spezialistinnen und Spezialisten bei. Die Gesamtverantwortung und die persönliche Begleitung bleiben bei Tam Nguyen.",
+    "qualificationsTitle": "Ausbildungen und Qualifikationen",
+    "qualifications": {
+      "0": "Studium der Arbeits- und Organisationspsychologie, Universität Bern",
+      "1": "CAS Executive Management",
+      "2": "CAS Digitalisierung und Künstliche Intelligenz im HRM",
+      "3": "Arbeitssprachen: Deutsch, Englisch und Französisch"
+    }
   },
   "QuoteBanner": {
     "testimonials": {

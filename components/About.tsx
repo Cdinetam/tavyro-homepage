@@ -1,57 +1,66 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import QuoteBanner from "@/components/QuoteBanner";
+
+function listFromRaw(raw: Record<string, string>): string[] {
+  return Object.keys(raw)
+    .sort((a, b) => Number(a) - Number(b))
+    .map((key) => raw[key]);
+}
 
 export default function About() {
   const t = useTranslations("About");
-  const locale = useLocale();
 
-  const qualifications = [
-    t("qualifications.0"),
-    t("qualifications.1"),
-    t("qualifications.2"),
-    t("qualifications.3"),
-  ];
+  const experience = listFromRaw(t.raw("experience") as Record<string, string>);
+  const qualifications = listFromRaw(
+    t.raw("qualifications") as Record<string, string>
+  );
 
   return (
     <section id="ueber" className="section-padding bg-white">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
-          <h2 className="section-heading mb-6 text-center">
-            {t("title")}
-          </h2>
+          <h2 className="section-heading mb-6 text-center">{t("title")}</h2>
 
           <div className="space-y-8">
             <div className="text-center">
               <div className="max-w-3xl mx-auto space-y-4 md:space-y-5">
                 <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
-                  {t.rich("description", {
-                    strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
-                  })}
+                  {t("description")}
+                </p>
+
+                <h3 className="pt-2 text-xl md:text-2xl font-semibold text-tavyro-text">
+                  {t("founderTitle")}
+                </h3>
+
+                <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
+                  {t("bio1")}
                 </p>
                 <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
-                  {t.rich("leadAdvisor", {
-                    strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
-                  })}
+                  {t("bio2")}
+                </p>
+
+                <ul className="space-y-3 text-left max-w-2xl mx-auto">
+                  {experience.map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start text-tavyro-text text-base md:text-lg"
+                    >
+                      <span className="mr-3 text-tavyro-brand-500 font-bold text-lg flex-shrink-0">
+                        •
+                      </span>
+                      <span className="font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
+                  {t("bio3")}
                 </p>
                 <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
-                  {t("accountabilityBlock")}
+                  {t("bio4")}
                 </p>
-                {(locale === "en" || locale === "de") && (
-                  <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
-                    {t.rich("fractionalChroLandingTeaser", {
-                      link: (chunks) => (
-                        <Link href="/fractional-chro-zurich"
-                          className="text-tavyro-brand-700 font-medium underline underline-offset-4 hover:text-tavyro-brand-900"
-                        >
-                          {chunks}
-                        </Link>
-                      ),
-                    })}
-                  </p>
-                )}
               </div>
             </div>
 
