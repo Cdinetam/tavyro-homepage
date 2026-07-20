@@ -49,64 +49,109 @@
 </head>
 <body class="bg-paper text-ink font-sans antialiased" style="line-height:1.5;">
 <style>
-  .tr-burger{display:none;align-items:center;justify-content:center;color:#0f5a5e;cursor:pointer;padding:6px;margin:-6px;-webkit-tap-highlight-color:transparent}
-  .tr-mtop{display:none;align-items:center;gap:.75rem;flex-shrink:0}
-  .tr-mnav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#fff;border-top:1px solid rgb(223 231 228);border-bottom:1px solid rgb(223 231 228);box-shadow:0 10px 24px rgba(0,0,0,.08);padding:.35rem 1.75rem 1.25rem;z-index:60}
-  .tr-mnav a{padding:.85rem .25rem;font-size:15px;color:#16323f;text-decoration:none;border-bottom:1px solid #eef3f2}
-  .tr-mnav .tr-mcta{margin-top:.8rem;background:#0f5a5e;color:#fff;text-align:center;border-radius:8px;padding:.85rem 1rem;font-weight:600;border-bottom:0}
-  .tr-mnav .tr-mlang{display:flex;gap:.5rem;align-items:center;padding-top:.9rem;font-weight:600;font-size:14px;border-bottom:0}
-  .tr-mnav .tr-mlang a{padding:0;border-bottom:0}
-  @media(max-width:1023px){
-    .tr-burger{display:inline-flex}
-    .tr-mtop{display:flex}
-    .tr-mtoggle:checked ~ .tr-mnav{display:flex}
-  }
+/* Header matches Home / Navigation.tsx */
+body{padding-top:6rem}
+@media(min-width:768px){body{padding-top:7rem}}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border-bottom:1px solid #D7DDE1;color-scheme:light}
+.header-wrap{max-width:80rem;margin:0 auto;padding-left:1rem;padding-right:1rem}
+@media(min-width:640px){.header-wrap{padding-left:1.5rem;padding-right:1.5rem}}
+@media(min-width:1024px){.header-wrap{padding-left:2rem;padding-right:2rem}}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:6rem;padding:1rem 0;overflow:visible;flex-wrap:nowrap}
+@media(min-width:768px){.header-inner{height:7rem;padding:1.5rem 0;gap:2rem}}
+.header-logo{display:flex;flex-shrink:0;align-items:center;text-decoration:none;padding-left:.5rem}
+@media(min-width:640px){.header-logo{padding-left:1rem}}
+@media(min-width:768px){.header-logo{padding-left:2rem;margin-right:2rem}}
+@media(min-width:1024px){.header-logo{padding-left:2.5rem;margin-right:3rem}}
+@media(min-width:1280px){.header-logo{margin-right:4rem}}
+.header-logo img{display:block;height:2.75rem;width:auto;max-width:8.5rem}
+@media(min-width:640px){.header-logo img{height:3rem;max-width:12.5rem}}
+@media(min-width:768px){.header-logo img{height:3.5rem;max-width:13.5rem}}
+@media(min-width:1024px){.header-logo img{height:4rem;max-width:15rem}}
+.header-bar{display:flex;flex:1;min-width:0;align-items:center;justify-content:flex-end;gap:1rem;flex-wrap:nowrap}
+.header-nav{display:none;align-items:center;flex-shrink:1;min-width:0;gap:0;flex-wrap:nowrap}
+.header-nav a{font-size:.875rem;line-height:1.25rem;font-weight:500;color:#506364;text-decoration:none!important;border-bottom:none!important;box-shadow:none!important;white-space:nowrap;transition:color .2s;-webkit-tap-highlight-color:transparent}
+.header-nav a:hover,.header-nav a:visited,.header-nav a:focus{color:#132A32;text-decoration:none!important;border-bottom:none!important}
+.header-end{display:none;align-items:center;flex-shrink:0;gap:1rem}
+.header-lang{display:flex;align-items:center;gap:.25rem;font-size:.875rem;font-weight:500}
+.lang-active,.lang-link,.lang-cell{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;min-width:2.75rem;padding:0 .5rem;border-radius:.375rem;text-decoration:none;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.lang-active{font-weight:700;color:#132A32;cursor:default}
+.lang-link{color:#506364}
+.lang-link:hover{color:#132A32;background:#EEF1F3}
+.lang-sep{color:#D7DDE1;user-select:none;line-height:1}
+.nav-cta{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;padding:.625rem 1.25rem;font-size:.875rem;line-height:1.25rem;font-weight:500;color:#fff!important;background:#265464!important;border-radius:.5rem;text-decoration:none!important;white-space:nowrap;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);transition:all .2s}
+.nav-cta:hover{background:#1D404C!important;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}
+.nav-toggle{display:flex;align-items:center;justify-content:center;padding:.75rem;margin:0;border:0;background:transparent;color:#506364;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;flex-shrink:0}
+.nav-toggle svg{width:1.5rem;height:1.5rem;display:block}
+.nav-check{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;opacity:0;pointer-events:none}
+.nav-mobile-only{display:block}
+@media(min-width:768px){
+  .header-nav{display:flex;gap:1.5rem}
+  .header-end{display:flex}
+  .nav-toggle{display:none}
+  .nav-mobile-only{display:none!important}
+}
+@media(min-width:1024px){.header-nav{gap:2rem}.header-end{gap:1rem}}
+@media(max-width:1200px) and (min-width:768px){.header-nav{gap:1.25rem}.header-nav a{font-size:.8125rem}}
+@media(max-width:767px){
+  body{padding-top:6rem}
+  .header-inner{height:6rem;padding:1rem 0}
+  .header-logo{flex:0 1 auto;min-width:0;max-width:calc(100% - 3.5rem)}
+  .header-logo img{height:3.5rem;max-width:100%;object-fit:contain}
+  .header-wrap{position:relative}
+  .header-bar{gap:.5rem}
+  .header-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid #D7DDE1;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:.5rem 1rem 1rem;max-height:calc(100dvh - 6rem);overflow-y:auto;-webkit-overflow-scrolling:touch;z-index:49}
+  #nav-open:checked+.header-wrap .header-nav{display:flex}
+  .header-nav a{padding:.75rem .5rem;font-size:.875rem;border-bottom:1px solid #D7DDE1!important}
+  .header-nav .nav-cta{margin-top:.5rem;text-align:center;justify-content:center;border-bottom:none!important}
+  .header-nav .header-lang{margin-top:.5rem;padding:.5rem 0;justify-content:flex-start;border-bottom:none}
+  .nav-mobile-only.nav-cta{display:inline-flex!important}
+}
+.tr-crumb{border-bottom:1px solid rgb(223 231 228);background:#fff}
+.tr-subnav-sticky{top:6rem}
+@media(min-width:768px){.tr-subnav-sticky{top:7rem}}
 </style>
 
-<!-- BRAND BAR -->
-<div class="border-b border-hline">
-  <div class="max-w-[1280px] mx-auto px-7 flex items-center justify-between py-4 gap-8" style="position:relative">
-    <a href="/en" class="flex items-center shrink-0">
-      <img src="/logo-tavyro.svg" alt="TaVyro Logo" class="h-10 w-auto">
-    </a>
-    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-teal-800">
-      <a href="/en" class="hover:text-teal-600 transition-colors">Home</a>
-      <a href="/en/#leistungen" class="hover:text-teal-600 transition-colors">Services</a>
-      <a href="/en/#angebote" class="hover:text-teal-600 transition-colors">Models & Pricing</a>
-      <a href="/en/executive-intelligence" class="hover:text-teal-600 transition-colors">TaVyro Executive Intelligence®</a>
-      <a href="/en/trust-room" class="text-teal-700 font-semibold border-b-2 border-coral pb-0.5">Trust Room</a>
-      <a href="/en/#ueber" class="hover:text-teal-600 transition-colors">About TaVyro</a>
-    </nav>
-    <div class="hidden lg:flex items-center gap-5 shrink-0">
-      <a href="/en/erstgespraech-buchen" class="bg-teal-800 text-white text-[14.5px] font-semibold px-5 py-3 rounded-md whitespace-nowrap">Book an Introductory Call</a>
-      <div class="flex items-center gap-1 text-[14px] font-semibold">
-        <a href="/de/trust-room" class="text-muted hover:text-teal-700 transition-colors">DE</a>
-        <span class="text-muted">·</span>
-        <span class="text-teal-900" aria-current="page">EN</span>
+<!-- HEADER (matches Home) -->
+<header class="site-header">
+  <input type="checkbox" id="nav-open" class="nav-check" aria-hidden="true" tabindex="-1">
+  <div class="header-wrap">
+    <div class="header-inner">
+      <a href="/en" class="header-logo" aria-label="TaVyro – Home">
+        <img src="/logo-tavyro.svg" alt="TaVyro" width="240" height="64" decoding="async">
+      </a>
+      <div class="header-bar">
+        <nav id="navPanel" class="header-nav" aria-label="Main navigation">
+          <a href="/en">Home</a>
+          <a href="/en#leistungen">Services</a>
+          <a href="/en#angebote">Models & Pricing</a>
+          <a href="/en/executive-intelligence">TaVyro Executive Intelligence®</a>
+          <a href="/en/trust-room">Trust Room</a>
+          <a href="/en#ueber">About TaVyro</a>
+          <a href="/en/erstgespraech-buchen" class="nav-cta nav-mobile-only">Book an Introductory Call</a>
+          <div class="header-lang nav-mobile-only" aria-label="Language">
+            <a href="/de/trust-room" hreflang="de" lang="de" class="lang-link lang-cell">DE</a>
+            <span class="lang-sep" aria-hidden="true">|</span>
+            <span class="lang-active lang-cell" aria-current="page">EN</span>
+          </div>
+        </nav>
+        <div class="header-end">
+          <a href="/en/erstgespraech-buchen" class="nav-cta">Book an Introductory Call</a>
+          <div class="header-lang" aria-label="Language">
+            <a href="/de/trust-room" hreflang="de" lang="de" class="lang-link lang-cell">DE</a>
+            <span class="lang-sep" aria-hidden="true">|</span>
+            <span class="lang-active lang-cell" aria-current="page">EN</span>
+          </div>
+        </div>
+        <label for="nav-open" class="nav-toggle" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </label>
       </div>
-    </div>
-    <input type="checkbox" id="tr-menu" class="tr-mtoggle" hidden>
-    <div class="tr-mtop">
-      <div class="flex items-center gap-1 text-[14px] font-semibold">
-        <a href="/de/trust-room" style="color:#5c6664">DE</a>
-        <span style="color:#5c6664">·</span>
-        <span aria-current="page" style="color:#16323f">EN</span>
-      </div>
-      <label for="tr-menu" class="tr-burger" role="button" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </label>
-    </div>
-    <div class="tr-mnav">
-      <a href="/en">Home</a>
-      <a href="/en/#leistungen">Services</a>
-      <a href="/en/#angebote">Models & Pricing</a>
-      <a href="/en/executive-intelligence">TaVyro Executive Intelligence®</a>
-      <a href="/en/trust-room">Trust Room</a>
-      <a href="/en/#ueber">About TaVyro</a>
-      <a href="/en/erstgespraech-buchen" class="tr-mcta">Book an Introductory Call</a>
     </div>
   </div>
-  <div class="max-w-[1280px] mx-auto px-7 py-3 border-t border-hline">
+</header>
+
+<div class="tr-crumb">
+  <div class="max-w-[1280px] mx-auto px-7 py-3">
     <span class="text-[15px] font-medium text-teal-700">TaVyro Executive Intelligence®</span>
     <span class="text-[15px] text-muted mx-1.5">·</span>
     <span class="text-[15px] text-muted">Trust Room</span>
@@ -114,7 +159,7 @@
 </div>
 
 <!-- SUB NAVIGATION -->
-<nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md backdrop-saturate-150 border-b border-hline">
+<nav class="sticky tr-subnav-sticky z-50 bg-paper/85 backdrop-blur-md backdrop-saturate-150 border-b border-hline">
   <div class="max-w-[1100px] mx-auto px-7 flex items-center gap-1 overflow-x-auto" id="subnav">
     <a href="#overview" class="active inline-block px-4 py-4 text-[13.5px] text-muted hover:text-teal-700 whitespace-nowrap border-b-2 border-transparent transition-colors">Overview</a>
     <a href="#dialogue" class="inline-block px-4 py-4 text-[13.5px] text-muted hover:text-teal-700 whitespace-nowrap border-b-2 border-transparent transition-colors">Executive Dialogue</a>
