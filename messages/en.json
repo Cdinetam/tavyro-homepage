@@ -9,11 +9,11 @@
   "Navigation": {
     "home": "Home",
     "services": "Services",
-    "offers": "Plans",
+    "offers": "Models & Pricing",
     "about": "About TaVyro",
     "executiveIntelligence": "TaVyro Executive Intelligence®",
     "trustRoom": "Trust Room",
-    "cta": "Book consultation"
+    "cta": "Book an Introductory Call"
   },
   "ExecutiveIntelligencePage": {
     "meta": {

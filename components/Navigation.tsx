@@ -93,16 +93,6 @@ export default function Navigation() {
               {t("services")}
             </a>
             <a
-              href="#ueber"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("ueber");
-              }}
-              className="text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
-            >
-              {t("about")}
-            </a>
-            <a
               href="#angebote"
               onClick={(e) => {
                 e.preventDefault();
@@ -124,6 +114,16 @@ export default function Navigation() {
             >
               {t("trustRoom")}
             </Link>
+            <a
+              href="#ueber"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("ueber");
+              }}
+              className="text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
+            >
+              {t("about")}
+            </a>
 
             <div className="flex items-center gap-3 lg:gap-4">
               <Link
@@ -291,16 +291,6 @@ export default function Navigation() {
                 {t("services")}
               </a>
               <a
-                href="#ueber"
-                className="touch-manipulation py-2 text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("ueber");
-                }}
-              >
-                {t("about")}
-              </a>
-              <a
                 href="#angebote"
                 className="touch-manipulation py-2 text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
                 onClick={(e) => {
@@ -324,6 +314,16 @@ export default function Navigation() {
               >
                 {t("trustRoom")}
               </Link>
+              <a
+                href="#ueber"
+                className="touch-manipulation py-2 text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("ueber");
+                }}
+              >
+                {t("about")}
+              </a>
 
               <Link
                 href="/erstgespraech-buchen"
