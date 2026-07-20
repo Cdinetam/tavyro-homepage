@@ -64,7 +64,7 @@ export default async function FractionalChroLanding({
               </p>
               <h1
                 id="page-heading"
-                className="text-4xl md:text-5xl font-bold text-tavyro-text mb-6 leading-tight"
+                className="display-heading mb-6 text-tavyro-brand-900"
               >
                 {t("hero.h1")}
               </h1>
@@ -108,7 +108,7 @@ export default async function FractionalChroLanding({
             <section aria-labelledby="why-heading">
               <h2
                 id="why-heading"
-                className="text-2xl md:text-3xl font-bold text-tavyro-text mb-6"
+                className="section-heading mb-6"
               >
                 {t("why.title")}
               </h2>
@@ -121,7 +121,7 @@ export default async function FractionalChroLanding({
             <section aria-labelledby="situations-heading">
               <h2
                 id="situations-heading"
-                className="text-2xl md:text-3xl font-bold text-tavyro-text mb-6"
+                className="section-heading mb-6"
               >
                 {t("situations.title")}
               </h2>
@@ -143,7 +143,7 @@ export default async function FractionalChroLanding({
             <section aria-labelledby="what-heading">
               <h2
                 id="what-heading"
-                className="text-2xl md:text-3xl font-bold text-tavyro-text mb-6"
+                className="section-heading mb-6"
               >
                 {t("what.title")}
               </h2>
@@ -171,7 +171,7 @@ export default async function FractionalChroLanding({
             <section aria-labelledby="different-heading">
               <h2
                 id="different-heading"
-                className="text-2xl md:text-3xl font-bold text-tavyro-text mb-6"
+                className="section-heading mb-6"
               >
                 {t("different.title")}
               </h2>
@@ -195,7 +195,7 @@ export default async function FractionalChroLanding({
             <section aria-labelledby="mandate-heading">
               <h2
                 id="mandate-heading"
-                className="text-2xl md:text-3xl font-bold text-tavyro-text mb-6"
+                className="section-heading mb-6"
               >
                 {t("mandate.title")}
               </h2>
@@ -208,7 +208,7 @@ export default async function FractionalChroLanding({
             <section aria-labelledby="faq-heading">
               <h2
                 id="faq-heading"
-                className="text-2xl md:text-3xl font-bold text-tavyro-text mb-6"
+                className="section-heading mb-6"
               >
                 {t("faq.title")}
               </h2>
@@ -241,7 +241,7 @@ export default async function FractionalChroLanding({
             >
               <h2
                 id="final-heading"
-                className="text-2xl md:text-3xl font-bold mb-4"
+                className="section-heading mb-4 text-white"
               >
                 {t("final.title")}
               </h2>

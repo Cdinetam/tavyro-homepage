@@ -215,7 +215,7 @@ Gesendet über: tavyro.ch/de/erstgespraech-buchen
             <div className="space-y-12">
               {/* SECTION 1: HERO */}
               <section>
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                <h1 className="display-heading mb-6 text-tavyro-brand-900">
                   {t("pageTitle")}
                 </h1>
 
@@ -246,7 +246,7 @@ Gesendet über: tavyro.ch/de/erstgespraech-buchen
 
               {/* SECTION 2: ABLAUF */}
               <section id="ablauf" className="scroll-mt-32">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                <h2 className="section-heading mb-8">
                   {t("processTitle")}
                 </h2>
 
@@ -338,7 +338,7 @@ function BookingSection({
   return (
     <section id="booking" className="scroll-mt-32">
       <div className="bg-white rounded-lg border border-gray-200 p-6 md:p-8 shadow-sm">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+        <h2 className="section-heading mb-4">
           {t("formTitle")}
         </h2>
 

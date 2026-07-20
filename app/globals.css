@@ -78,6 +78,14 @@
     letter-spacing: -0.01em;
   }
 
+  /* Page / hero display – same family as section-heading, one step larger */
+  .display-heading {
+    @apply font-serif font-light;
+    font-size: clamp(2.35rem, 4.2vw, 3.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }

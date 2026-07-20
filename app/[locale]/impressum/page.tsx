@@ -38,7 +38,7 @@ export default async function Impressum({ params }: Props) {
         {/* Page Header */}
         <section className="bg-gradient-to-b from-tavyro-surface to-white pt-32 md:pt-40 pb-12 md:pb-16">
           <div className="container-custom">
-            <h1 className="text-4xl md:text-5xl font-bold text-tavyro-text text-center">
+            <h1 className="display-heading text-center text-tavyro-brand-900">
               {t("pageTitle")}
             </h1>
           </div>

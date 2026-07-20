@@ -22,13 +22,13 @@ export default function Hero() {
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+          <h1 className="display-heading mb-6 text-white [text-shadow:0_1px_18px_rgba(0,0,0,.28)]">
             {t("headline")}
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-white mb-12 leading-relaxed drop-shadow-lg">
+          <p className="mb-12 text-lg leading-relaxed text-white md:text-xl lg:text-2xl [text-shadow:0_1px_12px_rgba(0,0,0,.25)]">
             {t.rich("subheadline", {
-              strong: (chunks) => <strong className="text-white">{chunks}</strong>,
+              strong: (chunks) => <strong className="font-medium text-white">{chunks}</strong>,
             })}
           </p>
 
