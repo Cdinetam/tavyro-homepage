@@ -57,12 +57,12 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-tavyro-border bg-white/95 backdrop-blur-sm [color-scheme:light]">
+    <nav className="fixed top-0 left-0 right-0 z-50 overflow-x-hidden border-b border-tavyro-border bg-white/95 backdrop-blur-sm [color-scheme:light]">
       <div className="container-custom">
-        <div className="flex h-24 items-center justify-between gap-4 py-4 md:h-28 md:gap-8 md:py-6">
+        <div className="flex h-24 items-center justify-between gap-4 py-4 md:h-28 md:gap-6 md:py-6 xl:gap-8">
           <Link
             href="/"
-            className="flex shrink-0 items-center pl-2 sm:pl-4 md:pl-8 lg:pl-10 md:mr-12 lg:mr-16 xl:mr-20"
+            className="flex shrink-0 items-center pl-2 sm:pl-4 md:pl-8 lg:pl-10 xl:mr-8 2xl:mr-12"
           >
             <Image
               src="/logo-tavyro.svg"
@@ -74,8 +74,8 @@ export default function Navigation() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden shrink-0 items-center space-x-6 lg:space-x-8 md:flex">
+          {/* Desktop Navigation — erst ab xl, sonst Overflow bei langen EN-Labels */}
+          <div className="hidden shrink-0 items-center space-x-5 2xl:space-x-8 xl:flex">
             <Link
               href="/"
               className="text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text"
@@ -178,8 +178,8 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile: Sprachumschalter (sichtbar im Header) + Menü-Button */}
-          <div className="flex items-center gap-1 md:hidden">
+          {/* Tablet/Mobile: Sprachumschalter (sichtbar im Header) + Menü-Button */}
+          <div className="flex items-center gap-1 xl:hidden">
             <div className="flex items-center gap-0.5 text-sm font-medium">
               {locale === "de" ? (
                 <span
@@ -270,7 +270,7 @@ export default function Navigation() {
         {isOpen && (
           <div
             id="mobile-nav-panel"
-            className="max-h-[calc(100dvh-5.5rem)] overflow-y-auto overflow-x-hidden border-t border-tavyro-border py-4 md:hidden [-webkit-overflow-scrolling:touch]"
+            className="max-h-[calc(100dvh-5.5rem)] overflow-y-auto overflow-x-hidden border-t border-tavyro-border py-4 xl:hidden [-webkit-overflow-scrolling:touch]"
           >
             <div className="flex flex-col space-y-4">
               <Link
