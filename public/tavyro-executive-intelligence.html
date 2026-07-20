@@ -78,11 +78,18 @@ body{padding-top:6rem}
 .nav-check{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;opacity:0;pointer-events:none}
 .nav-mobile-only{display:block}
 .nav-desktop-only{display:none!important}
-@media(min-width:1280px){
-  .header-nav{display:flex;gap:1.25rem;align-items:center;position:static}
+@media(min-width:1024px){
+  .header-nav{display:flex;gap:.75rem;align-items:center;position:static}
+  .header-nav a:not(.nav-cta){font-size:.75rem}
+  .nav-cta{padding:.5rem .85rem;font-size:.75rem}
   .nav-toggle{display:none}
   .nav-mobile-only{display:none!important}
   .nav-desktop-only{display:inline-flex!important}
+}
+@media(min-width:1280px){
+  .header-nav{gap:1.25rem}
+  .header-nav a:not(.nav-cta){font-size:.875rem}
+  .nav-cta{padding:.625rem 1.25rem;font-size:.875rem}
 }
 @media(min-width:1536px){.header-nav{gap:1.5rem}}
 
@@ -267,7 +274,7 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
 .rv.in{opacity:1;transform:translateY(0)}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1279px){
+@media(max-width:1023px){
   body{padding-top:6rem}
   .header-inner{height:6rem;padding:1rem 0}
   .header-logo{flex:0 1 auto;min-width:0;max-width:calc(100% - 8.5rem)}
