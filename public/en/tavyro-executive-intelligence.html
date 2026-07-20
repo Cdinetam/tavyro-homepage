@@ -62,12 +62,11 @@ body{padding-top:6rem}
 @media(min-width:640px){.header-logo img{height:3rem;max-width:12.5rem}}
 @media(min-width:768px){.header-logo img{height:3.5rem;max-width:13.5rem}}
 @media(min-width:1024px){.header-logo img{height:4rem;max-width:15rem}}
-.header-bar{display:flex;flex:1;min-width:0;align-items:center;justify-content:flex-end;gap:1rem;flex-wrap:nowrap}
-.header-nav{display:none;align-items:center;flex-shrink:1;min-width:0;gap:0;flex-wrap:nowrap}
+.header-bar{display:flex;flex:1;min-width:0;align-items:center;justify-content:flex-end;gap:.75rem;flex-wrap:nowrap}
+.header-nav{display:none;align-items:center;flex-shrink:0;gap:0;flex-wrap:nowrap}
 .header-nav a{font-size:.875rem;line-height:1.25rem;font-weight:500;color:#506364;text-decoration:none!important;border-bottom:none!important;box-shadow:none!important;white-space:nowrap;transition:color .2s;-webkit-tap-highlight-color:transparent}
 .header-nav a:hover,.header-nav a:visited,.header-nav a:focus{color:#132A32;text-decoration:none!important;border-bottom:none!important}
-.header-end{display:none;align-items:center;flex-shrink:0;gap:1rem}
-.header-lang{display:flex;align-items:center;gap:.25rem;font-size:.875rem;font-weight:500}
+.header-lang{display:flex;align-items:center;gap:.25rem;font-size:.875rem;font-weight:500;flex-shrink:0}
 .lang-active,.lang-link,.lang-cell{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;min-width:2.75rem;padding:0 .5rem;border-radius:.375rem;text-decoration:none;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .lang-active{font-weight:700;color:#132A32;cursor:default}
 .lang-link{color:#506364}
@@ -79,14 +78,18 @@ body{padding-top:6rem}
 .nav-toggle svg{width:1.5rem;height:1.5rem;display:block}
 .nav-check{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;opacity:0;pointer-events:none}
 .nav-mobile-only{display:block}
+.nav-desktop-only{display:none!important}
 @media(min-width:768px){
-  .header-nav{display:flex;gap:1.5rem}
-  .header-end{display:flex}
+  .header-nav{display:flex;gap:1.25rem;align-items:center}
   .nav-toggle{display:none}
   .nav-mobile-only{display:none!important}
+  .nav-desktop-only{display:inline-flex!important}
+  .header-lang.nav-desktop-only{display:flex!important}
 }
-@media(min-width:1024px){.header-nav{gap:2rem}.header-end{gap:1rem}}
-@media(max-width:1200px) and (min-width:768px){.header-nav{gap:1.25rem}.header-nav a{font-size:.8125rem}}
+@media(min-width:1024px){.header-nav{gap:1.5rem}}
+@media(min-width:1280px){.header-nav{gap:1.75rem}}
+@media(max-width:1200px) and (min-width:768px){.header-nav{gap:1rem}.header-nav a:not(.nav-cta){font-size:.8125rem}.nav-cta{padding:.5rem 1rem}}
+@media(max-width:1100px) and (min-width:768px){.header-nav{gap:.75rem}.header-logo{margin-right:1rem!important}}
 
 /* ── HERO ── */
 .hero{background:var(--p);padding:5rem 0 5.5rem;position:relative;overflow:hidden}
@@ -324,15 +327,13 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
             <span class="lang-sep" aria-hidden="true">|</span>
             <span class="lang-active lang-cell" aria-current="page">EN</span>
           </div>
-        </nav>
-        <div class="header-end">
-          <a href="/en/erstgespraech-buchen" class="nav-cta">Book an Introductory Call</a>
-          <div class="header-lang" aria-label="Language">
+          <a href="/en/erstgespraech-buchen" class="nav-cta nav-desktop-only">Book an Introductory Call</a>
+          <div class="header-lang nav-desktop-only" aria-label="Language">
             <a href="/de/executive-intelligence" hreflang="de" lang="de" class="lang-link lang-cell">DE</a>
             <span class="lang-sep" aria-hidden="true">|</span>
             <span class="lang-active lang-cell" aria-current="page">EN</span>
           </div>
-        </div>
+        </nav>
         <label for="nav-open" class="nav-toggle" aria-label="Open menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </label>
