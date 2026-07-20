@@ -33,7 +33,7 @@ function localeHref(locale: "de" | "en", pathname: string): string {
 }
 
 const navLinkClass =
-  "whitespace-nowrap text-xs font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text xl:text-sm";
+  "whitespace-nowrap text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text";
 
 export default function Navigation() {
   const t = useTranslations("Navigation");
@@ -60,9 +60,9 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 overflow-x-hidden border-b border-tavyro-border bg-white/95 backdrop-blur-sm [color-scheme:light]">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-tavyro-border bg-white/95 backdrop-blur-sm [color-scheme:light]">
       <div className="container-custom">
-        <div className="flex h-24 items-center justify-between gap-3 py-4 md:h-28 md:py-6 lg:gap-4 xl:gap-6">
+        <div className="flex h-24 items-center justify-between gap-3 py-4 md:h-28 md:py-6 xl:gap-6">
           <Link
             href="/"
             className="flex shrink-0 items-center pl-2 sm:pl-4 md:pl-6 lg:pl-8"
@@ -72,13 +72,13 @@ export default function Navigation() {
               alt="TaVyro Logo"
               width={240}
               height={64}
-              className="h-11 w-auto max-w-[8.5rem] sm:h-12 sm:max-w-[12.5rem] md:h-14 md:max-w-[13.5rem] lg:h-12 lg:max-w-[11.5rem] xl:h-14 xl:max-w-[13.5rem] 2xl:h-16 2xl:max-w-[15rem]"
+              className="h-11 w-auto max-w-[8.5rem] sm:h-12 sm:max-w-[12.5rem] md:h-14 md:max-w-[13.5rem] xl:h-14 xl:max-w-[13.5rem] 2xl:h-16 2xl:max-w-[15rem]"
               priority
             />
           </Link>
 
-          {/* Desktop-Links: dürfen schrumpfen, nie über CTA/Sprache malen */}
-          <div className="hidden min-w-0 flex-1 items-center justify-end gap-x-3 overflow-hidden lg:flex xl:gap-x-5 2xl:gap-x-7">
+          {/* Desktop-Links erst ab xl – kein overflow-hidden (schneidet sonst «Home» ab) */}
+          <div className="hidden min-w-0 flex-1 items-center justify-end gap-x-4 xl:flex 2xl:gap-x-7">
             <Link href="/" className={navLinkClass}>
               {t("home")}
             </Link>
@@ -120,19 +120,19 @@ export default function Navigation() {
             </a>
           </div>
 
-          {/* CTA + Sprache: eigene Flex-Kinder, immer sichtbar ab lg */}
-          <div className="hidden shrink-0 items-center gap-2 lg:flex xl:gap-3">
+          {/* CTA + Sprache: eigene Flex-Kinder, immer sichtbar ab xl */}
+          <div className="hidden shrink-0 items-center gap-3 xl:flex">
             <Link
               href="/erstgespraech-buchen"
-              className="btn-primary shrink-0 px-3 py-2 text-xs xl:px-5 xl:py-2.5 xl:text-sm"
+              className="btn-primary shrink-0 px-5 py-2.5 text-sm"
             >
               {t("cta")}
             </Link>
 
-            <div className="flex items-center gap-0.5 text-xs font-medium xl:gap-1 xl:text-sm">
+            <div className="flex items-center gap-1 text-sm font-medium">
               {locale === "de" ? (
                 <span
-                  className="touch-manipulation flex min-h-9 min-w-8 cursor-default items-center justify-center rounded-md px-1 font-bold text-tavyro-text xl:min-h-11 xl:min-w-11 xl:px-2"
+                  className="touch-manipulation flex min-h-11 min-w-11 cursor-default items-center justify-center rounded-md px-2 font-bold text-tavyro-text"
                   aria-current="page"
                 >
                   DE
@@ -142,7 +142,7 @@ export default function Navigation() {
                   href={deHref}
                   hrefLang="de"
                   lang="de"
-                  className="touch-manipulation flex min-h-9 min-w-8 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100 xl:min-h-11 xl:min-w-11 xl:px-2"
+                  className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
                   aria-label="Deutsch"
                 >
                   DE
@@ -153,7 +153,7 @@ export default function Navigation() {
               </span>
               {locale === "en" ? (
                 <span
-                  className="touch-manipulation flex min-h-9 min-w-8 cursor-default items-center justify-center rounded-md px-1 font-bold text-tavyro-text xl:min-h-11 xl:min-w-11 xl:px-2"
+                  className="touch-manipulation flex min-h-11 min-w-11 cursor-default items-center justify-center rounded-md px-2 font-bold text-tavyro-text"
                   aria-current="page"
                 >
                   EN
@@ -163,7 +163,7 @@ export default function Navigation() {
                   href={enHref}
                   hrefLang="en"
                   lang="en"
-                  className="touch-manipulation flex min-h-9 min-w-8 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100 xl:min-h-11 xl:min-w-11 xl:px-2"
+                  className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
                   aria-label="English"
                 >
                   EN
@@ -172,8 +172,8 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Tablet/Mobile: Sprachumschalter (sichtbar im Header) + Menü-Button */}
-          <div className="flex shrink-0 items-center gap-1 lg:hidden">
+          {/* Unter xl: Sprachumschalter + Menü-Button */}
+          <div className="flex shrink-0 items-center gap-1 xl:hidden">
             <div className="flex items-center gap-0.5 text-sm font-medium">
               {locale === "de" ? (
                 <span
@@ -264,7 +264,7 @@ export default function Navigation() {
         {isOpen && (
           <div
             id="mobile-nav-panel"
-            className="max-h-[calc(100dvh-5.5rem)] overflow-y-auto overflow-x-hidden border-t border-tavyro-border py-4 lg:hidden [-webkit-overflow-scrolling:touch]"
+            className="max-h-[calc(100dvh-5.5rem)] overflow-y-auto overflow-x-hidden border-t border-tavyro-border py-4 xl:hidden [-webkit-overflow-scrolling:touch]"
           >
             <div className="flex flex-col space-y-4">
               <Link
