@@ -88,7 +88,6 @@ body{padding-top:6rem}
   .nav-toggle{display:none}
   .nav-mobile-only{display:none!important}
   .nav-desktop-only{display:inline-flex!important}
-  .header-lang.nav-desktop-only{display:flex!important}
 }
 @media(min-width:1024px){.header-nav{gap:1.25rem}}
 @media(min-width:1280px){.header-nav{gap:1.5rem}}
@@ -97,7 +96,7 @@ body{padding-top:6rem}
 @media(max-width:767px){
   body{padding-top:6rem}
   .header-inner{height:6rem;padding:1rem 0}
-  .header-logo{flex:0 1 auto;min-width:0;max-width:calc(100% - 3.5rem)}
+  .header-logo{flex:0 1 auto;min-width:0;max-width:calc(100% - 8.5rem)}
   .header-logo img{height:3.5rem;max-width:100%;object-fit:contain}
   .header-wrap{position:relative}
   .header-bar{gap:.5rem}
@@ -105,7 +104,6 @@ body{padding-top:6rem}
   #nav-open:checked+.header-wrap .header-nav{display:flex}
   .header-nav a{padding:.75rem .5rem;font-size:.875rem;border-bottom:1px solid #D7DDE1!important}
   .header-nav .nav-cta{margin-top:.5rem;text-align:center;justify-content:center;border-bottom:none!important}
-  .header-nav .header-lang{margin-top:.5rem;padding:.5rem 0;justify-content:flex-start;border-bottom:none}
   .nav-mobile-only.nav-cta{display:inline-flex!important}
 }
 .tr-crumb{border-bottom:1px solid rgb(223 231 228);background:#fff}
@@ -130,18 +128,13 @@ body{padding-top:6rem}
           <a href="/en/trust-room">Trust Room</a>
           <a href="/en#ueber">About TaVyro</a>
           <a href="/en/erstgespraech-buchen" class="nav-cta nav-mobile-only">Book an Introductory Call</a>
-          <div class="header-lang nav-mobile-only" aria-label="Language">
-            <a href="/de/trust-room" hreflang="de" lang="de" class="lang-link lang-cell">DE</a>
-            <span class="lang-sep" aria-hidden="true">|</span>
-            <span class="lang-active lang-cell" aria-current="page">EN</span>
-          </div>
           <a href="/en/erstgespraech-buchen" class="nav-cta nav-desktop-only">Book an Introductory Call</a>
-          <div class="header-lang nav-desktop-only" aria-label="Language">
-            <a href="/de/trust-room" hreflang="de" lang="de" class="lang-link lang-cell">DE</a>
-            <span class="lang-sep" aria-hidden="true">|</span>
-            <span class="lang-active lang-cell" aria-current="page">EN</span>
-          </div>
         </nav>
+        <div class="header-lang" aria-label="Language">
+          <a href="/de/trust-room" hreflang="de" lang="de" class="lang-link lang-cell">DE</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <span class="lang-active lang-cell" aria-current="page">EN</span>
+        </div>
         <label for="nav-open" class="nav-toggle" aria-label="Open menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </label>
