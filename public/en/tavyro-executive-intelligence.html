@@ -61,17 +61,17 @@ body{padding-top:6rem}
 @media(min-width:640px){.header-logo img{height:3rem;max-width:12.5rem}}
 @media(min-width:768px){.header-logo img{height:3.5rem;max-width:13.5rem}}
 @media(min-width:1024px){.header-logo img{height:4rem;max-width:15rem}}
-.header-bar{display:flex;margin-left:auto;align-items:center;justify-content:flex-end;gap:.75rem;flex:0 1 auto;min-width:0;flex-wrap:nowrap}
-.header-nav{display:none;align-items:center;flex:0 1 auto;min-width:0;gap:0;flex-wrap:nowrap;position:static}
+.header-bar{display:flex;margin-left:auto;align-items:center;justify-content:flex-end;gap:.75rem;flex:1 1 auto;min-width:0;flex-wrap:nowrap}
+.header-nav{display:none;align-items:center;flex:1 1 auto;min-width:0;gap:0;flex-wrap:nowrap;position:static;justify-content:flex-end;overflow:hidden}
 .header-nav a{font-size:.875rem;line-height:1.25rem;font-weight:500;color:#506364;text-decoration:none!important;border:0!important;border-bottom:none!important;box-shadow:none!important;outline:none;background-image:none!important;white-space:nowrap;transition:color .2s;-webkit-tap-highlight-color:transparent}
 .header-nav a:hover,.header-nav a:visited,.header-nav a:focus,.header-nav a:active{color:#132A32;text-decoration:none!important;border:0!important;border-bottom:none!important;box-shadow:none!important;outline:none;background-image:none!important}
-.header-lang{display:flex;align-items:center;gap:.25rem;font-size:.875rem;font-weight:500;flex-shrink:0}
+.header-lang{display:flex;align-items:center;gap:.25rem;font-size:.875rem;font-weight:500;flex-shrink:0;position:relative;z-index:2}
 .lang-active,.lang-link,.lang-cell{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;min-width:2.75rem;padding:0 .5rem;border-radius:.375rem;text-decoration:none;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .lang-active{font-weight:700;color:#132A32;cursor:default}
 .lang-link{color:#506364}
 .lang-link:hover{color:#132A32;background:#EEF1F3}
 .lang-sep{color:#D7DDE1;user-select:none;line-height:1}
-.nav-cta{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;padding:.625rem 1.25rem;font-size:.875rem;line-height:1.25rem;font-weight:500;color:#fff!important;background:#265464!important;border-radius:.5rem;text-decoration:none!important;white-space:nowrap;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);transition:all .2s}
+.nav-cta{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:2;padding:.625rem 1.25rem;font-size:.875rem;line-height:1.25rem;font-weight:500;color:#fff!important;background:#265464!important;border-radius:.5rem;text-decoration:none!important;white-space:nowrap;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);transition:all .2s}
 .nav-cta:hover{background:#1D404C!important;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}
 .nav-toggle{display:flex;align-items:center;justify-content:center;padding:.75rem;margin:0;border:0;background:transparent;color:#506364;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;flex-shrink:0}
 .nav-toggle svg{width:1.5rem;height:1.5rem;display:block}
@@ -323,8 +323,8 @@ footer small{font-size:.73rem;color:rgba(255,255,255,.28)}
           <a href="/en/trust-room">Trust Room</a>
           <a href="/en#ueber">About</a>
           <a href="/en/erstgespraech-buchen" class="nav-cta nav-mobile-only">Book a Call</a>
-          <a href="/en/erstgespraech-buchen" class="nav-cta nav-desktop-only">Book a Call</a>
         </nav>
+        <a href="/en/erstgespraech-buchen" class="nav-cta nav-desktop-only">Book a Call</a>
         <div class="header-lang" aria-label="Language">
           <a href="/de/executive-intelligence" hreflang="de" lang="de" class="lang-link lang-cell">DE</a>
           <span class="lang-sep" aria-hidden="true">|</span>

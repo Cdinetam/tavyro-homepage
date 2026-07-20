@@ -77,105 +77,103 @@ export default function Navigation() {
             />
           </Link>
 
-          {/* Desktop Navigation — ab lg; kompakt bis xl, damit EN-Labels passen */}
-          <div className="hidden min-w-0 flex-1 items-center justify-end gap-3 lg:flex xl:gap-5 2xl:gap-8">
-            <div className="flex min-w-0 items-center justify-end gap-x-3 xl:gap-x-5 2xl:gap-x-7">
-              <Link href="/" className={navLinkClass}>
-                {t("home")}
-              </Link>
-              <a
-                href="#leistungen"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("leistungen");
-                }}
-                className={navLinkClass}
-              >
-                {t("services")}
-              </a>
-              <a
-                href="#angebote"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("angebote");
-                }}
-                className={navLinkClass}
-              >
-                {t("offers")}
-              </a>
-              <Link href="/executive-intelligence" className={navLinkClass}>
-                {t("executiveIntelligence")}
-              </Link>
-              <Link href="/trust-room" className={navLinkClass}>
-                {t("trustRoom")}
-              </Link>
-              <a
-                href="#ueber"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("ueber");
-                }}
-                className={navLinkClass}
-              >
-                {t("about")}
-              </a>
-            </div>
+          {/* Desktop-Links: dürfen schrumpfen, nie über CTA/Sprache malen */}
+          <div className="hidden min-w-0 flex-1 items-center justify-end gap-x-3 overflow-hidden lg:flex xl:gap-x-5 2xl:gap-x-7">
+            <Link href="/" className={navLinkClass}>
+              {t("home")}
+            </Link>
+            <a
+              href="#leistungen"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("leistungen");
+              }}
+              className={navLinkClass}
+            >
+              {t("services")}
+            </a>
+            <a
+              href="#angebote"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("angebote");
+              }}
+              className={navLinkClass}
+            >
+              {t("offers")}
+            </a>
+            <Link href="/executive-intelligence" className={navLinkClass}>
+              {t("executiveIntelligence")}
+            </Link>
+            <Link href="/trust-room" className={navLinkClass}>
+              {t("trustRoom")}
+            </Link>
+            <a
+              href="#ueber"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("ueber");
+              }}
+              className={navLinkClass}
+            >
+              {t("about")}
+            </a>
+          </div>
 
-            <div className="flex shrink-0 items-center gap-2 xl:gap-3">
-              <Link
-                href="/erstgespraech-buchen"
-                className="btn-primary shrink-0 px-3 py-2 text-xs xl:px-5 xl:py-2.5 xl:text-sm"
-              >
-                {t("cta")}
-              </Link>
+          {/* CTA + Sprache: eigene Flex-Kinder, immer sichtbar ab lg */}
+          <div className="hidden shrink-0 items-center gap-2 lg:flex xl:gap-3">
+            <Link
+              href="/erstgespraech-buchen"
+              className="btn-primary shrink-0 px-3 py-2 text-xs xl:px-5 xl:py-2.5 xl:text-sm"
+            >
+              {t("cta")}
+            </Link>
 
-              {/* Language switch: right of CTA — native <a> for iOS Safari */}
-              <div className="flex items-center gap-0.5 text-xs font-medium xl:gap-1 xl:text-sm">
-                {locale === "de" ? (
-                  <span
-                    className="touch-manipulation flex min-h-9 min-w-8 cursor-default items-center justify-center rounded-md px-1 font-bold text-tavyro-text xl:min-h-11 xl:min-w-11 xl:px-2"
-                    aria-current="page"
-                  >
-                    DE
-                  </span>
-                ) : (
-                  <a
-                    href={deHref}
-                    hrefLang="de"
-                    lang="de"
-                    className="touch-manipulation flex min-h-9 min-w-8 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100 xl:min-h-11 xl:min-w-11 xl:px-2"
-                    aria-label="Deutsch"
-                  >
-                    DE
-                  </a>
-                )}
-                <span className="select-none text-tavyro-border" aria-hidden>
-                  |
+            <div className="flex items-center gap-0.5 text-xs font-medium xl:gap-1 xl:text-sm">
+              {locale === "de" ? (
+                <span
+                  className="touch-manipulation flex min-h-9 min-w-8 cursor-default items-center justify-center rounded-md px-1 font-bold text-tavyro-text xl:min-h-11 xl:min-w-11 xl:px-2"
+                  aria-current="page"
+                >
+                  DE
                 </span>
-                {locale === "en" ? (
-                  <span
-                    className="touch-manipulation flex min-h-9 min-w-8 cursor-default items-center justify-center rounded-md px-1 font-bold text-tavyro-text xl:min-h-11 xl:min-w-11 xl:px-2"
-                    aria-current="page"
-                  >
-                    EN
-                  </span>
-                ) : (
-                  <a
-                    href={enHref}
-                    hrefLang="en"
-                    lang="en"
-                    className="touch-manipulation flex min-h-9 min-w-8 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100 xl:min-h-11 xl:min-w-11 xl:px-2"
-                    aria-label="English"
-                  >
-                    EN
-                  </a>
-                )}
-              </div>
+              ) : (
+                <a
+                  href={deHref}
+                  hrefLang="de"
+                  lang="de"
+                  className="touch-manipulation flex min-h-9 min-w-8 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100 xl:min-h-11 xl:min-w-11 xl:px-2"
+                  aria-label="Deutsch"
+                >
+                  DE
+                </a>
+              )}
+              <span className="select-none text-tavyro-border" aria-hidden>
+                |
+              </span>
+              {locale === "en" ? (
+                <span
+                  className="touch-manipulation flex min-h-9 min-w-8 cursor-default items-center justify-center rounded-md px-1 font-bold text-tavyro-text xl:min-h-11 xl:min-w-11 xl:px-2"
+                  aria-current="page"
+                >
+                  EN
+                </span>
+              ) : (
+                <a
+                  href={enHref}
+                  hrefLang="en"
+                  lang="en"
+                  className="touch-manipulation flex min-h-9 min-w-8 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100 xl:min-h-11 xl:min-w-11 xl:px-2"
+                  aria-label="English"
+                >
+                  EN
+                </a>
+              )}
             </div>
           </div>
 
           {/* Tablet/Mobile: Sprachumschalter (sichtbar im Header) + Menü-Button */}
-          <div className="flex items-center gap-1 lg:hidden">
+          <div className="flex shrink-0 items-center gap-1 lg:hidden">
             <div className="flex items-center gap-0.5 text-sm font-medium">
               {locale === "de" ? (
                 <span
