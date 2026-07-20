@@ -5,13 +5,10 @@ import forWhomImage from "@/images/tavyro-fuer-wen.jpg";
 export default function TargetAudience() {
   const t = useTranslations("TargetAudience");
 
-  const audiences = [
-    t("items.0"),
-    t("items.1"),
-    t("items.2"),
-    t("items.3"),
-    t("items.4"),
-  ];
+  const items = t.raw("items") as Record<string, string>;
+  const audiences = Object.keys(items)
+    .sort((a, b) => Number(a) - Number(b))
+    .map((key) => items[key]);
 
   return (
     <section id="zielgruppe" className="section-padding bg-white">
@@ -20,12 +17,13 @@ export default function TargetAudience() {
           <h2 className="section-heading mb-4 text-center">
             {t("title")}
           </h2>
-          <p className="text-lg md:text-xl text-tavyro-text2 mb-8 max-w-3xl mx-auto text-center whitespace-normal md:whitespace-nowrap">
-            <span className="inline-block">
-              {t.rich("subtitle", {
-                strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
-              })}
-            </span>
+          <p className="text-lg md:text-xl text-tavyro-text2 mb-6 max-w-3xl mx-auto text-center">
+            {t.rich("subtitle", {
+              strong: (chunks) => <strong className="text-tavyro-text">{chunks}</strong>,
+            })}
+          </p>
+          <p className="text-lg md:text-xl text-tavyro-text2 mb-8 max-w-3xl mx-auto text-center">
+            {t("additional")}
           </p>
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">

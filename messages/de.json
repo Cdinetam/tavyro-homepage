@@ -28,7 +28,7 @@
     }
   },
   "Hero": {
-    "headline": "Fractional CHRO für Schweizer KMU",
+    "headline": "Fractional CHRO für Schweizer und internationale Unternehmen",
     "subheadline": "TaVyro begleitet CEOs, Geschäftsleitungen und Verwaltungsräte als <strong>Fractional CHRO / Executive Advisor für People & Organisation</strong> – unabhängig, umsetzungsnah und mit messbarer Wirkung.",
     "ctaPrimary": "Erstgespräch buchen",
     "ctaSecondary": "Leistungen ansehen",
@@ -38,7 +38,7 @@
     "eyebrow": "Fractional CHRO",
     "title": "Mehr als ein klassischer Fractional CHRO",
     "p1": "TaVyro bietet erfahrene Fractional-CHRO-Führung und gibt KMU und wachsenden Organisationen flexible Executive-Expertise – ohne die Verpflichtung eines Vollzeit-Chief-Human-Resources-Officers.",
-    "p2": "TaVyros Ansatz geht über klassische Fractional-HR-Führung hinaus, indem er Executive-Expertise mit <strong>TaVyro Executive Intelligence®</strong> und dem <strong>TEI® Trust Room</strong> verbindet. Gemeinsam integrieren sie vertrauliche Reflexion auf Führungsebene, evidenzbasierte organisationale Intelligenz und erfahrene Führung auf Executive-Ebene zu einem gemeinsamen Executive-Ansatz für komplexe Führungsherausforderungen."
+    "p2": "TaVyros Ansatz geht über klassische Fractional-HR-Führung hinaus, indem er Executive-Expertise mit <strong>TaVyro Executive Intelligence®</strong> und dem <strong>TEI® Trust Room</strong> verbindet. Gemeinsam integrieren sie vertrauliche Reflexion auf Führungsebene, evidenzbasierte organisationale Intelligenz und erfahrene Führung auf Executive-Ebene zu einem gemeinsamen Ansatz für komplexe Führungsherausforderungen."
   },
   "TrustAnchors": {
     "items": {
@@ -63,13 +63,15 @@
   },
   "TargetAudience": {
     "title": "Für wen",
-    "subtitle": "Für Unternehmen, die People & Organisation strategisch stärken wollen – <strong>ohne</strong> Vollzeit‑CHRO.",
+    "subtitle": "Für Schweizer und internationale Unternehmen, in denen People & Organisation auf Geschäftsleitungsebene gestärkt werden sollen – insbesondere, wenn kein CHRO in der GL vertreten ist oder zusätzliche Führungskapazität benötigt wird.",
+    "additional": "TaVyro ergänzt bestehende HR-Organisationen, übernimmt ausgewählte Verantwortung auf GL-Ebene und begleitet strategische, organisatorische und transformationsbezogene Themen.",
     "items": {
-      "0": "KMU & Familienunternehmen",
-      "1": "PE-Portfoliofirmen",
-      "2": "Scale-ups (Tech, AI, Digital)",
-      "3": "Gemeinwohl-Organisationen (Heime, soziale Einrichtungen, Stiftungen/NPOs)",
-      "4": "Öffentlich-rechtliche Organisationen & staatsnahe Betriebe"
+      "0": "KMU und Familienunternehmen",
+      "1": "Internationale Unternehmen und Schweizer Niederlassungen ohne CHRO in der GL",
+      "2": "Unternehmen mit bestehender HR-Organisation, aber zusätzlichem Bedarf auf strategischer Führungsebene",
+      "3": "Unternehmen in Transformation, Wachstum oder Neuorganisation",
+      "4": "PE-Portfoliofirmen und Scale-ups",
+      "5": "Öffentlich-rechtliche und gemeinnützige Organisationen"
     }
   },
   "Services": {
