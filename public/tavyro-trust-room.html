@@ -106,6 +106,13 @@ body{padding-top:6rem}
 .tr-crumb{border-bottom:1px solid rgb(223 231 228);background:#fff}
 .tr-subnav-sticky{top:6rem}
 @media(min-width:768px){.tr-subnav-sticky{top:7rem}}
+.tr-trust-info{background:#fbfcfc;border-bottom:1px solid #dfe7e4;padding:1.75rem 0 2rem}
+.tr-trust-info__box{display:flex;align-items:flex-start;gap:1rem;padding:1.125rem 1.5rem;background:#fff;border:1px solid #dfe7e4;border-radius:.75rem}
+@media(min-width:768px){.tr-trust-info__box{align-items:center;padding:1.25rem 1.75rem;gap:1.125rem}}
+.tr-trust-info__icon{flex-shrink:0;width:1.25rem;height:1.25rem;margin-top:.125rem;color:#265464}
+@media(min-width:768px){.tr-trust-info__icon{margin-top:0}}
+.tr-trust-info__text{margin:0;font-size:.9375rem;line-height:1.65;color:#5c6664;font-weight:400}
+@media(min-width:1024px){.tr-trust-info__text{font-size:.875rem;line-height:1.6}}
 </style>
 
 <!-- HEADER (matches Home) -->
@@ -181,6 +188,15 @@ body{padding-top:6rem}
     </div>
   </div>
 </section>
+
+<div class="tr-trust-info" role="note" aria-label="Vertrauens- und Sicherheitshinweis">
+  <div class="max-w-[1100px] mx-auto px-7">
+    <div class="tr-trust-info__box">
+      <svg class="tr-trust-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+      <p class="tr-trust-info__text">Geschützte Verarbeitung über TaVyros dedizierte Azure OpenAI-Umgebung in der Region Switzerland North. Keine Nutzung Ihrer Daten zum Training von KI-Modellen.</p>
+    </div>
+  </div>
+</div>
 
 <!-- SECTION 2: UNASKED QUESTIONS -->
 <section class="py-24">
