@@ -42,7 +42,7 @@
   }
 
   .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
-  .faq-item.open .faq-a{max-height:220px;}
+  .faq-item.open .faq-a{max-height:720px;}
   .faq-item.open .plus{transform:rotate(45deg);}
   .plus{transition:transform .25s;}
 </style>
@@ -356,6 +356,25 @@ body{padding-top:6rem}
     <div class="text-[12.5px] font-semibold text-teal-600 tracking-[.1em] uppercase mb-3.5">FAQ</div>
     <h2 class="text-[32px] font-medium leading-tight text-teal-900 mb-4 tracking-tight">Questions, <em class="italic text-teal-600 font-normal">before you start.</em></h2>
     <div class="max-w-[720px]" id="faq-list">
+      <div class="faq-item border-b border-hline">
+        <div class="faq-q flex items-center justify-between py-5.5 px-0.5 cursor-pointer text-[15.5px] text-teal-900 font-medium">
+          Are my inputs used to train AI models?<span class="plus text-[18px] text-teal-600 font-light">+</span>
+        </div>
+        <div class="faq-a">
+          <p class="text-[14.5px] text-muted leading-relaxed px-0.5 max-w-[640px]">No. Your inputs are used exclusively to process your request and are not used to train AI models.</p>
+          <p class="text-[14.5px] text-muted leading-relaxed pb-5.5 px-0.5 max-w-[640px] mt-3">The Trust Room runs on TaVyro's dedicated Azure OpenAI environment in the Switzerland North region. Your data remains confidential and is not used to improve public AI models.</p>
+        </div>
+      </div>
+      <div class="faq-item border-b border-hline">
+        <div class="faq-q flex items-center justify-between py-5.5 px-0.5 cursor-pointer text-[15.5px] text-teal-900 font-medium">
+          Is the Trust Room a general-purpose AI chat?<span class="plus text-[18px] text-teal-600 font-light">+</span>
+        </div>
+        <div class="faq-a">
+          <p class="text-[14.5px] text-muted leading-relaxed px-0.5 max-w-[640px]">The Trust Room is not a general-purpose AI chat. It was developed specifically for CEOs, executive teams and boards of directors.</p>
+          <p class="text-[14.5px] text-muted leading-relaxed px-0.5 max-w-[640px] mt-3">Not every strategic or personal leadership question belongs in a public AI or in the company's own enterprise AI. The Trust Room offers a deliberately separate, protected space where sensitive topics can be reflected on confidentially and structured with TaVyro Executive Intelligence® (TEI®).</p>
+          <p class="text-[14.5px] text-muted leading-relaxed pb-5.5 px-0.5 max-w-[640px] mt-3">Whether it concerns doubts about a leader, an upcoming CEO change, conflicts in the executive team, a reorganisation or a strategic personnel decision — the Trust Room supports executives in analysing complex situations and preparing well-founded decisions before acting or involving the organisation.</p>
+        </div>
+      </div>
       <div class="faq-item border-b border-hline">
         <div class="faq-q flex items-center justify-between py-5.5 px-0.5 cursor-pointer text-[15.5px] text-teal-900 font-medium">
           Who is the Trust Room for?<span class="plus text-[18px] text-teal-600 font-light">+</span>
