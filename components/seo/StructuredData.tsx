@@ -21,7 +21,7 @@ function getServiceNames(locale: SiteLocale): string[] {
       "CEO sparring",
       "HR strategy",
       "Interim HR leadership (Fractional CHRO)",
-      "HR digitalization advisory (HRIS/People Analytics)",
+      "HR digitalisation advisory (HRIS/People Analytics)",
     ];
   }
 

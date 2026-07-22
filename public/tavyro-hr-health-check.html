@@ -764,7 +764,7 @@ const questionsDe = [
   { id:3, phase:1, num:"03", text:"Sind Rollen, Verantwortungen und Prozesse so klar definiert, dass die Organisation ohne wesentliche Reibungsverluste skalieren kann?", opts:[{c:"g",l:"Gut",t:"Ja, Zuständigkeiten sind klar geregelt. Wir sind strukturell bereit für Wachstum."},{c:"y",l:"Teilweise",t:"Teils — historisch gewachsene Strukturen erzeugen Doppelspurigkeiten und ungeklärte Zuständigkeiten."},{c:"r",l:"Kritisch",t:"Nein, viele Abläufe und Verantwortungen sind unklar und erzeugen operative Reibung und Verluste."}], costs:{r:78500,y:22500} },
   { id:4, phase:1, num:"04", text:"Trifft Ihr Kader Personalentscheide innerhalb klarer Leitplanken eigenständig oder werden heikle Themen regelmässig an Sie eskaliert?", opts:[{c:"g",l:"Gut",t:"Ja, die Führungspersonen handeln eigenständig innerhalb klarer Leitplanken. Eskalationen sind die Ausnahme."},{c:"y",l:"Teilweise",t:"Teils — das Kader ist fachlich kompetent, schiebt jedoch unbequeme Entscheide regelmässig nach oben."},{c:"r",l:"Kritisch",t:"Nein, ich muss vieles selbst entscheiden. Das Kader ist in der Führungsverantwortung noch nicht vollständig souverän."}], costs:{r:52500,y:15000} },
   { id:5, phase:1, num:"05", text:"Haben Sie eine klare People und Organisationsplanung, die Ihre Geschäftsziele der nächsten drei Jahre unterstützt?", opts:[{c:"g",l:"Gut",t:"Ja, wir haben eine Roadmap. Wir wissen, welche Fähigkeiten und Rollen wir wann brauchen."},{c:"y",l:"Teilweise",t:"Teils — gute Absichten, aber das Tagesgeschäft absorbiert die Kapazität für strategische Planung."},{c:"r",l:"Kritisch",t:"Nein, wir operieren reaktiv. People-Themen werden als Konsequenz von Krisen angegangen, nicht proaktiv gesteuert."}], costs:{r:87500,y:22500} },
-  { id:6, phase:2, num:"06", text:"Werden kritische Fähigkeiten im Unternehmen systematisch aufgebaut — auch in digitalen und AI-nahen Kompetenzfeldern?", opts:[{c:"g",l:"Gut",t:"Ja, wir investieren systematisch in Weiterbildung und Kompetenzaufbau. Das Team ist technologisch gut positioniert."},{c:"y",l:"Teilweise",t:"Teils — Weiterbildung erfolgt auf Anfrage, ein strukturiertes System zur Kompetenzentwicklung fehlt jedoch."},{c:"r",l:"Kritisch",t:"Nein, systematischer Kompetenzaufbau findet nicht statt. Die Lücke zur Konkurrenz wächst."}], costs:{r:70000,y:18000} },
+  { id:6, phase:2, num:"06", text:"Werden kritische Fähigkeiten im Unternehmen systematisch aufgebaut — auch in digitalen und KI-nahen Kompetenzfeldern?", opts:[{c:"g",l:"Gut",t:"Ja, wir investieren systematisch in Weiterbildung und Kompetenzaufbau. Das Team ist technologisch gut positioniert."},{c:"y",l:"Teilweise",t:"Teils — Weiterbildung erfolgt auf Anfrage, ein strukturiertes System zur Kompetenzentwicklung fehlt jedoch."},{c:"r",l:"Kritisch",t:"Nein, systematischer Kompetenzaufbau findet nicht statt. Die Lücke zur Konkurrenz wächst."}], costs:{r:70000,y:18000} },
   { id:7, phase:2, num:"07", text:"Gibt es in Ihrer Organisation einen vertrauenswürdigen Rahmen, um Konflikte, Spannungen oder Grenzthemen frühzeitig anzusprechen?", opts:[{c:"g",l:"Gut",t:"Ja, es gibt einen klaren Rahmen. Spannungen werden früh adressiert, bevor sie eskalieren."},{c:"y",l:"Teilweise",t:"Teils — Gesprächsmöglichkeiten bestehen, aber heikle Themen werden oft gemieden oder erst spät sichtbar."},{c:"r",l:"Kritisch",t:"Nein, Konflikte werden meist erst bei Kündigung oder Eskalation sichtbar. Die Früherkennung fehlt."}], costs:{r:61000,y:15000} },
   { id:8, phase:2, num:"08", text:"Ist die Nachfolge für Schlüsselpositionen so geregelt, dass ein Abgang keine wesentliche Betriebsstörung verursacht?", opts:[{c:"g",l:"Gut",t:"Ja, Wissen ist dokumentiert und für kritische Rollen existieren Nachfolgepläne."},{c:"y",l:"Teilweise",t:"Teils — Schlüsselpersonen sind bekannt, ein schriftlicher Nachfolgeplan fehlt jedoch für den Ernstfall."},{c:"r",l:"Kritisch",t:"Nein, wir sind in mehreren Positionen von Einzelpersonen abhängig. Ein Abgang hätte erhebliche operative Konsequenzen."}], costs:{r:140000,y:30000} },
   { id:9, phase:2, num:"09", text:"Ist Ihre Positionierung als Arbeitgeber so differenziert, dass sich qualifizierte Talente aktiv bei Ihnen bewerben?", opts:[{c:"g",l:"Gut",t:"Ja, unsere Arbeitgebermarke ist klar positioniert. Initiativbewerbungen qualifizierter Profile sind regelmässig."},{c:"y",l:"Teilweise",t:"Teils — wir gelten als solider Arbeitgeber, heben uns im Wettbewerb um Talente jedoch kaum ab."},{c:"r",l:"Kritisch",t:"Nein, unsere Sichtbarkeit als Arbeitgeber ist gering. Rekrutierung ist aufwändig und führt nicht konsistent zu guten Besetzungen."}], costs:{r:52500,y:15000} },
@@ -778,11 +778,11 @@ const questionsDe = [
 ];
 
 const questionsEn = [
-  { id:1, phase:1, num:"01", text:"How strongly do people topics consume your attention, although they should be solved at leadership or organizational level?", opts:[{c:"g",l:"Good",t:"Only occasionally. Most topics are prepared or decided before they reach me."},{c:"y",l:"Partly",t:"Regularly. I get pulled in for conflicts, leadership questions or individual cases."},{c:"r",l:"Critical",t:"Excessively. I am the central escalation point for many people topics — executive capacity is significantly tied up."}], costs:{r:118000,y:40500} },
-  { id:2, phase:1, num:"02", text:"Do you receive decision-ready recommendations on people and organization topics, or mainly operational single issues?", opts:[{c:"g",l:"Good",t:"Yes, HR delivers decision-ready input with clear recommendations. Alignment effort is minimal."},{c:"y",l:"Partly",t:"Partly — operations work, but for strategic decisions the preparation is not sufficient."},{c:"r",l:"Critical",t:"No, HR is mainly occupied with administration and payroll. Strategic sparring is missing."}], costs:{r:63000,y:18000} },
-  { id:3, phase:1, num:"03", text:"Are roles, responsibilities and processes clear enough for the organization to scale without major friction losses?", opts:[{c:"g",l:"Good",t:"Yes, responsibilities are clear. Structurally we are ready for growth."},{c:"y",l:"Partly",t:"Partly — historically grown structures create overlaps and unclear ownership."},{c:"r",l:"Critical",t:"No, many workflows and responsibilities are unclear and create operational friction."}], costs:{r:78500,y:22500} },
+  { id:1, phase:1, num:"01", text:"How strongly do people topics consume your attention, although they should be solved at leadership or organisational level?", opts:[{c:"g",l:"Good",t:"Only occasionally. Most topics are prepared or decided before they reach me."},{c:"y",l:"Partly",t:"Regularly. I get pulled in for conflicts, leadership questions or individual cases."},{c:"r",l:"Critical",t:"Excessively. I am the central escalation point for many people topics — executive capacity is significantly tied up."}], costs:{r:118000,y:40500} },
+  { id:2, phase:1, num:"02", text:"Do you receive decision-ready recommendations on people and organisation topics, or mainly operational single issues?", opts:[{c:"g",l:"Good",t:"Yes, HR delivers decision-ready input with clear recommendations. Alignment effort is minimal."},{c:"y",l:"Partly",t:"Partly — operations work, but for strategic decisions the preparation is not sufficient."},{c:"r",l:"Critical",t:"No, HR is mainly occupied with administration and payroll. Strategic sparring is missing."}], costs:{r:63000,y:18000} },
+  { id:3, phase:1, num:"03", text:"Are roles, responsibilities and processes clear enough for the organisation to scale without major friction losses?", opts:[{c:"g",l:"Good",t:"Yes, responsibilities are clear. Structurally we are ready for growth."},{c:"y",l:"Partly",t:"Partly — historically grown structures create overlaps and unclear ownership."},{c:"r",l:"Critical",t:"No, many workflows and responsibilities are unclear and create operational friction."}], costs:{r:78500,y:22500} },
   { id:4, phase:1, num:"04", text:"Does your management team make people decisions independently within clear guardrails, or are difficult topics regularly escalated to you?", opts:[{c:"g",l:"Good",t:"Yes, leaders act independently within clear guardrails. Escalations are the exception."},{c:"y",l:"Partly",t:"Partly — leaders are capable but often pass uncomfortable decisions upward."},{c:"r",l:"Critical",t:"No, I still need to decide too much myself. Leadership accountability is not yet fully established."}], costs:{r:52500,y:15000} },
-  { id:5, phase:1, num:"05", text:"Do you have a clear people and organization plan that supports your business goals over the next three years?", opts:[{c:"g",l:"Good",t:"Yes, we have a roadmap and know which capabilities and roles we need, and when."},{c:"y",l:"Partly",t:"Partly — the intent is clear, but day-to-day business limits strategic planning capacity."},{c:"r",l:"Critical",t:"No, we operate reactively. People topics are addressed only when issues escalate."}], costs:{r:87500,y:22500} },
+  { id:5, phase:1, num:"05", text:"Do you have a clear people and organisation plan that supports your business goals over the next three years?", opts:[{c:"g",l:"Good",t:"Yes, we have a roadmap and know which capabilities and roles we need, and when."},{c:"y",l:"Partly",t:"Partly — the intent is clear, but day-to-day business limits strategic planning capacity."},{c:"r",l:"Critical",t:"No, we operate reactively. People topics are addressed only when issues escalate."}], costs:{r:87500,y:22500} },
   { id:6, phase:2, num:"06", text:"Are critical capabilities built systematically — including digital and AI-related skills?", opts:[{c:"g",l:"Good",t:"Yes, we invest systematically in capability development. The team is well positioned technologically."},{c:"y",l:"Partly",t:"Partly — training is provided on request, but there is no structured capability framework."},{c:"r",l:"Critical",t:"No, capability development is not systematic. The gap to competitors is widening."}], costs:{r:70000,y:18000} },
   { id:7, phase:2, num:"07", text:"Is there a trusted framework to address conflicts, tensions and sensitive topics early?", opts:[{c:"g",l:"Good",t:"Yes, there is a clear framework. Tensions are addressed early before escalation."},{c:"y",l:"Partly",t:"Partly — channels exist, but sensitive topics are often avoided or become visible too late."},{c:"r",l:"Critical",t:"No, conflicts often surface only at termination or escalation. Early detection is missing."}], costs:{r:61000,y:15000} },
   { id:8, phase:2, num:"08", text:"Is succession planning for key roles established so that a departure does not cause major business disruption?", opts:[{c:"g",l:"Good",t:"Yes, knowledge is documented and succession plans exist for critical roles."},{c:"y",l:"Partly",t:"Partly — key roles are identified, but formal succession planning is missing."},{c:"r",l:"Critical",t:"No, we depend on individuals in several key roles. A departure would have a major operational impact."}], costs:{r:140000,y:30000} },
@@ -941,7 +941,7 @@ function updateDashboard() {
   var band    = getPriorityBand(score, reds);
   var bandColor = { low:'var(--c-green)', mid:'var(--c-yellow)', high:'var(--c-red)' };
   var bandText  = IS_EN
-    ? { low: 'Well positioned', mid: 'Prioritization recommended', high: 'Clear need for action' }
+    ? { low: 'Well positioned', mid: 'Prioritisation recommended', high: 'Clear need for action' }
     : { low:'Gut positioniert', mid:'Priorisierung empfohlen', high:'Klarer Handlungsbedarf' };
   document.getElementById('riskScore').textContent    = pct(score);
   document.getElementById('riskScore').style.color    = bandColor[band];
@@ -1093,9 +1093,9 @@ function showResults() {
   var summaryEl = document.getElementById('scoreSummary');
   var summaryText = IS_EN
     ? {
-        low: 'Your organization appears well positioned in key people and leadership topics. The biggest leverage likely lies in targeted sharpening and safeguarding.',
-        mid: 'Your organization shows several areas where leadership load, unclear roles or operational friction reduce impact. Focused prioritization at CEO and executive team level is recommended.',
-        high: 'At present, your organization likely ties up too much management attention in topics that should be solved structurally. The largest leverage lies in leadership relief, role clarity and stronger organizational steering. The financial model is still conservative, but with a high priority index the leverage assumptions are moderately increased.',
+        low: 'Your organisation appears well positioned in key people and leadership topics. The biggest leverage likely lies in targeted sharpening and safeguarding.',
+        mid: 'Your organisation shows several areas where leadership load, unclear roles or operational friction reduce impact. Focused prioritisation at CEO and executive team level is recommended.',
+        high: 'At present, your organisation likely ties up too much management attention in topics that should be solved structurally. The largest leverage lies in leadership relief, role clarity and stronger organisational steering. The financial model is still conservative, but with a high priority index the leverage assumptions are moderately increased.',
       }
     : {
         low:  'Ihre Organisation wirkt in zentralen People- und Führungsthemen gut aufgestellt. Der grösste Hebel liegt voraussichtlich in gezielter Schärfung und Absicherung.',
@@ -1113,7 +1113,7 @@ function showResults() {
   list.innerHTML = '';
   if (!top3.length) {
     list.innerHTML = IS_EN
-      ? '<p style="font-size:13px;color:var(--c-green-dark);padding:0.5rem 0;">No critical action areas identified — your organization appears well positioned.</p>'
+      ? '<p style="font-size:13px;color:var(--c-green-dark);padding:0.5rem 0;">No critical action areas identified — your organisation appears well positioned.</p>'
       : '<p style="font-size:13px;color:var(--c-green-dark);padding:0.5rem 0;">Keine kritischen Handlungsfelder identifiziert — Ihre Organisation ist solide aufgestellt.</p>';
   } else {
     top3.forEach(function(q, i) {
@@ -1185,12 +1185,12 @@ function getTopPriorities(limit) {
 function getDynamicResultIntro(locale, band) {
   if (locale === 'en') {
     if (band === 'high') {
-      return 'Your organization currently ties up above-average management attention in structurally solvable topics. The strongest leverage lies in leadership relief and clearer accountabilities.';
+      return 'Your organisation currently ties up above-average management attention in structurally solvable topics. The strongest leverage lies in leadership relief and clearer accountabilities.';
     }
     if (band === 'mid') {
-      return 'Your organization shows noticeable friction in leadership and organizational clarity. The strongest leverage lies in clearer accountabilities and targeted management relief.';
+      return 'Your organisation shows noticeable friction in leadership and organisational clarity. The strongest leverage lies in clearer accountabilities and targeted management relief.';
     }
-    return 'Your organization appears comparatively well positioned. The strongest leverage lies in sharpening ownership and systematically securing your current leadership quality.';
+    return 'Your organisation appears comparatively well positioned. The strongest leverage lies in sharpening ownership and systematically securing your current leadership quality.';
   }
   if (band === 'high') {
     return 'Ihre Organisation bindet aktuell überdurchschnittlich viel Management-Aufmerksamkeit in strukturell lösbaren Themen. Der grösste Hebel liegt in der Führungsentlastung und klareren Verantwortlichkeiten.';
@@ -1482,9 +1482,9 @@ function applyEnglishStatic() {
     if (el) el.innerHTML = value;
   }
   document.documentElement.lang = 'en';
-  document.title = 'TaVyro | CEO/Executive Team Self-Check for People and Organization';
+  document.title = 'TaVyro | CEO/Executive Team Self-Check for People and Organisation';
   setAttr('meta[name="description"]', 'content', 'In just a few minutes, identify where leadership load, role ambiguity, attrition and governance risk are slowing impact and momentum. No registration required. For CEOs, executive teams and boards.');
-  setText('.intro-title', 'CEO/Executive Team Self-Check for People and Organization');
+  setText('.intro-title', 'CEO/Executive Team Self-Check for People and Organisation');
   setText('.intro-sub', 'In just a few minutes, identify where leadership load, role ambiguity, attrition or governance risk are slowing impact and momentum.');
   setText('.trust-note', 'No registration required. 16 focused questions. The evaluation provides initial management-level orientation based on simplified model assumptions — it does not replace an in-depth analysis.');
   document.getElementById('progressLabel').textContent = '0 of 16 questions answered';
@@ -1495,8 +1495,8 @@ function applyEnglishStatic() {
     ctaPrimary.href = '#slTeam';
   }
   setText('.r-card .r-title', 'Orientation calculation for CEO and executive team', 1);
-  setText('.calc-intro', 'The following calculation uses simplified assumptions on leadership relief, avoided attrition and risk exposure. It provides an indicative order of magnitude — not an individual expert opinion. Adjust the parameters to your organization.');
-  setText('.slider-lbl', 'Organization size and downstream cost risk', 0);
+  setText('.calc-intro', 'The following calculation uses simplified assumptions on leadership relief, avoided attrition and risk exposure. It provides an indicative order of magnitude — not an individual expert opinion. Adjust the parameters to your organisation.');
+  setText('.slider-lbl', 'Organisation size and downstream cost risk', 0);
   setText('.slider-lbl', 'Affected executive team members', 1);
   setText('.slider-lbl', 'Average executive time that can be freed up per affected member per week', 2);
   setText('.slider-lbl', 'Avoided departures per year (cost approach scaled by team size)', 3);
@@ -1516,7 +1516,7 @@ function applyEnglishStatic() {
   setText('.roi-label', 'less TaVyro investment', 0);
   setText('.roi-label', 'Net effect per year', 1);
   setText('.roi-label', 'Potential / investment ratio', 2);
-  setHtml('.total-sub', 'This calculation provides an orientation value. Actual potential depends on your baseline, leadership setup, attrition, role clarity and organizational maturity.<br><br>The monetary risk assumption is based on estimated governance and compliance exposure. The qualitative self-check rating is derived separately from your answers. For higher priority-index results, leverage assumptions are moderately increased, while remaining intentionally conservative.');
+  setHtml('.total-sub', 'This calculation provides an orientation value. Actual potential depends on your baseline, leadership setup, attrition, role clarity and organisational maturity.<br><br>The monetary risk assumption is based on estimated governance and compliance exposure. The qualitative self-check rating is derived separately from your answers. For higher priority-index results, leverage assumptions are moderately increased, while remaining intentionally conservative.');
   setText('.scenarios-hd', 'Scenarios');
   setText('.scenario-label', 'Conservative', 0);
   setText('.scenario-label', 'Realistic', 1);
@@ -1531,7 +1531,7 @@ function applyEnglishStatic() {
   setText('.metric-lbl', 'Governance risk (qualitative)', 2);
   setText('.cost-hd', 'Assessment');
   setText('.cost-lbl', 'Leadership effort', 0);
-  setText('.cost-lbl', 'Organizational maturity', 1);
+  setText('.cost-lbl', 'Organisational maturity', 1);
   setText('.cost-lbl', 'Governance risk', 2);
   setText('.dash-hd', 'Live analysis');
   document.getElementById('riskLabel').textContent = 'Answer the questions to see the analysis';
