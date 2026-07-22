@@ -38,7 +38,7 @@
     "eyebrow": "Fractional CHRO",
     "title": "Mehr als ein klassischer Fractional CHRO",
     "p1": "TaVyro bietet erfahrene Fractional-CHRO-Führung und gibt KMU und wachsenden Organisationen flexible Executive-Expertise – ohne die Verpflichtung eines Vollzeit-Chief-Human-Resources-Officers.",
-    "p2": "TaVyros Ansatz geht über klassische Fractional-HR-Führung hinaus, indem er Executive-Expertise mit <strong>TaVyro Executive Intelligence®</strong> und dem <strong>TEI® Trust Room</strong> verbindet. Gemeinsam integrieren sie vertrauliche Reflexion auf Führungsebene, evidenzbasierte organisationale Intelligenz und erfahrene Führung auf Executive-Ebene zu einem gemeinsamen Ansatz für komplexe Führungsherausforderungen."
+    "p2": "TaVyros Ansatz geht über klassische Fractional-HR-Führung hinaus, indem er Executive-Expertise mit <strong>TaVyro Executive Intelligence®</strong> und dem <strong>Trust Room</strong> verbindet. Gemeinsam integrieren sie vertrauliche Reflexion auf Führungsebene, evidenzbasierte organisationale Intelligenz und erfahrene Führung auf Executive-Ebene zu einem gemeinsamen Ansatz für komplexe Führungsherausforderungen."
   },
   "TrustAnchors": {
     "items": {
@@ -363,12 +363,12 @@
     "navigationTitle": "Navigation",
     "home": "Home",
     "services": "Leistungen",
-    "offers": "Angebote",
+    "offers": "Modelle & Preise",
     "aboutTavyro": "Über TaVyro",
     "executiveIntelligence": "TaVyro Executive Intelligence®",
     "trustRoom": "Trust Room",
     "fractionalChroSchweiz": "Fractional CHRO Schweiz",
-    "fractionalChroZuerich": "Fractional CHRO Schweiz",
+    "fractionalChroZuerich": "Fractional CHRO Zürich",
     "bookCall": "Erstgespräch buchen",
     "legalTitle": "Rechtliches",
     "impressum": "Impressum",

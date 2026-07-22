@@ -10,7 +10,7 @@
     "home": "Home",
     "services": "Services",
     "offers": "Models & Pricing",
-    "about": "About",
+    "about": "About TaVyro",
     "executiveIntelligence": "TaVyro Executive Intelligence®",
     "trustRoom": "Trust Room",
     "cta": "Book a Call"
@@ -29,8 +29,8 @@
   },
   "Hero": {
     "headline": "Fractional CHRO for Swiss and international companies",
-    "subheadline": "TaVyro supports CEOs, executive teams and boards as <strong>Fractional CHRO / Executive Advisor for People & Organization</strong> – independent, hands-on and with measurable impact.",
-    "ctaPrimary": "Book consultation",
+    "subheadline": "TaVyro supports CEOs, executive teams and boards as <strong>Fractional CHRO / Executive Advisor for People & Organisation</strong> – independent, hands-on and with measurable impact.",
+    "ctaPrimary": "Book a Call",
     "ctaSecondary": "View services",
     "seoLink": "CEO/Executive Team Self-Check: <link>Start now</link>"
   },
@@ -38,19 +38,19 @@
     "eyebrow": "Fractional CHRO",
     "title": "Beyond traditional Fractional CHRO",
     "p1": "TaVyro provides experienced Fractional CHRO leadership, giving SMEs and growing organisations flexible executive expertise without the commitment of a full-time Chief Human Resources Officer.",
-    "p2": "TaVyro's approach goes beyond traditional Fractional HR leadership by combining executive expertise with <strong>TaVyro Executive Intelligence®</strong> and the <strong>TEI® Trust Room</strong>. Together, they integrate confidential executive reflection, evidence-based organisational intelligence and experienced executive leadership into one approach for complex leadership challenges."
+    "p2": "TaVyro's approach goes beyond traditional Fractional HR leadership by combining executive expertise with <strong>TaVyro Executive Intelligence®</strong> and the <strong>Trust Room</strong>. Together, they integrate confidential executive reflection, evidence-based organisational intelligence and experienced executive leadership into one approach for complex leadership challenges."
   },
   "TrustAnchors": {
     "items": {
       "0": "C-Level HR Leadership on demand",
-      "1": "Organizational development & implementation from one source",
+      "1": "Organisational development & implementation from one source",
       "2": "Zurich-based, internationally experienced",
       "3": "Discreet. Clear. Effective."
     }
   },
   "Impact": {
     "title": "What we achieve",
-    "subtitle": "We strengthen your organization where people, culture and strategy converge.",
+    "subtitle": "We strengthen your organisation where people, culture and strategy converge.",
     "clarityNote": "Unclear starting points rarely lead to good decisions. In such cases, we first align direction at executive level before moving into operational steps.",
     "items": {
       "0": "Enhance leadership quality and decision-making",
@@ -201,7 +201,7 @@
     }
   },
   "Pricing": {
-    "title": "Plans",
+    "title": "Models & Pricing",
     "subtitle": "All models include clear collaboration, confidentiality and predictable monthly costs.",
     "minTerm": "Minimum term: 3 months.",
     "perMonth": "/ month",
@@ -219,7 +219,7 @@
         "name": "TaVyro Pro",
         "price": "CHF 5,000",
         "features": {
-          "0": "1:1 executive sparring + participation in selected board meetings",
+          "0": "1:1 executive sparring + participation in selected executive team meetings",
           "1": "Prioritization & management of key HR topics",
           "2": "Quarterly roadmap + monthly brief reporting"
         }
@@ -290,7 +290,7 @@
   "Contact": {
     "title": "Contact",
     "subtitle": "Let's clarify in a brief initial meeting where the greatest leverage lies.",
-    "cta": "Book consultation",
+    "cta": "Book a Call",
     "alternative": "Alternatively:",
     "email": "Email",
     "phone": "Phone"
@@ -363,20 +363,20 @@
     "navigationTitle": "Navigation",
     "home": "Home",
     "services": "Services",
-    "offers": "Plans",
+    "offers": "Models & Pricing",
     "aboutTavyro": "About TaVyro",
     "executiveIntelligence": "TaVyro Executive Intelligence®",
     "trustRoom": "Trust Room",
     "fractionalChroZurich": "Fractional CHRO Switzerland",
     "fractionalChroSwitzerland": "Fractional CHRO Switzerland",
-    "bookCall": "Book consultation",
+    "bookCall": "Book a Call",
     "legalTitle": "Legal",
     "impressum": "Legal Notice",
     "privacy": "Privacy Policy",
     "copyright": "Copyright by TaVyro GmbH · © {year}. All rights reserved."
   },
   "Erstgespraech": {
-    "pageTitle": "Book consultation",
+    "pageTitle": "Book a Call",
     "heroText": "Let's clarify in 30 minutes whether and how TaVyro can effectively support you as <strong>Fractional CHRO / People & Organization Partner</strong> – pragmatically in the short term, strategically sustainable.",
     "step1": "Quick check of your situation (People, Organization, Leadership, HR Systems)",
     "step2": "Initial hypotheses & next steps – no sales pressure",

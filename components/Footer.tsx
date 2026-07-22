@@ -155,18 +155,6 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href="#ueber"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("ueber");
-                  }}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  {t("aboutTavyro")}
-                </a>
-              </li>
-              <li>
-                <a 
                   href="#angebote"
                   onClick={(e) => {
                     e.preventDefault();
@@ -192,6 +180,18 @@ export default function Footer() {
                 >
                   {t("trustRoom")}
                 </Link>
+              </li>
+              <li>
+                <a 
+                  href="#ueber"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("ueber");
+                  }}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  {t("aboutTavyro")}
+                </a>
               </li>
               {locale === "de" && (
                 <li>
