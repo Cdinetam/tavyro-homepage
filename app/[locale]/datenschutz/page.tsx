@@ -95,6 +95,12 @@ export default async function Datenschutz({ params }: Props) {
                         </span>
                         <span>{t("section2CommData")}</span>
                       </li>
+                      <li className="flex items-start">
+                        <span className="mr-3 text-tavyro-brand-500 font-semibold">
+                          •
+                        </span>
+                        <span>{t("section2TrustRoomData")}</span>
+                      </li>
                     </ul>
                     <p>{t("section2NoProfiling")}</p>
                   </div>
@@ -109,6 +115,7 @@ export default async function Datenschutz({ params }: Props) {
                     "section6",
                     "section7",
                     "section8",
+                    "section9",
                   ] as const
                 ).map((key) => (
                   <div key={key}>

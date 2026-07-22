@@ -93,7 +93,7 @@ export default function Services() {
             <h3 className="text-base md:text-lg font-semibold text-tavyro-brand-900 mb-3">
               {t("executiveIntelligenceNote.title")}
             </h3>
-            <p className="text-tavyro-text2 text-sm md:text-base leading-relaxed mb-5">
+            <p className="text-tavyro-text2 text-sm md:text-base leading-relaxed mb-5 whitespace-pre-line">
               {t("executiveIntelligenceNote.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center">
