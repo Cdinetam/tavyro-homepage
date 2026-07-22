@@ -107,6 +107,99 @@
       "trustRoomLink": "Explore the Trust Room"
     }
   },
+  "EmployeeCareLineQuote": {
+    "title": "Request a Quote for the Employee Care Line",
+    "intro": "We would be pleased to prepare a non-binding quote. The following information helps us determine the appropriate scope for your organisation.",
+    "closeAriaLabel": "Close dialog",
+    "selectPlaceholder": "Please select",
+    "fields": {
+      "company": {
+        "label": "Company",
+        "placeholder": "Company name"
+      },
+      "contactName": {
+        "label": "First and Last Name",
+        "placeholder": "Your contact person"
+      },
+      "position": {
+        "label": "Position",
+        "placeholder": "e.g. CEO, Head of HR or People & Culture"
+      },
+      "email": {
+        "label": "Business Email Address",
+        "placeholder": "name@company.com"
+      },
+      "phone": {
+        "label": "Telephone Number",
+        "placeholder": "+41"
+      },
+      "employeeCount": {
+        "label": "Number of Employees"
+      },
+      "scope": {
+        "label": "Intended Scope"
+      },
+      "languages": {
+        "label": "Required Languages"
+      },
+      "preferredStart": {
+        "label": "Preferred Start"
+      },
+      "additionalInfo": {
+        "label": "Additional Information",
+        "placeholder": "What else should we know to prepare the quote?",
+        "help": "Please do not provide confidential information or details of individual employee cases."
+      }
+    },
+    "options": {
+      "employeeCount": {
+        "1-20": "1–20",
+        "21-50": "21–50",
+        "51-100": "51–100",
+        "101-250": "101–250",
+        "251-500": "251–500",
+        "501-1000": "501–1,000",
+        "1000+": "More than 1,000"
+      },
+      "scope": {
+        "entire": "Entire organisation",
+        "location": "Individual location",
+        "unit": "Selected business unit",
+        "group": "Specific employee group",
+        "open": "Not yet defined"
+      },
+      "languages": {
+        "de": "German",
+        "en": "English",
+        "fr": "French",
+        "other": "Other"
+      },
+      "preferredStart": {
+        "asap": "As soon as possible",
+        "1-3": "Within the next 1–3 months",
+        "3-6": "Within the next 3–6 months",
+        "open": "Not yet defined"
+      }
+    },
+    "privacy": {
+      "text": "I have read the <link>Privacy Policy</link> and agree that TaVyro may use my information to process this enquiry."
+    },
+    "submit": "Request a Non-Binding Quote",
+    "cancel": "Cancel",
+    "submitting": "Sending …",
+    "success": {
+      "title": "Thank you for your enquiry.",
+      "text": "We have received your information and will contact you personally.",
+      "close": "Close"
+    },
+    "errors": {
+      "required": "Please complete this required field.",
+      "email": "Please enter a valid email address.",
+      "phone": "Please enter a valid telephone number.",
+      "privacy": "Please confirm the Privacy Policy.",
+      "send": "Your enquiry could not be sent. Please try again or contact us directly at hello@tavyro.ch."
+    }
+  },
   "Pricing": {
     "title": "Plans",
     "subtitle": "All models include clear collaboration, confidentiality and predictable monthly costs.",

@@ -1,13 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import EmployeeCareLineQuoteModal from "@/components/EmployeeCareLineQuoteModal";
 
 const SERVICE_KEYS = ["0", "1"] as const;
 const FRACTIONAL_CHRO_FEATURE_KEYS = ["0", "1", "2", "3", "4", "5", "6", "7"] as const;
 
 export default function Services() {
   const t = useTranslations("Services");
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   return (
     <section id="leistungen" className="section-padding bg-gradient-to-b from-white to-tavyro-surface">
@@ -66,9 +69,19 @@ export default function Services() {
                       </ul>
                     )}
                     <div className="mt-auto pt-2">
-                      <a href={ctaHref} className="btn-primary text-sm md:text-base">
-                        {cta}
-                      </a>
+                      {key === "1" ? (
+                        <button
+                          type="button"
+                          onClick={() => setIsQuoteModalOpen(true)}
+                          className="btn-primary text-sm md:text-base"
+                        >
+                          {cta}
+                        </button>
+                      ) : (
+                        <a href={ctaHref} className="btn-primary text-sm md:text-base">
+                          {cta}
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -100,6 +113,11 @@ export default function Services() {
           </div>
         </div>
       </div>
+
+      <EmployeeCareLineQuoteModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+      />
     </section>
   );
 }
