@@ -23,7 +23,7 @@
   },
   "TrustRoomPage": {
     "meta": {
-      "titleAbsolute": "Trust Room — TaVyro Executive Intelligence®",
+      "titleAbsolute": "Trust Room | TaVyro",
       "description": "Der Executive Intelligence Space für die Gespräche, die Führungskräfte sonst nirgends führen können."
     }
   },
@@ -437,8 +437,8 @@
     "section2NoProfiling": "Wir verwenden Ihre Daten nicht für automatisierte Einzelentscheidungen oder Profiling, das zu einer erheblichen Beeinträchtigung führt.",
     "section3Title": "3. Hosting der Homepage (Vercel, USA)",
     "section3Content": "Die öffentliche Homepage tavyro.ch wird über Vercel gehostet (Vercel Inc., San Francisco, Kalifornien, USA). Beim Besuch der Website werden technische Daten – insbesondere IP-Adresse, Datum/Uhrzeit, aufgerufene Seiten sowie Browser- und Betriebssysteminformationen – auf Servern von Vercel verarbeitet. Diese Verarbeitung erfolgt in den USA und kann in weiteren Ländern stattfinden, in denen Vercel oder deren Unterauftragsbearbeiter tätig sind. Zweck ist die sichere, zuverlässige Bereitstellung der Website.",
-    "section4Title": "4. Trust Room (Verarbeitung in Zurich North, Schweiz)",
-    "section4Content": "Der Trust Room ist ein separater, geschützter Bereich von TaVyro Executive Intelligence®. Daten und Inhalte, die Sie im Trust Room übermitteln oder die dort bearbeitet werden, werden in der Rechenzentrums-Region Zurich North (Schweiz) verarbeitet und gespeichert. Dies gilt unabhängig vom Hosting der öffentlichen Homepage über Vercel in den USA. Die beiden Systeme sind getrennt; Inhalte aus dem Trust Room werden nicht automatisch über das Homepage-Hosting in den USA verarbeitet.",
+    "section4Title": "4. Trust Room – geschützte Verarbeitung in der Schweiz",
+    "section4Content": "Der Trust Room ist eine separate, geschützte Anwendung von TaVyro für vertrauliche Führungs-, Organisations- und Governance-Fragen. Die öffentliche Homepage und der Trust Room sind technisch voneinander getrennt. Inhalte aus dem Trust Room werden nicht automatisch über das Hosting der öffentlichen Homepage verarbeitet und fliessen nicht automatisch in TaVyro Executive Intelligence® oder in Unternehmenssysteme ein.\n\nDie Verarbeitung über Microsoft Azure OpenAI erfolgt in der Azure-Region Switzerland North mit Standort Zürich, Schweiz. Die Eingaben werden nicht zum Training öffentlicher KI-Modelle verwendet.",
     "section5Title": "5. Kontaktaufnahme",
     "section5Content": "Wenn Sie uns per E-Mail oder via Kontaktformular kontaktieren, bearbeiten wir Ihre Angaben zur Bearbeitung Ihrer Anfrage und für allfällige Anschlussfragen. Eine Weitergabe an Dritte erfolgt nur, wenn dies zur Leistungserbringung erforderlich ist (z. B. IT-Dienstleister/Hosting) oder wir gesetzlich dazu verpflichtet sind.",
     "section6Title": "6. Cookies / Reichweitenmessung",

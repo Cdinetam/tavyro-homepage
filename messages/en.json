@@ -23,7 +23,7 @@
   },
   "TrustRoomPage": {
     "meta": {
-      "titleAbsolute": "Trust Room — TaVyro Executive Intelligence®",
+      "titleAbsolute": "Trust Room | TaVyro",
       "description": "The Executive Intelligence space for the conversations leaders cannot have anywhere else."
     }
   },
@@ -437,8 +437,8 @@
     "section2NoProfiling": "We do not use your data for automated individual decisions or profiling that leads to significant impairment.",
     "section3Title": "3. Homepage hosting (Vercel, USA)",
     "section3Content": "The public homepage tavyro.ch is hosted via Vercel (Vercel Inc., San Francisco, California, USA). When you visit the website, technical data – in particular IP address, date/time, pages accessed and browser/operating system information – is processed on Vercel servers. This processing takes place in the USA and may occur in other countries where Vercel or its sub-processors operate. The purpose is the secure, reliable provision of the website.",
-    "section4Title": "4. Trust Room (processing in Zurich North, Switzerland)",
-    "section4Content": "The Trust Room is a separate, protected area of TaVyro Executive Intelligence®. Data and content that you submit in the Trust Room or that is processed there are handled and stored in the Zurich North data centre region (Switzerland). This applies independently of homepage hosting via Vercel in the USA. The two systems are separate; Trust Room content is not automatically processed via homepage hosting in the USA.",
+    "section4Title": "4. Trust Room – protected processing in Switzerland",
+    "section4Content": "The Trust Room is a separate, protected TaVyro application for confidential leadership, organisational and governance questions. The public website and the Trust Room are technically separate. Trust Room content is not automatically processed through the hosting of the public website and does not automatically flow into TaVyro Executive Intelligence® or corporate systems.\n\nProcessing through Microsoft Azure OpenAI takes place in the Azure region Switzerland North, located in Zurich, Switzerland. Inputs are not used to train public AI models.",
     "section5Title": "5. Contact",
     "section5Content": "When you contact us by email or via the contact form, we process your information to handle your inquiry and for any follow-up questions. Disclosure to third parties only occurs when necessary for service provision (e.g. IT service providers/hosting) or when legally required.",
     "section6Title": "6. Cookies / Analytics",
