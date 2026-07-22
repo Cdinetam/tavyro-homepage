@@ -279,32 +279,18 @@ Gesendet über: tavyro.ch/de/erstgespraech-buchen
                   </p>
                 </div>
               </section>
-
-              {/* Mobile: Show booking here */}
-              <div className="lg:hidden">
-                <BookingSection
-                  t={t}
-                  formData={formData}
-                  handleChange={handleChange}
-                  handleSubmit={handleSubmit}
-                  isSubmitting={isSubmitting}
-                  submitStatus={submitStatus}
-                />
-              </div>
             </div>
 
-            {/* Right Column: Sticky Booking (Desktop only) */}
-            <div className="hidden lg:block">
-              <div className="sticky top-32">
-                <BookingSection
-                  t={t}
-                  formData={formData}
-                  handleChange={handleChange}
-                  handleSubmit={handleSubmit}
-                  isSubmitting={isSubmitting}
-                  submitStatus={submitStatus}
-                />
-              </div>
+            {/* Single responsive booking form — one DOM instance for all breakpoints */}
+            <div className="lg:sticky lg:top-32 lg:self-start">
+              <BookingSection
+                t={t}
+                formData={formData}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                isSubmitting={isSubmitting}
+                submitStatus={submitStatus}
+              />
             </div>
           </div>
         </div>
@@ -345,7 +331,11 @@ function BookingSection({
         <p className="text-gray-700 mb-6 leading-relaxed">{t("formIntro")}</p>
 
         {submitStatus === "success" ? (
-          <div className="p-6 bg-green-50 border border-green-200 rounded-lg">
+          <div
+            role="status"
+            aria-live="polite"
+            className="p-6 bg-green-50 border border-green-200 rounded-lg"
+          >
             <h3 className="text-lg font-semibold text-green-900 mb-2">
               {t("successTitle")}
             </h3>
@@ -555,7 +545,11 @@ function BookingSection({
             </div>
 
             {submitStatus === "error" && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+              <div
+                role="alert"
+                aria-live="assertive"
+                className="p-4 bg-red-50 border border-red-200 rounded-lg"
+              >
                 <p className="text-red-800 text-sm">{t("errorMessage")}</p>
               </div>
             )}
@@ -563,6 +557,7 @@ function BookingSection({
             <button
               type="submit"
               disabled={isSubmitting}
+              aria-busy={isSubmitting}
               className="w-full btn-primary py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? t("submitting") : t("submitButton")}
