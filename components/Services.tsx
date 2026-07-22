@@ -1,13 +1,13 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+
+const SERVICE_KEYS = ["0", "1"] as const;
+const FRACTIONAL_CHRO_FEATURE_KEYS = ["0", "1", "2", "3", "4", "5", "6", "7"] as const;
 
 export default function Services() {
   const t = useTranslations("Services");
-  const locale = useLocale();
-
-  const serviceKeys = ["0", "1", "2", "3"] as const;
 
   return (
     <section id="leistungen" className="section-padding bg-gradient-to-b from-white to-tavyro-surface">
@@ -17,18 +17,19 @@ export default function Services() {
             {t("title")}
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-            {serviceKeys.map((key) => {
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+            {SERVICE_KEYS.map((key) => {
               const title = t(`items.${key}.title`);
+              const subtitle = t(`items.${key}.subtitle`);
               const description = t(`items.${key}.description`);
-              // Build features list – items.3 has no features
-              const features: string[] = [];
-              if (key !== "3") {
-                const featureKeys = key === "2" ? ["0", "1", "2", "3", "4"] : ["0", "1", "2", "3"];
-                for (const fk of featureKeys) {
-                  features.push(t(`items.${key}.features.${fk}`));
-                }
-              }
+              const cta = t(`items.${key}.cta`);
+              const ctaHref = key === "0" ? "#angebote" : "#kontakt";
+              const features =
+                key === "0"
+                  ? FRACTIONAL_CHRO_FEATURE_KEYS.map((fk) =>
+                      t(`items.${key}.features.${fk}`)
+                    )
+                  : [];
 
               return (
                 <div
@@ -41,13 +42,16 @@ export default function Services() {
                     </h3>
                   </div>
                   <div className="p-6 md:p-8 flex flex-col flex-grow">
+                    <p className="text-tavyro-brand-900 font-medium mb-4 leading-relaxed text-sm md:text-base">
+                      {subtitle}
+                    </p>
                     {description.trim().length > 0 && (
                       <p className="text-tavyro-text2 mb-4 leading-relaxed text-sm md:text-base whitespace-pre-line">
                         {description}
                       </p>
                     )}
                     {features.length > 0 && (
-                      <ul className="list-none space-y-2 mt-auto">
+                      <ul className="list-none space-y-2 mb-6">
                         {features.map((item, itemIndex) => (
                           <li
                             key={itemIndex}
@@ -61,29 +65,39 @@ export default function Services() {
                         ))}
                       </ul>
                     )}
+                    <div className="mt-auto pt-2">
+                      <a href={ctaHref} className="btn-primary text-sm md:text-base">
+                        {cta}
+                      </a>
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
-          {(locale === "en" || locale === "de") && (
-            <p className="mt-10 text-center text-tavyro-text2 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-              {t.rich("fractionalChroLandingTeaser", {
-                link: (chunks) => (
-                  <Link
-                    href={
-                      locale === "en"
-                        ? "/fractional-chro-zurich"
-                        : "/fractional-chro-schweiz"
-                    }
-                    className="text-tavyro-brand-700 font-medium underline underline-offset-4 hover:text-tavyro-brand-900"
-                  >
-                    {chunks}
-                  </Link>
-                ),
-              })}
+
+          <div className="mt-10 md:mt-12 max-w-3xl mx-auto bg-tavyro-surface border border-tavyro-border rounded-lg p-6 md:p-8 text-center">
+            <h3 className="text-base md:text-lg font-semibold text-tavyro-brand-900 mb-3">
+              {t("executiveIntelligenceNote.title")}
+            </h3>
+            <p className="text-tavyro-text2 text-sm md:text-base leading-relaxed mb-5">
+              {t("executiveIntelligenceNote.description")}
             </p>
-          )}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center">
+              <Link
+                href="/executive-intelligence"
+                className="text-tavyro-brand-700 font-medium underline underline-offset-4 hover:text-tavyro-brand-900 text-sm md:text-base"
+              >
+                {t("executiveIntelligenceNote.executiveIntelligenceLink")}
+              </Link>
+              <Link
+                href="/trust-room"
+                className="text-tavyro-brand-700 font-medium underline underline-offset-4 hover:text-tavyro-brand-900 text-sm md:text-base"
+              >
+                {t("executiveIntelligenceNote.trustRoomLink")}
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

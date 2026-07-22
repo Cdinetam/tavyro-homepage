@@ -78,42 +78,34 @@
     "title": "Services for CEOs, Executive Teams and Boards",
     "items": {
       "0": {
-        "title": "Fractional CHRO / Executive Advisor for People & Organization",
-        "description": "External HR leadership role for executive teams and boards:",
+        "title": "Fractional CHRO / Executive Advisor for People & Organisation",
+        "subtitle": "Senior HR leadership at executive level – flexible, personal and implementation-focused.",
+        "description": "At the outset, TaVyro develops a focused understanding of the company, its organisation and its current challenges. This creates a shared prioritisation of the relevant people and organisational topics.\n\nTam Nguyen works closely with the CEO and executive team as a trusted sparring partner, prepares key decisions and – depending on the mandate – assumes responsibility for steering and implementation.",
         "features": {
-          "0": "Relieves and advises the executive team on people and organizational matters",
-          "1": "Develops and implements HR strategies",
-          "2": "Manages complex cases (terminations, conflicts, restructurings)",
-          "3": "Ensures full compliance with employment law"
-        }
+          "0": "Focused onboarding and structured assessment",
+          "1": "Regular exchange with the CEO and executive team",
+          "2": "Executive sparring on demanding leadership and organisational questions",
+          "3": "Prioritisation and steering of key people and HR topics",
+          "4": "Support for transformations, reorganisations and conflict situations",
+          "5": "Implementation and sustainable anchoring of agreed measures",
+          "6": "Swiss employment law, HR governance and compliance",
+          "7": "HR digitalisation, people analytics and targeted use of AI"
+        },
+        "cta": "View Models & Pricing"
       },
       "1": {
-        "title": "Organization & Transformation",
-        "description": "We create clarity in organization, roles, processes and execution.",
-        "features": {
-          "0": "Operating model, roles and RACI",
-          "1": "Reorganizations, change and communication",
-          "2": "Policies, regulations and legally compliant implementation",
-          "3": "HR digitalization, HRIS, People Analytics and pragmatic AI applications"
-        }
-      },
-      "2": {
-        "title": "Executive Advisory & Sparring",
-        "description": "1:1 sparring for executive teams and leaders on leadership, organization, management and communication. Focus: clear decisions, prioritization, role clarity and confident handling of challenging situations.",
-        "features": {
-          "0": "Role transitions and new expectations (leadership, stakeholders, responsibility)",
-          "1": "Leading change: alignment, implementation, handling resistance",
-          "2": "Difficult conversations and conflict resolution (clear, de-escalating, effective)",
-          "3": "Performance & leadership: goals, delegation, feedback, routines",
-          "4": "Team and cross-functional leadership: accountability, collaboration, performance"
-        }
-      },
-      "3": {
         "title": "Add-on: Employee Care Line",
-        "description": "The Employee Care Line is a confidential support service for employees within the organization. It serves as a neutral point of contact for orientation and relief and is provided by TaVyro. No individual cases are reported back to the company; feedback is provided exclusively in anonymized and aggregated form.\n\nEven as a standalone offering, the Employee Care Line creates impact because employees receive a discreet, professional space for conversation – as a signal of appreciation, psychological safety and active care."
+        "subtitle": "A complementary, confidential support service for employees.",
+        "description": "The Employee Care Line provides employees with a neutral and professional point of contact for personal or work-related concerns. Individual cases are not disclosed to the company. Feedback is provided exclusively in anonymised and aggregated form.\n\nThe service relieves leaders and HR, strengthens psychological safety and provides a visible signal of appreciation and care.",
+        "cta": "Enquire about the Employee Care Line"
       }
     },
-    "fractionalChroLandingTeaser": "If you need senior HR leadership without a full-time CHRO, see how TaVyro supports SMEs as a <link>Fractional CHRO in Zurich and across Switzerland</link>."
+    "executiveIntelligenceNote": {
+      "title": "Enhanced by Executive Intelligence",
+      "description": "For complex situations, TaVyro Executive Intelligence® supports organisational diagnostics and evidence-based decision-making. For particularly sensitive leadership questions, the Trust Room provides a deliberately separate, protected space for reflection.",
+      "executiveIntelligenceLink": "Discover TaVyro Executive Intelligence®",
+      "trustRoomLink": "Explore the Trust Room"
+    }
   },
   "Pricing": {
     "title": "Plans",
