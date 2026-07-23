@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import QuoteBanner from "@/components/QuoteBanner";
+import { siteConfig } from "@/config/site";
 
 function listFromRaw(raw: Record<string, string>): string[] {
   return Object.keys(raw)
@@ -30,9 +32,26 @@ export default function About() {
                   {t("description")}
                 </p>
 
-                <h3 className="pt-2 text-xl md:text-2xl font-semibold text-tavyro-text">
-                  {t("founderTitle")}
-                </h3>
+                <div className="flex flex-col items-center gap-3 pt-2">
+                  <h3 className="text-xl md:text-2xl font-semibold text-tavyro-text">
+                    {t("founderTitle")}
+                  </h3>
+                  <a
+                    href={siteConfig.founder.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t("linkedinAriaLabel")}
+                    className="inline-flex rounded-sm transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tavyro-brand-500 focus-visible:ring-offset-2"
+                  >
+                    <Image
+                      src="/linkedin-logo.svg"
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="h-7 w-7"
+                    />
+                  </a>
+                </div>
 
                 <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
                   {t("bio1")}

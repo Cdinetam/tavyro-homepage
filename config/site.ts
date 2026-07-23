@@ -14,6 +14,9 @@ export const siteConfig = {
   social: {
     linkedin: "https://www.linkedin.com/company/REPLACE_WITH_TAVYRO_LINKEDIN",
   },
+  founder: {
+    linkedin: "https://www.linkedin.com/in/dung-tam-nguyen",
+  },
   contact: {
     email: "hello@tavyro.ch",
     phone: "+41XXXXXXXXX",
