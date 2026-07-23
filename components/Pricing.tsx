@@ -16,8 +16,11 @@ export default function Pricing() {
           <p className="text-center text-tavyro-text2 mb-2">
             {t("subtitle")}
           </p>
-          <p className="text-center text-tavyro-text2 mb-12 font-medium">
+          <p className="text-center text-tavyro-text2 mb-2 font-medium">
             {t("minTerm")}
+          </p>
+          <p className="text-center text-tavyro-text2 text-sm md:text-base mb-12">
+            {t("currencyNote")}
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -74,11 +77,11 @@ export default function Pricing() {
             })}
           </div>
 
-          <div className="mb-12 bg-tavyro-surface border border-tavyro-border rounded-lg p-6 md:p-8 text-center">
-            <p className="text-tavyro-text2 mb-2">
-              <strong className="text-tavyro-text">{t("onboarding")}</strong>
+          <div className="mb-12 bg-tavyro-surface border border-tavyro-border rounded-lg p-6 md:p-8">
+            <p className="text-tavyro-text text-base md:text-lg font-semibold mb-3 text-center">
+              {t("onboarding")}
             </p>
-            <p className="text-tavyro-secondary-500 text-sm md:text-base">
+            <p className="text-tavyro-text2 text-sm md:text-base leading-relaxed text-center max-w-3xl mx-auto">
               {t("onboardingDesc")}
             </p>
           </div>

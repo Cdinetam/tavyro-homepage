@@ -204,6 +204,7 @@
     "title": "Models & Pricing",
     "subtitle": "All models include clear collaboration, confidentiality and predictable monthly costs.",
     "minTerm": "Minimum term: 3 months.",
+    "currencyNote": "All prices are in CHF. Any VAT applicable will be shown separately.",
     "perMonth": "/ month",
     "plans": {
       "0": {
@@ -234,8 +235,8 @@
         }
       }
     },
-    "onboarding": "Onboarding (one-time): CHF 4,000",
-    "onboardingDesc": "HR Health Check incl. prioritized action plan.",
+    "onboarding": "Initial analysis and onboarding: one-time CHF 4,000 for all Fractional CHRO models",
+    "onboardingDesc": "Each mandate begins with structured onboarding: situation assessment, review of relevant documents, conversations with key stakeholders, and joint prioritisation of the most important action areas and next steps.",
     "hourlyTitle": "Project work on hourly basis",
     "hourlyDesc": "For clearly defined projects, collaboration on an hourly basis is possible. The prerequisite is a defined scope (goal, result, timeframe). Effort and impact remain transparent; decisions are prepared on a fact-based basis."
   },
@@ -265,6 +266,8 @@
     }
   },
   "QuoteBanner": {
+    "prevAriaLabel": "Previous reference",
+    "nextAriaLabel": "Next reference",
     "testimonials": {
       "0": {
         "quote": "The 1:1 sparring at executive level was discreet, professional and very helpful. I was able to reassess the situation and make key decisions with significantly more clarity.",

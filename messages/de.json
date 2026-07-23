@@ -204,6 +204,7 @@
     "title": "Modelle & Preise",
     "subtitle": "Alle Modelle inkl. klarer Zusammenarbeit, Vertraulichkeit und kalkulierbarer Monatskosten.",
     "minTerm": "Mindestlaufzeit: 3 Monate.",
+    "currencyNote": "Alle Preise verstehen sich in CHF. Eine allfällige Mehrwertsteuer wird separat ausgewiesen.",
     "perMonth": "/ Monat",
     "plans": {
       "0": {
@@ -234,8 +235,8 @@
         }
       }
     },
-    "onboarding": "Onboarding (einmalig): CHF 4'000",
-    "onboardingDesc": "HR Health Check inkl. priorisiertem Massnahmenplan.",
+    "onboarding": "Initialanalyse und Onboarding: einmalig CHF 4'000 für alle Fractional-CHRO-Modelle",
+    "onboardingDesc": "Jedes Mandat beginnt mit einer strukturierten Einarbeitung: Standortbestimmung, Sichtung relevanter Unterlagen, Gespräche mit Schlüsselpersonen sowie gemeinsame Priorisierung der wichtigsten Handlungsfelder und nächsten Schritte.",
     "hourlyTitle": "Projektarbeit auf Stundenbasis",
     "hourlyDesc": "Für klar abgegrenzte Vorhaben ist eine Zusammenarbeit auf Stundenbasis möglich. Voraussetzung ist ein definierter Umfang (Ziel, Ergebnis, Zeitfenster). Aufwand und Wirkung bleiben transparent; Entscheidungen werden faktenbasiert vorbereitet."
   },
@@ -265,6 +266,8 @@
     }
   },
   "QuoteBanner": {
+    "prevAriaLabel": "Vorherige Referenz",
+    "nextAriaLabel": "Nächste Referenz",
     "testimonials": {
       "0": {
         "quote": "Das 1:1-Sparring auf GL-Ebene war diskret, professionell und sehr hilfreich. Ich konnte die Situation neu einordnen und zentrale Entscheidungen mit deutlich mehr Klarheit treffen.",
