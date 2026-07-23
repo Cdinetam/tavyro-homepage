@@ -16,11 +16,11 @@ export default function Pricing() {
           <p className="text-center text-tavyro-text2 mb-2">
             {t("subtitle")}
           </p>
-          <p className="text-center text-tavyro-text2 mb-2 font-medium">
-            {t("minTerm")}
-          </p>
-          <p className="text-center text-tavyro-text2 text-sm md:text-base mb-12">
+          <p className="text-center text-tavyro-text2 text-sm md:text-base mb-2">
             {t("currencyNote")}
+          </p>
+          <p className="text-center text-tavyro-text2 mb-12 font-medium">
+            {t("minTerm")}
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
