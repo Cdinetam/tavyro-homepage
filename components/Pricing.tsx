@@ -9,13 +9,10 @@ export default function Pricing() {
     <section id="angebote" className="section-padding bg-white">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto">
-          <h2 className="section-heading mb-4 text-center">
+          <h2 className="section-heading mb-6 text-center">
             {t("title")}
           </h2>
-          
-          <p className="text-center text-tavyro-text2 mb-2">
-            {t("subtitle")}
-          </p>
+
           <p className="text-center text-tavyro-text2 text-sm md:text-base mb-2">
             {t("currencyNote")}
           </p>
