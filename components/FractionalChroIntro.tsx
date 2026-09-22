@@ -15,13 +15,10 @@ export default function FractionalChroIntro() {
               {t("p1")}
             </p>
             <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
-              {t.rich("p2", {
-                strong: (chunks) => (
-                  <strong className="font-semibold text-tavyro-text">
-                    {chunks}
-                  </strong>
-                ),
-              })}
+              {t("p2")}
+            </p>
+            <p className="text-lg md:text-xl text-tavyro-text2 leading-relaxed">
+              {t("p3")}
             </p>
           </div>
         </div>

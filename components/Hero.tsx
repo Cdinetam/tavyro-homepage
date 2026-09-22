@@ -26,10 +26,12 @@ export default function Hero() {
             {t("headline")}
           </h1>
           
-          <p className="mb-12 text-lg leading-relaxed text-white md:text-xl lg:text-2xl [text-shadow:0_1px_12px_rgba(0,0,0,.25)]">
-            {t.rich("subheadline", {
-              strong: (chunks) => <strong className="font-medium text-white">{chunks}</strong>,
-            })}
+          <p className="mb-4 text-lg leading-relaxed text-white md:text-xl lg:text-2xl [text-shadow:0_1px_12px_rgba(0,0,0,.25)]">
+            {t("subheadline")}
+          </p>
+
+          <p className="mb-12 text-lg leading-relaxed text-white md:text-xl [text-shadow:0_1px_12px_rgba(0,0,0,.25)]">
+            {t("audienceLine")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-start">
