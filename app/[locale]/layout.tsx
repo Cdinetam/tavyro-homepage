@@ -51,8 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       images: [
         {
-          // Unique filename + bytes force WhatsApp/Facebook to re-fetch cached previews.
-          // Same path URL alone is not enough: WhatsApp caches text meta per exact share URL.
+          // Unique filename helps image re-fetch. Text preview cache is keyed by
+          // og:url — use /{locale}/share for WhatsApp shares (see share/page.tsx).
           url: "/og-share-20261009c.jpg",
           width: 1200,
           height: 630,
