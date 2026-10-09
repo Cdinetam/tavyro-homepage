@@ -16,7 +16,7 @@ import { getCanonical } from "@/lib/seo";
  * Social crawlers receive 200 + OG tags; humans are 308-redirected home.
  */
 
-const SHARE_OG_IMAGE = "/og-wa-share-landing.jpg";
+const SHARE_OG_IMAGE = "/og-wa-share-landing-d.jpg";
 
 const SOCIAL_CRAWLER_UA =
   /facebookexternalhit|Facebot|WhatsApp|Twitterbot|LinkedInBot|Slackbot|Discordbot|TelegramBot|Pinterest|Googlebot/i;
@@ -29,7 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const safeLocale = isSiteLocale(locale) ? locale : "de";
   const t = await getTranslations({ locale: safeLocale, namespace: "Metadata" });
-  const shareUrl = getCanonical(safeLocale, "/share");
+  // Unique og:url identity so WhatsApp refreshes when description text changes.
+  const shareUrl = `${getCanonical(safeLocale, "/share")}?og=20261009d`;
 
   return {
     title: {

@@ -45,15 +45,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
-      url: getCanonical(isSiteLocale(locale) ? locale : "de"),
+      // Canonical stays /{locale} (see alternates.canonical). A unique og:url
+      // identity forces WhatsApp/Facebook to treat the homepage as a fresh
+      // preview cache entry when https://tavyro.ch/de is pasted.
+      url: `${getCanonical(isSiteLocale(locale) ? locale : "de")}?og=20261009d`,
       siteName: siteConfig.brand,
       locale: locale === "de" ? "de_CH" : "en_US",
       type: "website",
       images: [
         {
-          // Unique filename helps image re-fetch. Text preview cache is keyed by
-          // og:url — use /{locale}/share for WhatsApp shares (see share/page.tsx).
-          url: "/og-share-20261009c.jpg",
+          // Unique filename + bytes help image re-fetch alongside new og:url.
+          url: "/og-share-20261009d.jpg",
           width: 1200,
           height: 630,
           alt: t("ogTitle"),
@@ -65,7 +67,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: t("ogTitle"),
       description: t("ogDescription"),
-      images: ["/og-share-20261009c.jpg"],
+      images: ["/og-share-20261009d.jpg"],
     },
     manifest: "/site.webmanifest?v=20260201",
     icons: {
