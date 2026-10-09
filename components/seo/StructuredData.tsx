@@ -107,7 +107,8 @@ export default function StructuredData({
       name: faq.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer,
+        // Strip markup so crawlers/link previews only see plain text.
+        text: faq.answer.replace(/<[^>]+>/g, "").trim(),
       },
     })),
   };

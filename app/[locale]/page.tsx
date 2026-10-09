@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             "fractional chro switzerland",
             "interim chro zurich",
             "hr advisory zurich",
-            "chro as a service switzerland",
+            "fractional chro advisory switzerland",
           ]
         : undefined,
     alternates: {
