@@ -80,7 +80,6 @@ export default function StructuredData({
       "@id": `${siteConfig.siteUrl}#organization`,
     },
     serviceType: [
-      "CHRO-as-a-Service",
       "Fractional CHRO",
       "HR Governance",
       "Executive Advisory & Sparring",

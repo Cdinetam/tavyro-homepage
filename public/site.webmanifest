@@ -2,7 +2,7 @@
   "name": "TaVyro – Fractional CHRO & People Advisory",
   "short_name": "TaVyro",
   "description": "Boutique Advisory für CEOs, Geschäftsleitungen und Verwaltungsräte",
-  "start_url": "/",
+  "start_url": "/de",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#265464",

@@ -38,13 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  return [
-    {
-      url: siteConfig.siteUrl,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    ...localizedRoutes,
-  ];
+  // Only emit final locale URLs. The bare root redirects permanently to /de.
+  return localizedRoutes;
 }
