@@ -51,7 +51,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: "/og.jpg",
+          // New filename forces WhatsApp/Facebook to re-fetch the link preview
+          // after OG text changed from CHRO-as-a-Service to Fractional CHRO.
+          url: "/og-fractional-chro.jpg",
           width: 1200,
           height: 630,
           alt: t("ogTitle"),
@@ -63,7 +65,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: t("ogTitle"),
       description: t("ogDescription"),
-      images: ["/og.jpg"],
+      images: ["/og-fractional-chro.jpg"],
     },
     manifest: "/site.webmanifest?v=20260201",
     icons: {
