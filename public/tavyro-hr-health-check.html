@@ -956,7 +956,7 @@ function updateDashboard() {
   document.getElementById('riskLabelMob').textContent    = bandText[band];
 
   var glH = calculateBoundGLHours();
-  var glChfVal = Math.round(glH * 420);
+  var glChfVal = Math.round(glH * 300);
   var ceoEl = document.getElementById('ceoHours');
   var ceoChfSub = document.getElementById('ceoChfSub');
   ceoEl.textContent = glH > 0 ? glH + '\u202Fh' : '—';
@@ -1036,7 +1036,7 @@ function updateCalc() {
       ? { ceo: 1.04, fluk: 1.06, comp: 1.06 }
       : { ceo: 1.0, fluk: 1.0, comp: 1.0 };
 
-  var ceoSaving = Math.round(totalGLHoursPerWeek * 46 * 420 * bandMultiplier.ceo);
+  var ceoSaving = Math.round(totalGLHoursPerWeek * 46 * 300 * bandMultiplier.ceo);
   var costPerPerson = flukCostPerPerson(team);
   var flukSaving = Math.round(fluk * costPerPerson * bandMultiplier.fluk);
   var baseComp = compCostByRisk(riskLevel);

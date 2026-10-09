@@ -18,7 +18,7 @@ from openpyxl.worksheet.datavalidation import DataValidation
 # Constants from the calculator
 # ---------------------------------------------------------------------------
 WEEKS = 46
-HOURLY_RATE = 420          # CHF / GL-Stunde
+HOURLY_RATE = 300          # CHF / GL-Stunde
 GL_CAP = 30               # max. entlastbare GL-Std/Woche (gesamt)
 SCEN_CONS = 0.7
 SCEN_REAL = 1.0
@@ -235,7 +235,7 @@ calc_row("Realistisch (Brutto x 1.0 - Investition)", f"={NETTO}", CHF_FMT2, bold
 calc_row("Ambitioniert (Brutto x 1.3 - Investition)", f"=ROUND({TOTP}*{SCEN_AMBI},0)-{INVEST}", CHF_FMT2)
 
 r += 1
-note = ("Modell: Entlastung CEO/GL = GL-Std/Woche (max. 30) x 46 Wochen x CHF 420/Std x Band-Faktor. "
+note = ("Modell: Entlastung CEO/GL = GL-Std/Woche (max. 30) x 46 Wochen x CHF 300/Std x Band-Faktor. "
         "Vermiedene Fluktuation = Abgaenge x Kosten/Person (teamgroessenabhaengig) x Band-Faktor. "
         "Risiko-/Compliance = Basiswert (Risiko) x (1 + Norm*0.8) x Band-Faktor. "
         "Qualitative Prioritaet und monetaere Rechnung sind getrennte Modelle; bei hohem Prioritaetsindex "
@@ -348,7 +348,7 @@ row += 2
 ws3.cell(row=row, column=1,
          value="Hinweis: Hebelwerte der einzelnen Fragen sind themenspezifische Richtwerte, NICHT summierbar "
                "und nicht 1:1 mit der monetaeren Orientierungsrechnung gleichzusetzen. Die GL-Stunden je Frage "
-               "speisen die Dashboard-Kennzahl 'gebundene GL-Zeit' (Std x CHF 420).").font = f_note
+               "speisen die Dashboard-Kennzahl 'gebundene GL-Zeit' (Std x CHF 300).").font = f_note
 ws3.merge_cells(start_row=row, start_column=1, end_row=row, end_column=9)
 
 # ===========================================================================
