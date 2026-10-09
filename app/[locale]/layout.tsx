@@ -51,8 +51,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       images: [
         {
-          // Unique filename forces WhatsApp/Facebook to re-fetch cached previews.
-          url: "/og-share-20261009.jpg",
+          // Unique filename + bytes force WhatsApp/Facebook to re-fetch cached previews.
+          // Same path URL alone is not enough: WhatsApp caches text meta per exact share URL.
+          url: "/og-share-20261009c.jpg",
           width: 1200,
           height: 630,
           alt: t("ogTitle"),
@@ -64,7 +65,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: t("ogTitle"),
       description: t("ogDescription"),
-      images: ["/og-share-20261009.jpg"],
+      images: ["/og-share-20261009c.jpg"],
     },
     manifest: "/site.webmanifest?v=20260201",
     icons: {
