@@ -732,7 +732,10 @@
     },
     "jsonLd": {
       "serviceName": "Externe HR-Leitung für KMU",
-      "breadcrumbCurrent": "Externe HR-Leitung für KMU"
+      "breadcrumbCurrent": "Externe HR-Leitung für KMU",
+      "serviceType0": "Externe HR-Leitung",
+      "serviceType2": "Strategische HR-Unterstützung",
+      "personJobTitle": "Gründer und Lead Advisor"
     },
     "header": {
       "home": "Zur Hauptseite",

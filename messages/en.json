@@ -718,6 +718,303 @@
       "body": "If you want to explore fit for Switzerland-wide or hybrid collaboration, an initial conversation is the straightforward next step.",
       "cta": "Book an initial conversation",
       "homeLink": "Back to homepage"
+    },
+    "related": {
+      "body": "Looking for external HR leadership for your SME? Learn how TaVyro connects strategic people leadership with concrete HR implementation.",
+      "cta": "External HR leadership for SMEs",
+      "href": "/external-hr-leadership-sme"
+    }
+  },
+  "ExternalHrLeadershipSmePage": {
+    "meta": {
+      "titleAbsolute": "External HR Leadership for SMEs in Zurich | TaVyro",
+      "description": "External HR leadership for SMEs in Zurich and Switzerland. Strategic HR support, sparring for CEOs and executive teams, and concrete implementation by TaVyro."
+    },
+    "jsonLd": {
+      "serviceName": "External HR leadership for SMEs",
+      "breadcrumbCurrent": "External HR leadership for SMEs",
+      "serviceType0": "External HR leadership",
+      "serviceType2": "Strategic HR support",
+      "personJobTitle": "Founder and Lead Advisor"
+    },
+    "header": {
+      "home": "To main site",
+      "cta": "Book an initial call"
+    },
+    "footer": {
+      "home": "Main website",
+      "impressum": "Legal notice",
+      "privacy": "Privacy policy",
+      "copyright": "Copyright {year} TaVyro GmbH"
+    },
+    "hero": {
+      "eyebrow": "Strategic HR support for SMEs",
+      "h1": "External HR leadership for SMEs in Zurich and Switzerland",
+      "subheadline": "Strategic people leadership. Support on people matters. Concrete implementation.",
+      "p1": "In many SMEs, operational HR tasks are organised. But who takes strategic responsibility for people, leadership and organisation?",
+      "p2": "When demanding people issues land with the CEO, leaders need support, or change is ahead, experienced HR leadership is required. Not necessarily as an additional full-time role.",
+      "p3": "TaVyro supports CEOs, executive teams and boards as external HR leadership on a mandate basis. Personally, entrepreneurially and with clearly defined responsibilities.",
+      "p4": "As a Fractional CHRO, TaVyro combines strategic HR, executive sparring and the concrete implementation of agreed measures.",
+      "ctaPrimary": "Book an initial call",
+      "ctaSecondary": "How TaVyro supports you",
+      "trust": {
+        "0": "Personally delivered by Tam Nguyen",
+        "1": "Over 20 years of HR experience",
+        "2": "Zurich | nationwide in Switzerland"
+      }
+    },
+    "situations": {
+      "title": "When people topics increasingly become a CEO matter",
+      "intro": "Especially in small and medium-sized companies, people responsibility is often spread across several roles. HR administration works, yet for strategic and demanding questions an experienced sparring and implementation partner is missing.",
+      "outro": "Not every one of these situations requires a full-time HR lead. But each requires clear ownership.",
+      "items": {
+        "0": {
+          "title": "People issues stay with the CEO",
+          "body": "You make key people decisions yourself, handle conflicts and support managers. Less time remains for your actual executive responsibilities."
+        },
+        "1": {
+          "title": "Strategic HR is missing",
+          "body": "Recruiting, payroll and people support are organised. An overarching HR strategy, workforce planning and clear prioritisation are missing, however."
+        },
+        "2": {
+          "title": "Growth changes the organisation",
+          "body": "New employees, additional management layers and rising requirements make previously informal ways of working increasingly demanding."
+        },
+        "3": {
+          "title": "Difficult people decisions are ahead",
+          "body": "Terminations, conflicts, performance issues, succession questions or sensitive employment-law situations require experience, a structured approach and an independent counterpart."
+        },
+        "4": {
+          "title": "Change must be implemented",
+          "body": "Reorganisations, transformations or strategic shifts require more than concepts: clear responsibilities and consistent follow-through."
+        },
+        "5": {
+          "title": "The executive team needs an additional perspective",
+          "body": "People and organisation topics directly affect leadership, culture, performance and business risk. An experienced HR perspective at executive level creates additional decision space."
+        }
+      }
+    },
+    "services": {
+      "title": "How TaVyro supports your executive team",
+      "intro": "TaVyro combines strategic HR support with practical implementation. The concrete scope follows your company's challenges and the agreed mandate.",
+      "items": {
+        "0": {
+          "title": "Strategic HR and people strategy",
+          "bullets": {
+            "0": "Develop and implement an HR strategy",
+            "1": "Strategic workforce planning",
+            "2": "Align HR priorities with business strategy",
+            "3": "HR governance and decision structures",
+            "4": "People risks and succession planning",
+            "5": "Strategic HR support for CEO, executive team and board"
+          },
+          "desc": "Strategic people management must fit the business strategy. TaVyro supports the development of a pragmatic HR strategy and accompanies its concrete implementation."
+        },
+        "1": {
+          "title": "HR implementation and professionalisation",
+          "bullets": {
+            "0": "Implement HR measures",
+            "1": "Improve HR processes",
+            "2": "Build or optimise HR structures",
+            "3": "Clarify roles and accountabilities",
+            "4": "Steer HR projects",
+            "5": "Advance HR digitalisation and HR systems"
+          },
+          "desc": "An HR strategy only creates impact when measures are implemented. TaVyro accompanies the operational embedding of strategic decisions and strengthens the existing HR organisation."
+        },
+        "2": {
+          "title": "Support on people matters",
+          "bullets": {
+            "0": "Sparring on difficult people decisions",
+            "1": "Support with conflicts and performance issues",
+            "2": "Support for demanding employee conversations",
+            "3": "Support in employment-law sensitive situations",
+            "4": "Assess people risks",
+            "5": "Prepare and accompany leadership decisions"
+          },
+          "desc": "Demanding people questions require experience and an independent perspective. TaVyro supports managing directors and leaders with factual assessment, decision-making and implementation."
+        },
+        "3": {
+          "title": "Leadership and organisation development",
+          "bullets": {
+            "0": "Leadership structures and accountabilities",
+            "1": "Organisation development for SMEs",
+            "2": "Leadership development",
+            "3": "Collaboration within the executive team",
+            "4": "Performance management",
+            "5": "Corporate culture and leadership principles"
+          },
+          "desc": "People leadership and organisation development are closely linked. TaVyro supports companies in designing effective leadership and decision structures."
+        },
+        "4": {
+          "title": "Growth, transformation and reorganisation",
+          "bullets": {
+            "0": "HR support during company growth",
+            "1": "HR accompaniment of reorganisations",
+            "2": "Change management",
+            "3": "Organisational realignment",
+            "4": "Integration after acquisitions",
+            "5": "Support for succession and change processes"
+          },
+          "desc": "Change affects not only structures and processes, but also people, leadership and collaboration. TaVyro accompanies these changes from assessment through to implementation."
+        },
+        "5": {
+          "title": "Sparring for CEO, executive team and board",
+          "bullets": {
+            "0": "External sparring partner for the CEO",
+            "1": "Support on strategic people topics",
+            "2": "Preparation of complex HR decisions",
+            "3": "HR governance and people risks",
+            "4": "Sparring for executive team and board",
+            "5": "Independent second opinion in sensitive leadership situations"
+          },
+          "desc": "TaVyro provides an experienced counterpart for questions that cannot be resolved solely within the organisation."
+        }
+      }
+    },
+    "difference": {
+      "title": "External HR leadership instead of additional consulting reports",
+      "p1": "Classic HR consulting often supports a single project or a specific question.",
+      "p2": "External HR leadership, depending on the mandate, also takes on a continuous role in steering people and organisation topics.",
+      "p3": "TaVyro works with the CEO and executive team, prioritises the key challenges, accompanies decisions and assumes agreed responsibility for their implementation.",
+      "p4": "Existing HR professionals, trustees or external specialists are not necessarily replaced. Rather, tasks, accountabilities and collaboration are organised clearly.",
+      "highlight": "Strategic leadership and concrete implementation belong together.",
+      "linkLabel": "Learn more about the Fractional CHRO model"
+    },
+    "process": {
+      "title": "Experienced HR leadership at the scope your SME needs",
+      "intro": "Not every company needs its own full-time HR lead. Often a continuous, clearly defined involvement at executive level is enough.",
+      "outro": "The scope is adapted to actual need. Continuous mandates and clearly defined projects are both possible.",
+      "cta": "Discuss collaboration with no obligation",
+      "steps": {
+        "0": {
+          "title": "Clarify the starting point",
+          "body": "In a no-obligation initial call we discuss your most important people and organisation questions, the existing HR structure and the potential support need."
+        },
+        "1": {
+          "title": "Agree ownership and priorities",
+          "body": "TaVyro familiarises itself with the relevant organisation, processes, policies and starting situation.",
+          "body2": "Together we define responsibilities, decision paths, priorities and the mandate scope.",
+          "body3": "The initial effort for familiarisation is agreed transparently in advance and offered separately."
+        },
+        "2": {
+          "title": "Accompany, steer and implement",
+          "body": "Collaboration takes place in an agreed rhythm with the CEO and executive team.",
+          "body2": "Depending on the mandate, this includes regular executive sparring, participation in selected executive meetings, support for leaders, steering of HR initiatives and concrete implementation."
+        }
+      }
+    },
+    "about": {
+      "title": "Your personal contact: Tam Nguyen",
+      "imageAlt": "Portrait of Tam Nguyen, founder and Lead Advisor of TaVyro",
+      "p1": "Tam Nguyen is founder and Lead Advisor of TaVyro.",
+      "p2": "He has more than 20 years of experience in Swiss and international HR management, including several years as CHRO and member of the executive team.",
+      "p3": "His experience covers strategic HR management, organisation development, transformation, leadership, Swiss employment law, HR governance and HR digitalisation.",
+      "p4": "As a work and organisational psychologist, he combines entrepreneurial leadership experience with a solid understanding of people and organisations.",
+      "p5": "At TaVyro he personally takes responsibility for the agreed accompaniment.",
+      "linkLabel": "More about Tam Nguyen"
+    },
+    "faq": {
+      "title": "Frequently asked questions on external HR leadership for SMEs",
+      "items": {
+        "0": {
+          "q": "What is external HR leadership?",
+          "a": "External HR leadership assumes, within the agreed scope, responsibility for the strategic leadership and steering of people and organisation topics. It supports the CEO and executive team, develops HR priorities and accompanies their implementation, without requiring an additional full-time role."
+        },
+        "1": {
+          "q": "Which SMEs is external HR leadership suitable for?",
+          "a": "Particularly for companies whose people and organisation questions are becoming more complex, yet that do not need a full-time HR lead. This can include SMEs, family businesses, scale-ups or organisations in growth and change. What matters is the leadership need, not headcount alone."
+        },
+        "2": {
+          "q": "Does an SME with 80 employees need an HR lead?",
+          "a": "Not necessarily full-time. At around 80 employees, leadership, workforce planning, conflicts and organisation topics can already reach a level of complexity where experienced HR leadership makes sense. External HR leadership can take on this responsibility at the right scope."
+        },
+        "3": {
+          "q": "How do I find external HR leadership in the Zurich area?",
+          "a": "Important selection criteria are executive-team experience, knowledge of Swiss employment law, an understanding of SME structures, and the willingness to take responsibility for implementation beyond advice. TaVyro provides this support from Zurich for companies across Switzerland."
+        },
+        "4": {
+          "q": "Does TaVyro also support CEOs, executive teams and boards directly?",
+          "a": "Yes. TaVyro accompanies CEOs, executive team members and board members on strategic HR topics, people risks, leadership questions, succession planning and organisational change. The concrete role and decision rights are defined in each mandate."
+        },
+        "5": {
+          "q": "How do I as CEO get relief from people topics?",
+          "a": "A first step is clarifying which people decisions truly need to be taken at CEO level and which tasks can be delegated. External HR leadership can support managers, coordinate people topics, prepare decisions and assume agreed responsibility."
+        },
+        "6": {
+          "q": "Who supports the executive team with difficult people decisions?",
+          "a": "An experienced external HR leader can support as an independent sparring partner. TaVyro helps with the factual assessment of difficult people questions, with preparing decisions and with planning next steps. Legally complex specialist questions can, where needed, be clarified with appropriately qualified professionals."
+        },
+        "7": {
+          "q": "What distinguishes external HR leadership from classic HR consulting?",
+          "a": "Classic HR consulting is often project- or topic-based. External HR leadership, by contrast, can be continuously embedded in leadership and decision processes and assume agreed responsibility for implementation. Both models can complement each other."
+        },
+        "8": {
+          "q": "Is external HR leadership the same as HR outsourcing?",
+          "a": "No. HR outsourcing often moves operational tasks such as payroll or HR administration outside the company. External HR leadership by TaVyro focuses on strategic people leadership, decision support, organisation development and the steering of central HR topics."
+        },
+        "9": {
+          "q": "What is the difference between interim HR and a Fractional CHRO?",
+          "a": "Interim HR is often used to cover temporary vacancies or transition phases. A Fractional CHRO is typically engaged longer term at a reduced capacity and takes on defined leadership tasks. The models can overlap in practice. What matters are the objective, responsibility and mandate scope."
+        },
+        "10": {
+          "q": "Can external HR leadership be part of the executive team?",
+          "a": "Yes, external HR leadership can be closely embedded in the executive team and, for example, join executive meetings or take on defined leadership tasks. Formal membership, representation rights and decision authority must, however, be expressly agreed."
+        },
+        "11": {
+          "q": "How do we organise HR without our own CHRO?",
+          "a": "What matters is a clear division of tasks between HR administration, line management and strategic HR responsibility. External HR leadership can take on overarching steering and ensure that people and organisation topics are addressed systematically in the executive team."
+        },
+        "12": {
+          "q": "We already have an HR team. Why do we need additional support?",
+          "a": "An existing HR department can perform operational tasks very well without strategic people leadership at executive level being sufficiently covered. TaVyro complements existing resources, supports HR leaders and takes on additional responsibility where experience, capacity or an independent perspective is needed."
+        },
+        "13": {
+          "q": "How do we implement an HR strategy in an SME concretely?",
+          "a": "The starting point is the business goals and the current HR organisation. From that, priorities, responsibilities, measures and reviewable objectives are derived. TaVyro accompanies not only the development of an HR strategy, but also the steering and implementation of the agreed measures."
+        },
+        "14": {
+          "q": "Does TaVyro also accompany growth, reorganisations and transformations?",
+          "a": "Yes. TaVyro supports the further development of organisational structures, changes in leadership, reorganisations and the HR-side accompaniment of growth or transformation. Scope and responsibilities are adapted to the concrete starting situation."
+        },
+        "15": {
+          "q": "What does a Fractional CHRO do in an SME?",
+          "a": "A Fractional CHRO takes on strategic HR and organisation leadership at the agreed part-time capacity. This can include people strategy, sparring for CEO and executive team, HR governance, leadership topics, organisation development and accompaniment of important change processes."
+        },
+        "16": {
+          "q": "Does TaVyro also support HR digitalisation?",
+          "a": "Yes. TaVyro accompanies the further development of HR processes, HR systems, people analytics and the targeted use of digital or AI-supported tools. The concrete benefit for leadership and organisation remains the priority."
+        },
+        "17": {
+          "q": "How many days per month does external HR leadership require?",
+          "a": "It depends on company size, complexity and agreed responsibility. In some situations regular executive sparring is the focus; in others the company needs closer involvement in the executive team plus additional implementation support. The effort is defined in the mandate."
+        },
+        "18": {
+          "q": "What does external HR leadership for SMEs cost?",
+          "a": "Costs depend on the agreed scope of work and the intensity of collaboration. TaVyro offers different mandate models as well as project-based support. Any initial effort for familiarisation is agreed separately and transparently. Current models and prices are published on tavyro.ch.",
+          "aBefore": "Costs depend on the agreed scope of work and the intensity of collaboration. TaVyro offers different mandate models as well as project-based support. Any initial effort for familiarisation is agreed separately and transparently. Current models and prices are available under",
+          "aLink": "Models & Pricing",
+          "aAfter": "."
+        },
+        "19": {
+          "q": "How quickly can collaboration begin?",
+          "a": "It depends on current availability, the starting situation and the familiarisation effort required. In the initial call we clarify what support is needed and what a realistic start can look like. There is no blanket start guarantee."
+        },
+        "20": {
+          "q": "How does TaVyro ensure confidentiality on sensitive people topics?",
+          "a": "Confidentiality is part of professional mandate management. Access, information exchange and responsibilities are agreed according to the situation. Where needed, a separate confidentiality agreement can be concluded."
+        },
+        "21": {
+          "q": "What happens in the no-obligation initial call?",
+          "a": "In a roughly 30-minute conversation we discuss the most important people and organisation questions, the current situation and the potential support need. The aim is an initial assessment of whether and in what form collaboration could make sense."
+        }
+      }
+    },
+    "final": {
+      "title": "People and organisation belong at the executive table.",
+      "p1": "Would you like to advance your HR strategy, get support on people matters, or clarify whether external HR leadership makes sense for your SME?",
+      "p2": "In a no-obligation conversation, let us find out what responsibility and support your company actually needs.",
+      "cta": "Book a no-obligation initial call"
     }
   }
 }

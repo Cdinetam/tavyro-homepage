@@ -24,6 +24,14 @@ const CROSS_LOCALE_PATHS: Record<string, { de: string; en: string }> = {
     de: "/fractional-chro-schweiz",
     en: "/fractional-chro-switzerland",
   },
+  "/externe-hr-leitung-kmu": {
+    de: "/externe-hr-leitung-kmu",
+    en: "/external-hr-leadership-sme",
+  },
+  "/external-hr-leadership-sme": {
+    de: "/externe-hr-leitung-kmu",
+    en: "/external-hr-leadership-sme",
+  },
 };
 
 function localeHref(locale: "de" | "en", pathname: string): string {

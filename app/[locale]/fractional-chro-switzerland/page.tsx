@@ -64,6 +64,7 @@ export default async function FractionalChroSwitzerlandPage({ params }: Props) {
       locale="en"
       namespace="FractionalChroSwitzerlandPage"
       jsonLdId="fractional-chro-switzerland-faq"
+      relatedHref="/external-hr-leadership-sme"
     />
   );
 }

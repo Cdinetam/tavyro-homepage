@@ -20,6 +20,7 @@ const LOCALE_ROUTE_PATHS: Record<(typeof siteConfig.locales)[number], string[]> 
     "faq",
     "fractional-chro-switzerland",
     "fractional-chro-zurich",
+    "external-hr-leadership-sme",
   ],
 };
 

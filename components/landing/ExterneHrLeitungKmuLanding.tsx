@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { siteConfig } from "@/config/site";
+import { siteConfig, type SiteLocale } from "@/config/site";
 import JsonLd from "@/components/seo/JsonLd";
 import LandingMinimalHeader from "@/components/landing/LandingMinimalHeader";
 import LandingCompactFooter from "@/components/landing/LandingCompactFooter";
@@ -17,17 +17,38 @@ const FAQ_KEYS = [
   "20", "21",
 ] as const;
 
-const PAGE_PATH = "/externe-hr-leitung-kmu";
-const CANONICAL = `${siteConfig.siteUrl}/de${PAGE_PATH}`;
 const GOLD = "#F5C518";
 
-export default async function ExterneHrLeitungKmuLanding() {
-  const t = await getTranslations({
-    locale: "de",
-    namespace: "ExterneHrLeitungKmuPage",
-  });
+export const EXTERNE_HR_PATHS = {
+  de: "/externe-hr-leitung-kmu",
+  en: "/external-hr-leadership-sme",
+} as const;
+
+type Namespace = "ExterneHrLeitungKmuPage" | "ExternalHrLeadershipSmePage";
+
+type Props = {
+  locale: SiteLocale;
+  namespace: Namespace;
+  path: string;
+  alternateHref: string;
+  jsonLdIdPrefix: string;
+  fractionalChroHref: string;
+};
+
+export default async function ExterneHrLeitungKmuLanding({
+  locale,
+  namespace,
+  path,
+  alternateHref,
+  jsonLdIdPrefix,
+  fractionalChroHref,
+}: Props) {
+  const t = await getTranslations({ locale, namespace });
 
   const year = new Date().getFullYear();
+  const canonical = `${siteConfig.siteUrl}/${locale}${path}`;
+  const inLanguage = locale === "de" ? "de-CH" : "en";
+  const cityName = locale === "de" ? "Zürich" : "Zurich";
 
   const faqMainEntity = FAQ_KEYS.map((key) => ({
     "@type": "Question",
@@ -41,11 +62,11 @@ export default async function ExterneHrLeitungKmuLanding() {
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${CANONICAL}#webpage`,
-    url: CANONICAL,
+    "@id": `${canonical}#webpage`,
+    url: canonical,
     name: t("meta.titleAbsolute"),
     description: t("meta.description"),
-    inLanguage: "de-CH",
+    inLanguage,
     isPartOf: {
       "@type": "WebSite",
       "@id": `${siteConfig.siteUrl}#website`,
@@ -53,17 +74,17 @@ export default async function ExterneHrLeitungKmuLanding() {
       url: siteConfig.siteUrl,
     },
     about: {
-      "@id": `${CANONICAL}#service`,
+      "@id": `${canonical}#service`,
     },
     breadcrumb: {
-      "@id": `${CANONICAL}#breadcrumb`,
+      "@id": `${canonical}#breadcrumb`,
     },
   };
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${CANONICAL}#service`,
+    "@id": `${canonical}#service`,
     name: t("jsonLd.serviceName"),
     description: t("meta.description"),
     provider: {
@@ -79,39 +100,39 @@ export default async function ExterneHrLeitungKmuLanding() {
         "@type": "PostalAddress",
         streetAddress: "Albisriederstrasse 248",
         postalCode: "8047",
-        addressLocality: "Zürich",
+        addressLocality: cityName,
         addressCountry: "CH",
       },
     },
     areaServed: [
-      { "@type": "City", name: "Zürich" },
+      { "@type": "City", name: cityName },
       { "@type": "Country", name: "Switzerland" },
     ],
     serviceType: [
-      "Externe HR-Leitung",
+      t("jsonLd.serviceType0"),
       "Fractional CHRO",
-      "Strategische HR-Unterstützung",
+      t("jsonLd.serviceType2"),
       "Executive Sparring",
     ],
-    url: CANONICAL,
+    url: canonical,
   };
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "@id": `${CANONICAL}#breadcrumb`,
+    "@id": `${canonical}#breadcrumb`,
     itemListElement: [
       {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: `${siteConfig.siteUrl}/de`,
+        item: `${siteConfig.siteUrl}/${locale}`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: t("jsonLd.breadcrumbCurrent"),
-        item: CANONICAL,
+        item: canonical,
       },
     ],
   };
@@ -121,7 +142,7 @@ export default async function ExterneHrLeitungKmuLanding() {
     "@type": "Person",
     "@id": `${siteConfig.siteUrl}#tam-nguyen`,
     name: "Tam Nguyen",
-    jobTitle: "Gründer und Lead Advisor",
+    jobTitle: t("jsonLd.personJobTitle"),
     worksFor: {
       "@id": `${siteConfig.siteUrl}#organization`,
     },
@@ -133,21 +154,23 @@ export default async function ExterneHrLeitungKmuLanding() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": `${CANONICAL}#faq`,
+    "@id": `${canonical}#faq`,
     mainEntity: faqMainEntity,
   };
 
   return (
     <>
-      <JsonLd data={webPageJsonLd} id="externe-hr-leitung-kmu-webpage" />
-      <JsonLd data={serviceJsonLd} id="externe-hr-leitung-kmu-service" />
-      <JsonLd data={breadcrumbJsonLd} id="externe-hr-leitung-kmu-breadcrumb" />
-      <JsonLd data={personJsonLd} id="externe-hr-leitung-kmu-person" />
-      <JsonLd data={faqJsonLd} id="externe-hr-leitung-kmu-faq" />
+      <JsonLd data={webPageJsonLd} id={`${jsonLdIdPrefix}-webpage`} />
+      <JsonLd data={serviceJsonLd} id={`${jsonLdIdPrefix}-service`} />
+      <JsonLd data={breadcrumbJsonLd} id={`${jsonLdIdPrefix}-breadcrumb`} />
+      <JsonLd data={personJsonLd} id={`${jsonLdIdPrefix}-person`} />
+      <JsonLd data={faqJsonLd} id={`${jsonLdIdPrefix}-faq`} />
 
       <LandingMinimalHeader
         homeLabel={t("header.home")}
         ctaLabel={t("header.cta")}
+        locale={locale}
+        alternateHref={alternateHref}
       />
 
       <main className="min-h-screen bg-white">
@@ -333,7 +356,7 @@ export default async function ExterneHrLeitungKmuLanding() {
               </blockquote>
               <p className="mt-8">
                 <Link
-                  href="/fractional-chro-schweiz"
+                  href={fractionalChroHref}
                   className="font-medium text-tavyro-brand-600 underline underline-offset-4 transition-colors hover:text-tavyro-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tavyro-brand-500 focus-visible:ring-offset-2 rounded-sm"
                 >
                   {t("difference.linkLabel")}

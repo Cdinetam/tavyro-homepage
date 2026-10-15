@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/config/site";
-import ExterneHrLeitungKmuLanding from "@/components/landing/ExterneHrLeitungKmuLanding";
+import ExterneHrLeitungKmuLanding, {
+  EXTERNE_HR_PATHS,
+} from "@/components/landing/ExterneHrLeitungKmuLanding";
 
-const PATH = "/externe-hr-leitung-kmu";
+const PATH = EXTERNE_HR_PATHS.de;
+const EN_PATH = EXTERNE_HR_PATHS.en;
 const CANONICAL = `${siteConfig.siteUrl}/de${PATH}`;
+const EN_URL = `${siteConfig.siteUrl}/en${EN_PATH}`;
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -45,9 +49,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     alternates: {
       canonical: CANONICAL,
-      // DE-only page: no invented EN hreflang
       languages: {
         "de-CH": CANONICAL,
+        en: EN_URL,
         "x-default": CANONICAL,
       },
     },
@@ -83,5 +87,14 @@ export default async function ExterneHrLeitungKmuPage({ params }: Props) {
     notFound();
   }
 
-  return <ExterneHrLeitungKmuLanding />;
+  return (
+    <ExterneHrLeitungKmuLanding
+      locale="de"
+      namespace="ExterneHrLeitungKmuPage"
+      path={PATH}
+      alternateHref={`/en${EN_PATH}`}
+      jsonLdIdPrefix="externe-hr-leitung-kmu"
+      fractionalChroHref="/fractional-chro-schweiz"
+    />
+  );
 }
