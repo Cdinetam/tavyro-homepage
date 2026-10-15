@@ -64,6 +64,7 @@ export default async function FractionalChroSchweizPage({ params }: Props) {
       locale="de"
       namespace="FractionalChroSchweizPage"
       jsonLdId="fractional-chro-schweiz-faq"
+      relatedHref="/externe-hr-leitung-kmu"
     />
   );
 }

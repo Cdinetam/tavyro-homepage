@@ -718,6 +718,300 @@
       "body": "Für schweizweite oder hybride Zusammenarbeit ist das Erstgespräch der direkte Einstieg.",
       "cta": "Erstgespräch vereinbaren",
       "homeLink": "Zurück zur Startseite"
+    },
+    "related": {
+      "body": "Sie suchen eine externe HR-Leitung für Ihr KMU? Erfahren Sie, wie TaVyro strategische Personalführung und konkrete HR-Umsetzung verbindet.",
+      "cta": "Externe HR-Leitung für KMU",
+      "href": "/externe-hr-leitung-kmu"
+    }
+  },
+  "ExterneHrLeitungKmuPage": {
+    "meta": {
+      "titleAbsolute": "Externe HR-Leitung für KMU in Zürich | TaVyro",
+      "description": "Externe HR-Leitung für KMU in Zürich und der Schweiz. Strategische HR-Unterstützung, Sparring für CEO und GL sowie konkrete Umsetzung durch TaVyro."
+    },
+    "jsonLd": {
+      "serviceName": "Externe HR-Leitung für KMU",
+      "breadcrumbCurrent": "Externe HR-Leitung für KMU"
+    },
+    "header": {
+      "home": "Zur Hauptseite",
+      "cta": "Erstgespräch vereinbaren"
+    },
+    "footer": {
+      "home": "Hauptwebsite",
+      "impressum": "Impressum",
+      "privacy": "Datenschutz",
+      "copyright": "Copyright {year} TaVyro GmbH"
+    },
+    "hero": {
+      "eyebrow": "Strategische HR-Unterstützung für KMU",
+      "h1": "Externe HR-Leitung für KMU in Zürich und der Schweiz",
+      "subheadline": "Strategische Personalführung. Begleitung in personellen Fragen. Konkrete Umsetzung.",
+      "p1": "In vielen KMU sind die operativen Personalaufgaben organisiert. Doch wer übernimmt die strategische Verantwortung für Personal, Führung und Organisation?",
+      "p2": "Wenn anspruchsvolle Personalfragen beim CEO landen, Führungskräfte Unterstützung benötigen oder Veränderungen anstehen, braucht es erfahrene HR-Führung. Nicht zwingend als zusätzliche Vollzeitstelle.",
+      "p3": "TaVyro unterstützt CEOs, Geschäftsleitungen und Verwaltungsräte als externe HR-Leitung auf Mandatsbasis. Persönlich, unternehmerisch und mit klar definierten Verantwortlichkeiten.",
+      "p4": "Als Fractional CHRO verbindet TaVyro strategisches HR, Executive Sparring und die konkrete Umsetzung vereinbarter Massnahmen.",
+      "ctaPrimary": "Erstgespräch vereinbaren",
+      "ctaSecondary": "So unterstützt TaVyro",
+      "trust": {
+        "0": "Persönlich durch Tam Nguyen",
+        "1": "Über 20 Jahre HR-Erfahrung",
+        "2": "Zürich | Schweizweit"
+      }
+    },
+    "situations": {
+      "title": "Wenn Personalfragen zunehmend zur Chefsache werden",
+      "intro": "Gerade in kleineren und mittleren Unternehmen ist die Personalverantwortung häufig auf mehrere Funktionen verteilt. Die Personaladministration funktioniert, doch bei strategischen und anspruchsvollen Fragen fehlt ein erfahrener Sparrings- und Umsetzungspartner.",
+      "outro": "Nicht jede dieser Situationen erfordert eine eigene Vollzeit-HR-Leitung. Aber jede benötigt klare Verantwortung.",
+      "items": {
+        "0": {
+          "title": "Personalfragen bleiben beim CEO",
+          "body": "Sie treffen wichtige Personalentscheidungen selbst, begleiten Konflikte und unterstützen Führungskräfte. Für Ihre eigentlichen Geschäftsleitungsaufgaben bleibt weniger Zeit."
+        },
+        "1": {
+          "title": "Strategisches HR fehlt",
+          "body": "Recruiting, Lohnadministration und Personalbetreuung sind organisiert. Eine übergreifende HR-Strategie, Personalplanung und klare Priorisierung fehlen jedoch."
+        },
+        "2": {
+          "title": "Wachstum verändert die Organisation",
+          "body": "Neue Mitarbeitende, zusätzliche Führungsebenen und steigende Anforderungen machen bisher informelle Abläufe zunehmend anspruchsvoll."
+        },
+        "3": {
+          "title": "Schwierige personelle Entscheidungen stehen an",
+          "body": "Kündigungen, Konflikte, Leistungsprobleme, Nachfolgefragen oder sensible arbeitsrechtliche Situationen benötigen Erfahrung, ein strukturiertes Vorgehen und ein unabhängiges Gegenüber."
+        },
+        "4": {
+          "title": "Veränderungen müssen umgesetzt werden",
+          "body": "Reorganisationen, Transformationen oder strategische Veränderungen erfordern nicht nur Konzepte, sondern klare Verantwortlichkeiten und eine konsequente Umsetzung."
+        },
+        "5": {
+          "title": "Die Geschäftsleitung benötigt eine zusätzliche Perspektive",
+          "body": "Personal- und Organisationsfragen haben direkte Auswirkungen auf Führung, Unternehmenskultur, Leistung und Unternehmensrisiken. Eine erfahrene HR-Perspektive auf Geschäftsleitungsebene schafft zusätzlichen Entscheidungsspielraum."
+        }
+      }
+    },
+    "services": {
+      "title": "Wie TaVyro Ihre Geschäftsleitung unterstützt",
+      "intro": "TaVyro verbindet strategische HR-Unterstützung mit praktischer Umsetzung. Der konkrete Leistungsumfang richtet sich nach den Herausforderungen Ihres Unternehmens und dem vereinbarten Mandat.",
+      "items": {
+        "0": {
+          "title": "Strategisches HR und Personalstrategie",
+          "bullets": {
+            "0": "HR-Strategie entwickeln und umsetzen",
+            "1": "Strategische Personalplanung",
+            "2": "Ausrichtung der HR-Prioritäten auf die Unternehmensstrategie",
+            "3": "HR-Governance und Entscheidungsstrukturen",
+            "4": "Personalrisiken und Nachfolgeplanung",
+            "5": "Strategische HR-Unterstützung für CEO, GL und VR"
+          },
+          "desc": "Strategisches Personalmanagement muss zur Unternehmensstrategie passen. TaVyro unterstützt bei der Entwicklung einer pragmatischen HR-Strategie und begleitet deren konkrete Umsetzung."
+        },
+        "1": {
+          "title": "HR-Umsetzung und Professionalisierung",
+          "bullets": {
+            "0": "Umsetzung von HR-Massnahmen",
+            "1": "HR-Prozesse verbessern",
+            "2": "HR-Strukturen aufbauen oder optimieren",
+            "3": "Rollen und Zuständigkeiten klären",
+            "4": "HR-Projekte steuern",
+            "5": "HR-Digitalisierung und HR-Systeme weiterentwickeln"
+          },
+          "desc": "Eine HR-Strategie entfaltet erst Wirkung, wenn Massnahmen umgesetzt werden. TaVyro begleitet die operative Verankerung strategischer Entscheidungen und stärkt die vorhandene HR-Organisation."
+        },
+        "2": {
+          "title": "Begleitung in personellen Fragen",
+          "bullets": {
+            "0": "Sparring bei schwierigen Personalentscheidungen",
+            "1": "Unterstützung bei Konflikten und Leistungsproblemen",
+            "2": "Begleitung anspruchsvoller Mitarbeitergespräche",
+            "3": "Unterstützung bei arbeitsrechtlich sensiblen Situationen",
+            "4": "Einordnung von Personalrisiken",
+            "5": "Vorbereitung und Begleitung von Führungsentscheidungen"
+          },
+          "desc": "Anspruchsvolle Personalfragen benötigen Erfahrung und eine unabhängige Perspektive. TaVyro unterstützt Geschäftsführer und Führungskräfte bei der sachlichen Einordnung, Entscheidungsfindung und Umsetzung."
+        },
+        "3": {
+          "title": "Führung und Organisationsentwicklung",
+          "bullets": {
+            "0": "Führungsstrukturen und Verantwortlichkeiten",
+            "1": "Organisationsentwicklung für KMU",
+            "2": "Führungskräfteentwicklung",
+            "3": "Zusammenarbeit innerhalb der Geschäftsleitung",
+            "4": "Performance Management",
+            "5": "Unternehmenskultur und Führungsgrundsätze"
+          },
+          "desc": "Personalführung und Organisationsentwicklung sind eng miteinander verbunden. TaVyro unterstützt Unternehmen bei der Gestaltung wirksamer Führungs- und Entscheidungsstrukturen."
+        },
+        "4": {
+          "title": "Wachstum, Transformation und Reorganisation",
+          "bullets": {
+            "0": "HR-Unterstützung bei Unternehmenswachstum",
+            "1": "HR-Begleitung von Reorganisationen",
+            "2": "Change Management",
+            "3": "Organisatorische Neuausrichtung",
+            "4": "Integration nach Unternehmensübernahmen",
+            "5": "Begleitung von Nachfolge- und Veränderungsprozessen"
+          },
+          "desc": "Veränderungen betreffen nicht nur Strukturen und Prozesse, sondern auch Menschen, Führung und Zusammenarbeit. TaVyro begleitet diese Veränderungen von der Einordnung bis zur Umsetzung."
+        },
+        "5": {
+          "title": "Sparring für CEO, Geschäftsleitung und Verwaltungsrat",
+          "bullets": {
+            "0": "Externer Sparringspartner für den CEO",
+            "1": "Unterstützung bei strategischen Personalfragen",
+            "2": "Vorbereitung komplexer HR-Entscheidungen",
+            "3": "HR-Governance und Personalrisiken",
+            "4": "Sparring für GL und Verwaltungsrat",
+            "5": "Unabhängige Zweitmeinung in sensiblen Führungssituationen"
+          },
+          "desc": "TaVyro bietet ein erfahrenes Gegenüber für Fragen, die sich nicht ausschliesslich innerhalb der eigenen Organisation klären lassen."
+        }
+      }
+    },
+    "difference": {
+      "title": "Externe HR-Leitung statt zusätzlicher Beratungsberichte",
+      "p1": "Klassische HR-Beratung unterstützt häufig bei einem einzelnen Projekt oder einer konkreten Fragestellung.",
+      "p2": "Eine externe HR-Leitung übernimmt darüber hinaus, abhängig vom Mandat, eine kontinuierliche Rolle in der Steuerung von Personal- und Organisationsthemen.",
+      "p3": "TaVyro arbeitet mit CEO und Geschäftsleitung zusammen, priorisiert die wesentlichen Herausforderungen, begleitet Entscheidungen und übernimmt vereinbarte Verantwortung bei deren Umsetzung.",
+      "p4": "Bestehende HR-Fachpersonen, Treuhänder oder externe Spezialisten werden dabei nicht zwangsläufig ersetzt. Vielmehr werden Aufgaben, Zuständigkeiten und Zusammenarbeit klar organisiert.",
+      "highlight": "Strategische Führung und konkrete Umsetzung gehören zusammen.",
+      "linkLabel": "Mehr über das Fractional-CHRO-Modell erfahren"
+    },
+    "process": {
+      "title": "Erfahrene HR-Führung im Umfang, den Ihr KMU benötigt",
+      "intro": "Nicht jedes Unternehmen benötigt eine eigene HR-Leitung mit einem Vollzeitpensum. Häufig genügt eine kontinuierliche, klar definierte Einbindung auf Geschäftsleitungsebene.",
+      "outro": "Der Umfang wird an den tatsächlichen Bedarf angepasst. Möglich sind kontinuierliche Mandate und klar abgegrenzte Projekte.",
+      "cta": "Zusammenarbeit unverbindlich besprechen",
+      "steps": {
+        "0": {
+          "title": "Ausgangslage klären",
+          "body": "Im unverbindlichen Erstgespräch besprechen wir Ihre wichtigsten Personal- und Organisationsfragen, die bestehende HR-Struktur und den möglichen Unterstützungsbedarf."
+        },
+        "1": {
+          "title": "Verantwortung und Prioritäten vereinbaren",
+          "body": "TaVyro arbeitet sich in die relevante Organisation, Prozesse, Reglemente und Ausgangslage ein.",
+          "body2": "Gemeinsam definieren wir Verantwortlichkeiten, Entscheidungswege, Prioritäten und den Mandatsumfang.",
+          "body3": "Der Initialaufwand für die Einarbeitung wird vorab transparent vereinbart und separat offeriert."
+        },
+        "2": {
+          "title": "Begleiten, steuern und umsetzen",
+          "body": "Die Zusammenarbeit erfolgt in einem vereinbarten Rhythmus mit CEO und Geschäftsleitung.",
+          "body2": "Je nach Mandat gehören dazu regelmässiges Executive Sparring, Teilnahme an ausgewählten GL-Sitzungen, Begleitung von Führungskräften, Steuerung von HR-Initiativen und konkrete Umsetzung."
+        }
+      }
+    },
+    "about": {
+      "title": "Ihr persönlicher Ansprechpartner: Tam Nguyen",
+      "imageAlt": "Portrait von Tam Nguyen, Gründer und Lead Advisor von TaVyro",
+      "p1": "Tam Nguyen ist Gründer und Lead Advisor von TaVyro.",
+      "p2": "Er verfügt über mehr als 20 Jahre Erfahrung im schweizerischen und internationalen HR-Management, davon mehrere Jahre als CHRO und Mitglied der Geschäftsleitung.",
+      "p3": "Seine Erfahrung umfasst strategisches HR-Management, Organisationsentwicklung, Transformation, Führung, Schweizer Arbeitsrecht, HR-Governance und HR-Digitalisierung.",
+      "p4": "Als Arbeits- und Organisationspsychologe verbindet er unternehmerische Führungserfahrung mit einem fundierten Verständnis für Menschen und Organisationen.",
+      "p5": "Bei TaVyro übernimmt er persönlich die Verantwortung für die vereinbarte Begleitung.",
+      "linkLabel": "Mehr über Tam Nguyen"
+    },
+    "faq": {
+      "title": "Häufige Fragen zur externen HR-Leitung für KMU",
+      "items": {
+        "0": {
+          "q": "Was ist eine externe HR-Leitung?",
+          "a": "Eine externe HR-Leitung übernimmt im vereinbarten Umfang Verantwortung für die strategische Führung und Steuerung von Personal- und Organisationsthemen. Sie unterstützt CEO und Geschäftsleitung, entwickelt HR-Prioritäten und begleitet deren Umsetzung, ohne dass dafür eine zusätzliche Vollzeitstelle geschaffen werden muss."
+        },
+        "1": {
+          "q": "Für welche KMU eignet sich eine externe HR-Leitung?",
+          "a": "Insbesondere für Unternehmen, deren Personal- und Organisationsfragen komplexer werden, die jedoch keine eigene Vollzeit-HR-Leitung benötigen. Das können KMU, Familienunternehmen, Scale-ups oder Organisationen in Wachstum und Veränderung sein. Entscheidend ist der Führungsbedarf, nicht allein die Mitarbeiterzahl."
+        },
+        "2": {
+          "q": "Braucht ein KMU mit 80 Mitarbeitenden einen HR-Leiter?",
+          "a": "Nicht zwingend in Vollzeit. Bei rund 80 Mitarbeitenden können Führung, Personalplanung, Konflikte und Organisationsfragen bereits eine Komplexität erreichen, die eine erfahrene HR-Leitung sinnvoll macht. Eine externe HR-Leitung kann diese Verantwortung im passenden Umfang übernehmen."
+        },
+        "3": {
+          "q": "Wie finde ich eine externe HR-Leitung im Raum Zürich?",
+          "a": "Wichtige Auswahlkriterien sind Erfahrung in der Geschäftsleitung, Kenntnisse des Schweizer Arbeitsrechts, Verständnis für KMU-Strukturen sowie die Bereitschaft, neben der Beratung auch Verantwortung für die Umsetzung zu übernehmen. TaVyro bietet diese Unterstützung von Zürich aus für Unternehmen in der ganzen Schweiz an."
+        },
+        "4": {
+          "q": "Unterstützt TaVyro auch CEOs, Geschäftsleitungen und Verwaltungsräte direkt?",
+          "a": "Ja. TaVyro begleitet CEOs, GL-Mitglieder und Verwaltungsräte bei strategischen HR-Themen, Personalrisiken, Führungsfragen, Nachfolgeplanung und organisatorischen Veränderungen. Die konkrete Rolle und die Entscheidungsbefugnisse werden im jeweiligen Mandat definiert."
+        },
+        "5": {
+          "q": "Wie entlaste ich mich als CEO bei Personalfragen?",
+          "a": "Ein erster Schritt ist die Klärung, welche Personalentscheidungen tatsächlich auf CEO-Ebene getroffen werden müssen und welche Aufgaben delegiert werden können. Eine externe HR-Leitung kann Führungskräfte unterstützen, Personalthemen koordinieren, Entscheidungen vorbereiten und vereinbarte Verantwortung übernehmen."
+        },
+        "6": {
+          "q": "Wer unterstützt die Geschäftsleitung bei schwierigen Personalentscheidungen?",
+          "a": "Eine erfahrene externe HR-Führungsperson kann als unabhängiger Sparringspartner unterstützen. TaVyro hilft bei der sachlichen Einordnung schwieriger Personalfragen, bei der Vorbereitung von Entscheidungen und bei der Planung der nächsten Schritte. Rechtlich komplexe Spezialfragen können bei Bedarf mit entsprechend qualifizierten Fachpersonen geklärt werden."
+        },
+        "7": {
+          "q": "Was unterscheidet eine externe HR-Leitung von klassischer HR-Beratung?",
+          "a": "Eine klassische HR-Beratung ist häufig projekt- oder themenbezogen. Eine externe HR-Leitung kann dagegen kontinuierlich in Führungs- und Entscheidungsprozesse eingebunden sein und vereinbarte Verantwortung für die Umsetzung übernehmen. Beide Modelle können sich ergänzen."
+        },
+        "8": {
+          "q": "Ist externe HR-Leitung dasselbe wie HR-Outsourcing?",
+          "a": "Nein. Beim HR-Outsourcing werden häufig operative Aufgaben wie Lohnadministration oder Personalverwaltung ausgelagert. Die externe HR-Leitung durch TaVyro konzentriert sich auf strategische Personalführung, Entscheidungsunterstützung, Organisationsentwicklung und die Steuerung zentraler HR-Themen."
+        },
+        "9": {
+          "q": "Was ist der Unterschied zwischen Interim HR und einem Fractional CHRO?",
+          "a": "Interim HR wird oft eingesetzt, um vorübergehende Vakanzen oder Übergangsphasen abzudecken. Ein Fractional CHRO ist typischerweise längerfristig mit einem reduzierten Pensum eingebunden und übernimmt definierte Führungsaufgaben. Die Modelle können sich in der Praxis überschneiden. Entscheidend sind Ziel, Verantwortung und Mandatsumfang."
+        },
+        "10": {
+          "q": "Kann eine externe HR-Leitung Teil der Geschäftsleitung sein?",
+          "a": "Ja, eine externe HR-Leitung kann eng in die Geschäftsleitung eingebunden werden und beispielsweise an GL-Sitzungen teilnehmen oder definierte Führungsaufgaben übernehmen. Eine formelle Mitgliedschaft, Vertretungsbefugnisse und Entscheidungsrechte müssen jedoch ausdrücklich vereinbart werden."
+        },
+        "11": {
+          "q": "Wie organisieren wir HR ohne eigenen CHRO?",
+          "a": "Wichtig ist eine klare Aufgabenteilung zwischen Personaladministration, Linienführung und strategischer HR-Verantwortung. Eine externe HR-Leitung kann die übergreifende Steuerung übernehmen und sicherstellen, dass Personal- und Organisationsfragen systematisch in der Geschäftsleitung behandelt werden."
+        },
+        "12": {
+          "q": "Wir haben bereits ein HR-Team. Weshalb brauchen wir zusätzliche Unterstützung?",
+          "a": "Eine bestehende HR-Abteilung kann operative Aufgaben sehr gut erfüllen, ohne dass strategische Personalführung auf Geschäftsleitungsebene ausreichend abgedeckt ist. TaVyro ergänzt vorhandene Ressourcen, unterstützt die HR-Verantwortlichen und übernimmt dort zusätzliche Verantwortung, wo Erfahrung, Kapazität oder eine unabhängige Perspektive benötigt werden."
+        },
+        "13": {
+          "q": "Wie setzen wir eine HR-Strategie im KMU konkret um?",
+          "a": "Ausgangspunkt sind die geschäftlichen Ziele und die aktuelle HR-Organisation. Daraus werden Prioritäten, Verantwortlichkeiten, Massnahmen und überprüfbare Ziele abgeleitet. TaVyro begleitet nicht nur die Entwicklung einer HR-Strategie, sondern auch die Steuerung und Umsetzung der vereinbarten Massnahmen."
+        },
+        "14": {
+          "q": "Begleitet TaVyro auch Wachstum, Reorganisationen und Transformationen?",
+          "a": "Ja. TaVyro unterstützt bei der Weiterentwicklung von Organisationsstrukturen, bei Veränderungen in der Führung, bei Reorganisationen und bei der HR-seitigen Begleitung von Wachstum oder Transformation. Umfang und Verantwortlichkeiten werden an die konkrete Ausgangslage angepasst."
+        },
+        "15": {
+          "q": "Was macht ein Fractional CHRO in einem KMU?",
+          "a": "Ein Fractional CHRO übernimmt strategische HR- und Organisationsführung im vereinbarten Teilpensum. Dazu gehören beispielsweise Personalstrategie, Sparring für CEO und Geschäftsleitung, HR-Governance, Führungsthemen, Organisationsentwicklung und die Begleitung wichtiger Veränderungsprozesse."
+        },
+        "16": {
+          "q": "Unterstützt TaVyro auch bei der HR-Digitalisierung?",
+          "a": "Ja. TaVyro begleitet die Weiterentwicklung von HR-Prozessen, HR-Systemen, People Analytics und den gezielten Einsatz digitaler beziehungsweise KI-gestützter Instrumente. Dabei steht der konkrete Nutzen für Führung und Organisation im Vordergrund."
+        },
+        "17": {
+          "q": "Wie viele Tage pro Monat benötigt eine externe HR-Leitung?",
+          "a": "Das hängt von Unternehmensgrösse, Komplexität und vereinbarter Verantwortung ab. In manchen Situationen steht regelmässiges Executive Sparring im Vordergrund, in anderen benötigt das Unternehmen eine engere Einbindung in die Geschäftsleitung sowie zusätzliche Umsetzungsunterstützung. Der Aufwand wird im Mandat definiert."
+        },
+        "18": {
+          "q": "Was kostet eine externe HR-Leitung für KMU?",
+          "a": "Die Kosten richten sich nach dem vereinbarten Leistungsumfang und der Intensität der Zusammenarbeit. TaVyro bietet unterschiedliche Mandatsmodelle sowie projektbezogene Unterstützung. Ein allfälliger Initialaufwand für die Einarbeitung wird separat und transparent vereinbart. Die aktuellen Modelle und Preise sind auf tavyro.ch veröffentlicht.",
+          "aBefore": "Die Kosten richten sich nach dem vereinbarten Leistungsumfang und der Intensität der Zusammenarbeit. TaVyro bietet unterschiedliche Mandatsmodelle sowie projektbezogene Unterstützung. Ein allfälliger Initialaufwand für die Einarbeitung wird separat und transparent vereinbart. Die aktuellen Modelle und Preise finden Sie unter",
+          "aLink": "Modelle & Preise",
+          "aAfter": "."
+        },
+        "19": {
+          "q": "Wie schnell kann eine Zusammenarbeit beginnen?",
+          "a": "Das hängt von der aktuellen Verfügbarkeit, der Ausgangslage und dem erforderlichen Einarbeitungsaufwand ab. Im Erstgespräch wird geklärt, welche Unterstützung benötigt wird und wie ein realistischer Start aussehen kann. Es gibt keine pauschale Startgarantie."
+        },
+        "20": {
+          "q": "Wie stellt TaVyro Vertraulichkeit bei sensiblen Personalfragen sicher?",
+          "a": "Vertraulichkeit ist Bestandteil der professionellen Mandatsführung. Zugriff, Informationsaustausch und Verantwortlichkeiten werden entsprechend der jeweiligen Situation vereinbart. Bei Bedarf kann eine separate Vertraulichkeitsvereinbarung abgeschlossen werden."
+        },
+        "21": {
+          "q": "Was passiert im unverbindlichen Erstgespräch?",
+          "a": "In einem rund 30-minütigen Gespräch werden die wichtigsten Personal- und Organisationsfragen, die aktuelle Situation und der mögliche Unterstützungsbedarf besprochen. Ziel ist eine erste Einschätzung, ob und in welcher Form eine Zusammenarbeit sinnvoll sein könnte."
+        }
+      }
+    },
+    "final": {
+      "title": "Personal und Organisation gehören in die Geschäftsleitung.",
+      "p1": "Sie möchten Ihre HR-Strategie weiterentwickeln, Unterstützung bei personellen Fragen erhalten oder klären, ob eine externe HR-Leitung für Ihr KMU sinnvoll ist?",
+      "p2": "Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, welche Verantwortung und Unterstützung Ihr Unternehmen tatsächlich benötigt.",
+      "cta": "Unverbindliches Erstgespräch vereinbaren"
     }
   }
 }

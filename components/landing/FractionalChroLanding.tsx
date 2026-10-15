@@ -24,14 +24,19 @@ type Props = {
   locale: SiteLocale;
   namespace: Namespace;
   jsonLdId: string;
+  /** Optional contextual SEO backlink (e.g. related landing page). */
+  relatedHref?: string;
 };
 
 export default async function FractionalChroLanding({
   locale,
   namespace,
   jsonLdId,
+  relatedHref,
 }: Props) {
   const t = await getTranslations({ locale, namespace });
+  const showRelated =
+    Boolean(relatedHref) && t.has("related.body") && t.has("related.cta");
 
   const faqMainEntity = FAQ_KEYS.map((key) => ({
     "@type": "Question",
@@ -234,6 +239,26 @@ export default async function FractionalChroLanding({
                 ))}
               </div>
             </section>
+
+            {showRelated && relatedHref ? (
+              <section
+                aria-labelledby="related-heading"
+                className="rounded-xl border border-tavyro-border bg-tavyro-surface/70 p-6 md:p-8"
+              >
+                <h2 id="related-heading" className="sr-only">
+                  {t("related.cta")}
+                </h2>
+                <p className="text-tavyro-text2 leading-relaxed mb-4">
+                  {t("related.body")}
+                </p>
+                <Link
+                  href={relatedHref}
+                  className="font-medium text-tavyro-brand-600 underline underline-offset-4 hover:text-tavyro-brand-800"
+                >
+                  {t("related.cta")}
+                </Link>
+              </section>
+            ) : null}
 
             <section
               aria-labelledby="final-heading"
