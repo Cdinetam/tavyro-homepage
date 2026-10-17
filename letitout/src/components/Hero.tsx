@@ -1,34 +1,46 @@
-"use client";
-
 import Link from "next/link";
 import { BRAND } from "@/lib/brand";
-import HeroBackdrop from "./HeroBackdrop";
+import TurquoiseWaterBackground from "./TurquoiseWaterBackground";
 
+/**
+ * Landing hero: wide rounded underwater visual at the top;
+ * headline, subtitle, and CTAs sit below — never overlaid on the water.
+ */
 export default function Hero() {
   return (
-    <section className="relative isolate min-h-[85dvh] overflow-hidden">
-      <HeroBackdrop />
+    <section className="bg-deep pb-2 pt-2" aria-labelledby="hero-heading">
+      <div className="container-wide">
+        <div
+          className="relative h-[min(56vw,640px)] min-h-[280px] overflow-hidden rounded-2xl border border-[#24525a] bg-[#092D38] sm:min-h-[360px]"
+          role="img"
+          aria-label="Soft underwater turquoise light"
+        >
+          <div className="absolute inset-0">
+            <TurquoiseWaterBackground />
+          </div>
+        </div>
 
-      <div className="container-wide relative z-10 flex min-h-[85dvh] flex-col justify-end pb-16 pt-28 sm:pb-20 sm:pt-32">
-        <p className="mb-4 text-sm font-medium tracking-wide text-glass animate-fade-up">
-          {BRAND.display}
-        </p>
-        <h1 className="max-w-2xl text-balance text-4xl font-semibold leading-[1.15] tracking-tight text-pearl sm:text-5xl lg:text-6xl animate-fade-up [animation-delay:80ms]">
-          {BRAND.tagline}
-        </h1>
-        <p className="mt-5 max-w-md text-lg italic text-aqua/95 sm:text-xl animate-fade-up [animation-delay:160ms]">
-          {BRAND.supportingLine}
-        </p>
-        <p className="mt-4 max-w-lg text-base leading-relaxed text-aqua/80 animate-fade-up [animation-delay:220ms]">
-          {BRAND.description}
-        </p>
-        <div className="mt-10 flex flex-col items-start gap-3 animate-fade-up [animation-delay:300ms]">
-          <Link href="/chat" className="btn-primary">
-            Start talking
-          </Link>
-          <p className="text-sm text-aqua/70">
-            Free to try. No account required to begin.
+        <div className="mx-auto max-w-3xl pt-10 sm:pt-12">
+          <h1
+            id="hero-heading"
+            className="text-balance text-3xl font-semibold leading-[1.15] tracking-tight text-pearl sm:text-4xl lg:text-5xl"
+          >
+            {BRAND.tagline}
+          </h1>
+          <p className="mt-4 max-w-xl text-lg italic text-aqua sm:text-xl">
+            {BRAND.supportingLine}
           </p>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-aqua/80">
+            {BRAND.description}
+          </p>
+          <div className="mt-8 flex flex-col items-start gap-3">
+            <Link href="/chat" className="btn-primary">
+              Start talking
+            </Link>
+            <p className="text-sm text-aqua/70">
+              Free to try. No account required to begin.
+            </p>
+          </div>
         </div>
       </div>
     </section>

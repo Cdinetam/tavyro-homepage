@@ -23,15 +23,17 @@ npm run build   # production build
 npm run start   # serve production build
 ```
 
-## Missing reference asset
+## Hero water visual
 
-Place the turquoise water/glass hero image at:
+The landing hero uses `src/components/TurquoiseWaterBackground.tsx` — a procedural underwater canvas (caustics, soft refracted light). It pauses when `prefers-reduced-motion` is set.
+
+Optional photographic asset (for pixel-level fidelity later):
 
 ```
 letitout/public/images/turquoise-glass.jpg
 ```
 
-Until that file exists, the hero uses palette gradients and soft glass/light effects matching the brief. Do **not** substitute unrelated stock photos.
+Do **not** substitute unrelated stock photos. The current Phase 1 hero is the canvas component in a wide rounded frame; headline and chat input sit **below** the water, not overlaid.
 
 ## Phase 1 scope
 

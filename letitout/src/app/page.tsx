@@ -9,12 +9,8 @@ import Footer from "@/components/Footer";
 export default function HomePage() {
   return (
     <>
-      <div className="relative">
-        <div className="absolute inset-x-0 top-0 z-40">
-          <Header />
-        </div>
-        <Hero />
-      </div>
+      <Header />
+      <Hero />
       <MindInput />
       <ExampleThoughts />
       <HowItWorks />
