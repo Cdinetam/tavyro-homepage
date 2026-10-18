@@ -75,7 +75,8 @@ export default function TurquoiseWaterBackground({ className = "", intensity = 1
       shade.addColorStop(1, "rgba(0,25,28,.36)");
       ctx.fillStyle = shade; ctx.fillRect(0, 0, width, height);
     };
-    const tick = () => { frame += 1; render(frame / 60); raf = requestAnimationFrame(tick); };
+    // ~1.5× original time scale so caustics drift remains calm but perceptible.
+    const tick = () => { frame += 1; render(frame / 40); raf = requestAnimationFrame(tick); };
     const ro = new ResizeObserver(resize);
     ro.observe(canvas);
     resize();
