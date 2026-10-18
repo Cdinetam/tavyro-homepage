@@ -11,11 +11,10 @@ export default function Hero() {
     <section className="bg-deep pb-2 pt-2" aria-labelledby="hero-heading">
       <div className="container-wide">
         <div
-          className="relative h-[min(56vw,640px)] min-h-[280px] overflow-hidden rounded-2xl border-2 border-[#3a7a68] bg-[#092D38] sm:min-h-[360px]"
-          role="img"
+          className="relative h-[min(56vw,640px)] min-h-[280px] overflow-hidden rounded-2xl border-2 border-[#7BB5A6] bg-[#092D38] sm:min-h-[360px]"
           aria-label="Soft underwater turquoise light"
         >
-          <div className="absolute inset-0">
+          <div className="absolute inset-0" aria-hidden="true">
             <TurquoiseWaterBackground />
           </div>
         </div>
