@@ -11,7 +11,7 @@ export default function Hero() {
     <section className="bg-deep pb-2 pt-2" aria-labelledby="hero-heading">
       <div className="container-wide">
         <div
-          className="relative h-[min(56vw,640px)] min-h-[280px] overflow-hidden rounded-2xl border border-[#24525a] bg-[#092D38] sm:min-h-[360px]"
+          className="relative h-[min(56vw,640px)] min-h-[280px] overflow-hidden rounded-2xl border border-[#2a5f70] bg-[#092D38] sm:min-h-[360px]"
           role="img"
           aria-label="Soft underwater turquoise light"
         >

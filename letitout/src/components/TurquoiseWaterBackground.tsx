@@ -27,11 +27,12 @@ export default function TurquoiseWaterBackground({ className = "", intensity = 1
     };
     const render = (t: number) => {
       ctx.clearRect(0, 0, width, height);
+      // Cooler turquoise–blue water (less emerald / yellow-green).
       const base = ctx.createLinearGradient(width, 0, 0, height);
-      base.addColorStop(0, "#03262c");
-      base.addColorStop(.35, "#07534f");
-      base.addColorStop(.72, "#198e8c");
-      base.addColorStop(1, "#a7e2dc");
+      base.addColorStop(0, "#022a38");
+      base.addColorStop(.35, "#0a5570");
+      base.addColorStop(.72, "#148cab");
+      base.addColorStop(1, "#7fc8ea");
       ctx.fillStyle = base; ctx.fillRect(0, 0, width, height);
       // Wide refracted patches of underwater light.
       ctx.globalCompositeOperation = "screen";
@@ -40,9 +41,9 @@ export default function TurquoiseWaterBackground({ className = "", intensity = 1
         const y = height * (.12 + (i * .273) % .95) + Math.cos(t * .11 + i) * height * .07;
         const radius = Math.max(width, height) * (.19 + (i % 4) * .035);
         const g = ctx.createRadialGradient(x, y, 0, x, y, radius);
-        g.addColorStop(0, `rgba(165,255,240,${(.095 + (i % 3) * .028) * intensity})`);
-        g.addColorStop(.5, "rgba(85,214,203,.055)");
-        g.addColorStop(1, "rgba(85,214,203,0)");
+        g.addColorStop(0, `rgba(175,228,255,${(.095 + (i % 3) * .028) * intensity})`);
+        g.addColorStop(.5, "rgba(80,185,235,.055)");
+        g.addColorStop(1, "rgba(80,185,235,0)");
         ctx.fillStyle = g; ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
       }
       // Multiple softly blurred wavefronts, rather than obvious horizontal stripes.
@@ -61,17 +62,17 @@ export default function TurquoiseWaterBackground({ className = "", intensity = 1
               + Math.sin(xn * 23 - i * .72 - t * .13) * height * .017;
             if (step === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
           }
-          ctx.strokeStyle = `rgba(178,255,244,${(.095 - layer * .018) * intensity})`;
+          ctx.strokeStyle = `rgba(190,232,255,${(.095 - layer * .018) * intensity})`;
           ctx.lineWidth = Math.max(13, width * (.022 + layer * .007));
           ctx.stroke();
         }
       }
       ctx.restore();
       ctx.globalCompositeOperation = "source-over";
-      // Very subtle edge shading, as in the supplied photograph.
+      // Very subtle edge shading, cooler blue depth.
       const shade = ctx.createRadialGradient(width * .3, height * .75, width * .12, width * .55, height * .5, width * .85);
       shade.addColorStop(0, "rgba(0,0,0,0)");
-      shade.addColorStop(1, "rgba(0,25,28,.36)");
+      shade.addColorStop(1, "rgba(0,18,32,.36)");
       ctx.fillStyle = shade; ctx.fillRect(0, 0, width, height);
     };
     const tick = () => { frame += 1; render(frame / 60); raf = requestAnimationFrame(tick); };

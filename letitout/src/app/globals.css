@@ -5,6 +5,8 @@
 :root {
   --color-deep-teal: #092d38;
   --color-dark-turquoise: #164754;
+  /* Lighter entry/surface bar — WCAG AA with pearl text */
+  --color-surface-bar: #256b7a;
   --color-ocean-turquoise: #087f91;
   --color-sea-glass: #a7dad4;
   --color-soft-aqua: #b8d9d8;
