@@ -37,8 +37,8 @@ export default function TurquoiseWaterBackground({ className = "", intensity = 1
       // Wide refracted patches of underwater light.
       ctx.globalCompositeOperation = "screen";
       for (let i = 0; i < 12; i++) {
-        const x = width * (-.1 + (i * .191) % 1.25) + Math.sin(t * .15 + i * 2.7) * width * .075;
-        const y = height * (.12 + (i * .273) % .95) + Math.cos(t * .11 + i) * height * .07;
+        const x = width * (-.1 + (i * .191) % 1.25) + Math.sin(t * .22 + i * 2.7) * width * .1;
+        const y = height * (.12 + (i * .273) % .95) + Math.cos(t * .16 + i) * height * .09;
         const radius = Math.max(width, height) * (.19 + (i % 4) * .035);
         const g = ctx.createRadialGradient(x, y, 0, x, y, radius);
         g.addColorStop(0, `rgba(165,255,240,${(.095 + (i % 3) * .028) * intensity})`);
@@ -58,8 +58,8 @@ export default function TurquoiseWaterBackground({ className = "", intensity = 1
             const x = (step / 85) * width;
             const xn = x / Math.max(1, width);
             const y = startY + xn * height * (.42 + layer * .09)
-              + Math.sin(xn * (9 + layer * 2) + i * 1.55 + t * (.20 + layer * .05)) * height * .055
-              + Math.sin(xn * 23 - i * .72 - t * .13) * height * .017;
+              + Math.sin(xn * (9 + layer * 2) + i * 1.55 + t * (.32 + layer * .08)) * height * .07
+              + Math.sin(xn * 23 - i * .72 - t * .2) * height * .025;
             if (step === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
           }
           ctx.strokeStyle = `rgba(178,255,244,${(.095 - layer * .018) * intensity})`;
@@ -75,8 +75,8 @@ export default function TurquoiseWaterBackground({ className = "", intensity = 1
       shade.addColorStop(1, "rgba(0,25,28,.36)");
       ctx.fillStyle = shade; ctx.fillRect(0, 0, width, height);
     };
-    // ~1.5× original time scale so caustics drift remains calm but perceptible.
-    const tick = () => { frame += 1; render(frame / 40); raf = requestAnimationFrame(tick); };
+    // Calm but visible drift (still pauses under prefers-reduced-motion).
+    const tick = () => { frame += 1; render(frame / 28); raf = requestAnimationFrame(tick); };
     const ro = new ResizeObserver(resize);
     ro.observe(canvas);
     resize();
