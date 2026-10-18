@@ -15,7 +15,7 @@ export default function MindInput() {
   }
 
   return (
-    <section className="pb-10 pt-8" aria-labelledby="mind-heading">
+    <section className="bg-copy pb-12 pt-6" aria-labelledby="mind-heading">
       <div className="container-wide">
         <div className="mx-auto max-w-3xl">
           <form

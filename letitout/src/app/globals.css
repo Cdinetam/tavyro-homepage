@@ -5,6 +5,8 @@
 :root {
   --color-deep-teal: #092d38;
   --color-dark-turquoise: #164754;
+  /* Soft green-teal band behind headline / mind-input (not blue) */
+  --color-copy-band: #1e5048;
   /* Lighter green-teal entry bar — WCAG AA with pearl text */
   --color-surface-bar: #2a7068;
   --color-ocean-turquoise: #087f91;
