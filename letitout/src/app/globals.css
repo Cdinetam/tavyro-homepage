@@ -5,10 +5,10 @@
 :root {
   --color-deep-teal: #092d38;
   --color-dark-turquoise: #164754;
-  /* Single continuous page surface around water + copy (sea-glass green-teal) */
-  --color-page-surface: #286058;
+  /* Single continuous page surface — lighter luminous green-teal */
+  --color-page-surface: #2c6a5e;
   /* Slightly lifted control surface for mind-input card */
-  --color-surface-bar: #2a7068;
+  --color-surface-bar: #2f7870;
   --color-ocean-turquoise: #087f91;
   --color-sea-glass: #a7dad4;
   --color-soft-aqua: #b8d9d8;

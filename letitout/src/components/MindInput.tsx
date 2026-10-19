@@ -39,7 +39,7 @@ export default function MindInput() {
               className="input-field mt-4 resize-y border-transparent bg-deep/35"
             />
             <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-xs text-[#D8E8E6]">
+              <p className="text-xs text-[#E8F4F1]">
                 Your words stay in this browser session for now.
               </p>
               <button type="submit" className="btn-primary w-full sm:w-auto">

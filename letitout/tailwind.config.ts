@@ -11,8 +11,8 @@ const config: Config = {
       colors: {
         deep: "rgb(9 45 56 / <alpha-value>)",
         dark: "rgb(22 71 84 / <alpha-value>)",
-        surface: "rgb(40 96 88 / <alpha-value>)",
-        bar: "rgb(42 112 104 / <alpha-value>)",
+        surface: "rgb(44 106 94 / <alpha-value>)",
+        bar: "rgb(47 120 112 / <alpha-value>)",
         ocean: "rgb(8 127 145 / <alpha-value>)",
         glass: "rgb(167 218 212 / <alpha-value>)",
         aqua: "rgb(184 217 216 / <alpha-value>)",
