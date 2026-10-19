@@ -5,23 +5,24 @@
 :root {
   --color-deep-teal: #092d38;
   --color-dark-turquoise: #164754;
-  /* Single continuous page surface — lighter luminous green-teal */
-  --color-page-surface: #2c6a5e;
-  /* Slightly lifted control surface for mind-input card */
-  --color-surface-bar: #2f7870;
+  /* Sampled from water canvas mid-left luminous zone */
+  --color-page-surface: #3aa19e;
+  /* Soft milky control surface for mind-input */
+  --color-surface-bar: #e8f6f4;
   --color-ocean-turquoise: #087f91;
   --color-sea-glass: #a7dad4;
   --color-soft-aqua: #b8d9d8;
   --color-pearl-white: #f1f7f5;
+  --color-ink: #092d38;
 
-  --text-primary: #f1f7f5;
-  --text-muted: #b8d9d8;
+  --text-primary: #092d38;
+  --text-muted: #0a322c;
   --text-on-light: #092d38;
-  --focus-ring: #a7dad4;
+  --focus-ring: #164754;
 
-  --glass-bg: rgba(22, 71, 84, 0.45);
-  --glass-border: rgba(167, 218, 212, 0.28);
-  --glass-highlight: rgba(241, 247, 245, 0.08);
+  --glass-bg: rgba(241, 247, 245, 0.55);
+  --glass-border: rgba(9, 45, 56, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.45);
 
   --radius-soft: 1rem;
   --radius-pill: 9999px;
@@ -47,12 +48,12 @@
   }
 
   body {
-    @apply bg-surface text-pearl font-sans antialiased;
+    @apply bg-surface text-ink font-sans antialiased;
     min-height: 100dvh;
   }
 
   ::selection {
-    background: rgba(8, 127, 145, 0.45);
+    background: rgba(8, 127, 145, 0.35);
     color: var(--color-pearl-white);
   }
 
@@ -76,7 +77,7 @@
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    box-shadow: inset 0 1px 0 var(--glass-highlight), 0 8px 32px rgba(9, 45, 56, 0.35);
+    box-shadow: inset 0 1px 0 var(--glass-highlight), 0 8px 24px rgba(9, 45, 56, 0.08);
   }
 
   .btn-primary {
@@ -94,23 +95,22 @@
   }
 
   .btn-ghost {
-    @apply inline-flex min-h-[44px] items-center justify-center rounded-pill px-4 py-2 text-sm font-medium text-aqua transition hover:text-pearl;
+    @apply inline-flex min-h-[44px] items-center justify-center rounded-pill px-4 py-2 text-sm font-medium text-[#072820] transition hover:text-ink;
   }
 
   .input-field {
-    @apply w-full rounded-soft border bg-dark/60 px-4 py-3 text-base text-pearl placeholder:text-aqua/60;
-    border-color: var(--glass-border);
+    @apply w-full rounded-soft border border-ink/10 bg-white/70 px-4 py-3 text-base text-ink placeholder:text-[#3A6B66];
     min-height: 52px;
   }
 
   .input-field:focus {
     outline: none;
-    border-color: var(--color-sea-glass);
-    box-shadow: 0 0 0 3px rgba(167, 218, 212, 0.2);
+    border-color: #164754;
+    box-shadow: 0 0 0 3px rgba(22, 71, 84, 0.18);
   }
 
   .section-eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.2em] text-glass;
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-[#072820];
   }
 
   .chat-bubble-user {

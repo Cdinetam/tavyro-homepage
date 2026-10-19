@@ -12,7 +12,7 @@ export default function Header() {
       <div className="container-wide flex min-h-[64px] items-center justify-between py-4">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-pearl transition hover:text-glass"
+          className="text-lg font-semibold tracking-tight text-ink transition hover:text-[#072820]"
         >
           {BRAND.display}
         </Link>
@@ -42,38 +42,38 @@ export default function Header() {
       {menuOpen && (
         <div
           id="site-menu"
-          className="absolute inset-x-0 top-full z-40 border-b border-glass/20 bg-surface backdrop-blur-md"
+          className="absolute inset-x-0 top-full z-40 border-b border-ink/10 bg-surface"
         >
           <div className="container-wide flex flex-col gap-1 py-4">
             <Link
               href="/#pricing"
-              className="rounded-soft px-3 py-3 text-sm text-aqua transition hover:bg-dark/60 hover:text-pearl"
+              className="rounded-soft px-3 py-3 text-sm text-[#072820] transition hover:bg-bar hover:text-ink"
               onClick={() => setMenuOpen(false)}
             >
               Pricing
             </Link>
             <Link
               href="/#how-it-works"
-              className="rounded-soft px-3 py-3 text-sm text-aqua transition hover:bg-dark/60 hover:text-pearl"
+              className="rounded-soft px-3 py-3 text-sm text-[#072820] transition hover:bg-bar hover:text-ink"
               onClick={() => setMenuOpen(false)}
             >
               How it works
             </Link>
             <Link
               href="/#privacy"
-              className="rounded-soft px-3 py-3 text-sm text-aqua transition hover:bg-dark/60 hover:text-pearl"
+              className="rounded-soft px-3 py-3 text-sm text-[#072820] transition hover:bg-bar hover:text-ink"
               onClick={() => setMenuOpen(false)}
             >
               Privacy
             </Link>
             <Link
               href="/chat"
-              className="rounded-soft px-3 py-3 text-sm font-medium text-pearl transition hover:bg-dark/60"
+              className="rounded-soft px-3 py-3 text-sm font-medium text-ink transition hover:bg-bar"
               onClick={() => setMenuOpen(false)}
             >
               Start talking
             </Link>
-            <p className="px-3 pt-2 text-xs text-aqua/70">
+            <p className="px-3 pt-2 text-xs text-[#072820]">
               Sign in will be available in a later release.
             </p>
           </div>

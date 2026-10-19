@@ -13,7 +13,7 @@ export default function ExampleThoughts() {
         <p className="section-eyebrow">Examples</p>
         <h2
           id="thoughts-heading"
-          className="mt-3 text-2xl font-semibold tracking-tight text-pearl sm:text-3xl"
+          className="mt-3 text-2xl font-semibold tracking-tight text-ink sm:text-3xl"
         >
           Thoughts that often stay unspoken
         </h2>
@@ -21,13 +21,13 @@ export default function ExampleThoughts() {
           {THOUGHTS.map((thought) => (
             <li
               key={thought}
-              className="border-l-2 border-ocean/50 pl-4 text-base leading-relaxed text-aqua/90"
+              className="border-l-2 border-ink/30 pl-4 text-base leading-relaxed text-[#072820]"
             >
               {thought}
             </li>
           ))}
         </ul>
-        <p className="mt-8 text-base italic text-aqua/75">
+        <p className="mt-8 text-base italic text-[#072820]">
           Or something completely different. There&apos;s no right place to start.
         </p>
       </div>
