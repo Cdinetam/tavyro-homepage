@@ -42,7 +42,7 @@ export default function Header() {
       {menuOpen && (
         <div
           id="site-menu"
-          className="absolute inset-x-0 top-full z-40 border-b border-glass/20 bg-deep/95 backdrop-blur-md"
+          className="absolute inset-x-0 top-full z-40 border-b border-glass/20 bg-surface backdrop-blur-md"
         >
           <div className="container-wide flex flex-col gap-1 py-4">
             <Link
