@@ -326,3 +326,11 @@ export const SITE_CONFIG = {
 - **TypeScript-Fehler**: `npx tsc --noEmit` für Type-Checking
 - **Linting-Fehler**: `npm run lint` für Details
 - **Styling-Probleme**: Tailwind-Klassen prüfen, ggf. `tailwind.config.ts` anpassen
+
+## Cursor Cloud specific instructions
+
+- Install mit `npm ci --legacy-peer-deps`. Ein plain `npm ci` bricht auf npm 10 ab (`Missing: @swc/helpers@0.5.23 from lock file`), weil das optionale Peer von `@swc/core` unter `next-intl` nicht im Lockfile steht. `--legacy-peer-deps` installiert den bestehenden Lockfile, ohne ihn umzuschreiben. Die `EBADENGINE`-Warnung von `connect@1.8.7` (Abhängigkeit des Pakets `codex`) ist unkritisch.
+- Dev-Server: `npm run dev -- -H 0.0.0.0 -p 3000`. `/` antwortet mit 308 auf `/de`. Englisch liegt unter `/en`.
+- `next-env.d.ts` ist gitignored. `npx tsc --noEmit` erst nach `npm run dev` oder `npm run build` ausführen, sonst fehlt die Deklaration für Bild-Imports.
+- `npm run build` überspringt Lint und Typecheck (`ignoreDuringBuilds` / `ignoreBuildErrors` in `next.config.js`). Lint und `tsc` separat laufen lassen.
+- Für Homepage, Sprachwechsel und das Buchungsformular sind keine Secrets nötig. `WEB3FORMS_ACCESS_KEY` betrifft nur den Versand; `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` und `SELF_CHECK_STATS_TOKEN` nur die Selfcheck-Analytics.
