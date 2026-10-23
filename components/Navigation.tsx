@@ -70,10 +70,10 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-tavyro-border bg-white/95 backdrop-blur-sm [color-scheme:light]">
       <div className="container-custom">
-        <div className="flex h-24 items-center justify-between gap-3 py-4 md:h-28 md:py-6 xl:gap-6">
+        <div className="flex h-24 items-center justify-between gap-4 py-4 md:h-28 md:gap-6 md:py-6 xl:gap-8">
           <Link
             href="/"
-            className="flex shrink-0 items-center pl-2 sm:pl-4 md:pl-6 lg:pl-8"
+            className="flex shrink-0 items-center"
           >
             <Image
               src="/logo-tavyro.svg"
@@ -85,98 +85,102 @@ export default function Navigation() {
             />
           </Link>
 
-          {/* Desktop-Links erst ab xl – kein overflow-hidden (schneidet sonst «Home» ab) */}
-          <div className="hidden min-w-0 flex-1 items-center justify-end gap-x-4 xl:flex 2xl:gap-x-7">
-            <Link href="/" className={navLinkClass}>
-              {t("home")}
-            </Link>
-            <a
-              href="#leistungen"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("leistungen");
-              }}
-              className={navLinkClass}
-            >
-              {t("services")}
-            </a>
-            <a
-              href="#angebote"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("angebote");
-              }}
-              className={navLinkClass}
-            >
-              {t("offers")}
-            </a>
-            <Link href="/executive-intelligence" className={navLinkClass}>
-              {t("executiveIntelligence")}
-            </Link>
-            <Link href="/trust-room" className={navLinkClass}>
-              {t("trustRoom")}
-            </Link>
-            <a
-              href="#ueber"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("ueber");
-              }}
-              className={navLinkClass}
-            >
-              {t("about")}
-            </a>
-          </div>
+          {/*
+            Desktop ab xl: Logo | (Links + CTA + Sprache) als zwei Blöcke.
+            Links+CTA in einer Gruppe, damit Overflow nicht nach links über das Logo läuft.
+          */}
+          <div className="hidden min-w-0 items-center justify-end gap-x-5 xl:flex 2xl:gap-x-8">
+            <div className="flex min-w-0 items-center gap-x-3 2xl:gap-x-6">
+              <Link href="/" className={navLinkClass}>
+                {t("home")}
+              </Link>
+              <a
+                href="#leistungen"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("leistungen");
+                }}
+                className={navLinkClass}
+              >
+                {t("services")}
+              </a>
+              <a
+                href="#angebote"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("angebote");
+                }}
+                className={navLinkClass}
+              >
+                {t("offers")}
+              </a>
+              <Link href="/executive-intelligence" className={navLinkClass}>
+                {t("executiveIntelligence")}
+              </Link>
+              <Link href="/trust-room" className={navLinkClass}>
+                {t("trustRoom")}
+              </Link>
+              <a
+                href="#ueber"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("ueber");
+                }}
+                className={navLinkClass}
+              >
+                {t("about")}
+              </a>
+            </div>
 
-          {/* CTA + Sprache: eigene Flex-Kinder, immer sichtbar ab xl */}
-          <div className="hidden shrink-0 items-center gap-3 xl:flex">
-            <Link
-              href="/erstgespraech-buchen"
-              className="btn-primary shrink-0 px-5 py-2.5 text-sm"
-            >
-              {t("cta")}
-            </Link>
+            <div className="flex shrink-0 items-center gap-3">
+              <Link
+                href="/erstgespraech-buchen"
+                className="btn-primary shrink-0 px-5 py-2.5 text-sm"
+              >
+                {t("cta")}
+              </Link>
 
-            <div className="flex items-center gap-1 text-sm font-medium">
-              {locale === "de" ? (
-                <span
-                  className="touch-manipulation flex min-h-11 min-w-11 cursor-default items-center justify-center rounded-md px-2 font-bold text-tavyro-text"
-                  aria-current="page"
-                >
-                  DE
+              <div className="flex items-center gap-1 text-sm font-medium">
+                {locale === "de" ? (
+                  <span
+                    className="touch-manipulation flex min-h-11 min-w-11 cursor-default items-center justify-center rounded-md px-2 font-bold text-tavyro-text"
+                    aria-current="page"
+                  >
+                    DE
+                  </span>
+                ) : (
+                  <a
+                    href={deHref}
+                    hrefLang="de"
+                    lang="de"
+                    className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
+                    aria-label="Deutsch"
+                  >
+                    DE
+                  </a>
+                )}
+                <span className="select-none text-tavyro-border" aria-hidden>
+                  |
                 </span>
-              ) : (
-                <a
-                  href={deHref}
-                  hrefLang="de"
-                  lang="de"
-                  className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
-                  aria-label="Deutsch"
-                >
-                  DE
-                </a>
-              )}
-              <span className="select-none text-tavyro-border" aria-hidden>
-                |
-              </span>
-              {locale === "en" ? (
-                <span
-                  className="touch-manipulation flex min-h-11 min-w-11 cursor-default items-center justify-center rounded-md px-2 font-bold text-tavyro-text"
-                  aria-current="page"
-                >
-                  EN
-                </span>
-              ) : (
-                <a
-                  href={enHref}
-                  hrefLang="en"
-                  lang="en"
-                  className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
-                  aria-label="English"
-                >
-                  EN
-                </a>
-              )}
+                {locale === "en" ? (
+                  <span
+                    className="touch-manipulation flex min-h-11 min-w-11 cursor-default items-center justify-center rounded-md px-2 font-bold text-tavyro-text"
+                    aria-current="page"
+                  >
+                    EN
+                  </span>
+                ) : (
+                  <a
+                    href={enHref}
+                    hrefLang="en"
+                    lang="en"
+                    className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
+                    aria-label="English"
+                  >
+                    EN
+                  </a>
+                )}
+              </div>
             </div>
           </div>
 
