@@ -86,7 +86,8 @@
     letter-spacing: -0.01em;
   }
 
+  /* 2xl (1536px): genug Raum für Logo + lange Nav-Labels auf grossen Screens */
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 xl:px-10;
   }
 }
