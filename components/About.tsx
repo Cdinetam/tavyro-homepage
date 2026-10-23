@@ -58,12 +58,12 @@ export default function About() {
           <div className="grid items-start gap-10 md:grid-cols-2 md:gap-8 lg:gap-12">
             {/* Tam Nguyen – Lead Advisor */}
             <article className="flex flex-col">
-              <div className="relative mx-auto mb-6 aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-xl border-2 border-tavyro-brand-500 shadow-md sm:max-w-[320px] md:mx-0 md:max-w-none">
+              <div className="relative mx-auto mb-6 aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border-2 border-tavyro-brand-500 shadow-md md:mx-0 md:max-w-[220px]">
                 <Image
                   src="/tam-nguyen-portrait.jpg"
                   alt={t("founderImageAlt")}
                   fill
-                  sizes="(max-width: 768px) 320px, (max-width: 1024px) 40vw, 420px"
+                  sizes="220px"
                   className="object-cover object-top"
                   priority
                 />
@@ -123,12 +123,12 @@ export default function About() {
 
             {/* Ingrid Dohme – ergänzendes Teammitglied */}
             <article className="flex flex-col md:pt-0">
-              <div className="relative mx-auto mb-6 aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-xl border border-tavyro-border shadow-md sm:max-w-[320px] md:mx-0 md:max-w-none">
+              <div className="relative mx-auto mb-6 aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border border-tavyro-border shadow-md md:mx-0 md:max-w-[220px]">
                 <Image
                   src="/ingrid-dohme-portrait.jpg"
                   alt={t("advisorImageAlt")}
                   fill
-                  sizes="(max-width: 768px) 320px, (max-width: 1024px) 40vw, 420px"
+                  sizes="220px"
                   className="object-cover object-top"
                 />
               </div>
