@@ -34,7 +34,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             "hr advisory zurich",
             "fractional chro advisory switzerland",
           ]
-        : undefined,
+        : safeLocale === "fr"
+          ? [
+              "fractional chro zurich",
+              "fractional chro suisse",
+              "chro intérimaire zurich",
+              "conseil rh zurich",
+              "fractional chro conseil suisse",
+            ]
+          : undefined,
     alternates: {
       canonical: getCanonical(safeLocale),
       languages: getLanguageAlternates(),

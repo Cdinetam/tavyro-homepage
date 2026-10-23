@@ -21,6 +21,8 @@ export default function ErstgespraechBuchen() {
   const t = useTranslations("Erstgespraech");
   const locale = useLocale();
   const isEn = locale === "en";
+  const isFr = locale === "fr";
+  const dateLocale = isEn ? "en-GB" : isFr ? "fr-CH" : "de-CH";
   const [formData, setFormData] = useState({
     vorname: "",
     nachname: "",
@@ -61,9 +63,15 @@ export default function ErstgespraechBuchen() {
           : "";
 
       const formatTermin = (termin: string) => {
-        if (!termin) return isEn ? "Not specified" : "Nicht angegeben";
+        if (!termin) {
+          return isEn
+            ? "Not specified"
+            : isFr
+              ? "Non indiqué"
+              : "Nicht angegeben";
+        }
         try {
-          return new Date(termin).toLocaleString(isEn ? "en-GB" : "de-CH", {
+          return new Date(termin).toLocaleString(dateLocale, {
             weekday: "long",
             year: "numeric",
             month: "long",
@@ -98,6 +106,28 @@ ${formData.nachricht ? `Additional message:\n${formData.nachricht}` : ""}
 ---
 Sent via: tavyro.ch/en/erstgespraech-buchen
       `.trim()
+        : isFr
+          ? `
+Demande d'appel Teams – site TaVyro
+========================================
+
+Prénom: ${formData.vorname}
+Nom: ${formData.nachname}
+E-mail: ${formData.email}
+${formData.telefon ? `Téléphone: ${formData.telefon}` : ""}
+
+Propositions de rendez-vous:
+1. ${formatTermin(terminwunsch1)}
+${terminwunsch2 ? `2. ${formatTermin(terminwunsch2)}` : ""}
+${terminwunsch3 ? `3. ${formatTermin(terminwunsch3)}` : ""}
+
+${formData.thema ? `Thème/occasion: ${formData.thema}` : ""}
+
+${formData.nachricht ? `Message complémentaire:\n${formData.nachricht}` : ""}
+
+---
+Envoyé via: tavyro.ch/fr/erstgespraech-buchen
+      `.trim()
         : `
 Teams-Call Anfrage von TaVyro Website
 ========================================
@@ -130,7 +160,9 @@ Gesendet über: tavyro.ch/de/erstgespraech-buchen
           access_key: "eefecccc-4850-4bce-81e9-d859ebd2c1a7",
           subject: isEn
             ? `New Teams Call Request from ${formData.vorname} ${formData.nachname}`
-            : `Neue Teams-Call Anfrage von ${formData.vorname} ${formData.nachname}`,
+            : isFr
+              ? `Nouvelle demande d'appel Teams de ${formData.vorname} ${formData.nachname}`
+              : `Neue Teams-Call Anfrage von ${formData.vorname} ${formData.nachname}`,
           from_name: "TaVyro Website",
           name: `${formData.vorname} ${formData.nachname}`,
           email: formData.email,
@@ -152,12 +184,16 @@ Gesendet über: tavyro.ch/de/erstgespraech-buchen
               access_key: "eefecccc-4850-4bce-81e9-d859ebd2c1a7",
               subject: isEn
                 ? `Confirmation: Your Teams Call Request at TaVyro`
-                : `Bestätigung: Ihre Teams-Call Anfrage bei TaVyro`,
+                : isFr
+                  ? `Confirmation: votre demande d'appel Teams chez TaVyro`
+                  : `Bestätigung: Ihre Teams-Call Anfrage bei TaVyro`,
               from_name: "TaVyro",
               email: formData.email,
               message: isEn
                 ? `Thank you for your request, ${formData.vorname}!\n\nWe have received your request and will get back to you typically on the same business day (Mon–Fri, 9am–5pm CET).\n\nYour details:\n--------------\n${emailMessage}\n\nKind regards\nYour TaVyro Team\n\n---\nThis email was generated automatically.\nFor questions, please contact us at hello@tavyro.ch`
-                : `Vielen Dank für Ihre Anfrage, ${formData.vorname}!\n\nWir haben Ihre Anfrage erhalten und melden uns in der Regel am selben Arbeitstag zurück (Mo-Fr, 9-17 Uhr).\n\nIhre Angaben:\n--------------\n${emailMessage}\n\nMit freundlichen Grüssen\nIhr TaVyro Team\n\n---\nDiese E-Mail wurde automatisch generiert.\nBei Fragen erreichen Sie uns unter hello@tavyro.ch`,
+                : isFr
+                  ? `Merci pour votre demande, ${formData.vorname}!\n\nNous avons bien reçu votre demande et vous répondrons en règle générale le même jour ouvrable (lun.–ven., 9h–17h CET).\n\nVos informations:\n--------------\n${emailMessage}\n\nCordialement\nVotre équipe TaVyro\n\n---\nCet e-mail a été généré automatiquement.\nPour toute question, contactez-nous à hello@tavyro.ch`
+                  : `Vielen Dank für Ihre Anfrage, ${formData.vorname}!\n\nWir haben Ihre Anfrage erhalten und melden uns in der Regel am selben Arbeitstag zurück (Mo-Fr, 9-17 Uhr).\n\nIhre Angaben:\n--------------\n${emailMessage}\n\nMit freundlichen Grüssen\nIhr TaVyro Team\n\n---\nDiese E-Mail wurde automatisch generiert.\nBei Fragen erreichen Sie uns unter hello@tavyro.ch`,
             }),
           }).catch((err) =>
             console.error("Confirmation email error:", err)

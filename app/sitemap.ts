@@ -22,6 +22,16 @@ const LOCALE_ROUTE_PATHS: Record<(typeof siteConfig.locales)[number], string[]> 
     "fractional-chro-zurich",
     "external-hr-leadership-sme",
   ],
+  fr: [
+    "",
+    "datenschutz",
+    "impressum",
+    "erstgespraech-buchen",
+    "faq",
+    "fractional-chro-suisse",
+    "fractional-chro-zurich",
+    "direction-rh-externe-pme",
+  ],
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {

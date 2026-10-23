@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { isSiteLocale, siteConfig } from "@/config/site";
+import { isSiteLocale, openGraphLocale, siteConfig } from "@/config/site";
 import { getCanonical, getLanguageAlternates } from "@/lib/seo";
 import "../globals.css";
 
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       // preview cache entry when https://tavyro.ch/de is pasted.
       url: `${getCanonical(isSiteLocale(locale) ? locale : "de")}?og=20261009d`,
       siteName: siteConfig.brand,
-      locale: locale === "de" ? "de_CH" : "en_US",
+      locale: openGraphLocale(isSiteLocale(locale) ? locale : "de"),
       type: "website",
       images: [
         {

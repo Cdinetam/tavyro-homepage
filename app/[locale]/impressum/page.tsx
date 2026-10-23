@@ -61,8 +61,21 @@ export default async function Impressum({ params }: Props) {
                     TaVyro GmbH
                   </p>
                   <p>Albisriederstrasse 248</p>
-                  <p>CH-8047 {safeLocale === "de" ? "Zürich" : "Zurich"}</p>
-                  <p>{safeLocale === "de" ? "Schweiz" : "Switzerland"}</p>
+                  <p>
+                    CH-8047{" "}
+                    {safeLocale === "de"
+                      ? "Zürich"
+                      : safeLocale === "fr"
+                        ? "Zurich"
+                        : "Zurich"}
+                  </p>
+                  <p>
+                    {safeLocale === "de"
+                      ? "Schweiz"
+                      : safeLocale === "fr"
+                        ? "Suisse"
+                        : "Switzerland"}
+                  </p>
                 </div>
               </div>
 
@@ -72,7 +85,13 @@ export default async function Impressum({ params }: Props) {
                 </h3>
                 <div className="space-y-2 text-tavyro-text2 leading-relaxed">
                   <p>
-                    <strong className="text-tavyro-text">{safeLocale === "de" ? "E-Mail:" : "Email:"}</strong>{" "}
+                    <strong className="text-tavyro-text">
+                      {safeLocale === "de"
+                        ? "E-Mail:"
+                        : safeLocale === "fr"
+                          ? "E-mail :"
+                          : "Email:"}
+                    </strong>{" "}
                     <a
                       href="mailto:hello@tavyro.ch"
                       className="text-tavyro-brand-500 hover:text-tavyro-brand-700 transition-colors"
@@ -81,7 +100,13 @@ export default async function Impressum({ params }: Props) {
                     </a>
                   </p>
                   <p>
-                    <strong className="text-tavyro-text">{safeLocale === "de" ? "Telefon:" : "Telephone:"}</strong>{" "}
+                    <strong className="text-tavyro-text">
+                      {safeLocale === "de"
+                        ? "Telefon:"
+                        : safeLocale === "fr"
+                          ? "Téléphone :"
+                          : "Telephone:"}
+                    </strong>{" "}
                     <a
                       href="tel:+41786868089"
                       className="text-tavyro-brand-500 hover:text-tavyro-brand-700 transition-colors"

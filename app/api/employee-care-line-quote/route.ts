@@ -24,12 +24,22 @@ const ERROR_MESSAGES = {
     generic: "An error occurred. Please try again.",
     config: "Form submission is currently unavailable. Please contact us directly at hello@tavyro.ch.",
   },
+  fr: {
+    required: "Veuillez remplir ce champ obligatoire.",
+    email: "Veuillez saisir une adresse e-mail valide.",
+    phone: "Veuillez saisir un numéro de téléphone valide.",
+    privacy: "Veuillez confirmer la déclaration de confidentialité.",
+    send: "La demande n’a pas pu être envoyée. Veuillez réessayer ou nous contacter directement à hello@tavyro.ch.",
+    generic: "Une erreur est survenue. Veuillez réessayer.",
+    config: "L’envoi du formulaire n’est actuellement pas disponible. Veuillez nous contacter directement à hello@tavyro.ch.",
+  },
 } as const;
 
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as EmployeeCareLineQuotePayload;
-    const locale = body.locale === "en" ? "en" : "de";
+    const locale =
+      body.locale === "en" || body.locale === "fr" ? body.locale : "de";
     const messages = ERROR_MESSAGES[locale];
 
     if (body.website?.trim()) {

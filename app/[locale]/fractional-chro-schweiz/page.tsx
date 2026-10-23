@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         "de-CH": CANONICAL,
         en: `${siteConfig.siteUrl}/en/fractional-chro-switzerland`,
+        "fr-CH": `${siteConfig.siteUrl}/fr/fractional-chro-suisse`,
         "x-default": CANONICAL,
       },
     },

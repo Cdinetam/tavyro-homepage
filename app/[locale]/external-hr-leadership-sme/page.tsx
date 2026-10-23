@@ -7,9 +7,7 @@ import ExterneHrLeitungKmuLanding, {
 } from "@/components/landing/ExterneHrLeitungKmuLanding";
 
 const PATH = EXTERNE_HR_PATHS.en;
-const DE_PATH = EXTERNE_HR_PATHS.de;
 const CANONICAL = `${siteConfig.siteUrl}/en${PATH}`;
-const DE_URL = `${siteConfig.siteUrl}/de${DE_PATH}`;
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -50,9 +48,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: CANONICAL,
       languages: {
-        "de-CH": DE_URL,
+        "de-CH": `${siteConfig.siteUrl}/de${EXTERNE_HR_PATHS.de}`,
         en: CANONICAL,
-        "x-default": DE_URL,
+        "fr-CH": `${siteConfig.siteUrl}/fr${EXTERNE_HR_PATHS.fr}`,
+        "x-default": `${siteConfig.siteUrl}/de${EXTERNE_HR_PATHS.de}`,
       },
     },
     openGraph: {
@@ -84,7 +83,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ExternalHrLeadershipSmePage({ params }: Props) {
   const { locale } = await params;
   if (locale !== "en") {
-    redirect(`/de${DE_PATH}`);
+    redirect(`/de${EXTERNE_HR_PATHS.de}`);
   }
 
   return (
@@ -92,7 +91,11 @@ export default async function ExternalHrLeadershipSmePage({ params }: Props) {
       locale="en"
       namespace="ExternalHrLeadershipSmePage"
       path={PATH}
-      alternateHref={`/de${DE_PATH}`}
+      localeHrefs={{
+        de: `/de${EXTERNE_HR_PATHS.de}`,
+        en: `/en${EXTERNE_HR_PATHS.en}`,
+        fr: `/fr${EXTERNE_HR_PATHS.fr}`,
+      }}
       jsonLdIdPrefix="external-hr-leadership-sme"
       fractionalChroHref="/fractional-chro-switzerland"
     />

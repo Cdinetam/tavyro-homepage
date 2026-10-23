@@ -25,6 +25,17 @@ function getServiceNames(locale: SiteLocale): string[] {
     ];
   }
 
+  if (locale === "fr") {
+    return [
+      "Soutien RH pour la direction",
+      "Conseil RH pour PME suisses",
+      "Sparring CEO",
+      "Stratégie RH",
+      "Direction RH intérimaire (Fractional CHRO)",
+      "Conseil en digitalisation RH (HRIS/People Analytics)",
+    ];
+  }
+
   return [
     "HR Unterstützung Geschäftsleitung",
     "HR Beratung KMU Schweiz",
@@ -87,7 +98,12 @@ export default function StructuredData({
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: locale === "en" ? "Services" : "Leistungen",
+      name:
+        locale === "en"
+          ? "Services"
+          : locale === "fr"
+            ? "Prestations"
+            : "Leistungen",
       itemListElement: getServiceNames(locale).map((serviceName) => ({
         "@type": "Offer",
         itemOffered: {

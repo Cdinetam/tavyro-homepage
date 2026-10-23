@@ -4,53 +4,70 @@ import { useState } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-
-/** Path after locale prefix, e.g. "" or "/erstgespraech-buchen" (next-intl pathname is locale-agnostic). */
-function pathSuffix(pathname: string): string {
-  const normalized = pathname.startsWith("/") ? pathname : `/${pathname}`;
-  return normalized === "/" ? "" : normalized;
-}
-
-/**
- * Slugs that intentionally differ per locale (locale-specific landing pages).
- * Ensures the language switch never points to a non-existent route (e.g. /en/fractional-chro-schweiz).
- */
-const CROSS_LOCALE_PATHS: Record<string, { de: string; en: string }> = {
-  "/fractional-chro-schweiz": {
-    de: "/fractional-chro-schweiz",
-    en: "/fractional-chro-switzerland",
-  },
-  "/fractional-chro-switzerland": {
-    de: "/fractional-chro-schweiz",
-    en: "/fractional-chro-switzerland",
-  },
-  "/externe-hr-leitung-kmu": {
-    de: "/externe-hr-leitung-kmu",
-    en: "/external-hr-leadership-sme",
-  },
-  "/external-hr-leadership-sme": {
-    de: "/externe-hr-leitung-kmu",
-    en: "/external-hr-leadership-sme",
-  },
-};
-
-function localeHref(locale: "de" | "en", pathname: string): string {
-  const suffix = pathSuffix(pathname);
-  const target = CROSS_LOCALE_PATHS[suffix]?.[locale] ?? suffix;
-  return `/${locale}${target}`;
-}
+import { siteConfig, type SiteLocale } from "@/config/site";
+import {
+  localeHref,
+  LOCALE_SWITCH_LABELS,
+} from "@/lib/locale-paths";
 
 const navLinkClass =
   "whitespace-nowrap text-sm font-medium text-tavyro-text2 transition-colors hover:text-tavyro-text";
+
+function LocaleSwitch({
+  current,
+  pathname,
+  compact = false,
+}: {
+  current: string;
+  pathname: string;
+  compact?: boolean;
+}) {
+  const itemClass = compact
+    ? "touch-manipulation flex min-h-11 min-w-8 items-center justify-center rounded-md px-1"
+    : "touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2";
+
+  return (
+    <div className={`flex items-center text-sm font-medium ${compact ? "gap-0.5" : "gap-1"}`}>
+      {siteConfig.locales.map((loc, index) => {
+        const meta = LOCALE_SWITCH_LABELS[loc];
+        const active = current === loc;
+        return (
+          <span key={loc} className="contents">
+            {index > 0 && (
+              <span className="select-none text-tavyro-border" aria-hidden>
+                |
+              </span>
+            )}
+            {active ? (
+              <span
+                className={`${itemClass} cursor-default font-bold text-tavyro-text`}
+                aria-current="page"
+              >
+                {meta.code}
+              </span>
+            ) : (
+              <a
+                href={localeHref(loc as SiteLocale, pathname)}
+                hrefLang={meta.hrefLang}
+                lang={meta.lang}
+                className={`${itemClass} text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100`}
+                aria-label={meta.ariaLabel}
+              >
+                {meta.code}
+              </a>
+            )}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function Navigation() {
   const t = useTranslations("Navigation");
   const locale = useLocale();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
-  const deHref = localeHref("de", pathname);
-  const enHref = localeHref("en", pathname);
 
   const scrollToSection = (id: string) => {
     // If not on homepage, navigate to homepage with hash
@@ -140,93 +157,13 @@ export default function Navigation() {
                 {t("cta")}
               </Link>
 
-              <div className="flex items-center gap-1 text-sm font-medium">
-                {locale === "de" ? (
-                  <span
-                    className="touch-manipulation flex min-h-11 min-w-11 cursor-default items-center justify-center rounded-md px-2 font-bold text-tavyro-text"
-                    aria-current="page"
-                  >
-                    DE
-                  </span>
-                ) : (
-                  <a
-                    href={deHref}
-                    hrefLang="de"
-                    lang="de"
-                    className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
-                    aria-label="Deutsch"
-                  >
-                    DE
-                  </a>
-                )}
-                <span className="select-none text-tavyro-border" aria-hidden>
-                  |
-                </span>
-                {locale === "en" ? (
-                  <span
-                    className="touch-manipulation flex min-h-11 min-w-11 cursor-default items-center justify-center rounded-md px-2 font-bold text-tavyro-text"
-                    aria-current="page"
-                  >
-                    EN
-                  </span>
-                ) : (
-                  <a
-                    href={enHref}
-                    hrefLang="en"
-                    lang="en"
-                    className="touch-manipulation flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-tavyro-text2 transition-colors hover:text-tavyro-text active:bg-tavyro-brand-100"
-                    aria-label="English"
-                  >
-                    EN
-                  </a>
-                )}
-              </div>
+              <LocaleSwitch current={locale} pathname={pathname} />
             </div>
           </div>
 
           {/* Unter xl: Sprachumschalter + Menü-Button */}
           <div className="flex shrink-0 items-center gap-1 xl:hidden">
-            <div className="flex items-center gap-0.5 text-sm font-medium">
-              {locale === "de" ? (
-                <span
-                  className="flex min-h-11 min-w-8 items-center justify-center rounded-md px-1 font-bold text-tavyro-text"
-                  aria-current="page"
-                >
-                  DE
-                </span>
-              ) : (
-                <a
-                  href={deHref}
-                  hrefLang="de"
-                  lang="de"
-                  className="touch-manipulation flex min-h-11 min-w-8 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
-                  aria-label="Deutsch"
-                >
-                  DE
-                </a>
-              )}
-              <span className="select-none text-tavyro-border" aria-hidden>
-                |
-              </span>
-              {locale === "en" ? (
-                <span
-                  className="flex min-h-11 min-w-8 items-center justify-center rounded-md px-1 font-bold text-tavyro-text"
-                  aria-current="page"
-                >
-                  EN
-                </span>
-              ) : (
-                <a
-                  href={enHref}
-                  hrefLang="en"
-                  lang="en"
-                  className="touch-manipulation flex min-h-11 min-w-8 items-center justify-center rounded-md px-1 text-tavyro-text2 transition-colors active:bg-tavyro-brand-100"
-                  aria-label="English"
-                >
-                  EN
-                </a>
-              )}
-            </div>
+            <LocaleSwitch current={locale} pathname={pathname} compact />
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}

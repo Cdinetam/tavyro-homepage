@@ -41,7 +41,7 @@ export default function Hero() {
             >
               {t("ctaPrimary")}
             </Link>
-            {(locale === "en" || locale === "de") && (
+            {(locale === "en" || locale === "de" || locale === "fr") && (
               <div className="group relative w-full sm:w-auto">
                 <a
                   href={
@@ -53,7 +53,9 @@ export default function Hero() {
                 >
                   {locale === "de"
                     ? "CEO/GL Selbstcheck"
-                    : "CEO/Executive Team Self-Check"}
+                    : locale === "fr"
+                      ? "Autodiagnostic CEO/direction"
+                      : "CEO/Executive Team Self-Check"}
                 </a>
                 <div
                   role="tooltip"
@@ -62,12 +64,16 @@ export default function Hero() {
                   <p className="mb-1.5 font-semibold text-tavyro-text">
                     {locale === "de"
                       ? "Fokus auf das, was nur Sie tun können."
-                      : "Focus on what only you can do."}
+                      : locale === "fr"
+                        ? "Concentrez-vous sur ce que vous seul pouvez faire."
+                        : "Focus on what only you can do."}
                   </p>
                   <p className="text-sm leading-relaxed text-tavyro-text2">
                     {locale === "de"
                       ? "Schätzen Sie die Opportunitätskosten von Führungszeit, die in operative HR- und Organisationsthemen fliesst. Ein Fractional CHRO ermöglicht Ihrer Geschäftsleitung, sich auf Kunden, Wachstum und strategische Entscheidungen zu konzentrieren."
-                      : "Estimate the opportunity costs of executive time spent on operational HR and organisational matters. A Fractional CHRO enables your leadership team to focus on customers, growth and strategic decisions."}
+                      : locale === "fr"
+                        ? "Estimez le coût d’opportunité du temps de direction consacré aux sujets RH et organisationnels opérationnels. Un Fractional CHRO permet à votre direction de se concentrer sur les clients, la croissance et les décisions stratégiques."
+                        : "Estimate the opportunity costs of executive time spent on operational HR and organisational matters. A Fractional CHRO enables your leadership team to focus on customers, growth and strategic decisions."}
                   </p>
                 </div>
               </div>
