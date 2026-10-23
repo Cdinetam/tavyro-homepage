@@ -48,17 +48,17 @@ export default function About() {
   return (
     <section id="ueber" className="section-padding bg-white">
       <div className="container-custom">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-4xl">
           <h2 className="section-heading mb-6 text-center">{t("title")}</h2>
 
           <p className="mx-auto mb-12 max-w-3xl text-center text-lg leading-relaxed text-tavyro-text2 md:mb-16 md:text-xl">
             {t("description")}
           </p>
 
-          <div className="grid items-start gap-12 md:grid-cols-2 md:gap-10 lg:gap-16">
+          <div className="space-y-14 md:space-y-16">
             {/* Tam Nguyen – Lead Advisor */}
-            <article className="mx-auto flex w-full max-w-md flex-col items-center text-center">
-              <div className="relative mb-6 aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border-2 border-tavyro-brand-500 shadow-md md:max-w-[220px]">
+            <article className="grid items-start gap-8 md:grid-cols-[220px_1fr] md:gap-10">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border border-tavyro-border shadow-md md:mx-0 md:max-w-none">
                 <Image
                   src="/tam-nguyen-portrait.jpg"
                   alt={t("founderImageAlt")}
@@ -69,17 +69,17 @@ export default function About() {
                 />
               </div>
 
-              <div className="mb-5 flex flex-col items-center gap-3">
-                <h3 className="text-xl font-semibold text-tavyro-text md:text-2xl">
-                  {t("founderTitle")}
-                </h3>
-                <LinkedInIconLink
-                  href={siteConfig.founder.linkedin}
-                  ariaLabel={t("linkedinAriaLabel")}
-                />
-              </div>
+              <div className="min-w-0 space-y-4 md:space-y-5">
+                <div className="flex flex-col items-center gap-3 text-center md:items-start md:text-left">
+                  <h3 className="text-xl font-semibold text-tavyro-text md:text-2xl">
+                    {t("founderTitle")}
+                  </h3>
+                  <LinkedInIconLink
+                    href={siteConfig.founder.linkedin}
+                    ariaLabel={t("linkedinAriaLabel")}
+                  />
+                </div>
 
-              <div className="w-full space-y-4 text-left md:space-y-5">
                 <p className="text-base leading-relaxed text-tavyro-text2 md:text-lg">
                   {t("bio1")}
                 </p>
@@ -121,9 +121,9 @@ export default function About() {
               </div>
             </article>
 
-            {/* Ingrid Dohme – ergänzendes Teammitglied */}
-            <article className="mx-auto flex w-full max-w-md flex-col items-center text-center">
-              <div className="relative mb-6 aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border border-tavyro-border shadow-md md:max-w-[220px]">
+            {/* Ingrid Dohme – unterhalb von Tam */}
+            <article className="grid items-start gap-8 border-t border-tavyro-border pt-14 md:grid-cols-[220px_1fr] md:gap-10 md:pt-16">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border border-tavyro-border shadow-md md:mx-0 md:max-w-none">
                 <Image
                   src="/ingrid-dohme-portrait.jpg"
                   alt={t("advisorImageAlt")}
@@ -133,23 +133,28 @@ export default function About() {
                 />
               </div>
 
-              <div className="mb-5 flex flex-col items-center gap-3">
-                <h3 className="text-xl font-semibold text-tavyro-text md:text-2xl">
-                  {t("advisorTitle")}
-                </h3>
-                <LinkedInIconLink
-                  href={siteConfig.advisors.ingridDohme.linkedin}
-                  ariaLabel={t("advisorLinkedinAriaLabel")}
-                />
-              </div>
+              <div className="min-w-0 space-y-4 md:space-y-5">
+                <div className="flex flex-col items-center gap-3 text-center md:items-start md:text-left">
+                  <h3 className="text-xl font-semibold text-tavyro-text md:text-2xl">
+                    {t("advisorTitle")}
+                  </h3>
+                  <LinkedInIconLink
+                    href={siteConfig.advisors.ingridDohme.linkedin}
+                    ariaLabel={t("advisorLinkedinAriaLabel")}
+                  />
+                </div>
 
-              <p className="w-full text-left text-base leading-relaxed text-tavyro-text2 md:text-lg">
-                {t("advisorBio")}
-              </p>
+                <p className="text-base leading-relaxed text-tavyro-text2 md:text-lg">
+                  {t("advisorBio")}
+                </p>
+              </div>
             </article>
           </div>
 
-          <div className="mt-12 md:mt-16">
+          <div className="mt-12 border-t border-tavyro-border pt-12 md:mt-16 md:pt-16">
+            <h3 className="section-heading mb-8 text-center md:mb-10">
+              {t("testimonialsTitle")}
+            </h3>
             <QuoteBanner />
           </div>
         </div>
