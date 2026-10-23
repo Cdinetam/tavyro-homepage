@@ -60,7 +60,7 @@ const inputClass =
 
 export default function EmployeeCareLineQuoteModal({ isOpen, onClose }: Props) {
   const t = useTranslations("EmployeeCareLineQuote");
-  const locale = useLocale() as "de" | "en";
+  const locale = useLocale() as "de" | "en" | "fr";
   const titleId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);

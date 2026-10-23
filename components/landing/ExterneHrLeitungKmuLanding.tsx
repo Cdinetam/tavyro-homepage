@@ -22,15 +22,19 @@ const GOLD = "#F5C518";
 export const EXTERNE_HR_PATHS = {
   de: "/externe-hr-leitung-kmu",
   en: "/external-hr-leadership-sme",
+  fr: "/direction-rh-externe-pme",
 } as const;
 
-type Namespace = "ExterneHrLeitungKmuPage" | "ExternalHrLeadershipSmePage";
+type Namespace =
+  | "ExterneHrLeitungKmuPage"
+  | "ExternalHrLeadershipSmePage"
+  | "DirectionRhExternePmePage";
 
 type Props = {
   locale: SiteLocale;
   namespace: Namespace;
   path: string;
-  alternateHref: string;
+  localeHrefs: Record<SiteLocale, string>;
   jsonLdIdPrefix: string;
   fractionalChroHref: string;
 };
@@ -39,7 +43,7 @@ export default async function ExterneHrLeitungKmuLanding({
   locale,
   namespace,
   path,
-  alternateHref,
+  localeHrefs,
   jsonLdIdPrefix,
   fractionalChroHref,
 }: Props) {
@@ -47,8 +51,9 @@ export default async function ExterneHrLeitungKmuLanding({
 
   const year = new Date().getFullYear();
   const canonical = `${siteConfig.siteUrl}/${locale}${path}`;
-  const inLanguage = locale === "de" ? "de-CH" : "en";
-  const cityName = locale === "de" ? "Zürich" : "Zurich";
+  const inLanguage =
+    locale === "de" ? "de-CH" : locale === "fr" ? "fr-CH" : "en";
+  const cityName = siteConfig.address.addressLocality[locale];
 
   const faqMainEntity = FAQ_KEYS.map((key) => ({
     "@type": "Question",
@@ -170,7 +175,7 @@ export default async function ExterneHrLeitungKmuLanding({
         homeLabel={t("header.home")}
         ctaLabel={t("header.cta")}
         locale={locale}
-        alternateHref={alternateHref}
+        localeHrefs={localeHrefs}
       />
 
       <main className="min-h-screen bg-white">

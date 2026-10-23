@@ -62,9 +62,22 @@ export default async function Datenschutz({ params }: Props) {
                     <p className="text-tavyro-text2 leading-relaxed">
                       <strong className="text-tavyro-text">TaVyro GmbH</strong>
                       <br />
-                      Albisriederstrasse 248, CH-8047 {safeLocale === "de" ? "Zürich" : "Zurich"}, {safeLocale === "de" ? "Schweiz" : "Switzerland"}
+                      Albisriederstrasse 248, CH-8047{" "}
+                      {safeLocale === "de"
+                        ? "Zürich"
+                        : "Zurich"}
+                      ,{" "}
+                      {safeLocale === "de"
+                        ? "Schweiz"
+                        : safeLocale === "fr"
+                          ? "Suisse"
+                          : "Switzerland"}
                       <br />
-                      {safeLocale === "de" ? "E-Mail:" : "Email:"}{" "}
+                      {safeLocale === "de"
+                        ? "E-Mail:"
+                        : safeLocale === "fr"
+                          ? "E-mail :"
+                          : "Email:"}{" "}
                       <a
                         href="mailto:hello@tavyro.ch"
                         className="text-tavyro-brand-500 hover:text-tavyro-brand-700 transition-colors"

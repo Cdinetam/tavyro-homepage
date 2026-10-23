@@ -18,7 +18,8 @@ const DIFF_BLOCKS = [
 type Namespace =
   | "FractionalChroZurichPage"
   | "FractionalChroSchweizPage"
-  | "FractionalChroSwitzerlandPage";
+  | "FractionalChroSwitzerlandPage"
+  | "FractionalChroSuissePage";
 
 type Props = {
   locale: SiteLocale;
@@ -101,7 +102,9 @@ export default async function FractionalChroLanding({
                 >
                   {locale === "de"
                     ? "CEO/GL Selbstcheck"
-                    : "CEO/Executive Team Self-Check"}
+                    : locale === "fr"
+                      ? "Autodiagnostic CEO/direction"
+                      : "CEO/Executive Team Self-Check"}
                 </a>
               </div>
             </div>

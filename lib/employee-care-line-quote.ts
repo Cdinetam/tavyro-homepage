@@ -1,7 +1,7 @@
 import { isValidEmail, isValidPhone } from "@/lib/form-validation";
 
 export type EmployeeCareLineQuotePayload = {
-  locale: "de" | "en";
+  locale: "de" | "en" | "fr";
   company: string;
   contactName: string;
   position?: string;
@@ -117,6 +117,39 @@ const LABELS = {
     yes: "Yes",
     no: "No",
   },
+  fr: {
+    employeeCount: {
+      "1-20": "1–20",
+      "21-50": "21–50",
+      "51-100": "51–100",
+      "101-250": "101–250",
+      "251-500": "251–500",
+      "501-1000": "501–1'000",
+      "1000+": "Plus de 1'000",
+    },
+    scope: {
+      entire: "Entreprise entière",
+      location: "Site individuel",
+      unit: "Unité organisationnelle sélectionnée",
+      group: "Groupe de collaborateurs spécifique",
+      open: "Pas encore défini",
+    },
+    languages: {
+      de: "Allemand",
+      en: "Anglais",
+      fr: "Français",
+      other: "Autres",
+    },
+    start: {
+      asap: "Dès que possible",
+      "1-3": "Dans les 1 à 3 prochains mois",
+      "3-6": "Dans les 3 à 6 prochains mois",
+      open: "Pas encore défini",
+    },
+    notSpecified: "Non indiqué",
+    yes: "Oui",
+    no: "Non",
+  },
 } as const;
 
 type Locale = keyof typeof LABELS;
@@ -157,7 +190,8 @@ export function validateEmployeeCareLineQuote(
 export function formatEmployeeCareLineQuoteEmail(
   payload: EmployeeCareLineQuotePayload
 ): { subject: string; message: string } {
-  const locale: Locale = payload.locale === "en" ? "en" : "de";
+  const locale: Locale =
+    payload.locale === "en" || payload.locale === "fr" ? payload.locale : "de";
   const labels = LABELS[locale];
   const languageList =
     payload.languages && payload.languages.length > 0
@@ -165,6 +199,28 @@ export function formatEmployeeCareLineQuoteEmail(
           .map((key) => labelFor(locale, "languages", key))
           .join(", ")
       : labels.notSpecified;
+
+  if (locale === "fr") {
+    return {
+      subject: `Demande d'offre Employee Care Line – ${payload.company.trim()}`,
+      message: `
+Demande d'offre Employee Care Line – site TaVyro
+================================================
+
+Entreprise: ${payload.company.trim()}
+Personne de contact: ${payload.contactName.trim()}
+Fonction: ${payload.position?.trim() || labels.notSpecified}
+E-mail professionnel: ${payload.email.trim()}
+Téléphone: ${payload.phone.trim()}
+Nombre de collaborateurs: ${labelFor(locale, "employeeCount", payload.employeeCount)}
+Périmètre souhaité: ${labelFor(locale, "scope", payload.scope)}
+Langues souhaitées: ${languageList}
+Début souhaité: ${labelFor(locale, "start", payload.preferredStart)}
+Informations complémentaires: ${payload.additionalInfo?.trim() || labels.notSpecified}
+Déclaration de confidentialité acceptée: ${payload.privacyAccepted ? labels.yes : labels.no}
+`,
+    };
+  }
 
   if (locale === "en") {
     return {

@@ -50,7 +50,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: t("ogDescription"),
       url: shareUrl,
       siteName: siteConfig.brand,
-      locale: safeLocale === "de" ? "de_CH" : "en_US",
+      locale:
+        safeLocale === "de"
+          ? "de_CH"
+          : safeLocale === "fr"
+            ? "fr_CH"
+            : "en_US",
       type: "website",
       images: [
         {

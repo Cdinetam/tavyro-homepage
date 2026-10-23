@@ -84,9 +84,9 @@ export default function Footer() {
                         link: (chunks) => (
                           <a
                             href={
-                              locale === "de"
-                                ? "https://fractional-chro.ch/"
-                                : "https://fractional-chro.ch/index-en.html"
+                              locale === "en"
+                                ? "https://fractional-chro.ch/index-en.html"
+                                : "https://fractional-chro.ch/"
                             }
                             target="_blank"
                             rel="noopener noreferrer"
@@ -112,7 +112,13 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <p className="text-white font-medium">TaVyro GmbH</p>
               <p>Albisriederstrasse 248</p>
-              <p>{locale === "de" ? "CH-8047 Zürich" : "CH-8047 Zurich"}</p>
+              <p>
+                {locale === "de"
+                  ? "CH-8047 Zürich"
+                  : locale === "fr"
+                    ? "CH-8047 Zurich"
+                    : "CH-8047 Zurich"}
+              </p>
               <p className="mt-4">
                 <a 
                   href="mailto:hello@tavyro.ch" 
@@ -210,6 +216,16 @@ export default function Footer() {
                     className="hover:text-white transition-colors"
                   >
                     {t("fractionalChroSwitzerland")}
+                  </Link>
+                </li>
+              )}
+              {locale === "fr" && (
+                <li>
+                  <Link
+                    href="/fractional-chro-suisse"
+                    className="hover:text-white transition-colors"
+                  >
+                    {t("fractionalChroSchweiz")}
                   </Link>
                 </li>
               )}

@@ -7,9 +7,7 @@ import ExterneHrLeitungKmuLanding, {
 } from "@/components/landing/ExterneHrLeitungKmuLanding";
 
 const PATH = EXTERNE_HR_PATHS.de;
-const EN_PATH = EXTERNE_HR_PATHS.en;
 const CANONICAL = `${siteConfig.siteUrl}/de${PATH}`;
-const EN_URL = `${siteConfig.siteUrl}/en${EN_PATH}`;
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -51,7 +49,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: CANONICAL,
       languages: {
         "de-CH": CANONICAL,
-        en: EN_URL,
+        en: `${siteConfig.siteUrl}/en${EXTERNE_HR_PATHS.en}`,
+        "fr-CH": `${siteConfig.siteUrl}/fr${EXTERNE_HR_PATHS.fr}`,
         "x-default": CANONICAL,
       },
     },
@@ -92,7 +91,11 @@ export default async function ExterneHrLeitungKmuPage({ params }: Props) {
       locale="de"
       namespace="ExterneHrLeitungKmuPage"
       path={PATH}
-      alternateHref={`/en${EN_PATH}`}
+      localeHrefs={{
+        de: `/de${EXTERNE_HR_PATHS.de}`,
+        en: `/en${EXTERNE_HR_PATHS.en}`,
+        fr: `/fr${EXTERNE_HR_PATHS.fr}`,
+      }}
       jsonLdIdPrefix="externe-hr-leitung-kmu"
       fractionalChroHref="/fractional-chro-schweiz"
     />

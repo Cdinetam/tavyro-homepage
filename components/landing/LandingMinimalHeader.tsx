@@ -1,23 +1,24 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import type { SiteLocale } from "@/config/site";
+import { siteConfig, type SiteLocale } from "@/config/site";
+import { LOCALE_SWITCH_LABELS } from "@/lib/locale-paths";
 
 type Props = {
   homeLabel: string;
   ctaLabel: string;
   locale: SiteLocale;
-  /** Absolute path for the other language, e.g. /en/external-hr-leadership-sme */
-  alternateHref: string;
+  /** Absolute path per locale, e.g. { de: "/de/...", en: "/en/...", fr: "/fr/..." } */
+  localeHrefs: Record<SiteLocale, string>;
 };
 
 export default function LandingMinimalHeader({
   homeLabel,
   ctaLabel,
   locale,
-  alternateHref,
+  localeHrefs,
 }: Props) {
-  const deActive = locale === "de";
-  const enActive = locale === "en";
+  const ariaLabel =
+    locale === "de" ? "Sprache" : locale === "fr" ? "Langue" : "Language";
 
   return (
     <header className="sticky top-0 z-50 border-b border-tavyro-border bg-white/95 backdrop-blur-sm [color-scheme:light]">
@@ -39,40 +40,36 @@ export default function LandingMinimalHeader({
 
           <div className="flex items-center gap-2.5 sm:gap-4 md:gap-5">
             <nav
-              aria-label={locale === "de" ? "Sprache" : "Language"}
+              aria-label={ariaLabel}
               className="flex items-center gap-1.5 text-sm font-medium"
             >
-              {deActive ? (
-                <span className="text-tavyro-brand-800" aria-current="page">
-                  DE
-                </span>
-              ) : (
-                <a
-                  href={alternateHref}
-                  className="text-tavyro-text2 transition-colors hover:text-tavyro-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tavyro-brand-500 focus-visible:ring-offset-2 rounded-sm"
-                  lang="de"
-                  hrefLang="de-CH"
-                >
-                  DE
-                </a>
-              )}
-              <span className="text-tavyro-border select-none" aria-hidden>
-                |
-              </span>
-              {enActive ? (
-                <span className="text-tavyro-brand-800" aria-current="page">
-                  EN
-                </span>
-              ) : (
-                <a
-                  href={alternateHref}
-                  className="text-tavyro-text2 transition-colors hover:text-tavyro-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tavyro-brand-500 focus-visible:ring-offset-2 rounded-sm"
-                  lang="en"
-                  hrefLang="en"
-                >
-                  EN
-                </a>
-              )}
+              {siteConfig.locales.map((loc, index) => {
+                const meta = LOCALE_SWITCH_LABELS[loc];
+                const active = locale === loc;
+                return (
+                  <span key={loc} className="contents">
+                    {index > 0 && (
+                      <span className="text-tavyro-border select-none" aria-hidden>
+                        |
+                      </span>
+                    )}
+                    {active ? (
+                      <span className="text-tavyro-brand-800" aria-current="page">
+                        {meta.code}
+                      </span>
+                    ) : (
+                      <a
+                        href={localeHrefs[loc]}
+                        className="text-tavyro-text2 transition-colors hover:text-tavyro-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tavyro-brand-500 focus-visible:ring-offset-2 rounded-sm"
+                        lang={meta.lang}
+                        hrefLang={meta.hrefLang}
+                      >
+                        {meta.code}
+                      </a>
+                    )}
+                  </span>
+                );
+              })}
             </nav>
 
             <Link
