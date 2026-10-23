@@ -151,7 +151,7 @@ export default function About() {
             </article>
           </div>
 
-          <div className="mt-12 md:mt-16">
+          <div className="mt-12 border-t border-tavyro-border pt-12 md:mt-16 md:pt-16">
             <h3 className="section-heading mb-8 text-center md:mb-10">
               {t("testimonialsTitle")}
             </h3>
