@@ -55,10 +55,10 @@ export default function About() {
             {t("description")}
           </p>
 
-          <div className="grid items-start gap-10 md:grid-cols-2 md:gap-8 lg:gap-12">
+          <div className="grid items-start gap-12 md:grid-cols-2 md:gap-10 lg:gap-16">
             {/* Tam Nguyen – Lead Advisor */}
-            <article className="flex flex-col">
-              <div className="relative mx-auto mb-6 aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border-2 border-tavyro-brand-500 shadow-md md:mx-0 md:max-w-[220px]">
+            <article className="mx-auto flex w-full max-w-md flex-col items-center text-center">
+              <div className="relative mb-6 aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border-2 border-tavyro-brand-500 shadow-md md:max-w-[220px]">
                 <Image
                   src="/tam-nguyen-portrait.jpg"
                   alt={t("founderImageAlt")}
@@ -69,7 +69,7 @@ export default function About() {
                 />
               </div>
 
-              <div className="mb-4 flex flex-col items-center gap-3 text-center md:items-start md:text-left">
+              <div className="mb-5 flex flex-col items-center gap-3">
                 <h3 className="text-xl font-semibold text-tavyro-text md:text-2xl">
                   {t("founderTitle")}
                 </h3>
@@ -79,7 +79,7 @@ export default function About() {
                 />
               </div>
 
-              <div className="space-y-4 md:space-y-5">
+              <div className="w-full space-y-4 text-left md:space-y-5">
                 <p className="text-base leading-relaxed text-tavyro-text2 md:text-lg">
                   {t("bio1")}
                 </p>
@@ -87,7 +87,7 @@ export default function About() {
                   {t("bio2")}
                 </p>
 
-                <ul className="max-w-xl space-y-3 text-left">
+                <ul className="space-y-3">
                   {experience.map((item, index) => (
                     <li
                       key={index}
@@ -122,8 +122,8 @@ export default function About() {
             </article>
 
             {/* Ingrid Dohme – ergänzendes Teammitglied */}
-            <article className="flex flex-col md:pt-0">
-              <div className="relative mx-auto mb-6 aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border border-tavyro-border shadow-md md:mx-0 md:max-w-[220px]">
+            <article className="mx-auto flex w-full max-w-md flex-col items-center text-center">
+              <div className="relative mb-6 aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border border-tavyro-border shadow-md md:max-w-[220px]">
                 <Image
                   src="/ingrid-dohme-portrait.jpg"
                   alt={t("advisorImageAlt")}
@@ -133,7 +133,7 @@ export default function About() {
                 />
               </div>
 
-              <div className="mb-4 flex flex-col items-center gap-3 text-center md:items-start md:text-left">
+              <div className="mb-5 flex flex-col items-center gap-3">
                 <h3 className="text-xl font-semibold text-tavyro-text md:text-2xl">
                   {t("advisorTitle")}
                 </h3>
@@ -143,7 +143,7 @@ export default function About() {
                 />
               </div>
 
-              <p className="text-base leading-relaxed text-tavyro-text2 md:text-lg">
+              <p className="w-full text-left text-base leading-relaxed text-tavyro-text2 md:text-lg">
                 {t("advisorBio")}
               </p>
             </article>
