@@ -212,30 +212,36 @@
         "name": "TaVyro Basic",
         "price": "CHF 3,000",
         "features": {
-          "0": "Executive sparring",
-          "1": "Hotline for leaders",
-          "2": "Templates, reviews, quick impulses"
+          "0": "Strategic HR sparring for CEO and executive team",
+          "1": "Advice on people and leadership matters",
+          "2": "Assessment of HR risks and need for action",
+          "3": "Recommendations and prioritisation of measures"
         }
       },
       "1": {
         "name": "TaVyro Pro",
         "price": "CHF 5,000",
         "features": {
-          "0": "1:1 executive sparring + participation in selected executive team meetings",
-          "1": "Prioritisation & management of key HR topics",
-          "2": "Quarterly roadmap + monthly brief reporting"
+          "0": "All Basic services",
+          "1": "Development and further development of the people strategy",
+          "2": "Organisational development and HR governance",
+          "3": "Optimisation of HR processes and leadership instruments",
+          "4": "Support for strategic HR initiatives"
         }
       },
       "2": {
         "name": "TaVyro Premium",
         "price": "from CHF 9,000",
         "features": {
-          "0": "Comprehensive Fractional CHRO support, up to four days per month",
-          "1": "Program management, KPI/pulse checks, moderation",
-          "2": "Governance, sensitive cases (conflicts, performance, reorg)"
+          "0": "All Pro services",
+          "1": "Active steering and implementation of agreed measures",
+          "2": "Support for transformation and growth",
+          "3": "Development and introduction of scalable structures and processes",
+          "4": "Ensuring sustainable embedding"
         }
       }
     },
+    "scopeNote": "Scope and priorities are tailored individually to the company and defined jointly with the executive team. Additional services are agreed separately.",
     "onboarding": "Initial effort for familiarisation",
     "onboardingDesc": "The scope is determined based on the agreed mandate before the start and offered separately. Depending on requirements, familiarisation typically includes reviewing relevant policies, processes and documents as well as conversations with key stakeholders. Costs and scope are transparent before engagement.",
     "hourlyTitle": "Project work on hourly basis",
