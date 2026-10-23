@@ -17,6 +17,11 @@ export const siteConfig = {
   founder: {
     linkedin: "https://www.linkedin.com/in/dung-tam-nguyen",
   },
+  advisors: {
+    ingridDohme: {
+      linkedin: "https://www.linkedin.com/in/ingrid-dohme",
+    },
+  },
   contact: {
     email: "hello@tavyro.ch",
     phone: "+41XXXXXXXXX",

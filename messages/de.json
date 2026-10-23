@@ -251,6 +251,7 @@
     "title": "Über TaVyro",
     "description": "TaVyro ist ein Boutique Advisory mit Sitz in Zürich. Wir unterstützen CEOs, Geschäftsleitungen und Verwaltungsräte bei anspruchsvollen Fragen rund um People, Organisation, Führung und Transformation – in Schweizer und internationalen Unternehmen.",
     "founderTitle": "Tam Nguyen – Gründer und Lead Advisor",
+    "founderImageAlt": "Portrait von Tam Nguyen, Gründer und Lead Advisor von TaVyro",
     "linkedinAriaLabel": "Tam Nguyen auf LinkedIn",
     "bio1": "Tam Nguyen, in Bern aufgewachsen, verfügt über mehr als 20 Jahre Erfahrung im schweizerischen und internationalen HR-Management, davon mehrere Jahre als CHRO und Mitglied der Geschäftsleitung. Er war für Organisationen in der Schweiz, Europa und Asien tätig und kennt sowohl global aufgestellte Unternehmen als auch mittelständische Schweizer Strukturen.",
     "bio2": "Als CHRO verantwortete er neben HR auch weitere Unternehmensfunktionen und war Mitglied von Verwaltungs- und Aufsichtsgremien in China und Korea. Seine Erfahrung umfasst unter anderem:",
@@ -270,7 +271,11 @@
       "1": "CAS Executive Management",
       "2": "CAS Digitalisierung und Künstliche Intelligenz im HRM",
       "3": "Arbeitssprachen: Deutsch, Englisch und Französisch"
-    }
+    },
+    "advisorTitle": "Ingrid Dohme – Senior Advisor Transformation & Culture",
+    "advisorImageAlt": "Portrait von Ingrid Dohme, Senior Advisor Transformation & Culture bei TaVyro",
+    "advisorLinkedinAriaLabel": "Ingrid Dohme auf LinkedIn",
+    "advisorBio": "Ingrid Dohme begleitet Unternehmen bei kulturellen und organisatorischen Veränderungen. Sie verbindet langjährige internationale Erfahrung in Transformation, Employee Experience und strategischer Kommunikation und unterstützt Führungsteams dabei, Veränderungen wirksam in der Organisation zu verankern."
   },
   "QuoteBanner": {
     "prevAriaLabel": "Vorherige Referenz",
