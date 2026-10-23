@@ -152,6 +152,9 @@ export default function About() {
           </div>
 
           <div className="mt-12 md:mt-16">
+            <h3 className="section-heading mb-8 text-center md:mb-10">
+              {t("testimonialsTitle")}
+            </h3>
             <QuoteBanner />
           </div>
         </div>
