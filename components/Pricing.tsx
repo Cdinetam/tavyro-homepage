@@ -1,5 +1,11 @@
 import { useTranslations } from "next-intl";
 
+function listFromRaw(raw: Record<string, string>): string[] {
+  return Object.keys(raw)
+    .sort((a, b) => Number(a) - Number(b))
+    .map((key) => raw[key]);
+}
+
 export default function Pricing() {
   const t = useTranslations("Pricing");
 
@@ -20,15 +26,13 @@ export default function Pricing() {
             {t("minTerm")}
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
             {planKeys.map((key, index) => {
               const name = t(`plans.${key}.name`);
               const price = t(`plans.${key}.price`);
-              const features = [
-                t(`plans.${key}.features.0`),
-                t(`plans.${key}.features.1`),
-                t(`plans.${key}.features.2`),
-              ];
+              const features = listFromRaw(
+                t.raw(`plans.${key}.features`) as Record<string, string>
+              );
               const highlighted = index === 1;
 
               return (
@@ -73,6 +77,10 @@ export default function Pricing() {
               );
             })}
           </div>
+
+          <p className="text-center text-tavyro-text2 text-sm md:text-base mb-12 max-w-3xl mx-auto leading-relaxed">
+            {t("scopeNote")}
+          </p>
 
           <div className="mb-12 bg-tavyro-surface border border-tavyro-border rounded-lg p-6 md:p-8">
             <p className="text-tavyro-text text-base md:text-lg font-semibold mb-3 text-center">

@@ -212,30 +212,36 @@
         "name": "TaVyro Basic",
         "price": "CHF 3'000",
         "features": {
-          "0": "GL-Sparring",
-          "1": "Hotline für Führungskräfte",
-          "2": "Vorlagen, Reviews, kurze Impulse"
+          "0": "Strategisches HR-Sparring für CEO und Geschäftsleitung",
+          "1": "Beratung bei Personal- und Führungsfragen",
+          "2": "Einschätzung von HR-Risiken und Handlungsbedarf",
+          "3": "Empfehlungen und Priorisierung von Massnahmen"
         }
       },
       "1": {
         "name": "TaVyro Pro",
         "price": "CHF 5'000",
         "features": {
-          "0": "GL-Sparring 1:1 + Teilnahme an ausgewählten GL-Sitzungen",
-          "1": "Priorisierung & Steuerung zentraler HR-Themen",
-          "2": "Quartals-Roadmap + monatliches Kurzreporting"
+          "0": "Alle Leistungen aus Basic",
+          "1": "Entwicklung und Weiterentwicklung der People-Strategie",
+          "2": "Organisationsentwicklung und HR-Governance",
+          "3": "Optimierung von HR-Prozessen und Führungsinstrumenten",
+          "4": "Begleitung strategischer HR-Initiativen"
         }
       },
       "2": {
         "name": "TaVyro Premium",
         "price": "ab CHF 9'000",
         "features": {
-          "0": "Nahezu CHRO-Ersatz (fair-use, bis 4 Tage/Monat)",
-          "1": "Programmsteuerung, KPI/Pulse-Checks, Moderation",
-          "2": "Governance, heikle Fälle (Konflikte, Performance, Reorg)"
+          "0": "Alle Leistungen aus Pro",
+          "1": "Aktive Steuerung und Implementierung vereinbarter Massnahmen",
+          "2": "Begleitung von Transformation und Wachstum",
+          "3": "Entwicklung und Einführung skalierbarer Strukturen und Prozesse",
+          "4": "Sicherstellung der nachhaltigen Verankerung"
         }
       }
     },
+    "scopeNote": "Leistungsumfang und Prioritäten werden individuell auf das Unternehmen abgestimmt und gemeinsam mit der Geschäftsleitung festgelegt. Zusatzleistungen werden separat vereinbart.",
     "onboarding": "Initialaufwand für Einarbeitung",
     "onboardingDesc": "Der Umfang wird auf Basis des vereinbarten Mandats vor dem Start festgelegt und separat offeriert. Je nach Bedarf umfasst die Einarbeitung etwa die Sichtung relevanter Reglemente, Prozesse und Unterlagen sowie Gespräche mit Schlüsselpersonen. Kosten und Umfang sind vor der Beauftragung transparent.",
     "hourlyTitle": "Projektarbeit auf Stundenbasis",
