@@ -58,7 +58,7 @@ export default function About() {
           <div className="space-y-14 md:space-y-16">
             {/* Tam Nguyen – Lead Advisor */}
             <article className="grid items-start gap-8 md:grid-cols-[220px_1fr] md:gap-10">
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border-2 border-tavyro-brand-500 shadow-md md:mx-0 md:max-w-none">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-xl border border-tavyro-border shadow-md md:mx-0 md:max-w-none">
                 <Image
                   src="/tam-nguyen-portrait.jpg"
                   alt={t("founderImageAlt")}
