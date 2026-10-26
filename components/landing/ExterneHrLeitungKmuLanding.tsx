@@ -563,6 +563,18 @@ export default async function ExterneHrLeitungKmuLanding({
         impressumLabel={t("footer.impressum")}
         privacyLabel={t("footer.privacy")}
         copyright={t("footer.copyright", { year })}
+        relatedLinks={[
+          {
+            href: siteConfig.relatedSites.fractionalChro[locale],
+            label: "fractional-chro.ch",
+            external: true,
+          },
+          {
+            href: siteConfig.relatedSites.tamNguyen[locale],
+            label: "tam-nguyen.ch",
+            external: true,
+          },
+        ]}
       />
     </>
   );

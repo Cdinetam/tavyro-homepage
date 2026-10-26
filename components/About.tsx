@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import QuoteBanner from "@/components/QuoteBanner";
-import { siteConfig } from "@/config/site";
+import { isSiteLocale, siteConfig } from "@/config/site";
 
 function listFromRaw(raw: Record<string, string>): string[] {
   return Object.keys(raw)
@@ -39,6 +39,9 @@ function LinkedInIconLink({
 
 export default function About() {
   const t = useTranslations("About");
+  const locale = useLocale();
+  const relatedLocale = isSiteLocale(locale) ? locale : "de";
+  const tamNguyenHref = siteConfig.relatedSites.tamNguyen[relatedLocale];
 
   const experience = listFromRaw(t.raw("experience") as Record<string, string>);
   const qualifications = listFromRaw(
@@ -72,7 +75,14 @@ export default function About() {
               <div className="min-w-0 space-y-4 md:space-y-5">
                 <div className="flex flex-col items-center gap-3 text-center md:items-start md:text-left">
                   <h3 className="text-xl font-semibold text-tavyro-text md:text-2xl">
-                    {t("founderTitle")}
+                    <a
+                      href={tamNguyenHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-tavyro-brand-600 transition-colors"
+                    >
+                      {t("founderTitle")}
+                    </a>
                   </h3>
                   <LinkedInIconLink
                     href={siteConfig.founder.linkedin}

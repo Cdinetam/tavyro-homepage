@@ -4,12 +4,17 @@ import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { usePathname } from "@/i18n/navigation";
+import { isSiteLocale, siteConfig } from "@/config/site";
 
 export default function Footer() {
   const t = useTranslations("Footer");
   const locale = useLocale();
   const pathname = usePathname();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const relatedLocale = isSiteLocale(locale) ? locale : "de";
+  const fractionalChroHref = siteConfig.relatedSites.fractionalChro[relatedLocale];
+  const tamNguyenHref = siteConfig.relatedSites.tamNguyen[relatedLocale];
+  const externeHrHref = siteConfig.relatedSites.externeHrLeitung[relatedLocale];
 
   const scrollToSection = (id: string) => {
     if (pathname !== "/") {
@@ -83,11 +88,7 @@ export default function Footer() {
                       {t.rich(`faqs.${key}.answer`, {
                         link: (chunks) => (
                           <a
-                            href={
-                              locale === "en"
-                                ? "https://fractional-chro.ch/index-en.html"
-                                : "https://fractional-chro.ch/"
-                            }
+                            href={fractionalChroHref}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="underline underline-offset-4 hover:text-white transition-colors"
@@ -259,6 +260,34 @@ export default function Footer() {
                 >
                   {t("privacy")}
                 </Link>
+              </li>
+              <li>
+                <Link
+                  href={externeHrHref}
+                  className="hover:text-white transition-colors text-tavyro-secondary-300"
+                >
+                  {t("relatedExterneHr")}
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={fractionalChroHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors text-tavyro-secondary-300"
+                >
+                  {t("relatedFractionalChro")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={tamNguyenHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors text-tavyro-secondary-300"
+                >
+                  {t("relatedTamNguyen")}
+                </a>
               </li>
             </ul>
           </div>

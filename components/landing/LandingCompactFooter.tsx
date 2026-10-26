@@ -1,10 +1,17 @@
 import { Link } from "@/i18n/navigation";
 
+type RelatedLink = {
+  href: string;
+  label: string;
+  external?: boolean;
+};
+
 type Props = {
   homeLabel: string;
   impressumLabel: string;
   privacyLabel: string;
   copyright: string;
+  relatedLinks?: RelatedLink[];
 };
 
 export default function LandingCompactFooter({
@@ -12,6 +19,7 @@ export default function LandingCompactFooter({
   impressumLabel,
   privacyLabel,
   copyright,
+  relatedLinks = [],
 }: Props) {
   return (
     <footer className="bg-tavyro-brand-900 text-tavyro-secondary-200 py-10 md:py-12">
@@ -65,6 +73,27 @@ export default function LandingCompactFooter({
                   {privacyLabel}
                 </Link>
               </li>
+              {relatedLinks.map((item) => (
+                <li key={item.href}>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors text-tavyro-secondary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5C518] focus-visible:ring-offset-2 focus-visible:ring-offset-tavyro-brand-900 rounded-sm"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="hover:text-white transition-colors text-tavyro-secondary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5C518] focus-visible:ring-offset-2 focus-visible:ring-offset-tavyro-brand-900 rounded-sm"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 
