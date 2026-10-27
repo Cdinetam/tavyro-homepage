@@ -113,14 +113,15 @@
     @apply text-xs font-semibold uppercase tracking-[0.2em] text-[#072820];
   }
 
+  /* Chat bubbles on page surface #3AA19E — ink text for WCAG AA */
   .chat-bubble-user {
-    @apply max-w-[85%] rounded-soft rounded-br-md px-4 py-3 text-[15px] leading-relaxed text-pearl sm:max-w-[75%];
-    background: rgba(8, 127, 145, 0.35);
-    border: 1px solid rgba(167, 218, 212, 0.22);
+    @apply max-w-[85%] rounded-soft rounded-br-md px-4 py-3 text-[15px] leading-relaxed text-ink sm:max-w-[75%];
+    background: #e8f6f4;
+    border: 1px solid rgba(9, 45, 56, 0.12);
   }
 
   .chat-bubble-ai {
-    @apply max-w-[90%] text-[15px] leading-relaxed text-pearl/95 sm:max-w-[80%];
+    @apply max-w-[90%] text-[15px] leading-relaxed text-ink sm:max-w-[80%];
   }
 }
 

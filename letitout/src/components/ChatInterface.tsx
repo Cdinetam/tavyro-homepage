@@ -189,25 +189,25 @@ export default function ChatInterface() {
   }
 
   return (
-    <div className="flex h-[100dvh] flex-col bg-deep">
-      <header className="flex min-h-[56px] shrink-0 items-center justify-between border-b border-glass/15 px-4 sm:px-6">
+    <div className="flex h-[100dvh] flex-col bg-surface text-ink">
+      <header className="flex min-h-[56px] shrink-0 items-center justify-between border-b border-ink/10 px-4 sm:px-6">
         <Link
           href="/"
-          className="btn-ghost min-h-[44px] px-2 text-aqua"
+          className="btn-ghost min-h-[44px] px-2"
           aria-label="Back to home"
         >
           Back
         </Link>
         <Link
           href="/"
-          className="text-base font-semibold tracking-tight text-pearl"
+          className="text-base font-semibold tracking-tight text-ink"
         >
           {BRAND.display}
         </Link>
         <div className="relative">
           <button
             type="button"
-            className="btn-ghost min-h-[44px] px-2 text-aqua"
+            className="btn-ghost min-h-[44px] px-2"
             aria-expanded={menuOpen}
             aria-controls="chat-menu"
             onClick={() => setMenuOpen((open) => !open)}
@@ -217,11 +217,11 @@ export default function ChatInterface() {
           {menuOpen && (
             <div
               id="chat-menu"
-              className="absolute right-0 top-full z-20 mt-1 w-56 rounded-soft border border-glass/20 bg-dark/95 py-2 shadow-soft backdrop-blur-md"
+              className="absolute right-0 top-full z-20 mt-1 w-56 rounded-soft border border-ink/12 bg-bar py-2 shadow-soft"
             >
               <button
                 type="button"
-                className="block w-full px-4 py-2.5 text-left text-sm text-aqua hover:bg-deep/50 hover:text-pearl"
+                className="block w-full px-4 py-2.5 text-left text-sm text-ink hover:bg-surface/40"
                 onClick={() => {
                   setMessages([INITIAL_AI]);
                   setError(null);
@@ -231,11 +231,11 @@ export default function ChatInterface() {
                 New conversation
               </button>
               <div className="px-4 py-2">
-                <p className="mb-1.5 text-[11px] uppercase tracking-wider text-glass/70">
+                <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-ink/80">
                   Style
                 </p>
                 <select
-                  className="w-full rounded-md border border-glass/20 bg-deep px-2 py-1.5 text-sm text-pearl"
+                  className="w-full rounded-md border border-ink/15 bg-white/80 px-2 py-1.5 text-sm text-ink"
                   value={style}
                   onChange={(event) =>
                     setStyle(event.target.value as ChatStyle)
@@ -251,7 +251,7 @@ export default function ChatInterface() {
               </div>
               <Link
                 href="/#pricing"
-                className="block px-4 py-2.5 text-sm text-aqua hover:bg-deep/50 hover:text-pearl"
+                className="block px-4 py-2.5 text-sm text-ink hover:bg-surface/40"
                 onClick={() => setMenuOpen(false)}
               >
                 Pricing
@@ -274,7 +274,7 @@ export default function ChatInterface() {
             ) : (
               <div key={message.id} className="flex justify-start animate-message-in">
                 <div className="chat-bubble-ai">
-                  <p className="mb-1 text-[11px] font-medium uppercase tracking-wider text-glass/70">
+                  <p className="mb-1 text-[11px] font-medium uppercase tracking-wider text-ink/80">
                     {BRAND.name}
                   </p>
                   <p className="whitespace-pre-wrap">{message.content}</p>
@@ -282,13 +282,13 @@ export default function ChatInterface() {
                     message.id === messages[messages.length - 1]?.id &&
                     !message.content && (
                       <span className="mt-1 flex gap-1.5" aria-label="Waiting for reply">
-                        <span className="h-1.5 w-1.5 rounded-full bg-glass animate-pulse-soft" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-ink/50 animate-pulse-soft" />
                         <span
-                          className="h-1.5 w-1.5 rounded-full bg-glass animate-pulse-soft"
+                          className="h-1.5 w-1.5 rounded-full bg-ink/50 animate-pulse-soft"
                           style={{ animationDelay: "0.2s" }}
                         />
                         <span
-                          className="h-1.5 w-1.5 rounded-full bg-glass animate-pulse-soft"
+                          className="h-1.5 w-1.5 rounded-full bg-ink/50 animate-pulse-soft"
                           style={{ animationDelay: "0.4s" }}
                         />
                       </span>
@@ -299,7 +299,10 @@ export default function ChatInterface() {
           )}
 
           {error && (
-            <p className="rounded-soft border border-red-400/30 bg-red-950/40 px-3 py-2 text-sm text-red-200" role="alert">
+            <p
+              className="rounded-soft border border-red-800/25 bg-[#F8EAEA] px-3 py-2 text-sm text-[#5C1A1A]"
+              role="alert"
+            >
               {error}
             </p>
           )}
@@ -308,7 +311,7 @@ export default function ChatInterface() {
         </div>
       </main>
 
-      <footer className="shrink-0 border-t border-glass/15 bg-deep/95 px-4 py-3 sm:px-6">
+      <footer className="shrink-0 border-t border-ink/10 bg-surface px-4 py-3 sm:px-6">
         <form
           onSubmit={handleSubmit}
           className="mx-auto flex max-w-2xl items-end gap-2"
@@ -336,7 +339,7 @@ export default function ChatInterface() {
             Send
           </button>
         </form>
-        <p className="mx-auto mt-2 max-w-2xl text-center text-[11px] text-aqua/50">
+        <p className="mx-auto mt-2 max-w-2xl text-center text-[11px] text-ink/70">
           Style: {STYLE_LABELS[style]}. Requires Azure OpenAI env — see README.
         </p>
       </footer>
