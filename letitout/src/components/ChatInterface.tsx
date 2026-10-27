@@ -189,7 +189,7 @@ export default function ChatInterface() {
   }
 
   return (
-    <div className="flex h-[100dvh] flex-col bg-surface text-ink">
+    <div className="flex h-[100dvh] flex-col bg-chat text-ink">
       <header className="flex min-h-[56px] shrink-0 items-center justify-between border-b border-ink/10 px-4 sm:px-6">
         <Link
           href="/"
@@ -311,7 +311,7 @@ export default function ChatInterface() {
         </div>
       </main>
 
-      <footer className="shrink-0 border-t border-ink/10 bg-surface px-4 py-3 sm:px-6">
+      <footer className="shrink-0 border-t border-ink/10 bg-chat px-4 py-3 sm:px-6">
         <form
           onSubmit={handleSubmit}
           className="mx-auto flex max-w-2xl items-end gap-2"

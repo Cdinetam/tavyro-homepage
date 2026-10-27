@@ -7,6 +7,8 @@
   --color-dark-turquoise: #164754;
   /* Sampled from water canvas mid-left luminous zone */
   --color-page-surface: #3aa19e;
+  /* Chat field: bright mid-left water sample — a touch lighter than landing surface */
+  --color-chat-surface: #4aafac;
   /* Soft milky control surface for mind-input */
   --color-surface-bar: #e8f6f4;
   --color-ocean-turquoise: #087f91;
@@ -113,7 +115,7 @@
     @apply text-xs font-semibold uppercase tracking-[0.2em] text-[#072820];
   }
 
-  /* Chat bubbles on page surface #3AA19E — ink text for WCAG AA */
+  /* Chat bubbles on luminous chat surface #4AAFAC — ink text for WCAG AA */
   .chat-bubble-user {
     @apply max-w-[85%] rounded-soft rounded-br-md px-4 py-3 text-[15px] leading-relaxed text-ink sm:max-w-[75%];
     background: #e8f6f4;

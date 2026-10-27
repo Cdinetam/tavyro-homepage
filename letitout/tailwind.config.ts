@@ -13,6 +13,8 @@ const config: Config = {
         dark: "rgb(22 71 84 / <alpha-value>)",
         ink: "rgb(9 45 56 / <alpha-value>)",
         surface: "rgb(58 161 158 / <alpha-value>)",
+        /* Luminous mid-left water (#4AAFAC) — chat only; landing stays surface */
+        chat: "rgb(74 175 172 / <alpha-value>)",
         bar: "rgb(232 246 244 / <alpha-value>)",
         ocean: "rgb(8 127 145 / <alpha-value>)",
         glass: "rgb(167 218 212 / <alpha-value>)",
