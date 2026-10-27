@@ -7,69 +7,92 @@ import {
   useEffect,
   useRef,
   useState,
+  useTransition,
 } from "react";
 import { BRAND } from "@/lib/brand";
 import { consumeDraftMessage } from "@/lib/chat-session";
+import {
+  CHAT_STYLES,
+  ChatStyle,
+  DEFAULT_CHAT_STYLE,
+} from "@/lib/chat-styles";
+import type { ChatMessage, ChatSetupErrorBody } from "@/types/chat";
 
-type Role = "user" | "assistant";
-
-interface Message {
+interface UiMessage {
   id: string;
-  role: Role;
+  role: "user" | "assistant";
   content: string;
 }
 
-const INITIAL_AI: Message = {
+const INITIAL_AI: UiMessage = {
   id: "welcome",
   role: "assistant",
   content: "What's on your mind? You can start anywhere.",
 };
 
-const MOCK_REPLIES = [
-  "I'm listening. Take your time — there's no rush to find the perfect words.",
-  "That sounds like something you've been carrying for a while. What feels most important about it right now?",
-  "Thank you for sharing that. What would it mean if you didn't have to hold it alone?",
-  "I hear you. Would you like to sit with that a moment, or go a little deeper?",
-] as const;
+const STYLE_LABELS: Record<ChatStyle, string> = {
+  gentle: "Gentle",
+  balanced: "Balanced",
+  witty: "Witty",
+  philosophical: "Philosophical",
+};
 
 function createId(): string {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 }
 
+async function streamAssistantReply(
+  history: ChatMessage[],
+  style: ChatStyle,
+  onDelta: (chunk: string) => void
+): Promise<void> {
+  const response = await fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ messages: history, style }),
+  });
+
+  if (!response.ok) {
+    let payload: ChatSetupErrorBody | null = null;
+    try {
+      payload = (await response.json()) as ChatSetupErrorBody;
+    } catch {
+      /* ignore */
+    }
+    if (payload?.code === "missing_config") {
+      const missing = payload.missing?.join(", ") ?? "Azure env vars";
+      throw new Error(
+        `${payload.error} Missing: ${missing}. See letitout/.env.example.`
+      );
+    }
+    throw new Error(payload?.error ?? `Chat request failed (${response.status}).`);
+  }
+
+  if (!response.body) {
+    throw new Error("No response stream from server.");
+  }
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    onDelta(decoder.decode(value, { stream: true }));
+  }
+}
+
 export default function ChatInterface() {
-  const [messages, setMessages] = useState<Message[]>([INITIAL_AI]);
+  const [messages, setMessages] = useState<UiMessage[]>([INITIAL_AI]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [replyIndex, setReplyIndex] = useState(0);
+  const [style, setStyle] = useState<ChatStyle>(DEFAULT_CHAT_STYLE);
   const [seeded, setSeeded] = useState(false);
+  const [, startTransition] = useTransition();
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    const draft = consumeDraftMessage();
-    if (draft) {
-      setMessages((prev) => [
-        ...prev,
-        { id: createId(), role: "user", content: draft },
-      ]);
-      setIsLoading(true);
-      window.setTimeout(() => {
-        setMessages((prev) => [
-          ...prev,
-          {
-            id: createId(),
-            role: "assistant",
-            content: MOCK_REPLIES[0],
-          },
-        ]);
-        setReplyIndex(1);
-        setIsLoading(false);
-      }, 900);
-    }
-    setSeeded(true);
-  }, []);
+  const draftSent = useRef(false);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -81,43 +104,87 @@ export default function ChatInterface() {
     }
   }, [seeded]);
 
-  function sendMessage(raw: string) {
+  async function runTurn(userText: string, prior: UiMessage[]) {
+    // Welcome bubble stays in UI only — omit from model history.
+    const apiHistory: ChatMessage[] = prior
+      .filter((m) => m.id !== "welcome" && m.content.trim().length > 0)
+      .map((m) => ({ role: m.role, content: m.content }));
+    apiHistory.push({ role: "user", content: userText });
+
+    const assistantId = createId();
+    setMessages((prev) => [
+      ...prev,
+      { id: assistantId, role: "assistant", content: "" },
+    ]);
+
+    try {
+      await streamAssistantReply(apiHistory, style, (chunk) => {
+        startTransition(() => {
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === assistantId ? { ...m, content: m.content + chunk } : m
+            )
+          );
+        });
+      });
+    } catch (err) {
+      setMessages((prev) => prev.filter((m) => m.id !== assistantId));
+      throw err;
+    }
+  }
+
+  useEffect(() => {
+    if (draftSent.current) return;
+    draftSent.current = true;
+    const draft = consumeDraftMessage();
+    setSeeded(true);
+    if (!draft) return;
+
+    const userMsg: UiMessage = {
+      id: createId(),
+      role: "user",
+      content: draft,
+    };
+    setMessages((prev) => [...prev, userMsg]);
+    setIsLoading(true);
+    setError(null);
+    void runTurn(draft, [INITIAL_AI])
+      .catch((err: unknown) => {
+        setError(err instanceof Error ? err.message : "Something went wrong.");
+      })
+      .finally(() => setIsLoading(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- seed once on mount
+  }, []);
+
+  async function sendMessage(raw: string) {
     const content = raw.trim();
     if (!content || isLoading) return;
 
     setError(null);
     setInput("");
-    setMessages((prev) => [
-      ...prev,
-      { id: createId(), role: "user", content },
-    ]);
+    const prior = messages;
+    const userMsg: UiMessage = { id: createId(), role: "user", content };
+    setMessages((prev) => [...prev, userMsg]);
     setIsLoading(true);
 
-    const nextReply = MOCK_REPLIES[replyIndex % MOCK_REPLIES.length];
-    window.setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        { id: createId(), role: "assistant", content: nextReply },
-      ]);
-      setReplyIndex((i) => i + 1);
+    try {
+      await runTurn(content, prior);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
       setIsLoading(false);
-    }, 800 + Math.random() * 400);
+    }
   }
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
-    try {
-      sendMessage(input);
-    } catch {
-      setError("Something went wrong. Please try again.");
-      setIsLoading(false);
-    }
+    void sendMessage(input);
   }
 
   function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
-      sendMessage(input);
+      void sendMessage(input);
     }
   }
 
@@ -140,7 +207,7 @@ export default function ChatInterface() {
         <div className="relative">
           <button
             type="button"
-            className="btn-ghost min-h-[44px] px-2"
+            className="btn-ghost min-h-[44px] px-2 text-aqua"
             aria-expanded={menuOpen}
             aria-controls="chat-menu"
             onClick={() => setMenuOpen((open) => !open)}
@@ -150,18 +217,38 @@ export default function ChatInterface() {
           {menuOpen && (
             <div
               id="chat-menu"
-              className="absolute right-0 top-full z-20 mt-1 w-52 rounded-soft border border-glass/20 bg-dark/95 py-2 shadow-soft backdrop-blur-md"
+              className="absolute right-0 top-full z-20 mt-1 w-56 rounded-soft border border-glass/20 bg-dark/95 py-2 shadow-soft backdrop-blur-md"
             >
               <button
                 type="button"
                 className="block w-full px-4 py-2.5 text-left text-sm text-aqua hover:bg-deep/50 hover:text-pearl"
                 onClick={() => {
                   setMessages([INITIAL_AI]);
+                  setError(null);
                   setMenuOpen(false);
                 }}
               >
                 New conversation
               </button>
+              <div className="px-4 py-2">
+                <p className="mb-1.5 text-[11px] uppercase tracking-wider text-glass/70">
+                  Style
+                </p>
+                <select
+                  className="w-full rounded-md border border-glass/20 bg-deep px-2 py-1.5 text-sm text-pearl"
+                  value={style}
+                  onChange={(event) =>
+                    setStyle(event.target.value as ChatStyle)
+                  }
+                  aria-label="Conversation style"
+                >
+                  {CHAT_STYLES.map((value) => (
+                    <option key={value} value={value}>
+                      {STYLE_LABELS[value]}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <Link
                 href="/#pricing"
                 className="block px-4 py-2.5 text-sm text-aqua hover:bg-deep/50 hover:text-pearl"
@@ -190,30 +277,29 @@ export default function ChatInterface() {
                   <p className="mb-1 text-[11px] font-medium uppercase tracking-wider text-glass/70">
                     {BRAND.name}
                   </p>
-                  <p>{message.content}</p>
+                  <p className="whitespace-pre-wrap">{message.content}</p>
+                  {isLoading &&
+                    message.id === messages[messages.length - 1]?.id &&
+                    !message.content && (
+                      <span className="mt-1 flex gap-1.5" aria-label="Waiting for reply">
+                        <span className="h-1.5 w-1.5 rounded-full bg-glass animate-pulse-soft" />
+                        <span
+                          className="h-1.5 w-1.5 rounded-full bg-glass animate-pulse-soft"
+                          style={{ animationDelay: "0.2s" }}
+                        />
+                        <span
+                          className="h-1.5 w-1.5 rounded-full bg-glass animate-pulse-soft"
+                          style={{ animationDelay: "0.4s" }}
+                        />
+                      </span>
+                    )}
                 </div>
               </div>
             )
           )}
 
-          {isLoading && (
-            <div className="flex justify-start" aria-label="Waiting for reply">
-              <div className="flex gap-1.5 px-1 py-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-glass animate-pulse-soft" />
-                <span
-                  className="h-1.5 w-1.5 rounded-full bg-glass animate-pulse-soft"
-                  style={{ animationDelay: "0.2s" }}
-                />
-                <span
-                  className="h-1.5 w-1.5 rounded-full bg-glass animate-pulse-soft"
-                  style={{ animationDelay: "0.4s" }}
-                />
-              </div>
-            </div>
-          )}
-
           {error && (
-            <p className="text-sm text-red-300" role="alert">
+            <p className="rounded-soft border border-red-400/30 bg-red-950/40 px-3 py-2 text-sm text-red-200" role="alert">
               {error}
             </p>
           )}
@@ -251,7 +337,7 @@ export default function ChatInterface() {
           </button>
         </form>
         <p className="mx-auto mt-2 max-w-2xl text-center text-[11px] text-aqua/50">
-          Mock replies for visual QA — AI integration comes in Phase 2.
+          Style: {STYLE_LABELS[style]}. Requires Azure OpenAI env — see README.
         </p>
       </footer>
     </div>
