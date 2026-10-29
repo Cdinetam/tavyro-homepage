@@ -62,7 +62,7 @@ async function streamAssistantReply(
     if (payload?.code === "missing_config") {
       const missing = payload.missing?.join(", ") ?? "Azure env vars";
       throw new Error(
-        `${payload.error} Missing: ${missing}. See letitout/.env.example.`
+        `${payload.error} Missing: ${missing}. See philofi/.env.example.`
       );
     }
     throw new Error(payload?.error ?? `Chat request failed (${response.status}).`);

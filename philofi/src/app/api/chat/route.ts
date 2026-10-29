@@ -67,7 +67,7 @@ export async function POST(request: NextRequest): Promise<Response> {
         error: "Azure OpenAI is not configured.",
         code: "missing_config",
         missing,
-        hint: "Copy letitout/.env.example to letitout/.env.local and set the listed variables. Do not commit secrets.",
+        hint: "Copy philofi/.env.example to philofi/.env.local and set the listed variables. Do not commit secrets.",
       },
       503
     );

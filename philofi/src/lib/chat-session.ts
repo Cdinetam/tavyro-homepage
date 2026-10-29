@@ -1,4 +1,4 @@
-const DRAFT_KEY = "letitout:draft-message";
+const DRAFT_KEY = "philofi:draft-message";
 
 export function saveDraftMessage(message: string): void {
   if (typeof window === "undefined") return;

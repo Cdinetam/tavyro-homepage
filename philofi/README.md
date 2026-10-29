@@ -1,19 +1,19 @@
-# Philofi (working title) — Unsaid codebase
+# Philofi — Unsaid codebase
 
 Private AI conversation space. **UI brand:** Philofi / `philofi.`  
-**Internal project:** Unsaid · **App folder:** `letitout/` (unchanged).
+**Internal project:** Unsaid · **App folder:** `philofi/`
 
 Phase 1 UI is locked (turquoise surface `#3AA19E`, green water hero).  
 Slice 1 adds system prompt + Azure OpenAI streaming chat.
 
 ## Brand
 
-Edit `src/lib/brand.ts` for display name / tagline. Do not rename this folder or the GitHub repo without approval.
+Edit `src/lib/brand.ts` for display name / tagline. Do not rename the GitHub repo without approval.
 
 ## Run locally
 
 ```bash
-cd letitout
+cd philofi
 npm install
 cp .env.example .env.local   # then fill Azure vars if you have them
 npm run dev
@@ -57,7 +57,7 @@ Next.js 14 (App Router), TypeScript, Tailwind CSS, Manrope, `openai` SDK (Azure 
 
 ## Deploy (Vercel — own project)
 
-Philofi must be a **separate** Vercel project with **Root Directory = `letitout`**. Do not change the TaVyro or WeitSinn projects.
+Philofi must be a **separate** Vercel project with **Root Directory = `philofi`**. Do not change the TaVyro or WeitSinn projects.
 
 - Config hint: `vercel.json` in this folder
 - Domain: `philofi.com` (+ `www`) — DNS table and click-path in the agent store doc `philofi-deploy-dns.md`

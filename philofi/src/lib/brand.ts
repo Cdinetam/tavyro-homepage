@@ -1,6 +1,6 @@
 /**
  * Central brand configuration — swap name/display without hunting through UI copy.
- * Internal project codename remains Unsaid; folder may stay `letitout/`.
+ * Internal project codename remains Unsaid; app folder is `philofi/`.
  */
 export const BRAND = {
   /** Product name shown in UI / legal short form */
