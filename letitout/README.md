@@ -54,3 +54,11 @@ Optional photo later: `public/images/turquoise-glass.jpg`.
 ## Stack
 
 Next.js 14 (App Router), TypeScript, Tailwind CSS, Manrope, `openai` SDK (Azure mode).
+
+## Deploy (Vercel — own project)
+
+Philofi must be a **separate** Vercel project with **Root Directory = `letitout`**. Do not change the TaVyro or WeitSinn projects.
+
+- Config hint: `vercel.json` in this folder
+- Domain: `philofi.com` (+ `www`) — DNS table and click-path in the agent store doc `philofi-deploy-dns.md`
+- Production Azure env vars: same four names as `.env.example` (leave empty until supplied)
