@@ -2,6 +2,7 @@ export const siteConfig = {
   brand: "TaVyro",
   legalName: "TaVyro GmbH",
   siteUrl: "https://tavyro.ch",
+  googleTagId: "G-7CLM70MZYD",
   locales: ["de", "en", "fr"] as const,
   hreflang: {
     de: "de-CH",
