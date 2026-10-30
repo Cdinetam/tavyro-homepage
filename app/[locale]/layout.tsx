@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import GoogleTag from "@/components/GoogleTag";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -122,6 +123,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <GoogleTag />
         <Analytics />
       </body>
     </html>
