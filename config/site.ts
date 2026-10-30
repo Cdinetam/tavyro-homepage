@@ -29,6 +29,24 @@ export const siteConfig = {
     email: "hello@tavyro.ch",
     phone: "+41XXXXXXXXX",
   },
+  /** Related sites/pages for unobtrusive cross-linking (SSOT). */
+  relatedSites: {
+    fractionalChro: {
+      de: "https://fractional-chro.ch/",
+      en: "https://fractional-chro.ch/index-en.html",
+      fr: "https://fractional-chro.ch/",
+    },
+    tamNguyen: {
+      de: "https://tam-nguyen.ch/",
+      en: "https://tam-nguyen.ch/en",
+      fr: "https://tam-nguyen.ch/fr",
+    },
+    externeHrLeitung: {
+      de: "/externe-hr-leitung-kmu#leistungen",
+      en: "/external-hr-leadership-sme#leistungen",
+      fr: "/direction-rh-externe-pme#leistungen",
+    },
+  },
   address: {
     addressLocality: {
       de: "Zürich",
